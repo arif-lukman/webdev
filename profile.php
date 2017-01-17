@@ -52,10 +52,10 @@
 					<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li class="active"><a href="profile.php">Profile</a></li>
-						<li><a href="#">Executive Summary</a></li>
-						<li><a href="#">Vision & Mission</a></li>
-						<li><a href="#">Langgak Field</a></li>
-						<li><a href="#">Message From Director</a></li>
+						<li><a href="executivesummary.php">Executive Summary</a></li>
+						<li><a href="visimisi.php">Vision & Mission</a></li>
+						<li><a href="langgakfield.php">Langgak Field</a></li>
+						<li><a href="msgdir.php">Message From Director</a></li>
 						<li><a href="#">Onboard Manager</a></li>
 					</ul>
 				</li>
@@ -118,8 +118,8 @@ SPRL commits to increase the production level of the Field to 700 barrel per day
     <li class="list-group-item">1. PT Sarana Pembangunan Riau (“SPR”) holds fifty percent of Participating Interests in the Field</li>
     <li class="list-group-item">2. The Interests, given as Production Sharing Contract (“PSC”),  was awarded by the Government of Indonesia in November 2009, which became effective on April 20, 2010</li>
     <li class="list-group-item">3. Holds 99.9% of ownerships in SPRL, SPR fully supported financially for the developement of the Field</li>
-  <li class="list-group-item">4. Established in 1990, SPR is the oldest Province of Riau’s owned company in Riau</li>
-  <li class="list-group-item">5. SPR repsonsibles in managing commercial assets of the Province such as Gas Turbine Generator, Landbanks and Heavy Equipment.</li>
+  	<li class="list-group-item">4. Established in 1990, SPR is the oldest Province of Riau’s owned company in Riau</li>
+  	<li class="list-group-item">5. SPR repsonsibles in managing commercial assets of the Province such as Gas Turbine Generator, Landbanks and Heavy Equipment.</li>
   </ul>
 </div>
 	</body>

@@ -53,9 +53,9 @@
 					<ul class="dropdown-menu">
 						<li><a href="profile.php">Profile</a></li>
 						<li class="active"><a href="executivesummary.php">Executive Summary</a></li>
-						<li><a href="#">Vision & Mission</a></li>
-						<li><a href="#">Langgak Field</a></li>
-						<li><a href="#">Message From Director</a></li>
+						<li><a href="visimisi.php">Vision & Mission</a></li>
+						<li><a href="langgakfield.php">Langgak Field</a></li>
+						<li><a href="msgdir.php">Message From Director</a></li>
 						<li><a href="#">Onboard Manager</a></li>
 					</ul>
 				</li>
