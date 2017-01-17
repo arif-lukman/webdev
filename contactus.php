@@ -22,7 +22,7 @@
 				color: white;
 			}
 			.container{
-				max-width: 787px;
+				max-width: 805px;
 			}
 		</style>
 		<title>SPR Langgak</title>
@@ -46,7 +46,7 @@
 		<div class="container">
 			<nav class="navbar navbar-default">
 				<ul class="nav navbar-nav">
-				<li><a href="index.php">Home</a></li>
+				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">About SPR Langgak
 					<span class="caret"></span></a>
@@ -108,9 +108,10 @@
 				  	<input type="text" class="form-control" id="phone">
 				</div>
 				<center><input type="submit"></center>
+				<hr>
 			</form>
 		</div>
-				<div class="container">
+		<div class="container">
 			<div class="col-sm-12 text-center">
 				<h3>Our Office</h3>
 				PT. SPR LANGGAK<br>
@@ -118,6 +119,7 @@
 			</div>
 
 			<div class="col-sm-6 text-center">
+				<span class="glyphicon glyphicon-map-marker"></span><br>
 				Head Office :<br>
 				AD Premier Lt. 8<br>
 				Jl. TB Simatupang No.5<br>
@@ -125,6 +127,7 @@
 			</div>
 
 			<div class="col-sm-6 text-center">
+				<span class="glyphicon glyphicon-map-marker"></span><br>
 				Langgak Site :<br>
 				Desa Langgak,<br>
 				Kabupaten Rokan Hulu,<br>
@@ -134,11 +137,10 @@
 			<div class="col-sm-12 text-center">
 				<br>
 				<br>
-				No. Tlp : 021.22708945<br>
-				No Fax : 021.22708946
+				<span class="glyphicon glyphicon-phone-alt"></span> 021-22708945<br>
+				<span class="glyphicon glyphicon-print"></span> 021-22708946
 				<br>
 				<br>
-				 <img src="logohd/duaduanya.png" width="150" height="150" class="img-responsive center-block">
 			</div>
 		</div>
 	</body>
