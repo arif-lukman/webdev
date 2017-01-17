@@ -122,6 +122,37 @@ SPRL commits to increase the production level of the Field to 700 barrel per day
   	<li class="list-group-item">5. SPR repsonsibles in managing commercial assets of the Province such as Gas Turbine Generator, Landbanks and Heavy Equipment.</li>
   </ul>
 </div>
+		<div class="container">
+			<div class="col-sm-12 text-center">
+				<h3>Our Office</h3>
+				PT. SPR LANGGAK<br>
+				<hr><br>
+			</div>
+
+			<div class="col-sm-6 text-center">
+				Head Office :<br>
+				AD Premier Lt. 8<br>
+				Jl. TB Simatupang No.5<br>
+				Jakarta 12550<br>
+			</div>
+
+			<div class="col-sm-6 text-center">
+				Langgak Site :<br>
+				Desa Langgak,<br>
+				Kabupaten Rokan Hulu,<br>
+				Riau 28559<br>
+			</div>
+
+			<div class="col-sm-12 text-center">
+				<br>
+				<br>
+				No. Tlp : 021.22708945<br>
+				No Fax : 021.22708946
+				<br>
+				<br>
+				 <img src="logohd/duaduanya.png" width="150" height="150" class="img-responsive center-block">
+			</div>
+		</div>
 	</body>
 
 </html>

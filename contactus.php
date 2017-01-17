@@ -110,7 +110,7 @@
 				<center><input type="submit"></center>
 			</form>
 		</div>
-		<div class="container">
+				<div class="container">
 			<div class="col-sm-12 text-center">
 				<h3>Our Office</h3>
 				PT. SPR LANGGAK<br>
@@ -138,6 +138,7 @@
 				No Fax : 021.22708946
 				<br>
 				<br>
+				 <img src="logohd/duaduanya.png" width="150" height="150" class="img-responsive center-block">
 			</div>
 		</div>
 	</body>
