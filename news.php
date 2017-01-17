@@ -18,7 +18,6 @@
 		</div>
 		<nav class="navbar navbar-default">
 			<ul class="nav navbar-nav">
-			<li class="active"><a href="#">Home</a></li>
 			<li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">About SPR Langgak
 				<span class="caret"></span></a>
@@ -31,7 +30,6 @@
 					<li><a href="#">Onboard Manager</a></li>
 				</ul>
 			</li>
-			<li><a href="news.php">News & Events</a></li>
 			<li><a href="procurement.php">Procurement</a></li>
 			<li><a href="production.php">Production</a></li>
 			<li><a href="reports.php">Reports</a></li>
