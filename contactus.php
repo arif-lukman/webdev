@@ -51,8 +51,8 @@
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">About SPR Langgak
 					<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Profile</a></li>
-						<li><a href="#">Executive Summary</a></li>
+						<li><a href="profile.php">Profile</a></li>
+						<li><a href="executivesummary.php">Executive Summary</a></li>
 						<li><a href="#">Vision & Mission</a></li>
 						<li><a href="#">Langgak Field</a></li>
 						<li><a href="#">Message From Director</a></li>
@@ -109,6 +109,36 @@
 				</div>
 				<center><input type="submit"></center>
 			</form>
+		</div>
+		<div class="container">
+			<div class="col-sm-12 text-center">
+				<h3>Our Office</h3>
+				PT. SPR LANGGAK<br>
+				<hr><br>
+			</div>
+
+			<div class="col-sm-6 text-center">
+				Head Office :<br>
+				AD Premier Lt. 8<br>
+				Jl. TB Simatupang No.5<br>
+				Jakarta 12550<br>
+			</div>
+
+			<div class="col-sm-6 text-center">
+				Langgak Site :<br>
+				Desa Langgak,<br>
+				Kabupaten Rokan Hulu,<br>
+				Riau 28559<br>
+			</div>
+
+			<div class="col-sm-12 text-center">
+				<br>
+				<br>
+				No. Tlp : 021.22708945<br>
+				No Fax : 021.22708946
+				<br>
+				<br>
+			</div>
 		</div>
 	</body>
 

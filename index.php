@@ -52,7 +52,7 @@
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">About SPR Langgak
 					<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Profile</a></li>
+						<li><a href="profile.php">Profile</a></li>
 						<li><a href="#">Executive Summary</a></li>
 						<li><a href="#">Vision & Mission</a></li>
 						<li><a href="#">Langgak Field</a></li>

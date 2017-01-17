@@ -1,21 +1,73 @@
-<div class="jumbotron text-center">
-  <h1>Profile SPR Langak</h1>
-  <p>about SPR Langgak</p> 
-</div>
+<!doctype html>
+<html>
+	<head>
+		<!--Override css-->
+		<style>
+			#map {
+				height: 400px;
+				width: 100%;
+			}
+			.motto{
+				font-size: 30px;
+				font-style: italic;
+			}
+			.grad{
+				background-color: #FFDF00;
+				border-color: transparent;
+			}
+			.white{
+				background: white;
+			}
+			a{
+				color: white;
+			}
+			.container{
+				max-width: 787px;
+			}
+		</style>
+		<title>SPR Langgak</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-<div class="container">
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<center><img src="logospr.png"></center>
+			<div class="col-sm-12 text-center motto">
+				Providing world's energy. Today
+			</div>
+		</div>
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<ul class="nav navbar-nav">
+				<li><a href="index.php">Home</a></li>
+				<li class="dropdown active">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">About SPR Langgak
+					<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li class="active"><a href="profile.php">Profile</a></li>
+						<li><a href="#">Executive Summary</a></li>
+						<li><a href="#">Vision & Mission</a></li>
+						<li><a href="#">Langgak Field</a></li>
+						<li><a href="#">Message From Director</a></li>
+						<li><a href="#">Onboard Manager</a></li>
+					</ul>
+				</li>
+				<li><a href="news.php">News & Events</a></li>
+				<li><a href="procurement.php">Procurement</a></li>
+				<li><a href="production.php">Production</a></li>
+				<li><a href="reports.php">Reports</a></li>
+				<li><a href="contactus.php">Contact Us</a></li>
+				</ul>
+			</nav>
+		</div>
+    <div class="container">
   <h2>Image Gallery</h2>
   <div class="row">
     <div class="col-md-4">
@@ -28,8 +80,8 @@
         </a>
       </div>
     </div>
-	
-	
+  
+  
     <div class="col-md-4">
       <div class="thumbnail">
         <a href="foto\lapangan.png" target="_blank">
@@ -66,10 +118,10 @@ SPRL commits to increase the production level of the Field to 700 barrel per day
     <li class="list-group-item">1. PT Sarana Pembangunan Riau (“SPR”) holds fifty percent of Participating Interests in the Field</li>
     <li class="list-group-item">2. The Interests, given as Production Sharing Contract (“PSC”),  was awarded by the Government of Indonesia in November 2009, which became effective on April 20, 2010</li>
     <li class="list-group-item">3. Holds 99.9% of ownerships in SPRL, SPR fully supported financially for the developement of the Field</li>
-	<li class="list-group-item">4. Established in 1990, SPR is the oldest Province of Riau’s owned company in Riau</li>
-	<li class="list-group-item">5. SPR repsonsibles in managing commercial assets of the Province such as Gas Turbine Generator, Landbanks and Heavy Equipment.</li>
+  <li class="list-group-item">4. Established in 1990, SPR is the oldest Province of Riau’s owned company in Riau</li>
+  <li class="list-group-item">5. SPR repsonsibles in managing commercial assets of the Province such as Gas Turbine Generator, Landbanks and Heavy Equipment.</li>
   </ul>
 </div>
+	</body>
 
-</body>
 </html>
