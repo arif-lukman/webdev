@@ -26,61 +26,61 @@
 </head>
 <body>
  
-<div id="section1" class="container-fluid">
+<div>
   <h1>SPRL Director</h1>
   <div class="container"> 
-  <img src="fotomanager/ik.jpg" class="img-circle img-responsive center-block" alt="image" width="304" height="236"> 
-  <h2>----Ikin Faizal----</h2><hr>
+  <img src="fotomanager/ik.jpg" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
+  <h2>----Ikin Faizal----</h2>
   </div>
 </div>
-
-<div id="section2" class="container-fluid"><br>
-  <h1><br><br>SPRL Business Support Manager<br></h1>
+<hr>
+<div>
+  <h1>SPRL Business Support Manager</h1>
   <div class="container"> 
-  <img src="fotomanager/mah.jpg" class="img-circle img-responsive center-block" alt="image" width="304" height="236"> 
-  <h2>----Mahpuzoh----</h2><hr>
+  <img src="fotomanager/mah.jpg" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
+  <h2>----Mahpuzoh----</h2>
   </div>
 </div>
-
-<div id="section3" class="container-fluid"><br><br>
-  <h1><br>SPRL E&D Manager<br></h1>
+<hr>
+<div>
+  <h1>SPRL E&D Manager</h1>
   <div class="container"> 
-  <img src="fotomanager/har.jpg" class="img-circle img-responsive center-block" alt="image" width="304" height="236"> 
-  <h2>----Hardianto----</h2><hr>
+  <img src="fotomanager/har.jpg" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
+  <h2>----Hardianto----</h2>
   </div>
 </div>
-
-<div id="section4" class="container-fluid"><br><br><br><br><br><br>
-  <h1><br>SPRL Finance Manager<br></h1>
+<hr>
+<div>
+  <h1>SPRL Finance Manager</h1>
   <div class="container"> 
-  <img src="fotomanager/ar.jpg" class="img-circle img-responsive center-block" alt="image" width="304" height="236"> 
-  <h2>----Arif Wicaksono----</h2><hr>
+  <img src="fotomanager/ar.jpg" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
+  <h2>----Arif Wicaksono----</h2>
   </div>
 </div>
-
-<div id="section5" class="container-fluid"><br><br><br><br><br><br><br><br><br>
-  <h1><br>SPRL Production & Operation Manager<br></h1>
+<hr>
+<div>
+  <h1>SPRL Production & Operation Manager</h1>
   <div class="container"> 
-  <img src="fotomanager/yas.jpg" class="img-circle img-responsive center-block" alt="image" width="304" height="236"> 
-  <h2>----M. Yasin Abdulfatah----</h2><hr>
+  <img src="fotomanager/yas.jpg" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
+  <h2>----M. Yasin Abdulfatah----</h2>
   </div>
 </div>
-
-<div id="section6" class="container-fluid"><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <h1><br>Head of SCM<br></h1>
+<hr>
+<div>
+  <h1>Head of SCM</h1>
   <div class="container"> 
-  <img src="fotomanager/.jpg" class="img-circle img-responsive center-block" alt="image" width="304" height="236"> 
-  <h2>----Susi Kardina Ria----</h2><hr>
+  <img src="fotomanager/.jpg" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
+  <h2>----Susi Kardina Ria----</h2>
   </div>
 </div>
-
-<div id="section7" class="container-fluid">
-  <h1><br>Head of HSSE<br></h1>
+<hr>
+<div>
+  <h1>Head of HSSE</h1>
   <div class="container"> 
-  <img src="fotomanager/.jpg" class="img-circle img-responsive center-block" alt="image" width="304" height="236"> 
+  <img src="fotomanager/.jpg" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
   <h2>----Hardi----</h2>
   </div>
 </div>
-
+<hr>
 </body>
 </html>
