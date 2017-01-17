@@ -21,6 +21,9 @@
 			a{
 				color: white;
 			}
+			.container{
+				max-width: 787px;
+			}
 		</style>
 		<title>SPR Langgak</title>
 		<!-- Latest compiled and minified CSS -->
@@ -63,6 +66,49 @@
 				<li class="active"><a href="contactus.php">Contact Us</a></li>
 				</ul>
 			</nav>
+
+			<div class="col-sm-2">
+				
+			</div>
+			<form class="col-sm-8">
+				<h2>Contact Us</h2>
+				<hr>
+				<div class="form-group">
+					<label for="title">Title:</label>
+					<br>
+					<label class="radio-inline"><input type="radio" name="optradio" id="title">Mr</label>
+					<label class="radio-inline"><input type="radio" name="optradio" id="title">Mrs</label>
+					<label class="radio-inline"><input type="radio" name="optradio" id="title">Ms</label>
+				</div>
+				<div class="form-group">
+			  		<label for="name">Name:</label>
+				  	<input type="text" class="form-control" id="name">
+				</div>
+				<div class="form-group">
+				  	<label for="city">City:</label>
+				  	<input type="text" class="form-control" id="city">
+				</div>
+				<div class="form-group">
+				  	<label for="email">Email:</label>
+				  	<input type="email" class="form-control" id="email">
+				</div>
+				<div class="form-group">
+				  <label for="sel1">Send to:</label>
+				  <select class="form-control" id="sel1">
+				    <option>Head Office</option>
+				    <option>Langgak Site</option>
+				  </select>
+				</div>
+				<div class="form-group">
+				  	<label for="comment">Message:</label>
+				  	<textarea class="form-control" rows="5" id="comment"></textarea>
+				</div>
+				<div class="form-group">
+				  	<label for="phone">Phone:</label>
+				  	<input type="text" class="form-control" id="phone">
+				</div>
+				<center><input type="submit"></center>
+			</form>
 		</div>
 	</body>
 

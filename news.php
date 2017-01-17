@@ -21,6 +21,9 @@
 			a{
 				color: white;
 			}
+			.container{
+				max-width: 787px;
+			}
 		</style>
 		<title>SPR Langgak</title>
 		<!-- Latest compiled and minified CSS -->
@@ -63,6 +66,7 @@
 				<li><a href="contactus.php">Contact Us</a></li>
 				</ul>
 			</nav>
+			Butuh Database
 		</div>
 	</body>
 

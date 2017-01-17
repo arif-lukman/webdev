@@ -21,6 +21,9 @@
 			a{
 				color: white;
 			}
+			.container{
+				max-width: 787px;
+			}
 		</style>
 		<title>SPR Langgak</title>
 
@@ -74,7 +77,7 @@
 			</div>
 		</div>
 		<div class="container">
-			<div class="col-sm-4">
+			<div class="col-sm-6">
 				<p>
 				Media Clippings »<br>
 				Contains information and news about SPRL covered by print and online media.<br>
@@ -84,15 +87,10 @@
 				Pada tanggal 22 Desember 2016 bertempat di Ujungbatu, PT SPR Langgak bersama sama dengan SKK Migas melaksanakan... More »
 				</p>
 			</div>
-			<div class="col-sm-4">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d361061.7041297614!2d100.5635046543917!3d1.0038789855921215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sid!4v1484617176341" height= "300" frameborder="0" style="border:0" allowfullscreen></iframe>
-			</div>
-			<div class="col-sm-4">
-				<video controls>
-				  <source src="movie.mp4" type="video/mp4">
-				  <source src="movie.ogg" type="video/ogg">
-				Your browser does not support the video tag.
-				</video>
+			<div class="col-sm-6">
+				<center>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d361061.7041297614!2d100.5635046543917!3d1.0038789855921215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sid!4v1484617176341" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</center>
 			</div>
 		</div>
 	</body>
