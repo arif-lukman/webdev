@@ -22,7 +22,7 @@
 				color: white;
 			}
 			.container{
-				max-width: 787px;
+				max-width: 805px;
 			}
 		</style>
 		<title>SPR Langgak</title>
@@ -46,7 +46,7 @@
 		<div class="container">
 			<nav class="navbar navbar-default">
 				<ul class="nav navbar-nav">
-				<li><a href="index.php">Home</a></li>
+				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
 				<li class="dropdown active">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">About SPR Langgak
 					<span class="caret"></span></a>

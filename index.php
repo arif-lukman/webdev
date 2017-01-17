@@ -22,7 +22,21 @@
 				color: white;
 			}
 			.container{
-				max-width: 787px;
+				max-width: 805px;
+			}
+			.main{
+				font-style: italic;
+				font-weight: bold;
+			}
+			.sub{
+				color: white;
+				text-shadow: 5px 5px 10px black;
+			}
+			.caption {
+			    position: absolute;
+			    top: 45%;
+			    left: 0;
+			    width: 100%;
 			}
 		</style>
 		<title>SPR Langgak</title>
@@ -47,7 +61,7 @@
 		<div class="container">
 			<nav class="navbar navbar-default">
 				<ul class="nav navbar-nav">
-				<li class="active"><a href="index.php">Home</a></li>
+				<li class="active"><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">About SPR Langgak
 					<span class="caret"></span></a>
@@ -67,13 +81,13 @@
 				<li><a href="contactus.php">Contact Us</a></li>
 				</ul>
 			</nav>
-			<div class="col-sm-8">
-				<img src="oilrig1.jpg" class="img-thumbnail">
-			</div>
-			<div class="col-sm-4">
-				<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum, justo at viverra vulputate, metus urna dapibus nunc, eget sagittis elit odio quis purus. Sed maximus aliquet justo, at hendrerit ex aliquet quis. Quisque sed tortor dapibus, egestas augue et, accumsan ligula. Nulla rhoncus erat lacus, at molestie lectus pulvinar sed. Ut dignissim ullamcorper ullamcorper. Etiam dui diam, bibendum eu sodales sed, feugiat vitae nibh. Etiam vehicula nulla a condimentum vulputate. Vestibulum nec tincidunt eros. Praesent sed vestibulum risus. Nunc sit amet eleifend libero. Proin ornare malesuada faucibus.
-				</p>
+			<div class="col-sm-12 text-center">
+				<img class="img-thumbnail" src="oilrig1.jpg">
+				<div class="caption">
+					<h1 class="main sub">Langgak 1000</h1>
+					<h3 class="sub">We Achieve Day by Day, 1000 barrels at a time</h3>
+				</div>
+				<br><br><br>
 			</div>
 		</div>
 		<div class="container">
