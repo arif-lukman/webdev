@@ -47,12 +47,12 @@
 			<nav class="navbar navbar-default">
 				<ul class="nav navbar-nav">
 				<li><a href="index.php">Home</a></li>
-				<li class="dropdown">
+				<li class="dropdown active">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">About SPR Langgak
 					<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="profile.php">Profile</a></li>
-						<li><a href="executivesummary.php">Executive Summary</a></li>
+						<li class="active"><a href="executivesummary.php">Executive Summary</a></li>
 						<li><a href="#">Vision & Mission</a></li>
 						<li><a href="#">Langgak Field</a></li>
 						<li><a href="#">Message From Director</a></li>
@@ -60,7 +60,7 @@
 					</ul>
 				</li>
 				<li><a href="news.php">News & Events</a></li>
-				<li class="active"><a href="procurement.php">Procurement</a></li>
+				<li><a href="procurement.php">Procurement</a></li>
 				<li><a href="production.php">Production</a></li>
 				<li><a href="reports.php">Reports</a></li>
 				<li><a href="contactus.php">Contact Us</a></li>

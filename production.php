@@ -52,7 +52,7 @@
 					<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="profile.php">Profile</a></li>
-						<li><a href="#">Executive Summary</a></li>
+						<li><a href="executivesummary.php">Executive Summary</a></li>
 						<li><a href="#">Vision & Mission</a></li>
 						<li><a href="#">Langgak Field</a></li>
 						<li><a href="#">Message From Director</a></li>
