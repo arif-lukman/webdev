@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 	<head>
+		<title>SPR Langgak</title>
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -12,7 +13,31 @@
 	</head>
 
 	<body>
-		Hello World~!
+		<div class="jumbotron">
+			<h2>SPR Langgak</h2>
+		</div>
+		<nav class="navbar navbar-default">
+			<ul class="nav navbar-nav">
+			<li class="active"><a href="#">Home</a></li>
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">About SPR Langgak
+				<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#">Profile</a></li>
+					<li><a href="#">Executive Summary</a></li>
+					<li><a href="#">Vision & Mission</a></li>
+					<li><a href="#">Langgak Field</a></li>
+					<li><a href="#">Message From Director</a></li>
+					<li><a href="#">Onboard Manager</a></li>
+				</ul>
+			</li>
+			<li><a href="#">News & Events</a></li>
+			<li><a href="#">Procurement</a></li>
+			<li><a href="#">Production</a></li>
+			<li><a href="#">Reports</a></li>
+			<li><a href="#">Contact Us</a></li>
+			</ul>
+		</nav>
 	</body>
 
 </html>
