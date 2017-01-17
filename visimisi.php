@@ -61,7 +61,7 @@
 						<li class="active"><a href="visimisi.php">Vision & Mission</a></li>
 						<li><a href="langgakfield.php">Langgak Field</a></li>
 						<li><a href="msgdir.php">Message From Director</a></li>
-						<li><a href="#">Onboard Manager</a></li>
+						<li><a href="obmanager.php">Onboard Manager</a></li>
 					</ul>
 				</li>
 				<li><a href="news.php">News & Events</a></li>
