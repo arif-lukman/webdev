@@ -242,9 +242,13 @@
 	</div>
 </form>
 </div>
-<br><br>
+
+<div class="container">
+<form><br>
 <div class="container">
   <button type="button" class="btn btn-primary">Confirm</button>
+</div>
+</form>
 </div>
 
 </body>
