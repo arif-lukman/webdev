@@ -116,7 +116,32 @@
 				<li><a href="contactus.php">Contact Us</a></li>
 				</ul>
 			</nav>
-			Butuh Database
+			Lelang Ulang: Jasa Angkut dan penyediaan Bahan Bakar Solar Industri Secara Call Off Order (COO)<br><br>
+			Bid No : BID-026-1/SPRL/XI/2016<br>
+			Qualification : Usaha Menengah/Besar<br>
+			Classification : 02.p.16 Jasa Angkutan<br>
+			Masa Pendaftaran : 23-25 November 2016<br>
+			Waktu Pendaftaran : Pukul 09.30 - 11.30 & 13.00 - 15.00 WIB (Penyerahan dokumen sesudah jam dan tanggal tersebut diatas tidak diterima)<br>
+			Tempat Pendaftaran : Sekretariat Panitia Tender PT SPR LANGGAK AD Premier, Lantai 8, Jl. TB Simatupang No. 5,
+			Jakarta 12550<br><br>
+			 
+			Bid No : BID-027-1/SPRL/XI/2016<br>
+			Qualification : Usaha Kecil/Menengah<br>
+			Classification : 02.e.18 Stimulasi Sumur (Well Stimulation)<br>
+			Masa Pendaftaran : 23-25 November 2016<br>
+			Waktu Pendaftaran : Pukul 09.30 - 11.30 & 13.00 - 15.00 WIB (Penyerahan dokumen sesudah jam dan tanggal tersebut diatas tidak diterima)<br>
+			Tempat Pendaftaran : Sekretariat Panitia Tender PT SPR LANGGAK AD Premier, Lantai 8, Jl. TB Simatupang No. 5,
+			Jakarta 12550<br><br>
+			 
+			Bid No : BID-028/SPRL/XI/2016<br>
+			Qualification : Usaha Menengah<br>
+			Classification : 02.p.16.01 Angkutan Personil melalui antara lain: darat, laut, atau udara<br>
+			Masa Pendaftaran : 23-25 November 2016<br>
+			Waktu Pendaftaran : Pukul 09.30 - 11.30 & 13.00 - 15.00 WIB (Penyerahan dokumen sesudah jam dan tanggal tersebut diatas tidak diterima)<br>
+			Tempat Pendaftaran : Sekretariat Panitia Tender PT SPR LANGGAK AD Premier, Lantai 8, Jl. TB Simatupang No. 5,
+			Jakarta 12550<br><br>
+
+			Offline Tender Registration: SPR Langgak Office.<br>
 		</div>
 
 		<div class="container footer">

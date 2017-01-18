@@ -68,6 +68,9 @@
 				background-repeat: repeat-x;
 				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffdfdfdf', GradientType=0);
 		    }
+		    .submit{
+		    	float: right;
+		    }
 		</style>
 		<title>SPR Langgak</title>
 		<!-- Latest compiled and minified CSS -->
@@ -93,63 +96,30 @@
 			</div>
 		</div>
 		<div class="container">
-			<nav class="navbar navbar-default">
-				<ul class="nav navbar-nav">
-				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-				<li class="dropdown active">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">About SPR Langgak
-					<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="profile.php">Profile</a></li>
-						<li><a href="executivesummary.php">Executive Summary</a></li>
-						<li><a href="visimisi.php">Vision & Mission</a></li>
-						<li><a href="langgakfield.php">Langgak Field</a></li>
-						<li class="active"><a href="msgdir.php">Message From Director</a></li>
-						<li><a href="obmanager.php">Onboard Manager</a></li>
-					</ul>
-				</li>
-				<li><a href="news.php">News & Events</a></li>
-				<li><a href="procurement.php">Procurement</a></li>
-				<li><a href="production.php">Production</a></li>
-				<li><a href="reports.php">Reports</a></li>
-				<li><a href="contactus.php">Contact Us</a></li>
-				</ul>
-			</nav>
-			Defaultnya kosong
-		</div>
-
-		<div class="container footer">
-			<div class="col-sm-12 text-center">
-				<h3>Our Office</h3>
-				PT. SPR LANGGAK<br>
-				<hr><br>
+			<hr>
+			<div class="col-sm-2">
+				
 			</div>
-
-			<div class="col-sm-6 text-center">
-				<span class="glyphicon glyphicon-map-marker"></span><br>
-				Head Office :<br>
-				AD Premier Lt. 8<br>
-				Jl. TB Simatupang No.5<br>
-				Jakarta 12550<br>
-			</div>
-
-			<div class="col-sm-6 text-center">
-				<span class="glyphicon glyphicon-map-marker"></span><br>
-				Langgak Site :<br>
-				Desa Langgak,<br>
-				Kabupaten Rokan Hulu,<br>
-				Riau 28559<br>
-			</div>
-
-			<div class="col-sm-12 text-center">
+			<form method="post" class="col-sm-8">
+				<h2>Login Admin</h2>
+				<hr>
+				<div class="form-group">
+			  		<label for="name">Username:</label>
+				  	<input type="text" class="form-control" id="name">
+				</div>
+				<div class="form-group">
+				  	<label for="city">Password:</label>
+				  	<input type="password" class="form-control" id="city">
+				</div>
+				<input class="submit" type="submit" value="LOGIN">
 				<br>
+				<br><br>
+				<br><br>
+				<br><br>
 				<br>
-				<span class="glyphicon glyphicon-phone-alt"></span> 021-22708945<br>
-				<span class="glyphicon glyphicon-print"></span> 021-22708946
-				<br>
-				<br>
-			 	<img src="logohd/duaduanya.png" width="150" height="150" class="img-responsive center-block">
-			</div>
+				<hr>
+			</form>
+			<hr>
 		</div>
 	</body>
 
