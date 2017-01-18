@@ -135,7 +135,7 @@
 			<div>
 			  <h1>SPRL E&D Manager</h1>
 			  <div class="container"> 
-			  <img src="fotomanager/hardianto.png" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
+			  <img src="fotomanager/hardi.png" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
 			  <h2>----Hardianto----</h2>
 			  </div>
 			</div>
@@ -167,7 +167,7 @@
 			<div>
 			  <h1>Head of HSSE</h1>
 			  <div class="container"> 
-			  <img src="fotomanager/hardi.png" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
+			  <img src="fotomanager/hardianto.png" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
 			  <h2>----Hardi----</h2>
 			  </div>
 			</div>
