@@ -23,6 +23,7 @@
 			}
 			.container{
 				max-width: 805px;
+				background: white;
 			}
 			.innercon{
 				max-width: 700px;
@@ -30,6 +31,43 @@
 			.middle{
 				vertical-align: center;
 			}
+			body { 
+			background: url(batik.jpg) no-repeat center center fixed; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			}
+			.navbar-default {
+				background-image: -webkit-linear-gradient(top, #ffffff 0%, #D4AF37 100%);
+				background-image: linear-gradient(to bottom, #ffffff 0%, #D4AF37 100%);
+				background-repeat: repeat-x;
+				border-color: #D4AF37 !important;
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffdfdfdf', GradientType=0);
+				color: white !important;
+			}
+			.navbar-nav>.active>a, .navbar-nav>.active>a:hover, .navbar-nav>.active>a:focus {
+			  	background-color:#D4AF37 !important;
+			}
+			.navbar-default .navbar-nav > .open > a, 
+			.navbar-default .navbar-nav > .open > a:hover, 
+			.navbar-default .navbar-nav > .open > a:focus {
+			  	background-color:#D4AF37 !important;
+			}
+			.navbar-default .navbar-nav > li > a:hover,
+			.navbar-default .navbar-nav > li > a:focus {
+			    text-decoration: underline;
+			}
+			.navbar-default .navbar-nav > li > a {
+			    color: #2b2b2b !important;
+			}
+			.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+		        color: #2b2b2b !important;
+		    }
+		    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+		    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+		    	text-decoration: underline;
+		    }
 		</style>
 		<title>SPR Langgak</title>
 		<!-- Latest compiled and minified CSS -->
