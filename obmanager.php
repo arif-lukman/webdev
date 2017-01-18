@@ -121,7 +121,7 @@
 			<div>
 			  <h1>Head of SCM</h1>
 			  <div class="container"> 
-			  <img src="fotomanager/sus.jpg" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
+			  <img src="fotomanager/sus.png" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
 			  <h2>----Susi Kardina Ria----</h2>
 			  </div>
 			</div>
