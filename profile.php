@@ -106,14 +106,14 @@
 </div>
 
 <div class="container">
-  <h2>About SPR Langgak</h2>
+  <h2>About SPR Langgak =will be revised=</h2>
   <div class="well">SPRL commits to increase the production level of the Field to 700 barrel per day at the end of 2010, by the use of advanced technologies in oil services maintenance, work over and enhanced oil recovery.
 SPRL commits to increase the production level of the Field to 700 barrel per day at the end of 2010, by the use of advanced technologies in oil services maintenance, work over and enhanced oil recoverySPRL commits to increase the production level of the Field to 700 barrel per day at the end of 2010, by the use of advanced technologies in oil services maintenance, work over and enhanced oil recoverySPRL commits to increase the production level of the Field to 700 barrel per day at the end of 2010, by the use of advanced technologies in oil services maintenance, work over and enhanced oil recovery
 </div>
 </div>
 
 <div class="container">
-  <h2>PT Sarana Pembangunan Riau</h2>
+  <h2>PT Sarana Pembangunan Riau =will be revised=</h2>
   <ul class="list-group">
     <li class="list-group-item">1. PT Sarana Pembangunan Riau (“SPR”) holds fifty percent of Participating Interests in the Field</li>
     <li class="list-group-item">2. The Interests, given as Production Sharing Contract (“PSC”),  was awarded by the Government of Indonesia in November 2009, which became effective on April 20, 2010</li>

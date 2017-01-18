@@ -81,7 +81,7 @@
 			<div>
 			  <h1>SPRL Director</h1>
 			  <div class="container"> 
-			  <img src="fotomanager/ik.jpg" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
+			  <img src="fotomanager/iki.JPG" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
 			  <h2>----Ikin Faizal----</h2>
 			  </div>
 			</div>
@@ -89,7 +89,7 @@
 			<div>
 			  <h1>SPRL Business Support Manager</h1>
 			  <div class="container"> 
-			  <img src="fotomanager/mah.jpg" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
+			  <img src="fotomanager/mahpu.JPG" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
 			  <h2>----Mahpuzoh----</h2>
 			  </div>
 			</div>
@@ -97,7 +97,7 @@
 			<div>
 			  <h1>SPRL E&D Manager</h1>
 			  <div class="container"> 
-			  <img src="fotomanager/har.jpg" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
+			  <img src="fotomanager/hardianto.png" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
 			  <h2>----Hardianto----</h2>
 			  </div>
 			</div>
@@ -105,7 +105,7 @@
 			<div>
 			  <h1>SPRL Finance Manager</h1>
 			  <div class="container"> 
-			  <img src="fotomanager/ar.jpg" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
+			  <img src="fotomanager/arif.jpg" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
 			  <h2>----Arif Wicaksono----</h2>
 			  </div>
 			</div>
@@ -113,7 +113,7 @@
 			<div>
 			  <h1>SPRL Production & Operation Manager</h1>
 			  <div class="container"> 
-			  <img src="fotomanager/yas.jpg" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
+			  <img src="fotomanager/yasi.jpg" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
 			  <h2>----M. Yasin Abdulfatah----</h2>
 			  </div>
 			</div>
@@ -121,7 +121,7 @@
 			<div>
 			  <h1>Head of SCM</h1>
 			  <div class="container"> 
-			  <img src="fotomanager/sus.png" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
+			  <img src="fotomanager/susianto.png" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
 			  <h2>----Susi Kardina Ria----</h2>
 			  </div>
 			</div>
@@ -129,7 +129,7 @@
 			<div>
 			  <h1>Head of HSSE</h1>
 			  <div class="container"> 
-			  <img src="fotomanager/.jpg" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
+			  <img src="fotomanager/hardi.png" class="img-circle img-responsive center-block" alt="image" width="100" height="100"> 
 			  <h2>----Hardi----</h2>
 			  </div>
 			</div>
