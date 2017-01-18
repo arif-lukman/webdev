@@ -40,7 +40,7 @@
 			    width: 100%;
 			}
 			body { 
-			background: url(batik.jpg) no-repeat center center fixed; 
+			background: url(webbg.png) no-repeat center center fixed; 
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
 			-o-background-size: cover;
@@ -76,6 +76,12 @@
 		    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
 		    	text-decoration: underline;
 		    }
+		    .footer{
+		    	background-image: -webkit-linear-gradient(top, white 70%, #9b9b9b 100%);
+				background-image: linear-gradient(to bottom, white 70%, #9b9b9b 100%);
+				background-repeat: repeat-x;
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffdfdfdf', GradientType=0);
+		    }
 		</style>
 		<title>SPR Langgak</title>
 
@@ -91,7 +97,12 @@
 
 	<body>
 		<div class="container">
-			<center><img src="logospr.png"></center>
+			<div class="col-sm-10">
+				<left><img src="logospr.png" height="100"></left>
+			</div>
+			<div class="col-sm-2">
+				<center><img src="riau.jpg" width="100" height="100"></center>
+			</div>
 			<div class="col-sm-12 text-center motto">
 				Providing world's energy. Today
 			</div>
@@ -120,15 +131,45 @@
 				</ul>
 			</nav>
 			<div class="col-sm-12 text-center">
-				<img class="img-thumbnail" src="oilrig1.jpg">
-				<div class="caption">
-					<h1 class="main sub">Langgak 1000</h1>
-					<h3 class="sub">We Achieve Day by Day, 1000 barrels at a time</h3>
-				</div>
-				<br><br><br>
+
 			</div>
 		</div>
+
 		<div class="container">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+			    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			    <li data-target="#myCarousel" data-slide-to="1"></li>
+			    <li data-target="#myCarousel" data-slide-to="2"></li>
+			  </ol>
+
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">
+			    <div class="item active">
+			      <img src="home2.jpg">
+			    </div>
+
+			    <div class="item">
+			      <img src="home3.jpg">
+			    </div>
+
+			    <div class="item">
+			      <img src="home4.jpg">
+			    </div>
+			  </div>
+
+			  <!-- Left and right controls -->
+			  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+			    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+			    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			  </a>
+			</div>
+			<br>
 			<div class="col-sm-6">
 				<p>
 				Media Clippings »<br>
@@ -146,7 +187,7 @@
 			</div>
 		</div>
 
-		<div class="container">
+		<div class="container footer">
 			<div class="col-sm-12 text-center">
 				<h3>Our Office</h3>
 				PT. SPR LANGGAK<br>
@@ -154,6 +195,7 @@
 			</div>
 
 			<div class="col-sm-6 text-center">
+				<span class="glyphicon glyphicon-map-marker"></span><br>
 				Head Office :<br>
 				AD Premier Lt. 8<br>
 				Jl. TB Simatupang No.5<br>
@@ -161,6 +203,7 @@
 			</div>
 
 			<div class="col-sm-6 text-center">
+				<span class="glyphicon glyphicon-map-marker"></span><br>
 				Langgak Site :<br>
 				Desa Langgak,<br>
 				Kabupaten Rokan Hulu,<br>
@@ -170,11 +213,11 @@
 			<div class="col-sm-12 text-center">
 				<br>
 				<br>
-				No. Tlp : 021.22708945<br>
-				No Fax : 021.22708946
+				<span class="glyphicon glyphicon-phone-alt"></span> 021-22708945<br>
+				<span class="glyphicon glyphicon-print"></span> 021-22708946
 				<br>
 				<br>
-				 <img src="logohd/duaduanya.png" width="150" height="150" class="img-responsive center-block">
+			 	<img src="logohd/duaduanya.png" width="150" height="150" class="img-responsive center-block">
 			</div>
 		</div>
 	</body>
