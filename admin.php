@@ -105,11 +105,11 @@
 				<hr>
 				<div class="form-group">
 			  		<label for="name">Username:</label>
-				  	<input type="text" class="form-control" id="name">
+				  	<input type="text" class="form-control" id="name" name="username">
 				</div>
 				<div class="form-group">
-				  	<label for="city">Password:</label>
-				  	<input type="password" class="form-control" id="city">
+				  	<label for="pwd">Password:</label>
+				  	<input type="password" class="form-control" id="pwd" name="password">
 				</div>
 				<input class="submit" type="submit" value="LOGIN">
 				<br>

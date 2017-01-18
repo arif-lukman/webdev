@@ -97,28 +97,7 @@
 		</div>
 		<div class="container">
 			<hr>
-			<div class="col-sm-2">
-				
-			</div>
-			<form action="cek_login.php" method="post" class="col-sm-8">
-				<h2>Login Admin</h2>
-				<hr>
-				<div class="form-group">
-			  		<label for="name">Username:</label>
-				  	<input type="text" class="form-control" id="name">
-				</div>
-				<div class="form-group">
-				  	<label for="city">Password:</label>
-				  	<input type="password" class="form-control" id="city">
-				</div>
-				<input class="submit" type="submit" value="LOGIN">
-				<br>
-				<br><br>
-				<br><br>
-				<br><br>
-				<br>
-				<hr>
-			</form>
+			<center><h1>Login Berhasil</h1></center>
 			<hr>
 		</div>
 	</body>
