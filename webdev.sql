@@ -1,0 +1,53 @@
+-- phpMyAdmin SQL Dump
+-- version 4.4.14
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: 18 Jan 2017 pada 09.27
+-- Versi Server: 5.6.26
+-- PHP Version: 5.6.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `webdev`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `sot_sprl`
+--
+
+CREATE TABLE IF NOT EXISTS `sot_sprl` (
+  `ID` varchar(10) NOT NULL,
+  `TGL` date NOT NULL,
+  `GROSS_PROD` float NOT NULL,
+  `NETT_PROD` float NOT NULL,
+  `ALLOCATED_PROD` float NOT NULL,
+  `EKSPOR_SPRL_DAILY` float NOT NULL,
+  `EKSPOR_SPRL_CUM` float NOT NULL,
+  `DOMESTIK_GOI_TANKER_DAILY` float NOT NULL,
+  `DOMESTIK_GOI_TANKER_CUM` float NOT NULL,
+  `DOMESTIK_GOI_PIPA_DAILY` float NOT NULL,
+  `DOMESTIK_GOI_PIPA_CUM` float NOT NULL,
+  `OPENING_TERMINAL` float NOT NULL,
+  `OPENING_FIELD` float NOT NULL,
+  `OWN_USE` float NOT NULL,
+  `ENDING_TERMINAL` float NOT NULL,
+  `ENDING_DEAD_TERMINAL` float NOT NULL,
+  `ENDING_FIELD` float NOT NULL,
+  `ENDING_DEAD_FIELD` float NOT NULL,
+  `DUMAI_LOSS_GAIN` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
