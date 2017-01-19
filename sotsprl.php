@@ -89,9 +89,9 @@
 			function validateForm(){
 				var x = document.forms["form"];
 				var i;
-				var count=0;
+				var count=-1;
 				for(i=1; i<x.length; i++){
-					if(isNaN(x) || x.elements[i].value == "" || x.elements[i].value==null){
+					if(isNaN(x.elements[i].value) || x.elements[i].value == "" || x.elements[i].value==null){
 						count++;
 					}
 				}
