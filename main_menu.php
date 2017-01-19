@@ -36,7 +36,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div class="container">
+		<div class="container-fluid">
 			<h2>DATABASE SOT SPRL</h2>
 			<table class="table table-bordered">
 				<!--nama field-->
@@ -52,15 +52,19 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<?php
-							while($conNames = mysql_fetch_array($conExec)){
-								foreach($all_prop as $item){
-									echo "<td>$conNames[$item]</td>";
-								}
+					<?php
+						while($conNames = mysql_fetch_array($conExec)){
+							echo "<tr>";
+							foreach($all_prop as $item){
+								echo "<td>$conNames[$item]</td>";
 							}
-						?>
-					</tr>
+							echo "
+								<td><a href=\"edit.php\">edit</a></td>
+								<td><a href=\"hapus.php\">hapus</td>
+							";
+							echo "</tr>";
+						}
+					?>
 				</tbody>
 			</table>
 		</div>
