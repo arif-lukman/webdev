@@ -56,7 +56,7 @@
 		  	}
 		  	body { 
 			font-family: Verdana !important;
-			background: url(administratoronly.png) no-repeat center center fixed; 
+			background: url(administratoronly3.png) no-repeat center center fixed; 
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
 			-o-background-size: cover;
@@ -129,6 +129,12 @@ a.right { color:#000000; font-weight: bold;
     color: white;
 }
 
+h2{ color:#000000; font-weight: bold; 
+    position: fixed;
+    center: 1;
+	top: 0;
+}
+
 
 	</style>
 		
@@ -144,7 +150,8 @@ a.right { color:#000000; font-weight: bold;
 </head>
 	<body>
 		<div class="container-fluid">
-			<h2>DATABASE SOT SPRL</h2>
+			<h2 class="container-fluid">DATABASE SOT SPRL</h2>
+			<br><br><br><br>
 			<table class="table table-bordered">
 				<!--nama field-->
 				<thead>
