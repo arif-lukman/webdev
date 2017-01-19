@@ -78,7 +78,6 @@
 
   <div class="alert alert-info">
     <strong>Important!</strong> Fill the blank with number only, cannot with alphabet <br>
-	<strong>Date Format is Years-Month-Date</strong> ex : 1996-07-18
   </div>
   
 <div class="container">
