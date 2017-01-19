@@ -77,50 +77,51 @@
 <body>
 
   <div class="alert alert-info">
-    <strong>Important!</strong> Fill the blank with number only, cannot with alphabet <br>
-	<strong>Date Format is Years-Month-Date</strong> ex : 1996-07-18
+    <strong>Important!</strong> Fill the blank with number only, cannot with alphabet
   </div>
   
 <div class="container">
-<form action="a.php" method="post">
+<form>
     <div class="form-group">
 	<div class="col-xs-5">
       <label for="TGL">TGL:</label>
-      <input type="text" class="form-control" id="usr" name="TGL">
+      <input type="text" class="form-control" id="usr">
     </div>
 	</div>
 	
     <div class="form-group">
 	<div class="col-xs-5">
       <label for="GROSS_PROD">GROSS_PROD:</label>
-      <input type="text" class="form-control" id="pwd" name="GROSS_PROD">
+      <input type="text" class="form-control" id="pwd">
     </div>
 	</div>
+  </form>
+</div>	
 
-
-
+<div class="container">
+<form>
 	    <div class="form-group">
 		<div class="col-xs-5">
       <label for="NETT_PROD">NETT_PROD:</label>
-      <input type="text" class="form-control" id="pwd" name="NETT_PROD">
+      <input type="text" class="form-control" id="pwd">
     </div>
 	</div>
 	
 	    <div class="form-group">
       <div class="col-xs-5">
 	  <label for="ALLOCATED_PROD">ALLOCATED_PROD:</label>
-      <input type="text" class="form-control" id="pwd" name="ALLOCATED_PROD">
+      <input type="text" class="form-control" id="pwd">
     </div>
 	</div>
+</form>
+</div>
 
-
-
-	
-
+<div class="container">	
+<form>
 	    <div class="form-group">
 		<div class="col-xs-5">
       <label for="EKSPOR_SPRL_DAILY">EKSPOR_SPRL_DAILY:</label>
-      <input type="text" class="form-control" id="pwd" name="EKSPOR_SPRL_DAILY">
+      <input type="text" class="form-control" id="pwd">
     </div>
 	</div>
 
@@ -128,125 +129,125 @@
 	    <div class="form-group">
 		<div class="col-xs-5">
       <label for="EKSPOR_SPRL_CUM">EKSPOR_SPRL_CUM:</label>
-      <input type="text" class="form-control" id="pwd" name="EKSPOR_SPRL_CUM">
+      <input type="text" class="form-control" id="pwd">
     </div>
 	</div>
+</form>
+</div>
 
-
-
-
-
+<div class="container">
+<form>
 	    <div class="form-group">
 		<div class="col-xs-5">
       <label for="DOMESTIK_GOI_TANKER_DAILY	">DOMESTIK_GOI_TANKER_DAILY	:</label>
-      <input type="text" class="form-control" id="pwd" name="DOMESTIK_GOI_TANKER_DAILY">
+      <input type="text" class="form-control" id="pwd">
     </div>
 	</div>
 	
 	    <div class="form-group">
 		<div class="col-xs-5">
       <label for="DOMESTIK_GOI_TANKER_CUM">DOMESTIK_GOI_TANKER_CUM:</label>
-      <input type="text" class="form-control" id="pwd" name="DOMESTIK_GOI_TANKER_CUM">
+      <input type="text" class="form-control" id="pwd">
     </div>
 	</div>
+</form>
+</div>
 
-
-
-
-
+<div class="container">
+<form>
 	    <div class="form-group">
 		<div class="col-xs-5">
       <label for="DOMESTIK_GOI_PIPA_DAILY">DOMESTIK_GOI_PIPA_DAILY:</label>
-      <input type="text" class="form-control" id="pwd" name="DOMESTIK_GOI_PIPA_DAILY">
+      <input type="text" class="form-control" id="pwd">
     </div>
 	</div>
 	
 	    <div class="form-group">
 		<div class="col-xs-5">
       <label for="DOMESTIK_GOI_PIPA_CUM">DOMESTIK_GOI_PIPA_CUM:</label>
-      <input type="text" class="form-control" id="pwd" name="DOMESTIK_GOI_PIPA_CUM">
+      <input type="text" class="form-control" id="pwd">
     </div>
 	</div>
-
-
+</form>
+</div>
 	
-
-
+<div class="container">
+<form>
 	<div class="form-group">
 		<div class="col-xs-5">
       <label for="OPENING_TERMINAL">OPENING_TERMINAL:</label>
-      <input type="text" class="form-control" id="pwd" name="OPENING_TERMINAL">
+      <input type="text" class="form-control" id="pwd">
     </div>
 	</div>
 	
 	    <div class="form-group">
 		<div class="col-xs-5">
       <label for="OPENING_FIELD">OPENING_FIELD:</label>
-      <input type="text" class="form-control" id="pwd" name="OPENING_FIELD">
+      <input type="text" class="form-control" id="pwd">
     </div>
 	</div>
+</form>
+</div>
 
-
-
-
-	
+<div class="container">
+<form>	
 	    <div class="form-group">
 		<div class="col-xs-5">
       <label for="OWN_USE">OWN_USE:</label>
-	 <input type="text" class="form-control" id="pwd" name="OWN_USE">
+	 <input type="text" class="form-control" id="pwd">
     </div>
 	</div>
 	
 	    <div class="form-group">
 		<div class="col-xs-5">
       <label for="ENDING_TERMINAL">ENDING_TERMINAL:</label>
-      <input type="text" class="form-control" id="pwd" name="ENDING_TERMINAL">
+      <input type="text" class="form-control" id="pwd">
     </div>
 	</div>
+</form>
+</div>
 
-
-
-
-	
+<div class="container">
+<form>	
 	    <div class="form-group">
 		<div class="col-xs-5">
       <label for="ENDING_DEAD_TERMINAL">ENDING_DEAD_TERMINAL:</label>
-      <input type="text" class="form-control" id="pwd" name="ENDING_DEAD_TERMINAL">
+      <input type="text" class="form-control" id="pwd">
     </div>
 	</div>
 	
 	    <div class="form-group">
 		<div class="col-xs-5">
       <label for="ENDING_FIELD">ENDING_FIELD:</label>
-      <input type="text" class="form-control" id="pwd" name="ENDING_FIELD">
+      <input type="text" class="form-control" id="pwd">
     </div>   
 	</div>
+</form>
+</div>
 
-
-
-
-	
+<div class="container">
+<form>	
 	<div class="form-group">
 	<div class="col-xs-5">
       <label for="ENDING_DEAD_FIELD">ENDING_DEAD_FIELD:</label>
-      <input type="text" class="form-control" id="pwd" name="ENDING_DEAD_FIELD">
+      <input type="text" class="form-control" id="pwd">
     </div>
 	</div>
 	
 	    <div class="form-group">
 		<div class="col-xs-5">
       <label for="DUMAI_LOSS_GAIN">DUMAI_LOSS_GAIN:</label>
-      <input type="text" class="form-control" id="pwd" name="DUMAI_LOSS_GAIN">
+      <input type="text" class="form-control" id="pwd">
     </div>    
 	</div>
+</form>
+</div>
 
-
-
-
-<br>
-
-  <input type="submit" class="btn btn-primary" value="Confirm"></input>
-
+<div class="container">
+<form><br>
+<div class="container">
+  <button type="button" class="btn btn-primary">Confirm</button>
+</div>
 </form>
 </div>
 
