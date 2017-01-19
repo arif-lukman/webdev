@@ -22,7 +22,7 @@
 				color: white;
 			}
 			.container{
-				max-width: 805px;
+				max-width: 851.57px;
 				background: white;
 			}
 			.main{
@@ -40,6 +40,7 @@
 			    width: 100%;
 			}
 			body { 
+			font-family: Verdana !important;
 			background: url(webbg.png) no-repeat center center fixed; 
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
@@ -136,7 +137,7 @@
 		</div>
 
 		<div class="container">
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
 			  <!-- Indicators -->
 			  <ol class="carousel-indicators">
 			    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

@@ -22,11 +22,12 @@
 				color: white;
 			}
 			.container{
-				max-width: 805px;
+				max-width: 851.57px;
 				background: white;
 			}
 
 			body { 
+			font-family: Verdana !important;
 			background: url(webbg.png) no-repeat center center fixed; 
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
@@ -90,7 +91,7 @@
 				<center><img src="riau.jpg" width="100" height="100"></center>
 			</div>
 			<div class="col-sm-12 text-center motto">
-				Providing world's energy. Today
+				A Center of Riau Energy
 			</div>
 		</div>
 		<div class="container">

@@ -1,4 +1,4 @@
-font verdana	
+font verdana <done>
 visi dan misi simple (ubah)
 tulisan on board manager dikecilkan. Foto diatas nama dibawah, lalu jab. SPRL hapus
-slider ga otomatic
+slider ga otomatic <done>

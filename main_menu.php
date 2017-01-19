@@ -26,6 +26,7 @@
 				background: white;
 			}
 			body { 
+			font-family: Verdana !important;
 			background: url(webbg.png) no-repeat center center fixed; 
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
