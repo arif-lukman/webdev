@@ -91,7 +91,7 @@
 				var i;
 				var count=-1;
 				for(i=1; i<x.length; i++){
-					if(isNaN(x.elements[i].value) || x.elements[i].value == "" || x.elements[i].value==null){
+					if(x.elements[i].value == "" || x.elements[i].value==null){
 						count++;
 					}
 				}

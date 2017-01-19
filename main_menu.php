@@ -108,6 +108,7 @@
 tr,td,th{
 		border-style: solid;
 		border-color: black !important;
+		background-color: white !important;
 }
 
 a.left { color:#000000; font-weight: bold; 
