@@ -133,20 +133,20 @@
 		    <div class="carousel-inner" role="listbox">
 
 		      <div class="item active">
-		        <img src="visionandmission/TOP TANK.jpg" alt="Chania" width="600" height="500">
+		        <img src="visionandmission/TOP TANK.jpg" alt="Chania" width="460" height="345">
 		        <div class="carousel-caption">
-		          <h1>VISI</h1><br><br><br><br>
-		          <P>Menjadi perusahaan minyak dan gas bumi kelas dunia yang disegani di tingkat nasional</P>
-				  <img src="logohd/Logo HD.png" width="100" height="150" class="img-responsive center-block">
+		          <h1>VISI</h1>
+		          <h3>Menjadi perusahaan minyak dan gas bumi kelas dunia yang disegani di tingkat nasional</h3>
+				  <img src="logohd/Logo HD.png" width="150" height="150" class="img-responsive center-block">
 		        </div>
 		      </div>
 
 		      <div class="item">
-		        <img src="visionandmission/TOP TANK.jpg" alt="Chania" width="600" height="500">
+		        <img src="visionandmission/IN BETWEEN.jpg" alt="Chania" width="460" height="345">
 		        <div class="carousel-caption">
-		          <h1>MISI</h1><br><br><br>
-		          <p>Mengoperasikan kontrak kerjasama Lapangan Produksi Minyak Blok Langgak secara optimal dan profesional sesuai dengan ketetapan tahapan target produksi demi kepentingan masyarakat Riau dan Nasional</p>
-		        <img src="logohd/Logo HD.png" width="100" height="150" class="img-responsive center-block">
+		          <h1>MISI</h1>
+		          <h4>Mengoperasikan kontrak kerjasama Lapangan Produksi Minyak Blok Langgak secara optimal dan profesional sesuai dengan ketetapan tahapan target produksi demi kepentingan masyarakat Riau dan Nasional</h4>
+		        <img src="logohd/Logo HD.png" width="150" height="150" class="img-responsive center-block">
 				</div>
 		      </div>
 			  
