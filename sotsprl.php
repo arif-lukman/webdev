@@ -239,14 +239,18 @@
     </div>    
 	</div>
 
+		<div class="col-sm-10">
+	<div class="container'">
+  <input type="submit" class="btn btn-primary" value="Confirm"></input> <br>
+	</div
+  </form>
 
-
-
-<br>
-
-  <input type="submit" class="btn btn-primary" value="Confirm"></input>
-
+<form action="back.php">
+  <input type="submit" class="btn btn-primary" value="back"></input>
 </form>
+</div>
+</div>
+
 </div>
 
 </body>
