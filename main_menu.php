@@ -1,79 +1,31 @@
-<!doctype html>
+<?php
+	include "koneksi.php";
+
+	//query buat ngambil nama field
+	$colQuery = 
+	"SHOW columns FROM sot_sprl";
+
+	//eksekusi query colQuery
+	$colExec = mysql_query($colQuery);
+
+	//query buat ngambil isi field
+	$conQuery = "SELECT * FROM sot_sprl";
+
+	//eksekusi query conQuery
+	$conExec = mysql_query($conQuery);
+
+	//array buatan
+	$all_prop = array();
+
+	//push fieldsnya ke all_prop
+	while ($prop = mysql_fetch_field($conExec)){
+		array_push($all_prop, $prop->name);
+	}
+?>
+<!DOCTYPE html>
 <html>
 	<head>
-		<!--Override css-->
-		<style>
-			#map {
-				height: 400px;
-				width: 100%;
-			}
-			.motto{
-				font-size: 30px;
-				font-style: italic;
-			}
-			.grad{
-				background-color: #FFDF00;
-				border-color: transparent;
-			}
-			.white{
-				background: white;
-			}
-			a{
-				color: white;
-			}
-			/*ini beda*/
-			.container{
-				background: white;
-			}
-			body { 
-			font-family: Verdana !important;
-			background: url(webbg.png) no-repeat center center fixed; 
-			-webkit-background-size: cover;
-			-moz-background-size: cover;
-			-o-background-size: cover;
-			background-size: cover;
-			}
-			.navbar-default {
-				background-image: -webkit-linear-gradient(top, #ffffff 0%, #D4AF37 100%);
-				background-image: linear-gradient(to bottom, #ffffff 0%, #D4AF37 100%);
-				background-repeat: repeat-x;
-				border-color: #D4AF37 !important;
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffdfdfdf', GradientType=0);
-				color: white !important;
-			}
-			.navbar-nav>.active>a, .navbar-nav>.active>a:hover, .navbar-nav>.active>a:focus {
-			  	background-color:#D4AF37 !important;
-			}
-			.navbar-default .navbar-nav > .open > a, 
-			.navbar-default .navbar-nav > .open > a:hover, 
-			.navbar-default .navbar-nav > .open > a:focus {
-			  	background-color:#D4AF37 !important;
-			}
-			.navbar-default .navbar-nav > li > a:hover,
-			.navbar-default .navbar-nav > li > a:focus {
-			    text-decoration: underline;
-			}
-			.navbar-default .navbar-nav > li > a {
-			    color: #2b2b2b !important;
-			}
-			.navbar-default .navbar-nav .open .dropdown-menu > li > a {
-		        color: #2b2b2b !important;
-		    }
-		    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-		    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-		    	text-decoration: underline;
-		    }
-		    .footer{
-		    	background-image: -webkit-linear-gradient(top, white 70%, #9b9b9b 100%);
-				background-image: linear-gradient(to bottom, white 70%, #9b9b9b 100%);
-				background-repeat: repeat-x;
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffdfdfdf', GradientType=0);
-		    }
-		    .submit{
-		    	float: right;
-		    }
-		</style>
-		<title>SPR Langgak</title>
+		<title>BAAAA</title>
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -83,11 +35,34 @@
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
-
 	<body>
 		<div class="container">
-			
+			<h2>DATABASE SOT SPRL</h2>
+			<table class="table table-bordered">
+				<!--nama field-->
+				<thead>
+					<tr>
+						<?php
+							while ($colNames = mysql_fetch_array($colExec)){
+								echo "
+									<th>$colNames[Field]</th>
+								";
+							}
+						?>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<?php
+							while($conNames = mysql_fetch_array($conExec)){
+								foreach($all_prop as $item){
+									echo "<td>$conNames[$item]</td>";
+								}
+							}
+						?>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</body>
-
 </html>
