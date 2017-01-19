@@ -62,6 +62,15 @@
 		    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
 		    	text-decoration: underline;
 		    }
+	    	a{
+	    		color: white !important;
+	    	}
+		    .tisleft{
+		    	float: left;
+		    }
+		    .tisright{
+		    	float: right;
+		    }
 		</style>
 		<title>SOT_SPRL</title>
 		<!-- Latest compiled and minified CSS -->
@@ -83,171 +92,156 @@
 <div class="container">
 <form action="a.php" method="post">
     <div class="form-group">
-	<div class="col-xs-5">
-      <label for="TGL">TGL:</label>
-      <input type="date" class="form-control" id="usr" name="TGL">
-    </div>
+		<div class="col-sm-6">
+	      <label for="TGL">TGL:</label>
+	      <input type="date" class="form-control" id="usr" name="TGL">
+	    </div>
 	</div>
 	
     <div class="form-group">
-	<div class="col-xs-5">
-      <label for="GROSS_PROD">GROSS_PROD:</label>
-      <input type="text" class="form-control" id="pwd" name="GROSS_PROD">
-    </div>
+		<div class="col-sm-6">
+	      	<label for="GROSS_PROD">GROSS_PROD:</label>
+	      	<input type="text" class="form-control" id="pwd" name="GROSS_PROD">
+	    </div>
 	</div>
 
+	<div class="col-sm-12"><br></div>
 
-
-	    <div class="form-group">
-		<div class="col-xs-5">
-      <label for="NETT_PROD">NETT_PROD:</label>
-      <input type="text" class="form-control" id="pwd" name="NETT_PROD">
-    </div>
-	</div>
-	
-	    <div class="form-group">
-      <div class="col-xs-5">
-	  <label for="ALLOCATED_PROD">ALLOCATED_PROD:</label>
-      <input type="text" class="form-control" id="pwd" name="ALLOCATED_PROD">
-    </div>
-	</div>
-
-
-
-	
-
-	    <div class="form-group">
-		<div class="col-xs-5">
-      <label for="EKSPOR_SPRL_DAILY">EKSPOR_SPRL_DAILY:</label>
-      <input type="text" class="form-control" id="pwd" name="EKSPOR_SPRL_DAILY">
-    </div>
-	</div>
-
-	
-	    <div class="form-group">
-		<div class="col-xs-5">
-      <label for="EKSPOR_SPRL_CUM">EKSPOR_SPRL_CUM:</label>
-      <input type="text" class="form-control" id="pwd" name="EKSPOR_SPRL_CUM">
-    </div>
-	</div>
-
-
-
-
-
-	    <div class="form-group">
-		<div class="col-xs-5">
-      <label for="DOMESTIK_GOI_TANKER_DAILY	">DOMESTIK_GOI_TANKER_DAILY	:</label>
-      <input type="text" class="form-control" id="pwd" name="DOMESTIK_GOI_TANKER_DAILY">
-    </div>
+    <div class="form-group">
+		<div class="col-sm-6">
+	      	<label for="NETT_PROD">NETT_PROD:</label>
+	      	<input type="text" class="form-control" id="pwd" name="NETT_PROD">
+	    </div>
 	</div>
 	
-	    <div class="form-group">
-		<div class="col-xs-5">
-      <label for="DOMESTIK_GOI_TANKER_CUM">DOMESTIK_GOI_TANKER_CUM:</label>
-      <input type="text" class="form-control" id="pwd" name="DOMESTIK_GOI_TANKER_CUM">
-    </div>
+    <div class="form-group">
+      	<div class="col-sm-6">
+	  		<label for="ALLOCATED_PROD">ALLOCATED_PROD:</label>
+      		<input type="text" class="form-control" id="pwd" name="ALLOCATED_PROD">
+    	</div>
 	</div>
 
+	<div class="col-sm-12"><br></div>	
 
-
-
-
-	    <div class="form-group">
-		<div class="col-xs-5">
-      <label for="DOMESTIK_GOI_PIPA_DAILY">DOMESTIK_GOI_PIPA_DAILY:</label>
-      <input type="text" class="form-control" id="pwd" name="DOMESTIK_GOI_PIPA_DAILY">
-    </div>
+    <div class="form-group">
+		<div class="col-sm-6">
+      		<label for="EKSPOR_SPRL_DAILY">EKSPOR_SPRL_DAILY:</label>
+      		<input type="text" class="form-control" id="pwd" name="EKSPOR_SPRL_DAILY">
+    	</div>
 	</div>
 	
-	    <div class="form-group">
-		<div class="col-xs-5">
-      <label for="DOMESTIK_GOI_PIPA_CUM">DOMESTIK_GOI_PIPA_CUM:</label>
-      <input type="text" class="form-control" id="pwd" name="DOMESTIK_GOI_PIPA_CUM">
-    </div>
+    <div class="form-group">
+		<div class="col-sm-6">
+      		<label for="EKSPOR_SPRL_CUM">EKSPOR_SPRL_CUM:</label>
+      		<input type="text" class="form-control" id="pwd" name="EKSPOR_SPRL_CUM">
+    	</div>
 	</div>
 
+	<div class="col-sm-12"><br></div>
 
+    <div class="form-group">
+		<div class="col-sm-6">
+      		<label for="DOMESTIK_GOI_TANKER_DAILY	">DOMESTIK_GOI_TANKER_DAILY	:</label>
+      		<input type="text" class="form-control" id="pwd" name="DOMESTIK_GOI_TANKER_DAILY">
+    	</div>
+	</div>
 	
+    <div class="form-group">
+		<div class="col-sm-6">
+    	  	<label for="DOMESTIK_GOI_TANKER_CUM">DOMESTIK_GOI_TANKER_CUM:</label>
+      		<input type="text" class="form-control" id="pwd" name="DOMESTIK_GOI_TANKER_CUM">
+    	</div>
+	</div>
 
+	<div class="col-sm-12"><br></div>
+
+    <div class="form-group">
+		<div class="col-sm-6">
+      		<label for="DOMESTIK_GOI_PIPA_DAILY">DOMESTIK_GOI_PIPA_DAILY:</label>
+      		<input type="text" class="form-control" id="pwd" name="DOMESTIK_GOI_PIPA_DAILY">
+    	</div>
+	</div>
+	
+    <div class="form-group">
+		<div class="col-sm-6">
+      		<label for="DOMESTIK_GOI_PIPA_CUM">DOMESTIK_GOI_PIPA_CUM:</label>
+      		<input type="text" class="form-control" id="pwd" name="DOMESTIK_GOI_PIPA_CUM">
+    	</div>
+	</div>
+
+	<div class="col-sm-12"><br></div>
 
 	<div class="form-group">
-		<div class="col-xs-5">
-      <label for="OPENING_TERMINAL">OPENING_TERMINAL:</label>
-      <input type="text" class="form-control" id="pwd" name="OPENING_TERMINAL">
-    </div>
+		<div class="col-sm-6">
+      		<label for="OPENING_TERMINAL">OPENING_TERMINAL:</label>
+      		<input type="text" class="form-control" id="pwd" name="OPENING_TERMINAL">
+    	</div>
 	</div>
 	
-	    <div class="form-group">
-		<div class="col-xs-5">
-      <label for="OPENING_FIELD">OPENING_FIELD:</label>
-      <input type="text" class="form-control" id="pwd" name="OPENING_FIELD">
-    </div>
+    <div class="form-group">
+		<div class="col-sm-6">
+      		<label for="OPENING_FIELD">OPENING_FIELD:</label>
+      		<input type="text" class="form-control" id="pwd" name="OPENING_FIELD">
+		</div>
 	</div>
 
-
-
-
+	<div class="col-sm-12"><br></div>
 	
-	    <div class="form-group">
-		<div class="col-xs-5">
-      <label for="OWN_USE">OWN_USE:</label>
-	 <input type="text" class="form-control" id="pwd" name="OWN_USE">
-    </div>
+    <div class="form-group">
+		<div class="col-sm-6">
+      		<label for="OWN_USE">OWN_USE:</label>
+	 		<input type="text" class="form-control" id="pwd" name="OWN_USE">
+    	</div>
 	</div>
 	
-	    <div class="form-group">
-		<div class="col-xs-5">
-      <label for="ENDING_TERMINAL">ENDING_TERMINAL:</label>
-      <input type="text" class="form-control" id="pwd" name="ENDING_TERMINAL">
-    </div>
+    <div class="form-group">
+		<div class="col-sm-6">
+      		<label for="ENDING_TERMINAL">ENDING_TERMINAL:</label>
+      		<input type="text" class="form-control" id="pwd" name="ENDING_TERMINAL">
+    	</div>
 	</div>
 
-
-
-
+	<div class="col-sm-12"><br></div>
 	
-	    <div class="form-group">
-		<div class="col-xs-5">
-      <label for="ENDING_DEAD_TERMINAL">ENDING_DEAD_TERMINAL:</label>
-      <input type="text" class="form-control" id="pwd" name="ENDING_DEAD_TERMINAL">
-    </div>
+    <div class="form-group">
+		<div class="col-sm-6">
+      		<label for="ENDING_DEAD_TERMINAL">ENDING_DEAD_TERMINAL:</label>
+      		<input type="text" class="form-control" id="pwd" name="ENDING_DEAD_TERMINAL">
+    	</div>
 	</div>
 	
-	    <div class="form-group">
-		<div class="col-xs-5">
-      <label for="ENDING_FIELD">ENDING_FIELD:</label>
-      <input type="text" class="form-control" id="pwd" name="ENDING_FIELD">
-    </div>   
+    <div class="form-group">
+		<div class="col-sm-6">
+      		<label for="ENDING_FIELD">ENDING_FIELD:</label>
+      		<input type="text" class="form-control" id="pwd" name="ENDING_FIELD">
+    	</div>   
 	</div>
 
+	<div class="col-sm-12"><br></div>
 
-
-
-	
 	<div class="form-group">
-	<div class="col-xs-5">
-      <label for="ENDING_DEAD_FIELD">ENDING_DEAD_FIELD:</label>
-      <input type="text" class="form-control" id="pwd" name="ENDING_DEAD_FIELD">
-    </div>
+		<div class="col-sm-6">
+      		<label for="ENDING_DEAD_FIELD">ENDING_DEAD_FIELD:</label>
+      		<input type="text" class="form-control" id="pwd" name="ENDING_DEAD_FIELD">
+		</div>
 	</div>
 	
-	    <div class="form-group">
-		<div class="col-xs-5">
-      <label for="DUMAI_LOSS_GAIN">DUMAI_LOSS_GAIN:</label>
-      <input type="text" class="form-control" id="pwd" name="DUMAI_LOSS_GAIN">
-    </div>    
+    <div class="form-group">
+		<div class="col-sm-6">
+      		<label for="DUMAI_LOSS_GAIN">DUMAI_LOSS_GAIN:</label>
+      		<input type="text" class="form-control" id="pwd" name="DUMAI_LOSS_GAIN">
+    	</div>    
 	</div>
 
-		<div class="col-sm-10">
-	<div class="container'">
-  <input type="submit" class="btn btn-primary" value="Confirm"></input> <br>
+	<div class="col-sm-12"><br></div>
+
+	<div class="container col-sm-12">
+		<br>
+  		<input type="submit" class="btn btn-primary tisright" value="Confirm"></input>
+  		<button type="button" class="btn btn-primary tisleft"><a href="main_menu.php">Back</a></button>
+  		<br><br>
 	</div
   </form>
-
-<form action="back.php">
-  <input type="submit" class="btn btn-primary" value="back"></input>
-</form>
 </div>
 </div>
 
