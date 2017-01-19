@@ -1,7 +1,7 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<!--Override css-->
+<head>
+<!--Override css-->
 		<style>
 			#map {
 				height: 400px;
@@ -74,7 +74,14 @@
 				background-repeat: repeat-x;
 				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffdfdfdf', GradientType=0);
 		    }
+			 /* Note: Try to remove the following lines to see the effect of CSS positioning */
+
+			  body {
+      position: relative; 
+  }
+
 		</style>
+		
 		<title>SPR Langgak</title>
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -84,9 +91,10 @@
 
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	</head>
+</head>
 
-	<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
 		<div class="container">
 			<div class="col-sm-10">
 				<left><img src="logospr.png" height="100"></left>
@@ -121,48 +129,48 @@
 				<li><a href="contactus.php">Contact Us</a></li>
 				</ul>
 			</nav>
-			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-		    <!-- Indicators -->
-		    <ol class="carousel-indicators">
-		      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		      <li data-target="#myCarousel" data-slide-to="1"></li>
 
-		    </ol>
-
-		    <!-- Wrapper for slides -->
-		    <div class="carousel-inner" role="listbox">
-
-		      <div class="item active">
-		        <img src="visionandmission/TOP TANK.jpg" alt="Chania" width="600" height="500">
-		        <div class="carousel-caption">
-		          <h1>VISI</h1><br><br><br><br>
-		          <P>Menjadi perusahaan minyak dan gas bumi kelas dunia yang disegani di tingkat nasional</P>
-				  <img src="logohd/Logo HD.png" width="100" height="150" class="img-responsive center-block">
-		        </div>
+			
+    <div class="container">
+		  <div class="row">
+		    <div class="col-md-6">
+		      <div class="thumbnail">
+		        <a href="visionandmission/TOP TANK.jpg" target="_blank">
+		          <img src="visionandmission/TOP TANK.jpg" alt="top tank" style="width:100%">
+		        </a>
 		      </div>
-
-		      <div class="item">
-		        <img src="visionandmission/TOP TANK.jpg" alt="Chania" width="600" height="500">
-		        <div class="carousel-caption">
-		          <h1>MISI</h1><br><br><br>
-		          <p>Mengoperasikan kontrak kerjasama Lapangan Produksi Minyak Blok Langgak secara optimal dan profesional sesuai dengan ketetapan tahapan target produksi demi kepentingan masyarakat Riau dan Nasional</p>
-		        <img src="logohd/Logo HD.png" width="100" height="150" class="img-responsive center-block">
-				</div>
+		    </div>
+		  
+		  
+		    <div class="col-md-6">
+		      <div class="thumbnail">
+		        <a href="visionandmission/IN BETWEEN.jpg" target="_blank">
+		          <img src="visionandmission/IN BETWEEN.jpg" alt="in between" style="width:100%">
+		        </a>
 		      </div>
-			  
 		    </div>
 
-		    <!-- Left and right controls -->
-		    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-		      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-		      <span class="sr-only">Previous</span>
-		    </a>
-		    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-		      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-		      <span class="sr-only">Next</span>
-		    </a>
 		  </div>
 		</div>
+
+<div class="container">
+    <h2>VISION and MISSION</h2> 
+</div>
+		
+<div class="container">
+  <h4>Vision</h4>
+   <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Look</button>
+  <div id="demo" class="collapse">
+  Menjadi perusahaan minyak dan gas bumi kelas dunia yang disegani di tingkat nasional
+  </div>
+  
+<hr>
+  <h4>Mission</h4>
+  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demi">Look</button>
+  <div id="demi" class="collapse">
+  Mengoperasikan kontrak kerjasama Lapangan Produksi Minyak Blok Langgak secara optimal dan profesional sesuai dengan ketetapan tahapan target produksi demi kepentingan masyarakat Riau dan Nasional
+</div>
+  </div>
 
 		<div class="container footer">
 			<div class="col-sm-12 text-center">
@@ -196,7 +204,7 @@
 				<br>
 			 	<img src="logohd/duaduanya.png" width="150" height="150" class="img-responsive center-block">
 			</div>
-		</div>
-	</body>
 
+</body>
 </html>
+
