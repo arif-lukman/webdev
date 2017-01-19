@@ -57,9 +57,11 @@ $sql = "INSERT INTO sot_sprl (TGL, GROSS_PROD, NETT_PROD, ALLOCATED_PROD, EKSPOR
 VALUES ('$TGL', '$GROSS_PROD', '$NETT_PROD', '$ALLOCATED_PROD', '$EKSPOR_SPRL_DAILY', '$EKSPOR_SPRL_CUM' , '$DOMESTIK_GOI_TANKER_DAILY', '$DOMESTIK_GOI_TANKER_CUM', '$DOMESTIK_GOI_PIPA_DAILY', '$DOMESTIK_GOI_PIPA_CUM', '$OPENING_TERMINAL', '$OPENING_FIELD', '$OWN_USE', '$ENDING_TERMINAL', '$ENDING_DEAD_TERMINAL', '$ENDING_FIELD', '$ENDING_DEAD_FIELD', '$DUMAI_LOSS_GAIN')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Saving Data Success";
+			echo "<script> alert('Saving Data Success');
+			location='sotsprl.php';
+			</script>";
 } else {
-    echo "Failed" . $sql . "<br>" . $conn->error;
+    echo "Saving Data Failed" . $sql . "<br>" . $conn->error;
 }
 
 $conn->close();

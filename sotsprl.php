@@ -26,7 +26,7 @@
 				background: white;
 			}
 			body { 
-			background: url(batik.jpg) no-repeat center center fixed; 
+			background: url(webbg.png) no-repeat center center fixed; 
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
 			-o-background-size: cover;
@@ -86,7 +86,7 @@
     <div class="form-group">
 	<div class="col-xs-5">
       <label for="TGL">TGL:</label>
-      <input type="text" class="form-control" id="usr" name="TGL">
+      <input type="date" class="form-control" id="usr" name="TGL">
     </div>
 	</div>
 	
