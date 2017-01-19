@@ -21,8 +21,8 @@
 			a{
 				color: white;
 			}
+			/*ini beda*/
 			.container{
-				max-width: 805px;
 				background: white;
 			}
 			body { 
@@ -85,20 +85,7 @@
 
 	<body>
 		<div class="container">
-			<div class="col-sm-10">
-				<left><img src="logospr.png" height="100"></left>
-			</div>
-			<div class="col-sm-2">
-				<center><img src="riau.jpg" width="100" height="100"></center>
-			</div>
-			<div class="col-sm-12 text-center motto">
-				Providing world's energy. Today
-			</div>
-		</div>
-		<div class="container">
-			<hr>
-			<center><h1>Login Berhasil</h1></center>
-			<hr>
+			
 		</div>
 	</body>
 
