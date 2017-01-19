@@ -58,7 +58,7 @@ VALUES ('$TGL', '$GROSS_PROD', '$NETT_PROD', '$ALLOCATED_PROD', '$EKSPOR_SPRL_DA
 
 if ($conn->query($sql) === TRUE) {
 			echo "<script> alert('Saving Data Success');
-			location='sotsprl.php';
+			location='main_menu.php';
 			</script>";
 } else {
     echo "Saving Data Failed" . $sql . "<br>" . $conn->error;

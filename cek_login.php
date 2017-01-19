@@ -10,7 +10,7 @@ $password = $_POST['password'];
 
 	if($count == 1)
 		{
-			header ("location:sotsprl.php");
+			header ("location:main_menu.php");
 		}
 		else
 		{

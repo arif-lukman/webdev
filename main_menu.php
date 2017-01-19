@@ -67,6 +67,8 @@
 					?>
 				</tbody>
 			</table>
+			<a href="sotsprl.php">Add</a><br>
+			<a href="admin.php">Logout</a>
 		</div>
 	</body>
 </html>

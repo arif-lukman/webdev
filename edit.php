@@ -93,7 +93,7 @@
   </div>
   
 <div class="container">
-<form action="a.php" method="post">
+<form action="update.php?id=<?php echo "$id";?>" method="post">
     <div class="form-group">
 	<div class="col-xs-5">
       <label for="TGL">TGL:</label>

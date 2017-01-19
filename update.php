@@ -1,0 +1,48 @@
+<?php
+	$id = $_GET["id"];
+	$TGL=$_POST["TGL"];
+	$GROSS_PROD=$_POST["GROSS_PROD"];
+	$NETT_PROD=$_POST["NETT_PROD"];
+	$ALLOCATED_PROD=$_POST["ALLOCATED_PROD"];
+	$EKSPOR_SPRL_DAILY=$_POST["EKSPOR_SPRL_DAILY"];
+	$EKSPOR_SPRL_CUM=$_POST["EKSPOR_SPRL_CUM"];
+	$DOMESTIK_GOI_TANKER_DAILY=$_POST["DOMESTIK_GOI_TANKER_DAILY"];
+	$DOMESTIK_GOI_TANKER_CUM=$_POST["DOMESTIK_GOI_TANKER_CUM"];
+	$DOMESTIK_GOI_PIPA_DAILY=$_POST["DOMESTIK_GOI_PIPA_DAILY"];
+	$DOMESTIK_GOI_PIPA_CUM=$_POST["DOMESTIK_GOI_PIPA_CUM"];
+	$OPENING_TERMINAL=$_POST["OPENING_TERMINAL"];
+	$OPENING_FIELD=$_POST["OPENING_FIELD"];
+	$OWN_USE=$_POST["OWN_USE"];
+	$ENDING_TERMINAL=$_POST["ENDING_TERMINAL"];
+	$ENDING_DEAD_TERMINAL=$_POST["ENDING_DEAD_TERMINAL"];
+	$ENDING_FIELD=$_POST["ENDING_FIELD"];
+	$ENDING_DEAD_FIELD=$_POST["ENDING_DEAD_FIELD"];
+	$DUMAI_LOSS_GAIN=$_POST["DUMAI_LOSS_GAIN"];
+
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "webdev";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	}
+
+	$sql = "UPDATE sot_sprl
+	SET TGL = '$TGL', GROSS_PROD = '$GROSS_PROD', NETT_PROD = '$NETT_PROD', ALLOCATED_PROD = '$ALLOCATED_PROD', EKSPOR_SPRL_DAILY = '$EKSPOR_SPRL_DAILY', EKSPOR_SPRL_CUM = '$EKSPOR_SPRL_CUM' , DOMESTIK_GOI_TANKER_DAILY = '$DOMESTIK_GOI_TANKER_DAILY', 	DOMESTIK_GOI_TANKER_CUM = '$DOMESTIK_GOI_TANKER_CUM', DOMESTIK_GOI_PIPA_DAILY = '$DOMESTIK_GOI_PIPA_DAILY', DOMESTIK_GOI_PIPA_CUM = '$DOMESTIK_GOI_PIPA_CUM', OPENING_TERMINAL = '$OPENING_TERMINAL', OPENING_FIELD = '$OPENING_FIELD', OWN_USE = '$OWN_USE', ENDING_TERMINAL = '$ENDING_TERMINAL', ENDING_DEAD_TERMINAL = '$ENDING_DEAD_TERMINAL', ENDING_FIELD = '$ENDING_FIELD', ENDING_DEAD_FIELD = '$ENDING_DEAD_FIELD', DUMAI_LOSS_GAIN = '$DUMAI_LOSS_GAIN'
+	WHERE ID = '$id'";
+
+	if ($conn->query($sql) === TRUE) {
+			echo "<script> alert('Update Data Success');
+			location='main_menu.php';
+			</script>";
+	} else {
+	    echo "Saving Data Failed" . $sql . "<br>" . $conn->error;
+	}
+
+	$conn->close();
+	//header("location:main_menu.php");
+?>
