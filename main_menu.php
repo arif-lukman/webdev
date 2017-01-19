@@ -59,8 +59,8 @@
 								echo "<td>$conNames[$item]</td>";
 							}
 							echo "
-								<td><a href=\"edit.php\">edit</a></td>
-								<td><a href=\"hapus.php\">hapus</td>
+								<td><a href=\"edit.php?id=$conNames[ID]\">edit</a></td>
+								<td><a href=\"delete.php?id=$conNames[ID]\">delete</td>
 							";
 							echo "</tr>";
 						}
