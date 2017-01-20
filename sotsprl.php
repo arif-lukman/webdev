@@ -136,7 +136,7 @@
 				var ap = document.getElementById("ap").value;
 				var gp = document.getElementById("gp").value;
 				document.getElementById("dlg").value = ap-gp;
-			}
+			}z
 
 		</script>
 
@@ -154,7 +154,7 @@
 <body>
 
   <div class="alert alert-info">
-    <strong>Important!</strong> Fill the blank with number only, cannot with alphabet <br>
+    <strong>Important!</strong><pre>1. Fill the blank with number only, cannot with alphabet <br>2. use '.' for number's point <br>   Ex : "1.5" ("not 1,5")</pre>
   </div>
   
 <div class="container">
