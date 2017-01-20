@@ -252,6 +252,13 @@
       		<input type="text" class="form-control" id="pwd" name="DUMAI_LOSS_GAIN">
     	</div>    
 	</div>
+	
+	<div class="form-group">
+		<div class="col-sm-12">
+      		<label for="DUMAI_LOSS_GAIN">BLANK_FIELD:</label>
+      		<input type="text" class="form-control" id="pwd" name="BLANK_FIELD">
+    	</div>    
+	</div>
 
 	<div class="container col-sm-12">
 		<br>
