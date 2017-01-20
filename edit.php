@@ -1,5 +1,6 @@
 <?php
 	include "koneksi.php";
+	include "check_session.php";
 
 	//ambil param id
 	$id = $_GET["id"];

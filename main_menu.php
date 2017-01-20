@@ -1,5 +1,6 @@
 <?php
 	include "koneksi.php";
+	include "check_session.php";
 
 	//query buat ngambil nama field
 	$colQuery = 
@@ -184,7 +185,7 @@ h2{ color:#000000; font-weight: bold;
 			</table><br>
 			<div class="container-fluid">
 			<center><a class="left" href="sotsprl.php">Add</a> </center>
-			<center><a class="right" href="admin.php">Logout</a></center>
+			<center><a class="right" href="logout.php">Logout</a></center>
 			</div>
 		</div>
 	</body>

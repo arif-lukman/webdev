@@ -1,3 +1,10 @@
+<?php
+	if(isset($_SESSION)){
+		unset($_SESSION['uid']);
+		session_unset();
+		session_destroy();
+	}
+?>
 <!doctype html>
 <html>
 	<head>
