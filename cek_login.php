@@ -10,6 +10,10 @@ $password = $_POST['password'];
 
 	if($count == 1)
 		{
+			if(!isset($_SESSION)){
+				session_start();
+				$_SESSION['uid'] = $row['id'];
+			}
 			header ("location:main_menu.php");
 		}
 		else
