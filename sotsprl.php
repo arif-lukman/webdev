@@ -110,9 +110,21 @@
 			}
 
 			function setEt(){
-				var edt = document.getElementById("edt").value;
-				var b = document.getElementById("b").value;
+				var edt = parseFloat(document.getElementById("edt").value);
+				var b = parseFloat(document.getElementById("b").value);
+				if(isNaN(edt)){
+					edt = 0;
+				}
+				if(isNaN(b)){
+					b = 0;
+				}
 				document.getElementById("et").value = edt+b;
+			}
+
+			function noNan(){
+				if(isNaN(document.getElementById("et").value)){
+					document.getElementById("et").value = 0;
+				}
 			}
 
 			function setEdf(){
