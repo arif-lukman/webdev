@@ -105,6 +105,24 @@
 					return false;
 				}
 			}
+
+			function setEt(){
+				var edt = document.getElementById("edt").value;
+				var b = document.getElementById("b").value;
+				document.getElementById("et").value = edt+b;
+			}
+
+			function setEdf(){
+				var ofi = document.getElementById("ofi").value;
+				document.getElementById("edf").value = ofi;
+			}
+
+			function setDlg(){
+				var ap = document.getElementById("ap").value;
+				var gp = document.getElementById("gp").value;
+				document.getElementById("dlg").value = ap-gp;
+			}
+
 		</script>
 
 		<title>SOT_SPRL</title>
@@ -137,7 +155,7 @@
     <div class="form-group">
 		<div class="col-sm-6">
 	      	<label for="GROSS_PROD">GROSS_PROD:</label>
-	      	<input type="text" class="form-control" id="pwd" name="GROSS_PROD">
+	      	<input type="text" class="form-control" id="gp" name="GROSS_PROD" oninput="setDlg();">
 	    </div>
 	</div>
 
@@ -151,7 +169,7 @@
     <div class="form-group">
       	<div class="col-sm-6">
 	  		<label for="ALLOCATED_PROD">ALLOCATED_PROD:</label>
-      		<input type="text" class="form-control" id="pwd" name="ALLOCATED_PROD">
+      		<input type="text" class="form-control" id="ap" name="ALLOCATED_PROD" oninput="setDlg();">
     	</div>
 	</div>
 
@@ -207,7 +225,7 @@
     <div class="form-group">
 		<div class="col-sm-6">
       		<label for="OPENING_FIELD">OPENING_FIELD:</label>
-      		<input type="text" class="form-control" id="pwd" name="OPENING_FIELD">
+      		<input type="text" class="form-control" id="ofi" name="OPENING_FIELD" oninput="setEdf();">
 		</div>
 	</div>
 	
@@ -221,14 +239,14 @@
     <div class="form-group">
 		<div class="col-sm-6">
       		<label for="ENDING_TERMINAL">ENDING_TERMINAL:</label>
-      		<input type="text" class="form-control" id="pwd" name="ENDING_TERMINAL">
+      		<input type="text" class="form-control" id="et" name="ENDING_TERMINAL" disabled>
     	</div>
 	</div>
 	
     <div class="form-group">
 		<div class="col-sm-6">
       		<label for="ENDING_DEAD_TERMINAL">ENDING_DEAD_TERMINAL:</label>
-      		<input type="text" class="form-control" id="pwd" name="ENDING_DEAD_TERMINAL">
+      		<input type="text" class="form-control" id="edt" name="ENDING_DEAD_TERMINAL" oninput="setEt();">
     	</div>
 	</div>
 
@@ -242,21 +260,21 @@
 	<div class="form-group">
 		<div class="col-sm-6">
       		<label for="ENDING_DEAD_FIELD">ENDING_DEAD_FIELD:</label>
-      		<input type="text" class="form-control" id="pwd" name="ENDING_DEAD_FIELD">
+      		<input type="text" class="form-control" id="edf" name="ENDING_DEAD_FIELD" disabled>
 		</div>
 	</div>
 	
     <div class="form-group">
 		<div class="col-sm-6">
       		<label for="DUMAI_LOSS_GAIN">DUMAI_LOSS_GAIN:</label>
-      		<input type="text" class="form-control" id="pwd" name="DUMAI_LOSS_GAIN">
+      		<input type="text" class="form-control" id="dlg" name="DUMAI_LOSS_GAIN" disabled>
     	</div>    
 	</div>
 	
 	<div class="form-group">
 		<div class="col-sm-12">
       		<label for="DUMAI_LOSS_GAIN">BLANK_FIELD:</label>
-      		<input type="text" class="form-control" id="pwd" name="BLANK_FIELD">
+      		<input type="text" class="form-control" id="b" name="BLANK_FIELD" oninput="setEt();">
     	</div>    
 	</div>
 
