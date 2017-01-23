@@ -96,7 +96,7 @@
 	<body>
 		<div class="container">
 			<div class="col-sm-10">
-				<left><img src="logospr.png" height="100"></left>
+				<left><a href="index.php"><img src="logospr.png" height="100"></left></a>
 			</div>
 			<div class="col-sm-2">
 				<center><img src="riau.jpg" width="100" height="100"></center>
