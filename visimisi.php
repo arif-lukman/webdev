@@ -76,10 +76,6 @@
 		    }
 			 /* Note: Try to remove the following lines to see the effect of CSS positioning */
 
-			  body {
-      position: relative; 
-  }
-
 		</style>
 		
 		<title>SPR Langgak</title>
@@ -91,9 +87,10 @@
 
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
+		</head>
+
+		<body data-spy="scroll" data-target=".navbar" data-offset="50">
 
 		<div class="container">
 			<div class="col-sm-10">
@@ -106,6 +103,7 @@
 				A Center of Riau Energy
 			</div>
 		</div>
+
 		<div class="container">
 			<nav class="navbar navbar-default">
 				<ul class="nav navbar-nav">
@@ -130,48 +128,37 @@
 				</ul>
 			</nav>
 
-			
-    <div class="container">
-		  <div class="row">
-		    <div class="col-md-6">
-		      <div class="thumbnail">
+		    <div class="col-sm-6">
 		        <a href="visionandmission/TOP TANK.jpg" target="_blank">
-		          <img src="visionandmission/TOP TANK.jpg" alt="top tank" style="width:100%">
+		          <img src="visionandmission/TOP TANK.jpg" class="img thumbnail" alt="top tank" style="width:100%">
 		        </a>
-		      </div>
 		    </div>
 		  
 		  
-		    <div class="col-md-6">
-		      <div class="thumbnail">
+		    <div class="col-sm-6">
 		        <a href="visionandmission/IN BETWEEN.jpg" target="_blank">
-		          <img src="visionandmission/IN BETWEEN.jpg" alt="in between" style="width:100%">
+		          <img src="visionandmission/IN BETWEEN.jpg" class="img thumbnail" alt="in between" style="width:100%">
 		        </a>
-		      </div>
 		    </div>
 
-		  </div>
+		    <div class="col-sm-12">
+				<h2>VISION and MISSION</h2>
+
+			  	<h4>Vision</h4>
+			   	<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Look</button>
+			  	<div id="demo" class="collapse">
+			  	Menjadi perusahaan minyak dan gas bumi kelas dunia yang disegani di tingkat nasional
+			  	</div>
+				  
+				<hr>
+			  	<h4>Mission</h4>
+			  	<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demi">Look</button>
+			  	<div id="demi" class="collapse">
+			  	Mengoperasikan kontrak kerjasama Lapangan Produksi Minyak Blok Langgak secara optimal dan profesional sesuai dengan ketetapan tahapan target produksi demi kepentingan masyarakat Riau dan Nasional
+				</div>
+			</div>
 		</div>
-
-<div class="container">
-    <h2>VISION and MISSION</h2> 
-</div>
 		
-<div class="container">
-  <h4>Vision</h4>
-   <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Look</button>
-  <div id="demo" class="collapse">
-  Menjadi perusahaan minyak dan gas bumi kelas dunia yang disegani di tingkat nasional
-  </div>
-  
-<hr>
-  <h4>Mission</h4>
-  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demi">Look</button>
-  <div id="demi" class="collapse">
-  Mengoperasikan kontrak kerjasama Lapangan Produksi Minyak Blok Langgak secara optimal dan profesional sesuai dengan ketetapan tahapan target produksi demi kepentingan masyarakat Riau dan Nasional
-</div>
-  </div>
-
 		<div class="container footer">
 			<div class="col-sm-12 text-center">
 				<h3>Our Office</h3>
@@ -204,6 +191,7 @@
 				<br>
 			 	<img src="logohd/duaduanya.png" width="150" height="150" class="img-responsive center-block">
 			</div>
+		</div>
 
 </body>
 </html>
