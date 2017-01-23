@@ -2,87 +2,14 @@
 <html>
 	<head>
 		<!--Override css-->
-		<style>
-			#map {
-				height: 400px;
-				width: 100%;
-			}
-			.motto{
-				font-size: 30px;
-				font-style: italic;
-			}
-			.grad{
-				background-color: #FFDF00;
-				border-color: transparent;
-			}
-			.white{
-				background: white;
-			}
-			a{
-				color: white;
-			}
-			.container{
-				max-width: 851.57px;
-				background: white;
-			}
-
-			#section1 {padding-top:50px;height:500px; }
-		  	#section2 {padding-top:50px;height:500px; }
-		  	#section3 {padding-top:50px;height:500px; }
-		  	#section4 {padding-top:50px;height:500px; }
-		  	#section5 {padding-top:50px;height:500px; }
-		  	#section6 {padding-top:50px;height:500px; }
-		  	#section7 {padding-top:50px;height:500px; }
-			  
+		<style>			  
 		    h1, h2, h3, h4, h5, h6 {
 		        text-align: center;
 		    }
-		    body{
-			font-family: Verdana !important;
-		    background: url(webbg.png) no-repeat center center fixed; 
-			-webkit-background-size: cover;
-			-moz-background-size: cover;
-			-o-background-size: cover;
-			background-size: cover;
-			}
-			.navbar-default {
-				background-image: -webkit-linear-gradient(top, #ffffff 0%, #D4AF37 100%);
-				background-image: linear-gradient(to bottom, #ffffff 0%, #D4AF37 100%);
-				background-repeat: repeat-x;
-				border-color: #D4AF37 !important;
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffdfdfdf', GradientType=0);
-				color: white !important;
-			}
-			.navbar-nav>.active>a, .navbar-nav>.active>a:hover, .navbar-nav>.active>a:focus {
-			  	background-color:#D4AF37 !important;
-			}
-			.navbar-default .navbar-nav > .open > a, 
-			.navbar-default .navbar-nav > .open > a:hover, 
-			.navbar-default .navbar-nav > .open > a:focus {
-			  	background-color:#D4AF37 !important;
-			}
-			.navbar-default .navbar-nav > li > a:hover,
-			.navbar-default .navbar-nav > li > a:focus {
-			    text-decoration: underline;
-			}
-			.navbar-default .navbar-nav > li > a {
-			    color: #2b2b2b !important;
-			}
-			.navbar-default .navbar-nav .open .dropdown-menu > li > a {
-		        color: #2b2b2b !important;
-		    }
-		    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-		    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-		    	text-decoration: underline;
-		    }
-		    .footer{
-		    	background-image: -webkit-linear-gradient(top, white 70%, #9b9b9b 100%);
-				background-image: linear-gradient(to bottom, white 70%, #9b9b9b 100%);
-				background-repeat: repeat-x;
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffdfdfdf', GradientType=0);
-		    }
 		</style>
 		<title>SPR Langgak</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -129,7 +56,7 @@
 				</ul>
 			</nav>
 			<div>
-			  <div class="container"> 
+			  <div class="col-sm-12"> 
 			  <img src="fotomanager/iki.JPG" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
 			  <h3>Ikin Faizal</h3>
 			  <h4>Director</h4>
@@ -138,7 +65,7 @@
 			<hr>
 			<div>
 			  
-			  <div class="container"> 
+			  <div class="col-sm-12"> 
 			  <img src="fotomanager/mahpu.JPG" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
 			  <h3>Mahpuzoh</h3>
 			  <h4>Business Support Manager</h4>
@@ -147,7 +74,7 @@
 			<hr>
 			<div>
 			  
-			  <div class="container"> 
+			  <div class="col-sm-12"> 
 			  <img src="fotomanager/hardi.png" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
 			  <h3>Hardianto</h3>
 			  <h4>E&D Manager</h4>
@@ -156,7 +83,7 @@
 			<hr>
 			<div>
 			  
-			  <div class="container"> 
+			  <div class="col-sm-12"> 
 			  <img src="fotomanager/arif.jpg" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
 			  <h3>Arif Wicaksono</h3>
 			  <h4>Finance Manager</h4></div>
@@ -164,7 +91,7 @@
 			<hr>
 			<div>
 			
-			  <div class="container"> 
+			  <div class="col-sm-12"> 
 			  <img src="fotomanager/yasi.jpg" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
 			  <h3>M. Yasin Abdulfatah</h3>
 			  <h4>Production & Operation Manager</h4>
@@ -172,7 +99,7 @@
 			</div>
 			<hr>
 			<div>
-			  <div class="container"> 
+			  <div class="col-sm-12"> 
 			  <img src="fotomanager/susianto.png" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
 			  <h3>Susi Kardina Ria</h3>
 			  <h4>Head of SCM</h4>
@@ -180,7 +107,7 @@
 			</div>
 			<hr>
 			<div>
-			  <div class="container"> 
+			  <div class="col-sm-12"> 
 			  <img src="fotomanager/hardianto.png" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
 			  <h3>Hardi</h3>
 			  <h4>Head of HSSE</h4>

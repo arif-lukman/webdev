@@ -5,75 +5,11 @@
 <html lang="en">
 <head>
 		<!--Override css-->
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 		<style>
-			#map {
-				height: 400px;
-				width: 100%;
-			}
-			.motto{
-				font-size: 30px;
-				font-style: italic;
-			}
-			.grad{
-				background-color: #FFDF00;
-				border-color: transparent;
-			}
-			.white{
-				background: white;
-			}
-			a{
-				color: white;
-			}
-			.container{
-				max-width: 805px;
-				background: white;
-			}
-			body { 
-			background: url(webbg.png) no-repeat center center fixed; 
-			-webkit-background-size: cover;
-			-moz-background-size: cover;
-			-o-background-size: cover;
-			background-size: cover;
-			}
-			.navbar-default {
-				background-image: -webkit-linear-gradient(top, #ffffff 0%, #D4AF37 100%);
-				background-image: linear-gradient(to bottom, #ffffff 0%, #D4AF37 100%);
-				background-repeat: repeat-x;
-				border-color: #D4AF37 !important;
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffdfdfdf', GradientType=0);
-				color: white !important;
-			}
-			.navbar-nav>.active>a, .navbar-nav>.active>a:hover, .navbar-nav>.active>a:focus {
-			  	background-color:#D4AF37 !important;
-			}
-			.navbar-default .navbar-nav > .open > a, 
-			.navbar-default .navbar-nav > .open > a:hover, 
-			.navbar-default .navbar-nav > .open > a:focus {
-			  	background-color:#D4AF37 !important;
-			}
-			.navbar-default .navbar-nav > li > a:hover,
-			.navbar-default .navbar-nav > li > a:focus {
-			    text-decoration: underline;
-			}
-			.navbar-default .navbar-nav > li > a {
-			    color: #2b2b2b !important;
-			}
-			.navbar-default .navbar-nav .open .dropdown-menu > li > a {
-		        color: #2b2b2b !important;
-		    }
-		    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-		    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-		    	text-decoration: underline;
-		    }
 	    	a{
 	    		color: white !important;
 	    	}
-		    .tisleft{
-		    	float: left;
-		    }
-		    .tisright{
-		    	float: right;
-		    }
 		</style>
 
 		<!--Some script addittions-->
@@ -253,8 +189,7 @@
 
     <div class="form-group">
 		<div class="col-sm-6">
-      		<label for="ENDING_TERMINAL">ENDING_TERMINAL:</label>
-      		<input type="text" class="form-control" id="et" name="ENDING_TERMINAL" disabled>
+      		<input type="hidden" class="form-control" id="et" name="ENDING_TERMINAL">
     	</div>
 	</div>
 	
@@ -274,20 +209,18 @@
 
 	<div class="form-group">
 		<div class="col-sm-6">
-      		<label for="ENDING_DEAD_FIELD">ENDING_DEAD_FIELD:</label>
-      		<input type="text" class="form-control" id="edf" name="ENDING_DEAD_FIELD" disabled>
+      		<input type="hidden" class="form-control" id="edf" name="ENDING_DEAD_FIELD">
 		</div>
 	</div>
 	
     <div class="form-group">
 		<div class="col-sm-6">
-      		<label for="DUMAI_LOSS_GAIN">DUMAI_LOSS_GAIN:</label>
-      		<input type="text" class="form-control" id="dlg" name="DUMAI_LOSS_GAIN" disabled>
+      		<input type="hidden" class="form-control" id="dlg" name="DUMAI_LOSS_GAIN">
     	</div>    
 	</div>
 	
 	<div class="form-group">
-		<div class="col-sm-12">
+		<div class="col-sm-6">
       		<label for="DUMAI_LOSS_GAIN">BLANK_FIELD:</label>
       		<input type="text" class="form-control" id="b" name="BLANK_FIELD" oninput="setEt();">
     	</div>    
