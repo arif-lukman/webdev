@@ -23,51 +23,56 @@
 		array_push($all_prop, $prop->name);
 	}
 ?>
+
 <!DOCTYPE html>
 <html>
-<head>
-<!--Override css-->
+	<head>
+		<title>SPR Langgak</title>
+
+		<!--override css-->
 		<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+
 		<style type="text/css">
-		  	body {
+			body {
 				background: url(../assets/images/administratoronly3.png) no-repeat center center fixed;
 			}
-
-			h2{ color:#000000; font-weight: bold; 
-			    position: fixed;
-			    center: 1;
+				h2{ color:#000000; font-weight: bold; 
+				position: fixed;
+				center: 1;
 				top: 0;
 			}
-			a.left { color:#000000; font-weight: bold; 
-			    position: fixed;
-			    bottom: 0;
-			    left: 0;
-			    width: 200px;
-			    border: 3px solid #000000;
-				    background-color: #ff0000;
-			    color: white;
+			a.left {
+				color:#000000; font-weight: bold; 
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				width: 200px;
+				border: 3px solid #000000;
+				background-color: #ff0000;
+				color: white;
 			}
-			a.right { color:#000000; font-weight: bold; 
-			    position: fixed;
-			    bottom: 0;
-			    right: 0;
-			    width: 200px;
-			    border: 3px solid #000000;
-				    background-color: #ff0000;
-			    color: white;
+			a.right {
+				color:#000000; font-weight: bold; 
+				position: fixed;
+				bottom: 0;
+				right: 0;
+				width: 200px;
+				border: 3px solid #000000;
+				background-color: #ff0000;
+				color: white;
 			}
-			a.center { color:#000000; font-weight: bold; 
-			    position: fixed;
-			    top: 0;
-			    right: 0;
-			    width: 200px;
-			    border: 3px solid #000000;
-				    background-color: #ff0000;
-			    color: white;
+			a.center {
+				color:#000000; font-weight: bold; 
+				position: fixed;
+				top: 0;
+				right: 0;
+				width: 200px;
+				border: 3px solid #000000;
+				background-color: #ff0000;
+				color: white;
 			}
 		</style>
-		
-		<title>SPR Langgak</title>
+
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -76,7 +81,8 @@
 
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+	</head>
+
 	<body>
 		<div class="container-fluid">
 			<h2 class="container-fluid">DATABASE SOT SPRL</h2>
@@ -84,36 +90,36 @@
 			<table class="table table-bordered">
 				<!--nama field-->
 				<thead>
-					<tr>
-						<?php
-							while ($colNames = mysql_fetch_array($colExec)){
-								echo "
-									<th>$colNames[Field]</th>
-								";
-							}
-						?>
-					</tr>
+				<tr>
+				<?php
+				while ($colNames = mysql_fetch_array($colExec)){
+				echo "
+				<th>$colNames[Field]</th>
+				";
+				}
+				?>
+				</tr>
 				</thead>
 				<tbody>
-					<?php
-						while($conNames = mysql_fetch_array($conExec)){
-							echo "<tr>";
-							foreach($all_prop as $item){
-								echo "<td>$conNames[$item]</td>";
-							}
-							echo "
-								<td><a href=\"edit.php?id=$conNames[ID]\">edit</a></td>
-								<td><a href=\"delete.php?id=$conNames[ID]\">delete</td>
-							";
-							echo "</tr>";
-						}
-					?>
+				<?php
+				while($conNames = mysql_fetch_array($conExec)){
+				echo "<tr>";
+				foreach($all_prop as $item){
+				echo "<td>$conNames[$item]</td>";
+				}
+				echo "
+				<td><a href=\"edit.php?id=$conNames[ID]\">edit</a></td>
+				<td><a href=\"delete.php?id=$conNames[ID]\">delete</td>
+				";
+				echo "</tr>";
+				}
+				?>
 				</tbody>
 			</table><br>
 			<div class="container-fluid">
-			<center><a class="left" href="sotsprl.php">Add</a> </center>
-			<center><a class="right" href="logout.php">Logout</a></center>
-			<center><a class="center" href="download.php">Download Table</a></center>
+				<center><a class="left" href="input.php">Add</a> </center>
+				<center><a class="right" href="logout.php">Logout</a></center>
+				<center><a class="center" href="download.php">Download Table</a></center>
 			</div>
 		</div>
 	</body>

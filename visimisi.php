@@ -12,11 +12,9 @@
 
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
 
-		</head>
-
-		<body data-spy="scroll" data-target=".navbar" data-offset="50">
-
+	<body data-spy="scroll" data-target=".navbar" data-offset="50">
 		<div class="container">
 			<div class="col-sm-10">
 				<left><a href="index.php"><img src="assets/images/logospr.png" height="100"></left></a>
@@ -52,29 +50,23 @@
 				<li><a href="contactus.php">Contact Us</a></li>
 				</ul>
 			</nav>
-
 		    <div class="col-sm-6">
 		        <a href="assets/images/visionandmission/TOP TANK.jpg" target="_blank">
 		          <img src="assets/images/visionandmission/TOP TANK.jpg" class="img thumbnail" alt="top tank" style="width:100%">
 		        </a>
 		    </div>
-		  
-		  
 		    <div class="col-sm-6">
 		        <a href="assets/images/visionandmission/IN BETWEEN.jpg" target="_blank">
 		          <img src="assets/images/visionandmission/IN BETWEEN.jpg" class="img thumbnail" alt="in between" style="width:100%">
 		        </a>
 		    </div>
-
 		    <div class="col-sm-12">
 				<h2>VISION and MISSION</h2>
-
 			  	<h4>Vision</h4>
 			   	<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Look</button>
 			  	<div id="demo" class="collapse">
 			  	Menjadi perusahaan minyak dan gas bumi kelas dunia yang disegani di tingkat nasional
 			  	</div>
-				  
 				<hr>
 			  	<h4>Mission</h4>
 			  	<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demi">Look</button>
@@ -90,7 +82,6 @@
 				PT. SPR LANGGAK<br>
 				<hr><br>
 			</div>
-
 			<div class="col-sm-6 text-center">
 				<span class="glyphicon glyphicon-map-marker"></span><br>
 				Head Office :<br>
@@ -98,7 +89,6 @@
 				Jl. TB Simatupang No.5<br>
 				Jakarta 12550<br>
 			</div>
-
 			<div class="col-sm-6 text-center">
 				<span class="glyphicon glyphicon-map-marker"></span><br>
 				Langgak Site :<br>
@@ -106,7 +96,6 @@
 				Kabupaten Rokan Hulu,<br>
 				Riau 28559<br>
 			</div>
-
 			<div class="col-sm-12 text-center">
 				<br>
 				<br>
@@ -117,7 +106,5 @@
 			 	<img src="assets/images/logohd/duaduanya.png" width="150" height="150" class="img-responsive center-block">
 			</div>
 		</div>
-
-</body>
+	</body>
 </html>
-

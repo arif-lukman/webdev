@@ -2,11 +2,11 @@
 <html>
 	<head>
 		<title>SPR Langgak</title>
+		<!--override css-->
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
 
 		<!-- jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -27,77 +27,69 @@
 				A Center of Riau Energy
 			</div>
 		</div>
+
 		<div class="container">
 			<nav class="navbar navbar-default">
 				<ul class="nav navbar-nav">
-				<li class="active"><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">About SPR Langgak
-					<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="profile.php">Profile</a></li>
-						<li><a href="executivesummary.php">Executive Summary</a></li>
-						<li><a href="visimisi.php">Vision & Mission</a></li>
-						<li><a href="langgakfield.php">Langgak Field</a></li>
-						<li><a href="msgdir.php">Message From Director</a></li>
-						<li><a href="obmanager.php">Onboard Manager</a></li>
-					</ul>
-				</li>
-				<li><a href="news.php">News & Events</a></li>
-				<li><a href="procurement.php">Procurement</a></li>
-				<li><a href="production.php">Production</a></li>
-				<li><a href="reports.php">Reports</a></li>
-				<li><a href="contactus.php">Contact Us</a></li>
+					<li class="active"><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">About SPR Langgak
+						<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="profile.php">Profile</a></li>
+							<li><a href="executivesummary.php">Executive Summary</a></li>
+							<li><a href="visimisi.php">Vision & Mission</a></li>
+							<li><a href="langgakfield.php">Langgak Field</a></li>
+							<li><a href="msgdir.php">Message From Director</a></li>
+							<li><a href="obmanager.php">Onboard Manager</a></li>
+						</ul>
+					</li>
+					<li><a href="news.php">News & Events</a></li>
+					<li><a href="procurement.php">Procurement</a></li>
+					<li><a href="production.php">Production</a></li>
+					<li><a href="reports.php">Reports</a></li>
+					<li><a href="contactus.php">Contact Us</a></li>
 				</ul>
 			</nav>
-			<div class="col-sm-12 text-center">
-
-			</div>
 		</div>
 
 		<div class="container">
 			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-			  <!-- Indicators -->
-			  <ol class="carousel-indicators">
-			    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			    <li data-target="#myCarousel" data-slide-to="1"></li>
-			    <li data-target="#myCarousel" data-slide-to="2"></li>
-			  </ol>
-
-			  <!-- Wrapper for slides -->
-			  <div class="carousel-inner" role="listbox">
-			    <div class="item active">
-			      <img src="assets/images/home2.jpg">
-			    </div>
-
-			    <div class="item">
-			      <img src="assets/images/home3.jpg">
-			    </div>
-
-			    <div class="item">
-			      <img src="assets/images/home4.jpg">
-			    </div>
-			  </div>
-
-			  <!-- Left and right controls -->
-			  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-			    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-			    <span class="sr-only">Previous</span>
-			  </a>
-			  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-			    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-			    <span class="sr-only">Next</span>
-			  </a>
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+				</ol>
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img src="assets/images/home2.jpg">
+					</div>
+					<div class="item">
+						<img src="assets/images/home3.jpg">
+					</div>
+					<div class="item">
+						<img src="assets/images/home4.jpg">
+					</div>
+				</div>
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+				</a>
 			</div>
 			<br>
 			<div class="col-sm-6">
 				<p>
-				Media Clippings »<br>
-				Contains information and news about SPRL covered by print and online media.<br>
-
-				Latest News »<br>
-
-				Pada tanggal 22 Desember 2016 bertempat di Ujungbatu, PT SPR Langgak bersama sama dengan SKK Migas melaksanakan... More »
+					Media Clippings »<br>
+					Contains information and news about SPRL covered by print and online media.<br>
+					Latest News »<br>
+					Pada tanggal 22 Desember 2016 bertempat di Ujungbatu, PT SPR Langgak bersama sama dengan SKK Migas melaksanakan... More »
 				</p>
 			</div>
 			<div class="col-sm-6">
@@ -113,7 +105,6 @@
 				PT. SPR LANGGAK<br>
 				<hr><br>
 			</div>
-
 			<div class="col-sm-6 text-center">
 				<span class="glyphicon glyphicon-map-marker"></span><br>
 				Head Office :<br>
@@ -121,7 +112,6 @@
 				Jl. TB Simatupang No.5<br>
 				Jakarta 12550<br>
 			</div>
-
 			<div class="col-sm-6 text-center">
 				<span class="glyphicon glyphicon-map-marker"></span><br>
 				Langgak Site :<br>
@@ -129,7 +119,6 @@
 				Kabupaten Rokan Hulu,<br>
 				Riau 28559<br>
 			</div>
-
 			<div class="col-sm-12 text-center">
 				<br>
 				<br>
@@ -137,9 +126,8 @@
 				<span class="glyphicon glyphicon-print"></span> 021-22708946
 				<br>
 				<br>
-			 	<img src="assets/images/logohd/duaduanya.png" width="150" height="150" class="img-responsive center-block">
+				<img src="assets/images/logohd/duaduanya.png" width="150" height="150" class="img-responsive center-block">
 			</div>
 		</div>
 	</body>
-
 </html>

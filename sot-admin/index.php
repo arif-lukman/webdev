@@ -1,16 +1,20 @@
 <?php
+	//Hapus session
 	if(isset($_SESSION)){
 		unset($_SESSION['uid']);
 		session_unset();
 		session_destroy();
 	}
 ?>
+
 <!doctype html>
 <html>
 	<head>
 		<title>SPR Langgak</title>
+
+		<!--override css-->
 		<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
-		
+
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -22,6 +26,7 @@
 	</head>
 
 	<body>
+		<!--header-->
 		<div class="container">
 			<div class="col-sm-10">
 				<left><a href="../index.php"><img src="../assets/images/logospr.png" height="100"></left></a>
@@ -29,36 +34,31 @@
 			<div class="col-sm-2">
 				<center><img src="../assets/images/riau.jpg" width="100" height="100"></center>
 			</div>
-			<div class="col-sm-12 text-center motto">
+				<div class="col-sm-12 text-center motto">
 				Providing world's energy. Today
 			</div>
 		</div>
+
+		<!--form login-->
 		<div class="container">
 			<hr>
-			<div class="col-sm-2">
-				
-			</div>
+			<div class="col-sm-2"></div>
 			<form action="cek_login.php" method="post" class="col-sm-8">
 				<h2>Login Admin</h2>
 				<hr>
 				<div class="form-group">
-			  		<label for="name">Username:</label>
-				  	<input type="text" class="form-control" id="name" name="username">
+					<label for="name">Username:</label>
+					<input type="text" class="form-control" id="name" name="username">
 				</div>
 				<div class="form-group">
-				  	<label for="pwd">Password:</label>
-				  	<input type="password" class="form-control" id="pwd" name="password">
+					<label for="pwd">Password:</label>
+					<input type="password" class="form-control" id="pwd" name="password">
 				</div>
 				<input class="submit" type="submit" value="LOGIN">
-				<br>
-				<br><br>
-				<br><br>
-				<br><br>
-				<br>
+				<br><br><br><br><br><br><br><br>
 				<hr>
 			</form>
 			<hr>
 		</div>
 	</body>
-
 </html>

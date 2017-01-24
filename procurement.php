@@ -26,27 +26,28 @@
 				A Center of Riau Energy
 			</div>
 		</div>
+
 		<div class="container">
 			<nav class="navbar navbar-default">
 				<ul class="nav navbar-nav">
-				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">About SPR Langgak
-					<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="profile.php">Profile</a></li>
-						<li><a href="executivesummary.php">Executive Summary</a></li>
-						<li><a href="visimisi.php">Vision & Mission</a></li>
-						<li><a href="langgakfield.php">Langgak Field</a></li>
-						<li><a href="msgdir.php">Message From Director</a></li>
-						<li><a href="obmanager.php">Onboard Manager</a></li>
-					</ul>
-				</li>
-				<li><a href="news.php">News & Events</a></li>
-				<li class="active"><a href="procurement.php">Procurement</a></li>
-				<li><a href="production.php">Production</a></li>
-				<li><a href="reports.php">Reports</a></li>
-				<li><a href="contactus.php">Contact Us</a></li>
+					<li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">About SPR Langgak
+						<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="profile.php">Profile</a></li>
+							<li><a href="executivesummary.php">Executive Summary</a></li>
+							<li><a href="visimisi.php">Vision & Mission</a></li>
+							<li><a href="langgakfield.php">Langgak Field</a></li>
+							<li><a href="msgdir.php">Message From Director</a></li>
+							<li><a href="obmanager.php">Onboard Manager</a></li>
+						</ul>
+					</li>
+					<li><a href="news.php">News & Events</a></li>
+					<li class="active"><a href="procurement.php">Procurement</a></li>
+					<li><a href="production.php">Production</a></li>
+					<li><a href="reports.php">Reports</a></li>
+					<li><a href="contactus.php">Contact Us</a></li>
 				</ul>
 			</nav>
 			Lelang Ulang: Jasa Angkut dan penyediaan Bahan Bakar Solar Industri Secara Call Off Order (COO)<br><br>
@@ -83,7 +84,6 @@
 				PT. SPR LANGGAK<br>
 				<hr><br>
 			</div>
-
 			<div class="col-sm-6 text-center">
 				<span class="glyphicon glyphicon-map-marker"></span><br>
 				Head Office :<br>
@@ -91,7 +91,6 @@
 				Jl. TB Simatupang No.5<br>
 				Jakarta 12550<br>
 			</div>
-
 			<div class="col-sm-6 text-center">
 				<span class="glyphicon glyphicon-map-marker"></span><br>
 				Langgak Site :<br>
@@ -99,7 +98,6 @@
 				Kabupaten Rokan Hulu,<br>
 				Riau 28559<br>
 			</div>
-
 			<div class="col-sm-12 text-center">
 				<br>
 				<br>
@@ -111,5 +109,4 @@
 			</div>
 		</div>
 	</body>
-
 </html>

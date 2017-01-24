@@ -1,14 +1,5 @@
 <?php
-	include "koneksi.php";
 	include "check_session.php";
-
-	//ambil param id
-	$id = $_GET["id"];
-
-	//ambil semua detail dengan id diatas
-	$query = "SELECT * FROM sot_sprl WHERE ID='$id'";
-	$result = mysql_query($query);
-	$data = mysql_fetch_array($result);
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +14,7 @@
 				color: white !important;
 			}
 		</style>
-		
+
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -43,134 +34,134 @@
 		</div>
 
 		<div class="container">
-			<form name="form" action="update.php?id=<?php echo $id;?>" method="post" oninput="validateForm();">
+			<form name="form" action="create.php" method="post" oninput="validateForm();">
 				<div class="form-group">
 					<div class="col-sm-6">
 						<label for="TGL">TGL:</label>
-						<input type="date" class="form-control" id="usr" name="TGL" value="<?php echo $data['TGL']?>">
+						<input type="date" class="form-control" id="usr" name="TGL">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-6">
 						<label for="GROSS_PROD">GROSS_PROD:</label>
-						<input type="text" class="form-control" id="gp" name="GROSS_PROD" oninput="setDlg();" value="<?php echo $data['GROSS_PROD']?>">
+						<input type="text" class="form-control" id="gp" name="GROSS_PROD" oninput="setDlg();">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-6">
 						<label for="NETT_PROD">NETT_PROD:</label>
-						<input type="text" class="form-control" id="pwd" name="NETT_PROD" value="<?php echo $data['NETT_PROD']?>">
+						<input type="text" class="form-control" id="pwd" name="NETT_PROD">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-6">
 						<label for="ALLOCATED_PROD">ALLOCATED_PROD:</label>
-						<input type="text" class="form-control" id="ap" name="ALLOCATED_PROD" oninput="setDlg();" value="<?php echo $data['ALLOCATED_PROD']?>">
+						<input type="text" class="form-control" id="ap" name="ALLOCATED_PROD" oninput="setDlg();">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-6">
 						<label for="EKSPOR_SPRL_DAILY">EKSPOR_SPRL_DAILY:</label>
-						<input type="text" class="form-control" id="pwd" name="EKSPOR_SPRL_DAILY" value="<?php echo $data['EKSPOR_SPRL_DAILY']?>">
+						<input type="text" class="form-control" id="pwd" name="EKSPOR_SPRL_DAILY">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-6">
 						<label for="EKSPOR_SPRL_CUM">EKSPOR_SPRL_CUM:</label>
-						<input type="text" class="form-control" id="pwd" name="EKSPOR_SPRL_CUM" value="<?php echo $data['EKSPOR_SPRL_CUM']?>">
+						<input type="text" class="form-control" id="pwd" name="EKSPOR_SPRL_CUM">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-6">
-						<label for="DOMESTIK_GOI_TANKER_DAILY">DOMESTIK_GOI_TANKER_DAILY:</label>
-						<input type="text" class="form-control" id="pwd" name="DOMESTIK_GOI_TANKER_DAILY" value="<?php echo $data['DOMESTIK_GOI_TANKER_DAILY']?>">
+						<label for="DOMESTIK_GOI_TANKER_DAILY	">DOMESTIK_GOI_TANKER_DAILY	:</label>
+						<input type="text" class="form-control" id="pwd" name="DOMESTIK_GOI_TANKER_DAILY">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-6">
 						<label for="DOMESTIK_GOI_TANKER_CUM">DOMESTIK_GOI_TANKER_CUM:</label>
-						<input type="text" class="form-control" id="pwd" name="DOMESTIK_GOI_TANKER_CUM" value="<?php echo $data['DOMESTIK_GOI_TANKER_CUM']?>">
+						<input type="text" class="form-control" id="pwd" name="DOMESTIK_GOI_TANKER_CUM">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-6">
 						<label for="DOMESTIK_GOI_PIPA_DAILY">DOMESTIK_GOI_PIPA_DAILY:</label>
-						<input type="text" class="form-control" id="pwd" name="DOMESTIK_GOI_PIPA_DAILY" value="<?php echo $data['DOMESTIK_GOI_PIPA_DAILY']?>">
+						<input type="text" class="form-control" id="pwd" name="DOMESTIK_GOI_PIPA_DAILY">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-6">
 						<label for="DOMESTIK_GOI_PIPA_CUM">DOMESTIK_GOI_PIPA_CUM:</label>
-						<input type="text" class="form-control" id="pwd" name="DOMESTIK_GOI_PIPA_CUM" value="<?php echo $data['DOMESTIK_GOI_PIPA_CUM']?>">
+						<input type="text" class="form-control" id="pwd" name="DOMESTIK_GOI_PIPA_CUM">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-6">
 						<label for="OPENING_TERMINAL">OPENING_TERMINAL:</label>
-						<input type="text" class="form-control" id="pwd" name="OPENING_TERMINAL" value="<?php echo $data['OPENING_TERMINAL']?>">
+						<input type="text" class="form-control" id="pwd" name="OPENING_TERMINAL">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-6">
 						<label for="OPENING_FIELD">OPENING_FIELD:</label>
-						<input type="text" class="form-control" id="ofi" name="OPENING_FIELD" oninput="setEdf();" value="<?php echo $data['OPENING_FIELD']?>">
+						<input type="text" class="form-control" id="ofi" name="OPENING_FIELD" oninput="setEdf();">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-6">
 						<label for="OWN_USE">OWN_USE:</label>
-						<input type="text" class="form-control" id="pwd" name="OWN_USE" value="<?php echo $data['OWN_USE']?>">
+						<input type="text" class="form-control" id="pwd" name="OWN_USE">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-6">
-						<input type="hidden" class="form-control" id="et" name="ENDING_TERMINAL" value="<?php echo $data['ENDING_TERMINAL']?>">
+						<input type="hidden" class="form-control" id="et" name="ENDING_TERMINAL">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-6">
 						<label for="ENDING_DEAD_TERMINAL">ENDING_DEAD_TERMINAL:</label>
-						<input type="text" class="form-control" id="edt" name="ENDING_DEAD_TERMINAL" oninput="setEt();" value="<?php echo $data['ENDING_DEAD_TERMINAL']?>">
+						<input type="text" class="form-control" id="edt" name="ENDING_DEAD_TERMINAL" oninput="setEt();">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-6">
 						<label for="ENDING_FIELD">ENDING_FIELD:</label>
-						<input type="text" class="form-control" id="pwd" name="ENDING_FIELD" value="<?php echo $data['ENDING_FIELD']?>">
+						<input type="text" class="form-control" id="pwd" name="ENDING_FIELD">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-6">
-						<input type="hidden" class="form-control" id="edf" name="ENDING_DEAD_FIELD" value="<?php echo $data['ENDING_DEAD_FIELD']?>">
+						<input type="hidden" class="form-control" id="edf" name="ENDING_DEAD_FIELD">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-6">
-						<input type="hidden" class="form-control" id="dlg" name="DUMAI_LOSS_GAIN" value="<?php echo $data['DUMAI_LOSS_GAIN']?>">
+						<input type="hidden" class="form-control" id="dlg" name="DUMAI_LOSS_GAIN">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-6">
 						<label for="DUMAI_LOSS_GAIN">BLANK_FIELD:</label>
-						<input type="text" class="form-control" id="b" name="BLANK_FIELD" oninput="setEt();" value="<?php echo $data['BLANK_FIELD']?>">
+						<input type="text" class="form-control" id="b" name="BLANK_FIELD" oninput="setEt();">
 					</div>
 				</div>
 
