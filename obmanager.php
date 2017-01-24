@@ -23,10 +23,10 @@
 	<body>
 		<div class="container">
 			<div class="col-sm-10">
-				<left><a href="index.php"><img src="logospr.png" height="100"></left></a>
+				<left><a href="index.php"><img src="assets/images/logospr.png" height="100"></left></a>
 			</div>
 			<div class="col-sm-2">
-				<center><img src="riau.jpg" width="100" height="100"></center>
+				<center><img src="assets/images/riau.jpg" width="100" height="100"></center>
 			</div>
 			<div class="col-sm-12 text-center motto">
 				A Center of Riau Energy
@@ -57,7 +57,7 @@
 			</nav>
 			<div>
 			  <div class="col-sm-12"> 
-			  <img src="fotomanager/iki.JPG" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
+			  <img src="assets/images/fotomanager/iki.JPG" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
 			  <h3>Ikin Faizal</h3>
 			  <h4>Director</h4>
 			  </div>
@@ -66,7 +66,7 @@
 			<div>
 			  
 			  <div class="col-sm-12"> 
-			  <img src="fotomanager/mahpu.JPG" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
+			  <img src="assets/images/fotomanager/mahpu.JPG" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
 			  <h3>Mahpuzoh</h3>
 			  <h4>Business Support Manager</h4>
 			  </div>
@@ -75,7 +75,7 @@
 			<div>
 			  
 			  <div class="col-sm-12"> 
-			  <img src="fotomanager/hardi.png" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
+			  <img src="assets/images/fotomanager/hardi.png" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
 			  <h3>Hardianto</h3>
 			  <h4>E&D Manager</h4>
 			  </div>
@@ -84,7 +84,7 @@
 			<div>
 			  
 			  <div class="col-sm-12"> 
-			  <img src="fotomanager/arif.jpg" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
+			  <img src="assets/images/fotomanager/arif.jpg" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
 			  <h3>Arif Wicaksono</h3>
 			  <h4>Finance Manager</h4></div>
 			</div>
@@ -92,7 +92,7 @@
 			<div>
 			
 			  <div class="col-sm-12"> 
-			  <img src="fotomanager/yasi.jpg" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
+			  <img src="assets/images/fotomanager/yasi.jpg" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
 			  <h3>M. Yasin Abdulfatah</h3>
 			  <h4>Production & Operation Manager</h4>
 			  </div>
@@ -100,7 +100,7 @@
 			<hr>
 			<div>
 			  <div class="col-sm-12"> 
-			  <img src="fotomanager/susianto.png" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
+			  <img src="assets/images/fotomanager/susianto.png" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
 			  <h3>Susi Kardina Ria</h3>
 			  <h4>Head of SCM</h4>
 			  </div>
@@ -108,7 +108,7 @@
 			<hr>
 			<div>
 			  <div class="col-sm-12"> 
-			  <img src="fotomanager/hardianto.png" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
+			  <img src="assets/images/fotomanager/hardianto.png" class="img-circle img-responsive center-block" alt="image" width="250" height="250"> 
 			  <h3>Hardi</h3>
 			  <h4>Head of HSSE</h4>
 			  </div>
@@ -146,7 +146,7 @@
 				<span class="glyphicon glyphicon-print"></span> 021-22708946
 				<br>
 				<br>
-			 	<img src="logohd/duaduanya.png" width="150" height="150" class="img-responsive center-block">
+			 	<img src="assets/images/logohd/duaduanya.png" width="150" height="150" class="img-responsive center-block">
 			</div>
 		</div>
 	</body>

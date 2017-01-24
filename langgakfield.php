@@ -17,10 +17,10 @@
 	<body>
 		<div class="container">
 			<div class="col-sm-10">
-				<left><a href="index.php"><img src="logospr.png" height="100"></left></a>
+				<left><a href="index.php"><img src="assets/images/logospr.png" height="100"></left></a>
 			</div>
 			<div class="col-sm-2">
-				<center><img src="riau.jpg" width="100" height="100"></center>
+				<center><img src="assets/images/riau.jpg" width="100" height="100"></center>
 			</div>
 			<div class="col-sm-12 text-center motto">
 				A Center of Riau Energy
@@ -55,7 +55,7 @@
 				<li class="list-group-item">
 					<div class="container innercon">
 						<div class="col-sm-4">
-							<img class="thumbnail" src="slc.jpg" width="200" height="150">
+							<img class="thumbnail" src="assets/images/slc.jpg" width="200" height="150">
 						</div>
 						<div class="col-sm-8 text-right">
 							The Field produces Sumatra Light Crude (“SLC”), that similars with production from Chevron Pacific Indonesia’s fields in Riau
@@ -68,14 +68,14 @@
 							The Field was discovered, at then Caltex Pacific Indonesia in 1976, and had been operated ever since until it was relinquished to the Government of Indonesia in April 20, 2010
 						</div>
 						<div class="col-sm-4">
-							<img class="thumbnail" src="calt76.jpg" width="200" height="150">
+							<img class="thumbnail" src="assets/images/calt76.jpg" width="200" height="150">
 						</div>
 					</div>
 				</li>
 				<li class="list-group-item">
 					<div class="container innercon">
 						<div class="col-sm-4">
-							<img class="thumbnail" src="barrels.jpg" width="200" height="150">
+							<img class="thumbnail" src="assets/images/barrels.jpg" width="200" height="150">
 						</div>
 						<div class="col-sm-8 text-right">
 							The Field was designed to handle 3,000 barrel per day operation originally, despite it was recorded at 329 barrel per day at the hand over
@@ -88,14 +88,14 @@
 							The Field shared the infrastructures costs with CPI for the use of electrical supply and transportational pipeline including the use of Gathering Station to Dumai Port
 						</div>
 						<div class="col-sm-4">
-							<img class="thumbnail" src="ifcost.jpg" width="200" height="150">
+							<img class="thumbnail" src="assets/images/ifcost.jpg" width="200" height="150">
 						</div>
 					</div>
 				</li>
 				<li class="list-group-item">
 					<div class="container innercon">
 						<div class="col-sm-4">
-							<img class="thumbnail" src="produp.jpg" width="200" height="150">
+							<img class="thumbnail" src="assets/images/produp.jpg" width="200" height="150">
 						</div>
 						<div class="col-sm-8 text-right">
 							SPRL commits to increase the production level of the Field to 700 barrel per day at the end of 2010, by the use of advanced technologies in oil services maintenance, work over and enhanced oil recovery
@@ -108,7 +108,7 @@
 							The Province and a private bank have agreed repectively to support the development of the Field, so that it is expected to reach 1,000 barrel per day in 2011
 						</div>
 						<div class="col-sm-4">
-							<img class="thumbnail" src="bank.jpg" width="200" height="150">
+							<img class="thumbnail" src="assets/images/bank.jpg" width="200" height="150">
 						</div>
 					</div>
 				</li>
@@ -145,7 +145,7 @@
 				<span class="glyphicon glyphicon-print"></span> 021-22708946
 				<br>
 				<br>
-			 	<img src="logohd/duaduanya.png" width="150" height="150" class="img-responsive center-block">
+			 	<img src="assets/images/logohd/duaduanya.png" width="150" height="150" class="img-responsive center-block">
 			</div>
 		</div>
 	</body>

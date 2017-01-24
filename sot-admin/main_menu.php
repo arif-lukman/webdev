@@ -27,10 +27,10 @@
 <html>
 <head>
 <!--Override css-->
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 		<style type="text/css">
 		  	body {
-				background: url(administratoronly3.png) no-repeat center center fixed;
+				background: url(../assets/images/administratoronly3.png) no-repeat center center fixed;
 			}
 
 			h2{ color:#000000; font-weight: bold; 

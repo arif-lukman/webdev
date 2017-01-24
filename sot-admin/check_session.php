@@ -3,6 +3,6 @@
 		session_start();
 	}
 	if(!isset($_SESSION['uid'])){
-		header("location:admin.php");
+		header("location:index.php");
 	}
 ?>

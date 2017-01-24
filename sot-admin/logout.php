@@ -2,5 +2,5 @@
 if(isset($_SESSION['uid']))
 	unset($_SESSION['uid']);
 	session_destroy();
-	header ("location:admin.php");
+	header ("location:index.php");
 ?>

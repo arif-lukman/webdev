@@ -19,7 +19,7 @@ $password = $_POST['password'];
 		else
 		{
 			echo "<script> alert('Username atau Password Salah');
-			location='admin.php';
+			location='index.php';
 			</script>";
 		}
 ?>
