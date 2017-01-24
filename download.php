@@ -1,7 +1,7 @@
 <?php
 	include "koneksi.php";
 
-	$filename = "tes.xls";
+	$filename = "datatableSPRL.xls";
 
 	//Download file
 	header("Content-Disposition: attachment; filename=\"$filename\"");
