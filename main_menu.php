@@ -56,6 +56,15 @@
 				    background-color: #ff0000;
 			    color: white;
 			}
+			a.center { color:#000000; font-weight: bold; 
+			    position: fixed;
+			    top: 0;
+			    right: 0;
+			    width: 200px;
+			    border: 3px solid #000000;
+				    background-color: #ff0000;
+			    color: white;
+			}
 		</style>
 		
 		<title>SPR Langgak</title>
@@ -104,6 +113,7 @@
 			<div class="container-fluid">
 			<center><a class="left" href="sotsprl.php">Add</a> </center>
 			<center><a class="right" href="logout.php">Logout</a></center>
+			<center><a class="center" href="download.php">Download Table</a></center>
 			</div>
 		</div>
 	</body>
