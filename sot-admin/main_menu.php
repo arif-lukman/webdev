@@ -71,6 +71,7 @@
 				background-color: #ff0000;
 				color: white;
 			}
+			
 		</style>
 
 		<!-- Latest compiled and minified CSS -->
@@ -90,7 +91,7 @@
 			<table class="table table-bordered">
 				<!--nama field-->
 				<thead>
-				<tr>
+				<tr style="font-size:9px">
 				<?php
 				while ($colNames = mysql_fetch_array($colExec)){
 				echo "
