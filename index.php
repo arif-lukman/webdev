@@ -91,6 +91,8 @@
 					Latest News »<br>
 					Pada tanggal 22 Desember 2016 bertempat di Ujungbatu, PT SPR Langgak bersama sama dengan SKK Migas melaksanakan... More »
 				</p>
+				<br>
+				<a href="cooperation/login.php"><img src="assets/images/cooperation/businesspartnerlogo.png" height="210"></a>
 			</div>
 			<div class="col-sm-6">
 				<center>
@@ -98,7 +100,10 @@
 				</center>
 			</div>
 		</div>
-
+		
+		<div class="container">
+		
+		</div>
 		<div class="container footer">
 			<div class="col-sm-12 text-center">
 				<h3>Our Office</h3>

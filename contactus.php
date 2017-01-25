@@ -88,7 +88,7 @@
 				  	<label for="phone">Phone:</label>
 				  	<input type="text" class="form-control" id="phone">
 				</div>
-				<center><input type="submit"></center>
+				<center><input type="submit" value="Send"></center>
 				<hr>
 			</form>
 		</div>
