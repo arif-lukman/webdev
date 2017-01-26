@@ -97,13 +97,13 @@
 </nav>
 
 
-<div class="col-sm-2"
+<div class="col-sm-2">
   <div class="list-group">
     <a href="dataperusahaan.php" class="list-group-item">Data Perusahaan</a>
     <a href="gantipassword.php" class="list-group-item">Ganti Password</a>
     <a href="bantuan.php" class="list-group-item">Bantuan</a>
 	<a href="login.php" class="list-group-item">Logout</a>
   </div>
-
+</div>
 </body>
 </html>
