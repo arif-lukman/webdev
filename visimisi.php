@@ -65,13 +65,18 @@
 			  	<h4>Vision</h4>
 			   	<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Look</button>
 			  	<div id="demo" class="collapse">
-			  	Menjadi perusahaan minyak dan gas bumi kelas dunia yang disegani di tingkat nasional
+			  	To be recognized as a World-Class oil & gas field operator that contributes to the welfare of Indonesia, especially Riau community
 			  	</div>
 				<hr>
 			  	<h4>Mission</h4>
 			  	<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demi">Look</button>
 			  	<div id="demi" class="collapse">
-			  	Mengoperasikan kontrak kerjasama Lapangan Produksi Minyak Blok Langgak secara optimal dan profesional sesuai dengan ketetapan tahapan target produksi demi kepentingan masyarakat Riau dan Nasional
+			  	<p>1. To produce oil & gas optimally in a corridor of PSC terms</p>
+				<p>2. To operate the business that is in line with the approved program and budget</p>
+				<p>3. To comply with all regulations that are issued by the Government of Indonesia as well as Corporation</p>
+				<p>4. To recognize professionalism of workers who demonstrate the capability beyond limits</p>
+				<p>5. To create the sense of Riau as the homeland of Melayu</p>
+
 				</div>
 			</div>
 		</div>
