@@ -35,7 +35,7 @@
 				<center><img src="../assets/images/riau.jpg" width="100" height="100"></center>
 			</div>
 				<div class="col-sm-12 text-center motto">
-				cekk
+				Please Login if you are really Administrator this Website
 			</div>
 		</div>
 
