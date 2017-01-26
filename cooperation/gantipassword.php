@@ -15,7 +15,7 @@
   <div class="well well-lg">
   <div class="container">
   <h2>Silahkan isi data dibawah ini</h2>
-  <p>Pastikan anda mengingat password lama dan password baru yang telah anda ubah</p>
+  <p>Pastikan anda mengingat password lama dan password baru yang telah anda ubah</p><br>
   <form class="form-inline">
     <div class="form-group">
       <label for="email">Password Lama:</label>
