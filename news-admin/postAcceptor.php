@@ -7,7 +7,7 @@
   /*********************************************
    * Change this line to set the upload folder *
    *********************************************/
-  $imageFolder = "uploads/";
+  $imageFolder = "../assets/images/uploads/";
 
   reset ($_FILES);
   $temp = current($_FILES);
