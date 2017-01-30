@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Step 2</title>
+  <title>Step 3</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -31,25 +31,97 @@
 	  <li><a href="step15.php">Step 15 : Pengajuan / Submission</a></li>
     </ul>
   </div>
-  
+ 
 <div class="col-sm-2"></div>
 			<form class="col-sm-8">
-				<h2>Step 2</h2>
-				<h3>Partner K3S</h3>
+				<h2>Step 3</h2>
+				<h3>Alamat Kantor (Office Address)</h3>
 				<hr>
 					 <div class="well well-lg">
-			
-				<div class="form-group">
-			  		<label for="name">Nama K3S:</label>
+
+				<div class="col-xs-4">
+				  <label for="kualifikasiperusahaan">Tipe Kantor:</label>
+				  <select class="form-control" id="kualifikasiperusahaan">
+				    <option>Pusat</option>
+				    <option>Cabang</option>
+					<option>Perwakilan</option>
+				  </select>
+				</div>
+				
+				<div class="col-xs-4">
+				  <label for="kualifikasiperusahaan">Negara:</label>
+				  <select class="form-control" id="kualifikasiperusahaan">
+				    <option>Indonesia</option>
+				    <option>Malaysia</option>
+					<option>Singapura</option>
+					<option>Amerika</option>
+					<option>China</option>
+					<option>Inggris</option>
+					<option>Rusia</option>
+				  </select>
+				</div>
+				
+				<div class="col-xs-4">
+				  <label for="kualifikasiperusahaan">Provinsi:</label>
+				  <select class="form-control" id="kualifikasiperusahaan">
+				    <option>Aceh</option>
+				    <option>Bali</option>
+					<option>Banten</option>
+					<option>Bengkulu</option>
+					<option>Goranto</option>
+					<option>DKI Jakarta</option>
+					<option>Jambi</option>
+					<option>Jawa Barat</option>
+					<option>Jawa Tengah</option>
+					<option>Jawa Timur</option>
+					<option>Kalimantan Barat</option>
+					<option>Kalimantan Selatan</option>
+					<option>Kalimantan Tengah</option>
+					<option>Kepulauan Bangka Belitung</option>
+					<option>Kepulauan Riau</option>
+					<option>Lampung</option>
+					<option>Maluku</option>
+					<option>Maluku Utara</option>
+					<option>Nusa Tenggara Barat</option>
+					<option>Papua</option>
+					<option>Papua Barat</option>
+					<option>Sulawesi Barat</option>
+					<option>Sulawesi Selatan</option>
+					<option>Sulawesi Tengah</option>
+					<option>Sulawesi Tenggara</option>
+					<option>Sulawesi Utara</option>
+					<option>Sumatera Barat</option>
+					<option>Sumatera Selatan</option>
+					<option>Sumatera Utara</option>
+					<option>Yogyakarta</option>
+					<option>Yang Lain-Lain / Other</option>
+					
+				  </select>
+				</div>
+				
+				<br><br><br><br>
+				 <b>Kantor Utama?</b>
+				 <div class="checkbox">
+				<label><input type="checkbox" value=""> Yes (salah satu harus sebagai Pengurus Utama / one address must be set to Primary Person)</label>
+				<br><br>
+				</div>
+				
+				 <div class="form-group">
+					<label for="comment">Alamat Kantor:</label>
+					<textarea class="form-control" rows="5" id="comment"></textarea>
+				</div>
+		
+				<div class="col-xs-4">
+			  		<label for="name">Kota:</label>
 				  	<input type="text" class="form-control" id="namaperusahaan">
 				</div>
 				
-				<div class="col-sm-6">
-					<label for="TGL">Tanggal Terbit:</label>
-					<input type="date" class="form-control" id="usr" name="TGL">
+				<div class="col-xs-4">
+					<label for="TGL">Kode Pos:</label>
+					<input type="text" class="form-control" id="usr">
 					</div>
 
-				<div class="col-sm-6">
+				<div class="col-xs-4">
 					<label for="TGL">Tanggal Kadaluarsa:</label>
 					<input type="date" class="form-control" id="usr" name="TGL">
 				<br>	
@@ -74,8 +146,8 @@
 <button type="button" class="btn btn-primary">Reset</button>
 <hr>
   <ul class="pager">
-    <li><a href="step1.php">Previous Step</a></li>
-    <li><a href="step3.php">Next Step</a></li>
+    <li><a href="step2.php">Previous Step</a></li>
+    <li><a href="step4.php">Next Step</a></li>
   </ul>
   
 			</form>

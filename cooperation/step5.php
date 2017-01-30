@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Step 2</title>
+  <title>Step 5</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -34,53 +34,64 @@
   
 <div class="col-sm-2"></div>
 			<form class="col-sm-8">
-				<h2>Step 2</h2>
-				<h3>Partner K3S</h3>
+				<h2>Step 5</h2>
+				<h3>Daftar Pemilik (Shareholders)</h3>
 				<hr>
 					 <div class="well well-lg">
-			
+
+					 
 				<div class="form-group">
-			  		<label for="name">Nama K3S:</label>
+			  		<label for="name">Nama:</label>
 				  	<input type="text" class="form-control" id="namaperusahaan">
 				</div>
 				
-				<div class="col-sm-6">
-					<label for="TGL">Tanggal Terbit:</label>
-					<input type="date" class="form-control" id="usr" name="TGL">
+				<div class="form-group">
+			  		<label for="name">No Identitas:</label>
+				  	<input type="text" class="form-control" id="namaperusahaan">
+				</div>
+				
+				 <div class="form-group">
+					<label for="comment">Alamat Kantor:</label>
+					<textarea class="form-control" rows="5" id="comment"></textarea>
+				</div>
+	
+				<div class="col-xs-6">
+					<label for="TGL">No Telepon:</label>
+					<input type="text" class="form-control" id="usr">
 					</div>
-
-				<div class="col-sm-6">
-					<label for="TGL">Tanggal Kadaluarsa:</label>
-					<input type="date" class="form-control" id="usr" name="TGL">
-				<br>	
+					
+				<div class="col-xs-6">
+					<label for="TGL">Email:</label>
+					<input type="text" class="form-control" id="usr">
+					<br>
 					</div>
-
-				<div class="form-group">
-			  		<label for="name">Nomor Telepon:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan">
+				
+				<div class="col-xs-6">
+					<label for="TGL">Share(%):</label>
+					<input type="text" class="form-control" id="usr">
+					<br><br>
 				</div>
 				
-				<div class="form-group">
-			  		<label for="name">Nomor Fax:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan">
-				</div>	
-				
-				<div class="form-group">
-				<input type="file" name="pic" accept="image/*">
-				<br>
+				<div class="col-xs-6">
+					<label for="TGL">Share Value:</label>
+					<input type="text" class="form-control" id="usr">
+					<span class="label label-info">contoh/example: IDR 15.000.000 / USD 5.000</span>
+					<br><br>
 				</div>
-
+				
 <button type="button" class="btn btn-primary">Save</button>
 <button type="button" class="btn btn-primary">Reset</button>
 <hr>
   <ul class="pager">
-    <li><a href="step1.php">Previous Step</a></li>
-    <li><a href="step3.php">Next Step</a></li>
+    <li><a href="step4.php">Previous Step</a></li>
+    <li><a href="step6.php">Next Step</a></li>
   </ul>
   
 			</form>
 			<div class="well well-sm">Result (Table):</div>
 		</div>
+		<hr>
+				
 
 </body>
 </html>		
