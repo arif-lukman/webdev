@@ -44,7 +44,7 @@
 			<hr>
 			<div class="col-sm-2"></div>
 			<form action="cek_login.php" method="post" class="col-sm-8">
-				<h2>Login Admin</h2>
+				<h2>Login Admin SOT</h2>
 				<hr>
 				<div class="form-group">
 					<label for="name">Username:</label>
