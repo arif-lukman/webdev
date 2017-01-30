@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>SPR Langgak</title>
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -17,10 +17,10 @@
 	<body>
 		<div class="container">
 			<div class="col-sm-10">
-				<left><a href="index.php"><img src="assets/images/logospr.png" height="100"></left></a>
+				<left><a href="index.php"><img src="../assets/images/logospr.png" height="100"></left></a>
 			</div>
 			<div class="col-sm-2">
-				<center><img src="assets/images/riau.jpg" width="100" height="100"></center>
+				<center><img src="../assets/images/riau.jpg" width="100" height="100"></center>
 			</div>
 			<div class="col-sm-12 text-center motto">
 				A Center of Riau Energy
@@ -57,8 +57,8 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="thumbnail">
-						<a href="assets/images/foto/langgak.png" target="_blank">
-						<img src="assets/images/foto/langgak.png" alt="Langgak Gathering" style="width:100%">
+						<a href="../assets/images/foto/langgak.png" target="_blank">
+						<img src="../assets/images/foto/langgak.png" alt="Langgak Gathering" style="width:100%">
 						<div class="caption">
 							<p>Langgak Gathering Station</p>
 						</div>
@@ -67,8 +67,8 @@
 				</div>
 				<div class="col-md-4">
 					<div class="thumbnail">
-						<a href="assets/images/foto/lapangan.png" target="_blank">
-						<img src="assets/images/foto/lapangan.png" alt="Nature" style="width:100%">
+						<a href="../assets/images/foto/lapangan.png" target="_blank">
+						<img src="../assets/images/foto/lapangan.png" alt="Nature" style="width:100%">
 						<div class="caption">
 							<p>Production Operation</p>
 						</div>
@@ -77,8 +77,8 @@
 				</div>
 				<div class="col-md-4">
 					<div class="thumbnail">
-						<a href="assets/images/foto/watertank.png" target="_blank">
-						<img src="assets/images/foto/watertank.png" alt="Fjords" style="width:100%">
+						<a href="../assets/images/foto/watertank.png" target="_blank">
+						<img src="../assets/images/foto/watertank.png" alt="Fjords" style="width:100%">
 						<div class="caption">
 							<p>Water Tank</p>
 						</div>
@@ -108,7 +108,7 @@
 				<li class="list-group-item">2. The Interests, given as Production Sharing Contract (“PSC”),  was awarded by the Government of Indonesia in November 2009, which became effective on April 20, 2010</li>
 				<li class="list-group-item">3. Holds 99.9% of ownerships in SPRL, SPR fully supported financially for the developement of the Field</li>
 				<li class="list-group-item">4. Established in 1990, SPR is the oldest Province of Riau’s owned company in Riau</li>
-				<li class="list-group-item">5. SPR repsonsibles in managing commercial assets of the Province such as Gas Turbine Generator, Landbanks and Heavy Equipment.</li>
+				<li class="list-group-item">5. SPR repsonsibles in managing commercial ../assets of the Province such as Gas Turbine Generator, Landbanks and Heavy Equipment.</li>
 			</ul>
 		</div>
 
@@ -139,7 +139,7 @@
 				<span class="glyphicon glyphicon-print"></span> 021-22708946
 				<br>
 				<br>
-				<img src="assets/images/logohd/duaduanya.png" width="150" height="150" class="img-responsive center-block">
+				<img src="../assets/images/logohd/duaduanya.png" width="150" height="150" class="img-responsive center-block">
 			</div>
 		</div>
 	</body>

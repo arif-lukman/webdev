@@ -2,7 +2,7 @@
 <html>
 	<head>		
 		<title>SPR Langgak</title>
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 		
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -17,10 +17,10 @@
 	<body data-spy="scroll" data-target=".navbar" data-offset="50">
 		<div class="container">
 			<div class="col-sm-10">
-				<left><a href="index.php"><img src="assets/images/logospr.png" height="100"></left></a>
+				<left><a href="index.php"><img src="../assets/images/logospr.png" height="100"></left></a>
 			</div>
 			<div class="col-sm-2">
-				<center><img src="assets/images/riau.jpg" width="100" height="100"></center>
+				<center><img src="../assets/images/riau.jpg" width="100" height="100"></center>
 			</div>
 			<div class="col-sm-12 text-center motto">
 				A Center of Riau Energy
@@ -51,13 +51,13 @@
 				</ul>
 			</nav>
 		    <div class="col-sm-6">
-		        <a href="assets/images/visionandmission/TOP TANK.jpg" target="_blank">
-		          <img src="assets/images/visionandmission/TOP TANK.jpg" class="img thumbnail" alt="top tank" style="width:100%">
+		        <a href="../assets/images/visionandmission/TOP TANK.jpg" target="_blank">
+		          <img src="../assets/images/visionandmission/TOP TANK.jpg" class="img thumbnail" alt="top tank" style="width:100%">
 		        </a>
 		    </div>
 		    <div class="col-sm-6">
-		        <a href="assets/images/visionandmission/IN BETWEEN.jpg" target="_blank">
-		          <img src="assets/images/visionandmission/IN BETWEEN.jpg" class="img thumbnail" alt="in between" style="width:100%">
+		        <a href="../assets/images/visionandmission/IN BETWEEN.jpg" target="_blank">
+		          <img src="../assets/images/visionandmission/IN BETWEEN.jpg" class="img thumbnail" alt="in between" style="width:100%">
 		        </a>
 		    </div>
 		    <div class="col-sm-12">
@@ -108,7 +108,7 @@
 				<span class="glyphicon glyphicon-print"></span> 021-22708946
 				<br>
 				<br>
-			 	<img src="assets/images/logohd/duaduanya.png" width="150" height="150" class="img-responsive center-block">
+			 	<img src="../assets/images/logohd/duaduanya.png" width="150" height="150" class="img-responsive center-block">
 			</div>
 		</div>
 	</body>
