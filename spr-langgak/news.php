@@ -1,3 +1,10 @@
+<?php
+	include "koneksi.php";
+
+	//sql command yea *dab
+	$sql = "SELECT * FROM news";
+	
+?>
 <!doctype html>
 <html>
 	<head>
