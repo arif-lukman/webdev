@@ -10,9 +10,9 @@
 	//fungsi nampilin cuplikan konten
 	function cutContent($string){
 		$enterPos = strpos($string, "\n");
-		if(strlen($string) > 100){
+		if(strlen($string) > 300){
 			$end = " . . .";
-			if($enterPos <= 100){
+			if($enterPos <= 300){
 				$cutContent = substr($string, 0, $enterPos) . $end;
 			}
 			else{
@@ -23,6 +23,12 @@
 			$cutContent = $string;
 		}
 		return $cutContent;
+	}
+
+	function getDay($strDate){
+		$timestamp = strtotime($strDate);
+		$day = date('l, d F Y', $timestamp);
+		return $day;
 	}
 ?>
 <!DOCTYPE html>
@@ -88,7 +94,7 @@
 									echo "<div class='bold'>";
 									echo $field['title'];
 									echo "</div>";
-									echo cutContent($field['content']) . "</td>";
+									echo getDay($field['date']) . "</td>";
 									//kolom 3 tampilin tombol edit
 									echo "<td><a href='edit.php?id=$field[id]' data-toggle='tooltip' data-placement='bottom' title='Edit News'><img src='../assets/images/icons/edit.png' height='32' width='32'></a></td>";
 									//kolom 4 tampilin tombol hapus

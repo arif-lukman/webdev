@@ -12,9 +12,9 @@
 	//fungsi nampilin cuplikan konten
 	function cutContent($string){
 		$enterPos = strpos($string, "\n");
-		if(strlen($string) > 100){
+		if(strlen($string) > 300){
 			$end = " . . .";
-			if($enterPos <= 100){
+			if($enterPos <= 300){
 				$cutContent = substr($string, 0, $enterPos) . $end;
 			}
 			else{
@@ -25,6 +25,12 @@
 			$cutContent = $string;
 		}
 		return $cutContent;
+	}
+
+	function getDay($strDate){
+		$timestamp = strtotime($strDate);
+		$day = date('l, d F Y', $timestamp);
+		return $day;
 	}
 ?>
 <!doctype html>
@@ -86,7 +92,7 @@
 					$result = mysql_query($sql);
 					while ($data=mysql_fetch_array($result)) {
 						echo "<a href='news.php?id=$data[id]'>" . $data['title'] . "</a><br>";
-						echo cutContent($data['content']) . "<br><hr>";
+						echo getDay($data['date']) . " " . $data['time'] . "<br><hr>";
 					}
 				}
 				else{
@@ -95,7 +101,7 @@
 					$data = mysql_fetch_array($result);
 					echo $data['title'] . "<hr>";
 					echo $data['content'] . "<hr>";
-					echo $data['date'] . " " . $data['time'];
+					echo getDay($data['date']) . " " . $data['time'];
 				}
 			?>
 		</div>
