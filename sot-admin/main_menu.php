@@ -91,30 +91,30 @@
 			<table class="table table-bordered">
 				<!--nama field-->
 				<thead>
-				<tr style="font-size:9px">
-				<?php
-				while ($colNames = mysql_fetch_array($colExec)){
-				echo "
-				<th>$colNames[Field]</th>
-				";
-				}
-				?>
-				</tr>
+					<tr style="font-size:9px">
+					<?php
+						while ($colNames = mysql_fetch_array($colExec)){
+							echo "
+							<th>$colNames[Field]</th>
+							";
+						}
+					?>
+					</tr>
 				</thead>
 				<tbody>
-				<?php
-				while($conNames = mysql_fetch_array($conExec)){
-				echo "<tr>";
-				foreach($all_prop as $item){
-				echo "<td>$conNames[$item]</td>";
-				}
-				echo "
-				<td><a href=\"edit.php?id=$conNames[ID]\">edit</a></td>
-				<td><a href=\"delete.php?id=$conNames[ID]\">delete</td>
-				";
-				echo "</tr>";
-				}
-				?>
+					<?php
+						while($conNames = mysql_fetch_array($conExec)){
+							echo "<tr>";
+							foreach($all_prop as $item){
+								echo "<td>$conNames[$item]</td>";
+							}
+							echo "
+							<td><a href=\"edit.php?id=$conNames[ID]\">edit</a></td>
+							<td><a href=\"delete.php?id=$conNames[ID]\">delete</td>
+							";
+							echo "</tr>";
+						}
+					?>
 				</tbody>
 			</table><br>
 			<div class="container-fluid">

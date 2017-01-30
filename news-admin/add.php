@@ -1,14 +1,3 @@
-<?php
-	include "koneksi.php";
-
-	//ambil param id
-	$id = $_GET["id"];
-
-	//ambil semua detail dengan id diatas
-	$query = "SELECT * FROM news WHERE ID='$id'";
-	$result = mysql_query($query);
-	$data = mysql_fetch_array($result);
-?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -71,14 +60,14 @@
 			</div>
 			<h3>Add a News</h3>
 			<hr>
-			<form action="update.php?id=<?php echo $data['id']?>" method="post">
+			<form action="create.php" method="post">
 				<div class="form-group">
 					<label for="title">Title:</label>
-				  	<input type="text" class="form-control" id="title" name="title" value="<?php echo $data['title'];?>">
+				  	<input type="text" class="form-control" id="title" name="title">
 				</div>
 				<div class="form-group">
 					<label for="content">Content:</label>
-				  	<textarea class="form-control" rows="5" id="content" name="content"><?php echo $data['content'];?></textarea>
+				  	<textarea class="form-control" rows="5" id="content" name="content"></textarea>
 				</div>
 				<input type="submit" class="btn btn-primary" value="Confirm" id="submit"></input>
 			</form>
