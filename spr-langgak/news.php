@@ -1,9 +1,31 @@
 <?php
 	include "koneksi.php";
+	//ambil id news
+	if(isset($_GET["id"])){
+		$id = $_GET["id"];
+		$list = false;
+	}
+	else{
+		$list = true;
+	}
 
-	//sql command yea *dab
-	$sql = "SELECT * FROM news";
-	
+	//fungsi nampilin cuplikan konten
+	function cutContent($string){
+		$enterPos = strpos($string, "\n");
+		if(strlen($string) > 100){
+			$end = " . . .";
+			if($enterPos <= 100){
+				$cutContent = substr($string, 0, $enterPos) . $end;
+			}
+			else{
+				$cutContent = substr($string, 0, 100) . $end;
+			}
+		}
+		else{
+			$cutContent = $string;
+		}
+		return $cutContent;
+	}
 ?>
 <!doctype html>
 <html>
@@ -57,7 +79,25 @@
 					<li><a href="contactus.php">Contact Us</a></li>
 				</ul>
 			</nav>
-			Butuh Database
+			<?php
+				if($list){
+					//sql command yea *dab
+					$sql = "SELECT * FROM news";
+					$result = mysql_query($sql);
+					while ($data=mysql_fetch_array($result)) {
+						echo "<a href='news.php?id=$data[id]'>" . $data['title'] . "</a><br>";
+						echo cutContent($data['content']) . "<br><hr>";
+					}
+				}
+				else{
+					$sql = "SELECT * FROM news WHERE id = '$id'";
+					$result = mysql_query($sql);
+					$data = mysql_fetch_array($result);
+					echo $data['title'] . "<hr>";
+					echo $data['content'] . "<hr>";
+					echo $data['date'] . " " . $data['time'];
+				}
+			?>
 		</div>
 
 		<div class="container footer">
