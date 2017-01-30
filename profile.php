@@ -91,19 +91,19 @@
 		<div class="container">
 			<h2>About SPR Langgak</h2>
 			<div class="well">
-			<p>1. The Field produces Sumatra Light Crude (“SLC”), that similars with production from Chevron Pacific Indonesia’s fields in Riau</p>
-			<p>2. The Field was discovered, at then Caltex Pacific Indonesia in 1976, and had been operated ever since until it was relinquished to the Government of Indonesia in April 20, 2010</p>
-			<p>3. The Field was designed to handle 3,000 barrel per day operation originally, despite it was recorded at 329 barrel per day at the hand over</p>
-			<p>4. The Field shared the infrastructures costs with CPI for the use of electrical supply and transportational pipeline including the use of Gathering Station to Dumai Port</p>
-			<p>5. SPRL commits to increase the production level of the Field to 700 barrel per day at the end of 2010, by the use of advanced technologies in oil services maintenance, work over and enhanced oil recovery</p>
-			<p>6. The Province and a private bank have agreed repectively to support the development of the Field, so that it is expected to reach 1,000 barrel per day in 2011</p>
+			<li class="list-group-item">1. The Field produces Sumatra Light Crude (“SLC”), that similars with production from Chevron Pacific Indonesia’s fields in Riau</li>
+			<li class="list-group-item">2. The Field was discovered, at then Caltex Pacific Indonesia in 1976, and had been operated ever since until it was relinquished to the Government of Indonesia in April 20, 2010</li>
+			<li class="list-group-item">3. The Field was designed to handle 3,000 barrel per day operation originally, despite it was recorded at 329 barrel per day at the hand over</li>
+			<li class="list-group-item">4. The Field shared the infrastructures costs with CPI for the use of electrical supply and transportational pipeline including the use of Gathering Station to Dumai Port</li>
+			<li class="list-group-item">5. SPRL commits to increase the production level of the Field to 700 barrel per day at the end of 2010, by the use of advanced technologies in oil services maintenance, work over and enhanced oil recovery</li>
+			<li class="list-group-item">6. The Province and a private bank have agreed repectively to support the development of the Field, so that it is expected to reach 1,000 barrel per day in 2011</li>
 
 			</div>
 		</div>
 
 		<div class="container">
-			<h2>PT Sarana Pembangunan Riau =will be revised=</h2>
-			<ul class="list-group">
+			<h2>PT Sarana Pembangunan Riau</h2>
+			<ul class="well">
 				<li class="list-group-item">1. PT Sarana Pembangunan Riau (“SPR”) holds fifty percent of Participating Interests in the Field</li>
 				<li class="list-group-item">2. The Interests, given as Production Sharing Contract (“PSC”),  was awarded by the Government of Indonesia in November 2009, which became effective on April 20, 2010</li>
 				<li class="list-group-item">3. Holds 99.9% of ownerships in SPRL, SPR fully supported financially for the developement of the Field</li>
