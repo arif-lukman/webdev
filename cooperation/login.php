@@ -1,11 +1,10 @@
-
 <?php
 	//Hapus session
-	/*if(isset($_SESSION)){
+	if(isset($_SESSION)){
 		unset($_SESSION['uid']);
 		session_unset();
 		session_destroy();
-	}*/
+	}
 ?>
 
 <!doctype html>
@@ -36,22 +35,21 @@
 		<div class="container">
 			<hr>
 			<div class="col-sm-2"></div>
-			<form action="cek_login.php" method="post" class="col-sm-8">
+			<form action="cek_login_p.php" method="post" class="col-sm-8">
 				<h2>Login BPMS</h2>
 				<hr>
 				<div class="form-group">
 					<label for="name">Username:</label>
-					<input type="text" class="form-control" id="name" name="username">
+					<input type="text" class="form-control" id="name" name="username_proc">
 				</div>
 				<div class="form-group">
 					<label for="pwd">Password:</label>
-					<input type="password" class="form-control" id="pwd" name="password">
+					<input type="password" class="form-control" id="pwd" name="password_proc">
 				</div>
 				<br>
-				<center><input type="submit" value="LOGIN"><b>  OR  </b><input type="submit" value="SIGN UP"></center>
+				<input class="submit" type="submit" value="LOGIN">
+		
 
-				
-				<hr>
 			</form>
 
 		</div>
