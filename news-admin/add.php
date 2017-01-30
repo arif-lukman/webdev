@@ -46,7 +46,9 @@
 			    toolbar2: 'print preview media | forecolor backcolor emoticons | codesample',
 			    image_advtab: true,
 			    paste_enable_default_filters: false,
-			    paste_data_images: true
+			    paste_data_images: true,
+			    images_upload_url: 'postAcceptor.php',
+  				automatic_uploads: true
 		  	});
 	  	</script>
 	  	<br>
