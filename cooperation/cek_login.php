@@ -22,8 +22,8 @@
 		}
 	}
 	else{
-		//echo "<script> alert('Username atau Password Salah');
-		//location='index.php';
-		//</script>";
+		echo "<script> alert('Username atau Password Salah');
+		location='index.php';
+		</script>";
 	}
 ?>

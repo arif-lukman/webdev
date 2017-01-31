@@ -20,24 +20,25 @@
 				<a class="navbar-brand" href="#">SPRL BPMS</a>
 				</div>
 				<ul class="nav navbar-nav">
-					<li><a href="main_menu.php">Registrasi</a></li>
-					<li><a href="companies.php">Data Perusahaan</a></li>
-					<li class="active"><a href="proposals.php">Status Pengajuan</a></li>
-					<li><a href="expiry.php">Kadaluarsa</a></li>
-					<li><a href="#">Admin</a></li>
-					<li><a href="#">Bantuan</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="index.php">Logout</a></li>
+				<li class="active"><a href="main_menu.php">Registrasi</a></li>
+				<li><a href="companies.php">Data Perusahaan</a></li>
+				<li><a href="proposals.php">Status Pengajuan</a></li>
+				<li><a href="expiry.php">Kadaluarsa</a></li>
+				<li><a href="#">Admin</a></li>
+				<li><a href="#">Bantuan</a></li>
 				</ul>
 			</div>
 		</nav>
 		<div class="container" style="margin-top: 80px">
 			<div class="well">
-				<form action="search_stat.php">
+				<form action="register.php">
 					<div class="form-group">
-						<label for="keyword">Kata kunci:</label>
-						<input type="text" class="form-control" id="keyword" name="keyword">
+						<label for="name">Username:</label>
+						<input type="text" class="form-control" id="name" name="username">
+					</div>
+					<div class="form-group">
+						<label for="company">Nama Perusahaan:</label>
+						<input type="text" class="form-control" id="company" name="company">
 					</div>
 					<div class="form-group">
 						<label for="country">Negara:</label>
@@ -58,18 +59,18 @@
 						</select>
 					</div>
 					<div class="form-group">
-						<label for="status">Status Pengajuan:</label>
-						<select class="form-control" id="status" name="status">
-						    <option>Indonesia</option>
-						    <option>Malaysia</option>
-							<option>Singapura</option>
-							<option>Amerika</option>
-							<option>Cina</option>
-							<option>Inggris</option>
-							<option>Russia</option>
-						</select>
+						<label for="email">Email:</label>
+						<input type="email" class="form-control" id="email" name="email">
 					</div>
-					<input type="submit" value="search">
+					<div class="form-group">
+						<label for="password">Kata Sandi:</label>
+						<input type="password" class="form-control" id="password" name="password">
+					</div>
+					<div class="form-group">
+						<label for="desc">Keterangan:</label>
+						<textarea class="form-control" rows="5" id="desc"></textarea>
+					</div>
+					<input type="submit" value="Create">
 				</form>
 			</div>
 		</div>

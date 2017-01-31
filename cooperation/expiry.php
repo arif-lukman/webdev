@@ -20,12 +20,15 @@
 				<a class="navbar-brand" href="#">SPRL BPMS</a>
 				</div>
 				<ul class="nav navbar-nav">
-				<li><a href="main_menu.php">Registrasi</a></li>
-				<li><a href="companies.php">Data Perusahaan</a></li>
-				<li><a href="proposals.php">Status Pengajuan</a></li>
-				<li class="active"><a href="expiry.php">Kadaluarsa</a></li>
-				<li><a href="#">Admin</a></li>
-				<li><a href="#">Bantuan</a></li>
+					<li><a href="main_menu.php">Registrasi</a></li>
+					<li><a href="companies.php">Data Perusahaan</a></li>
+					<li><a href="proposals.php">Status Pengajuan</a></li>
+					<li class="active"><a href="expiry.php">Kadaluarsa</a></li>
+					<li><a href="#">Admin</a></li>
+					<li><a href="#">Bantuan</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="index.php">Logout</a></li>
 				</ul>
 			</div>
 		</nav>
