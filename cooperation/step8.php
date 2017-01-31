@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Step 2</title>
+  <title>Step 8</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -34,35 +34,58 @@
   
 <div class="col-sm-2"></div>
 			<form class="col-sm-8">
-				<h2>Step 2</h2>
+				<h2>Step 8</h2>
 				<h3>Partner K3S</h3>
 				<hr>
 					 <div class="well well-lg">
 			
+				<div class="col-xs-6">
+				  <label for="tipeperusahaan">Mata Uang:</label>
+				  <select class="form-control" id="tipeperusahaan">
+				    <option>Bank Negara Indonesia</option>
+				    <option>Bank Rakyat Indonesia</option>
+					<option>Bank Tabungan Negara</option>
+					<option>Bank Mandiri</option>
+					<option>Lain-lain</option>
+				  </select>
+				  <input type="text" class="form-control" id="namaperusahaan">
+				</div>
+				
+				<div class="col-xs-6">
+			  		<label for="name">Cabang:</label>
+				  	<input type="text" class="form-control" id="namaperusahaan">
+				<br>
+				</div>
+				
+				<div class="col-xs-6">
+				  <label for="tipeperusahaan">Negara:</label>
+				  <select class="form-control" id="tipeperusahaan">
+				    <option>Indonesia</option>
+				    <option>Malaysia</option>
+					<option>Singapura</option>
+					<option>Amerika</option>
+					<option>China</option>
+					<option>Inggris</option>
+					<option>Rusia</option>
+				  </select>
+				</div>
+
 				<div class="form-group">
-			  		<label for="name">Nama K3S:</label>
+			  		<label for="name">Nomor Rekening:</label>
 				  	<input type="text" class="form-control" id="namaperusahaan">
 				</div>
 				
-				<div class="col-sm-6">
-					<label for="TGL">Tanggal Terbit:</label>
-					<input type="date" class="form-control" id="usr" name="TGL">
-					</div>
-
-				<div class="col-sm-6">
-					<label for="TGL">Tanggal Kadaluarsa:</label>
-					<input type="date" class="form-control" id="usr" name="TGL">
-				<br>	
-					</div>
-
 				<div class="form-group">
-			  		<label for="name">Nomor Telepon:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan">
-				</div>
-				
-				<div class="form-group">
-			  		<label for="name">Nomor Fax:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan">
+				  <label for="tipeperusahaan">Mata Uang:</label>
+				  <select class="form-control" id="tipeperusahaan">
+				    <option>USD-Dolar</option>
+				    <option>MYR-Ringgit</option>
+					<option>IDR-Rupiah</option>
+					<option>SGD-Dolar</option>
+					<option>CNY-Renminbi</option>
+					<option>GBP-Poundsterling</option>
+					<option>RUB-Rubel</option>
+				  </select>
 				</div>	
 				
 				<div class="form-group">

@@ -67,7 +67,7 @@
 <button type="button" class="btn btn-primary">Reset</button>
 <hr>
   <ul class="pager">
-    <li><a href="indexuser.php">Home</a></li>
+    <li><a href="vendor.php">Home</a></li>
     <li><a href="step2.php">Next Step</a></li>
   </ul>
   

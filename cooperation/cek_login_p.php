@@ -13,7 +13,7 @@
 			session_start();
 			$_SESSION['uid'] = $row['id_proc'];
 		}
-		header ("location:indexuser.php");
+		header ("location:vendor.php");
 	}
 	else{
 		echo "<script> alert('Username atau Password Salah');

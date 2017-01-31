@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Step 2</title>
+  <title>Step 7</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -34,54 +34,68 @@
   
 <div class="col-sm-2"></div>
 			<form class="col-sm-8">
-				<h2>Step 2</h2>
-				<h3>Partner K3S</h3>
+				<h2>Step 7</h2>
+				<h3>Surat Keagenan / Dealer / Distributor</h3>
 				<hr>
 					 <div class="well well-lg">
-			
+
 				<div class="form-group">
-			  		<label for="name">Nama K3S:</label>
+				  <label for="tipeperusahaan">Tipe Distributor/Dealer:</label>
+				  <select class="form-control" id="tipeperusahaan">
+				    <option>Agen Tunggal</option>
+				    <option>Agen</option>
+					<option>Distributor</option>
+					<option>Dealer</option>
+				  </select>
+				</div>
+				
+				<div class="form-group">
+			  		<label for="name">Nomor Dokumen:</label>
 				  	<input type="text" class="form-control" id="namaperusahaan">
 				</div>
 				
-				<div class="col-sm-6">
-					<label for="TGL">Tanggal Terbit:</label>
+				<div class="form-group">
+			  		<label for="name">Dikeluarkan Oleh:</label>
+				  	<input type="text" class="form-control" id="namaperusahaan">
+				</div>
+				
+				 <div class="col-xs-6">
+					<label for="TGL">Tanggal Dikeluarkan:</label>
 					<input type="date" class="form-control" id="usr" name="TGL">
 					</div>
-
-				<div class="col-sm-6">
+	
+				<div class="col-xs-6">
 					<label for="TGL">Tanggal Kadaluarsa:</label>
 					<input type="date" class="form-control" id="usr" name="TGL">
-				<br>	
+					<br>	
 					</div>
-
-				<div class="form-group">
-			  		<label for="name">Nomor Telepon:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan">
-				</div>
-				
-				<div class="form-group">
-			  		<label for="name">Nomor Fax:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan">
-				</div>	
+					
+				<div class="col-xs-12">
+					<label for="TGL">Deskripsi:</label>
+					<input type="text" class="form-control" id="usr">
+					<br>
+					</div>
 				
 				<div class="form-group">
 				<input type="file" name="pic" accept="image/*">
-				<span class="label label-info">Format PDF max. 2Mb </span>
+				<span class="label label-info">Format PDF max. 2Mb*</span>
 				<br>
 				</div>
-
+				
+				
 <button type="button" class="btn btn-primary">Save</button>
 <button type="button" class="btn btn-primary">Reset</button>
 <hr>
   <ul class="pager">
-    <li><a href="step1.php">Previous Step</a></li>
-    <li><a href="step3.php">Next Step</a></li>
+    <li><a href="step4.php">Previous Step</a></li>
+    <li><a href="step6.php">Next Step</a></li>
   </ul>
   
 			</form>
 			<div class="well well-sm">Result (Table):</div>
 		</div>
+		<hr>
+				
 
 </body>
 </html>		

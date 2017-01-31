@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Step 2</title>
+  <title>Step 9</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -34,41 +34,65 @@
   
 <div class="col-sm-2"></div>
 			<form class="col-sm-8">
-				<h2>Step 2</h2>
-				<h3>Partner K3S</h3>
+				<h2>Step 9</h2>
+				<h3>Perusahaan Induk, Grup Perusahaan, Rekanan, Konsorsium, Afiliasi dan Aliansi</h3>
 				<hr>
 					 <div class="well well-lg">
 			
-				<div class="form-group">
-			  		<label for="name">Nama K3S:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan">
+				<div class="col-xs-6">
+				  <label for="tipeperusahaan">Tipe Affiliate / Perusahaan:</label>
+				  <select class="form-control" id="tipeperusahaan">
+				    <option>Perusahaan Induk</option>
+				    <option>Grup Perusahaan</option>
+					<option>Rekanan</option>
+					<option>Konsorsium</option>
+					<option>Affiliasi dan Aliansi</option>
+				  </select>
 				</div>
 				
-				<div class="col-sm-6">
-					<label for="TGL">Tanggal Terbit:</label>
-					<input type="date" class="form-control" id="usr" name="TGL">
-					</div>
+				<div class="col-xs-6">
+			  		<label for="name">Nama Perusahaan:</label>
+				  	<input type="text" class="form-control" id="namaperusahaan">
+				<br>
+				</div>
+				
+				 <div class="form-group">
+					<label for="comment">Alamat:</label>
+					<textarea class="form-control" rows="5" id="comment"></textarea>
+				</div>
+				
+				<div class="col-xs-6">
+				  <label for="tipeperusahaan">Negara:</label>
+				  <select class="form-control" id="tipeperusahaan">
+				    <option>Indonesia</option>
+				    <option>Malaysia</option>
+					<option>Singapura</option>
+					<option>Amerika</option>
+					<option>China</option>
+					<option>Inggris</option>
+					<option>Rusia</option>
+				  </select>
+				</div>
 
-				<div class="col-sm-6">
-					<label for="TGL">Tanggal Kadaluarsa:</label>
-					<input type="date" class="form-control" id="usr" name="TGL">
-				<br>	
-					</div>
-
+				<div class="col-xs-6">
+			  		<label for="name">Kota:</label>
+				  	<input type="text" class="form-control" id="namaperusahaan">
+				<br>
+				</div>
+				
 				<div class="form-group">
 			  		<label for="name">Nomor Telepon:</label>
 				  	<input type="text" class="form-control" id="namaperusahaan">
 				</div>
 				
 				<div class="form-group">
-			  		<label for="name">Nomor Fax:</label>
+			  		<label for="name">Email:</label>
 				  	<input type="text" class="form-control" id="namaperusahaan">
-				</div>	
+				</div>
 				
 				<div class="form-group">
-				<input type="file" name="pic" accept="image/*">
-				<span class="label label-info">Format PDF max. 2Mb </span>
-				<br>
+					<label for="comment">Deskripsi:</label>
+					<textarea class="form-control" rows="5" id="comment"></textarea>
 				</div>
 
 <button type="button" class="btn btn-primary">Save</button>
