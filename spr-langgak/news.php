@@ -52,7 +52,7 @@
 	<body>
 		<div class="container">
 			<div class="col-sm-10">
-				<left><a href="index.php"><img src="../assets/images/logospr.png" height="100"></left></a>
+				<left><a href="../index.php"><img src="../assets/images/logospr.png" height="100"></left></a>
 			</div>
 			<div class="col-sm-2">
 				<center><img src="../assets/images/riau.jpg" width="100" height="100"></center>
@@ -65,7 +65,7 @@
 		<div class="container">
 			<nav class="navbar navbar-default">
 				<ul class="nav navbar-nav">
-					<li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+					<li><a href="../index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">About SPR Langgak
 						<span class="caret"></span></a>

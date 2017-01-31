@@ -44,11 +44,11 @@
 							<li><a href="obmanager.php">Onboard Manager</a></li>
 						</ul>
 					</li>
-					<li><a href="news.php">News & Events</a></li>
-					<li><a href="procurement.php">Procurement</a></li>
-					<li><a href="production.php">Production</a></li>
-					<li><a href="reports.php">Reports</a></li>
-					<li><a href="contactus.php">Contact Us</a></li>
+					<li><a href="spr-langgak/news.php">News & Events</a></li>
+					<li><a href="spr-langgak/procurement.php">Procurement</a></li>
+					<li><a href="spr-langgak/production.php">Production</a></li>
+					<li><a href="spr-langgak/reports.php">Reports</a></li>
+					<li><a href="spr-langgak/contactus.php">Contact Us</a></li>
 				</ul>
 			</nav>
 		</div>

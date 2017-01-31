@@ -17,7 +17,7 @@
 	<body>
 		<div class="container">
 			<div class="col-sm-10">
-				<left><a href="index.php"><img src="../assets/images/logospr.png" height="100"></left></a>
+				<left><a href="../index.php"><img src="../assets/images/logospr.png" height="100"></left></a>
 			</div>
 			<div class="col-sm-2">
 				<center><img src="../assets/images/riau.jpg" width="100" height="100"></center>
