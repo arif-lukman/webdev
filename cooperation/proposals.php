@@ -24,7 +24,7 @@
 					<li><a href="companies.php">Data Perusahaan</a></li>
 					<li class="active"><a href="proposals.php">Status Pengajuan</a></li>
 					<li><a href="expiry.php">Kadaluarsa</a></li>
-					<li><a href="#">Admin</a></li>
+					<li><a href="cfg_gen.php">Admin</a></li>
 					<li><a href="#">Bantuan</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
