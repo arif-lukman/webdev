@@ -7,11 +7,23 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <style>
+  a.home {
+				position: fixed;
+				top: 0;
+				right: 0;
+				width: 200px;
+				color: white;
+  }
+
+  </style>
+  
 </head>
 
 <body>
   <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Go to step
+    <button class="step btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Go to step
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
       <li><a href="step1.php">Step 1 : Nama dan Tipe Perusahaan</a></li>
@@ -32,6 +44,8 @@
     </ul>
   </div>
   
+  <center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
+  
 <div class="col-sm-2"></div>
 			<form class="col-sm-8">
 				<h2>Step 8</h2>
@@ -40,20 +54,20 @@
 					 <div class="well well-lg">
 			
 				<div class="col-xs-6">
-				  <label for="tipeperusahaan">Mata Uang:</label>
+				  <label for="tipeperusahaan">Nama Bank:</label>
 				  <select class="form-control" id="tipeperusahaan">
 				    <option>Bank Negara Indonesia</option>
 				    <option>Bank Rakyat Indonesia</option>
 					<option>Bank Tabungan Negara</option>
 					<option>Bank Mandiri</option>
 					<option>Lain-lain</option>
-				  </select>
-				  <input type="text" class="form-control" id="namaperusahaan">
+				  </select><p class="text-warning">should not be empty</p>
+				  <input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
 				</div>
 				
 				<div class="col-xs-6">
 			  		<label for="name">Cabang:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan">
+				  	<input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
 				<br>
 				</div>
 				
@@ -67,12 +81,17 @@
 					<option>China</option>
 					<option>Inggris</option>
 					<option>Rusia</option>
-				  </select>
+				  </select><p class="text-warning">should not be empty</p>
 				</div>
-
+				
+				<div class="form-group">
+			  		<label for="name">Pemilik Rekening:</label>
+				  	<input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
+				</div>
+				
 				<div class="form-group">
 			  		<label for="name">Nomor Rekening:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan">
+				  	<input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
 				</div>
 				
 				<div class="form-group">
@@ -85,14 +104,8 @@
 					<option>CNY-Renminbi</option>
 					<option>GBP-Poundsterling</option>
 					<option>RUB-Rubel</option>
-				  </select>
+				  </select><p class="text-warning">should not be empty</p>
 				</div>	
-				
-				<div class="form-group">
-				<input type="file" name="pic" accept="image/*">
-				<span class="label label-info">Format PDF max. 2Mb </span>
-				<br>
-				</div>
 
 <button type="button" class="btn btn-primary">Save</button>
 <button type="button" class="btn btn-primary">Reset</button>

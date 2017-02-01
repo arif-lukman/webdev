@@ -7,11 +7,23 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <style>
+  a.home {
+				position: fixed;
+				top: 0;
+				right: 0;
+				width: 200px;
+				color: white;
+  }
+
+  </style>
+  
 </head>
 
 <body>
   <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Go to step
+    <button class="step btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Go to step
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
       <li><a href="step1.php">Step 1 : Nama dan Tipe Perusahaan</a></li>
@@ -31,6 +43,8 @@
 	  <li><a href="step15.php">Step 15 : Pengajuan / Submission</a></li>
     </ul>
   </div>
+  
+  <center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
   
 <div class="col-sm-2"></div>
 			<form class="col-sm-8">
@@ -54,22 +68,22 @@
 					<option>Bukti Bayar Pajak Tahunan</option>
 					<option>Neraca Audit</option>
 					<option>Lain-lain</option>
-				  </select>
+				  </select><p class="text-warning">should not be empty</p>
 				</div>
 				
 				<div class="form-group">
 			  		<label for="name">Nomor Dokumen:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan">
+				  	<input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
 				</div>
 				
 				<div class="form-group">
 			  		<label for="name">Dikeluarkan Oleh:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan">
+				  	<input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
 				</div>
 				
 				 <div class="col-xs-6">
 					<label for="TGL">Tanggal Dikeluarkan:</label>
-					<input type="date" class="form-control" id="usr" name="TGL">
+					<input type="date" class="form-control" id="usr" name="TGL"><p class="text-warning">should not be empty</p>
 					</div>
 	
 				<div class="col-xs-6">
@@ -80,13 +94,13 @@
 					
 				<div class="col-xs-12">
 					<label for="TGL">Deskripsi:</label>
-					<input type="text" class="form-control" id="usr">
+					<input type="text" class="form-control" id="usr"><p class="text-warning">should not be empty</p>
 					<br>
 					</div>
 				
 				<div class="form-group">
 				<input type="file" name="pic" accept="image/*">
-				<span class="label label-info">Format PDF max. 8Mb*</span>
+				<span class="label label-info">Format PDF max. 8Mb*</span><p class="text-warning">should not be empty</p>
 				<br>
 				</div>
 				

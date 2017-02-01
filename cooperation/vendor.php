@@ -45,6 +45,15 @@
 				color: white;
 			}
 			
+			a.home {
+				position: fixed;
+				bottom: 0;
+				right: 0;
+				color: white;
+			}
+			
+
+			
 		</style>
 
 		<!-- Latest compiled and minified CSS -->
@@ -91,11 +100,13 @@
 	  <li><a href="step12.php">Step 12</a></li>
       <li><a href="step13.php">Step 13</a></li>
 	  <li><a href="step14.php">Step 14</a></li>
+	  <li><a href="step15.php">Step 15</a></li>
 
     </ul>
   </div>
 </nav>
 
+<a class="home" href="../index.php"><img src="../assets/images/cooperation/backindex.png" height="100" width="100"></a>
 
 <div class="col-sm-2">
   <div class="list-group">
@@ -106,5 +117,6 @@
 	<a href="login.php" class="list-group-item">Logout</a>
   </div>
 </div>
+
 </body>
 </html>

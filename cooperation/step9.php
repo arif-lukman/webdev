@@ -7,11 +7,23 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <style>
+  a.home {
+				position: fixed;
+				top: 0;
+				right: 0;
+				width: 200px;
+				color: white;
+  }
+
+  </style>
+  
 </head>
 
 <body>
   <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Go to step
+    <button class="step btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Go to step
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
       <li><a href="step1.php">Step 1 : Nama dan Tipe Perusahaan</a></li>
@@ -32,6 +44,8 @@
     </ul>
   </div>
   
+  <center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
+  
 <div class="col-sm-2"></div>
 			<form class="col-sm-8">
 				<h2>Step 9</h2>
@@ -47,18 +61,18 @@
 					<option>Rekanan</option>
 					<option>Konsorsium</option>
 					<option>Affiliasi dan Aliansi</option>
-				  </select>
+				  </select><p class="text-warning">should not be empty</p>
 				</div>
 				
 				<div class="col-xs-6">
 			  		<label for="name">Nama Perusahaan:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan">
+				  	<input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
 				<br>
 				</div>
 				
 				 <div class="form-group">
 					<label for="comment">Alamat:</label>
-					<textarea class="form-control" rows="5" id="comment"></textarea>
+					<textarea class="form-control" rows="5" id="comment"></textarea><p class="text-warning">should not be empty</p>	
 				</div>
 				
 				<div class="col-xs-6">
@@ -71,29 +85,59 @@
 					<option>China</option>
 					<option>Inggris</option>
 					<option>Rusia</option>
-				  </select>
+				  </select><p class="text-warning">should not be empty</p>
 				</div>
 
 				<div class="col-xs-6">
 			  		<label for="name">Kota:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan">
+				  	<input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
 				<br>
 				</div>
 				
 				<div class="form-group">
 			  		<label for="name">Nomor Telepon:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan">
+				  	<input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
 				</div>
 				
 				<div class="form-group">
 			  		<label for="name">Email:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan">
+				  	<input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
 				</div>
 				
 				<div class="form-group">
 					<label for="comment">Deskripsi:</label>
-					<textarea class="form-control" rows="5" id="comment"></textarea>
+					<textarea class="form-control" rows="5" id="comment"></textarea><p class="text-warning">should not be empty</p>
 				</div>
+				
+				<div class="col-xs-6">
+				  <label for="tipeperusahaan">Provinsi:</label>
+				  <select class="form-control" id="tipeperusahaan">
+				    <option>Indonesia</option>
+				    <option>Malaysia</option>
+					<option>Singapura</option>
+					<option>Amerika</option>
+					<option>China</option>
+					<option>Inggris</option>
+					<option>Rusia</option>
+				  </select><p class="text-warning">should not be empty</p>
+				</div>
+				
+				<div class="col-xs-6">
+					<label for="name">Kode Pos:</label>
+				  	<input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
+				</div>
+				
+				<div class="col-xs-6">
+					<label for="name">Kode Fax:</label>
+				  	<input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
+				</div>
+				
+				<div class="col-xs-6">
+					<label for="name">Website:</label>
+				  	<input type="text" class="form-control" id="namaperusahaan">
+					<br><br>
+				</div>
+				
 
 <button type="button" class="btn btn-primary">Save</button>
 <button type="button" class="btn btn-primary">Reset</button>
