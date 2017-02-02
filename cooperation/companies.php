@@ -1,3 +1,7 @@
+<?php
+	include "koneksi_vendor.php";
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
