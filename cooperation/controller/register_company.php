@@ -3,7 +3,7 @@
 	$dbname = "_bpms_vendor";
 
 	//include file koneksi
-	include "koneksi_vendor.php";
+	include "koneksi.php";
 
 	//ambil parameter
 	$uname = $_POST["username"];

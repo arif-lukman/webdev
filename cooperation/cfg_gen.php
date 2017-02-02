@@ -1,3 +1,15 @@
+<?php
+	//set variabel nama db
+	$dbname = "_bpms_master";
+
+	//include file koneksi
+	include "controller/koneksi.php";
+
+	//ambil data dari db
+	$sql = "SELECT * FROM _general_cfg";
+	$result = $conn->query($sql);
+	$data = $result->fetch_assoc();
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -107,38 +119,38 @@
 			</div>
 			<div class="well col-sm-9">
 				<h3>Konfigurasi Umum</h3><hr>
-				<form>
+				<form action="controller/general_config.php" method="post" enctype="multipart/form-data">
 					<div class="form-group">
 				  		<label for="nama">Nama Aplikasi:</label>
-					  	<input type="text" class="form-control" id="nama">
+					  	<input type="text" class="form-control" id="nama" name="nama" value="<?php echo $data['_nama_app'];?>">
 					</div>
 					<div class="form-group">
 				  		<label for="desc">Deskripsi:</label>
-					  	<textarea class="form-control" rows="5" id="desc"></textarea>
+					  	<textarea class="form-control" rows="5" id="desc" name="desc"><?php echo $data['_desc'];?></textarea>
 					</div>
 					<div class="form-group">
 				  		<label for="email">Kontak Email:</label>
-					  	<input type="email" class="form-control" id="email">
+					  	<input type="email" class="form-control" id="email" name="email" value="<?php echo $data['_email_1'];?>">
 					</div>
 					<div class="form-group">
 				  		<label for="email2">Kontak Email2:</label>
-					  	<input type="email" class="form-control" id="email2">
+					  	<input type="email" class="form-control" id="email2" name="email2" value="<?php echo $data['_email_2'];?>">
 					</div>
 					<div class="form-group">
 				  		<label for="emailp">Email Procurement:</label>
-					  	<input type="email" class="form-control" id="emailp">
+					  	<input type="email" class="form-control" id="emailp" name="emailp" value="<?php echo $data['_email_proc'];?>">
 					</div>
 					<div class="form-group">
 				  		<label for="ttd">Penanda Tangan SKT:</label>
-					  	<input type="text" class="form-control" id="ttd">
+					  	<input type="text" class="form-control" id="ttd" name="ttd" value="<?php echo $data['_ttd_skt'];?>">
 					</div>
 					<div class="form-group">
 				  		<label for="footer">Teks Footer:</label>
-					  	<input type="text" class="form-control" id="footer">
+					  	<input type="text" class="form-control" id="footer" name="footer" value="<?php echo $data['_footer_txt'];?>">
 					</div>
 					<div class="form-group">
-				  		<label for="icon">Favicon:</label>
-					  	<input type="file" class="form-control" id="icon">
+				  		<label for="image">Favicon:</label>
+					  	<input type="file" class="form-control" id="image" name="image" value="<?php echo $data['_img'];?>">
 					</div>
 					<button type="submit" class="btn btn-default">Submit</button>
 				</form>
