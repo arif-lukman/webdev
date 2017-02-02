@@ -1,3 +1,15 @@
+<?php
+	//set variabel nama db
+	$dbname = "_bpms_master";
+
+	//include file koneksi
+	include "controller/koneksi.php";
+
+	//ambil data dari db
+	$sql = "SELECT * FROM _regist_cfg";
+	$result = $conn->query($sql);
+	$data = $result->fetch_assoc();
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -107,21 +119,30 @@
 			</div>
 			<div class="well col-sm-9">
 				<h3>Konfigurasi Pendaftaran</h3><hr>
-				<form>
+				<form action="controller/registration_config.php" method="post">
 					<div class="form-group">
 				  		<label for="judul">Judul:</label>
-					  	<input type="text" class="form-control" id="judul">
+					  	<input type="text" class="form-control" id="judul" name="judul" value="<?php echo $data['_judul'];?>">
 					</div>
 					<div class="form-group">
 				  		<label for="desc">Deskripsi:</label>
-					  	<textarea class="form-control" rows="5" id="desc"></textarea>
+					  	<textarea class="form-control" rows="5" id="desc" name="desc"><?php echo $data['_desc'];?></textarea>
 					</div>
 					<div class="form-group">
 				  		<label for="stat">Status:</label>
-					  	<select class="form-control" id="stat">
-						    <option>Active</option>
-						    <option>Inactive</option>
-						  </select>
+					  	<select class="form-control" id="stat" name="stat" value="<?php echo $data['_status'];?>">
+						    <option
+						    <?php
+						    	if($data['_status']){
+									echo "selected";
+								}
+						    ?>>Active</option>
+						    <option <?php
+						    	if(!$data['_status']){
+									echo "selected";
+								}
+						    ?>>Inactive</option>
+						</select>
 					</div>
 					<button type="submit" class="btn btn-default">Submit</button>
 				</form>
