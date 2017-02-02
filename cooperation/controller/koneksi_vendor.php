@@ -2,7 +2,6 @@
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "_bpms_vendor";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
