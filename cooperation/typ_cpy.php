@@ -107,22 +107,22 @@
 			</div>
 			<div class="well col-sm-9">
 				<h3>Tipe Perusahaan</h3><hr>
-				<form>
+				<form action="controller/company_type.php" method="post">
 					<div class="form-group">
 				  		<label for="kode">Kode Tipe Perusahaan:</label>
-					  	<input type="text" class="form-control" id="kode">
+					  	<input type="text" class="form-control" id="kode" name="kode">
 					</div>
 					<div class="form-group">
 				  		<label for="judul">Judul Tipe Perusahaan:</label>
-					  	<input type="text" class="form-control" id="judul">
+					  	<input type="text" class="form-control" id="judul" name="judul">
 					</div>
 					<div class="form-group">
 				  		<label for="order">Order:</label>
-					  	<input type="text" class="form-control" id="order">
+					  	<input type="text" class="form-control" id="order" name="order">
 					</div>
 					<div class="form-group">
-				  		<label for="doc">Status:</label>
-					  	<select class="form-control" id="doc">
+				  		<label for="stat">Status:</label>
+					  	<select class="form-control" id="doc" name="stat">
 						    <option>Active</option>
 						    <option>Inactive</option>
 						  </select>
