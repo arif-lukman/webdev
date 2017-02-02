@@ -34,7 +34,7 @@
 		</nav>
 		<div class="container" style="margin-top: 80px">
 			<div class="well">
-				<form action="register.php">
+				<form action="controller/register_company.php" method="post">
 					<div class="form-group">
 						<label for="name">Username:</label>
 						<input type="text" class="form-control" id="name" name="username">
@@ -57,8 +57,14 @@
 					</div>
 					<div class="form-group">
 						<label for="province">Propinsi:</label>
-						<select class="form-control" id="country" name="country">
-
+						<select class="form-control" id="province" name="province">
+							<option>Indonesia</option>
+						    <option>Malaysia</option>
+							<option>Singapura</option>
+							<option>Amerika</option>
+							<option>Cina</option>
+							<option>Inggris</option>
+							<option>Russia</option>
 						</select>
 					</div>
 					<div class="form-group">
@@ -71,7 +77,7 @@
 					</div>
 					<div class="form-group">
 						<label for="desc">Keterangan:</label>
-						<textarea class="form-control" rows="5" id="desc"></textarea>
+						<textarea class="form-control" rows="5" id="desc" name="desc"></textarea>
 					</div>
 					<input type="submit" value="Create">
 				</form>
