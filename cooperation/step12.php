@@ -63,7 +63,7 @@
 					<option>China</option>
 					<option>Inggris</option>
 					<option>Rusia</option>
-				  </select>
+				  </select><p class="text-warning">should not be empty</p>
 				</div>
 				
 				<div class="col-xs-6">
@@ -76,7 +76,7 @@
 					<option>China</option>
 					<option>Inggris</option>
 					<option>Rusia</option>
-				  </select>
+				  </select><p class="text-warning">should not be empty</p>
 				  <select class="form-control" id="tipeperusahaan">
 				    <option>Indonesia</option>
 				    <option>Malaysia</option>
@@ -85,19 +85,19 @@
 					<option>China</option>
 					<option>Inggris</option>
 					<option>Rusia</option>
-				  </select>
+				  </select><p class="text-warning">should not be empty</p>
 				  <br>
 				</div>
 			
 				<div class="form-group">
 			  		<label for="name">Deskripsi:</label>
-				  	<textarea type="text" class="form-control" id="namaperusahaan"></textarea>
+				  	<textarea type="text" class="form-control" id="namaperusahaan"></textarea><p class="text-warning">should not be empty</p>
 				<br>
 				</div>
 				
 				<div class="form-group">
 				<input type="file" name="pic" accept="image/*">
-				<span class="label label-info">Format PDF max. 2Mb </span>
+				<span class="label label-info">Format PDF max. 2Mb </span><p class="text-warning">should not be empty</p>
 				<br>
 				</div>
 						
@@ -105,8 +105,8 @@
 <button type="button" class="btn btn-primary">Reset</button>
 <hr>
   <ul class="pager">
-    <li><a href="vendor.php">Previous Step</a></li>
-    <li><a href="step2.php">Next Step</a></li>
+    <li><a href="step11.php">Previous Step</a></li>
+    <li><a href="step13.php">Next Step</a></li>
   </ul>
   
 			</form>

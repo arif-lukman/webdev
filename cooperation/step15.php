@@ -60,12 +60,12 @@
 				    <option>Persekutuan Komanditer</option>
 					<option>Koperasi</option>
 					<option>Lembaga</option>
-				  </select>
+				  </select><p class="text-warning">should not be empty</p>
 				</div>
 
 				<div class="form-group">
 				  <label for="kualifikasiperusahaan">Catatan:</label>
-				  <textarea class="form-control" rows="5" id="comment"></textarea>
+				  <textarea class="form-control" rows="5" id="comment"></textarea><p class="text-warning">should not be empty</p>
 				</div>
 
 <button type="button" class="btn btn-primary">Save</button>

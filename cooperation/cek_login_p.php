@@ -1,10 +1,10 @@
 <?php
-	include "koneksi_p.php";
+	include "koneksiDB.php";
 
-	$username = $_POST['username_proc'];
-	$password = $_POST['password_proc'];
+	$username = $_POST['username'];
+	$password = $_POST['password'];
 
-	$query = mysql_query("select * from user_proc where username_proc='$username' and password_proc='$password'");
+	$query = mysql_query("select * from tbl_user where username='$username' and password='$password'");
 	$count = mysql_num_rows($query);
 	$row = mysql_fetch_array($query);
 

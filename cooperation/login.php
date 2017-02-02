@@ -40,11 +40,11 @@
 				<hr>
 				<div class="form-group">
 					<label for="name">Username:</label>
-					<input type="text" class="form-control" id="name" name="username_proc">
+					<input type="text" class="form-control" id="name" name="username">
 				</div>
 				<div class="form-group">
 					<label for="pwd">Password:</label>
-					<input type="password" class="form-control" id="pwd" name="password_proc">
+					<input type="password" class="form-control" id="pwd" name="password">
 				</div>
 				<br>
 				<input class="submit" type="submit" value="LOGIN">

@@ -58,17 +58,17 @@
 				  <select class="form-control" id="sel1">
 				    <option>Head Office</option>
 				    <option>Langgak Site</option>
-				  </select>
+				  </select><p class="text-warning">should not be empty</p>
 				</div>
 						
 				<div class="form-group">
 				  	<label for="email">Deskripsi:</label>
-				  	<input type="input" class="form-control" id="email">
+				  	<input type="input" class="form-control" id="email"><p class="text-warning">should not be empty</p>
 				</div>
 
 				<div class="form-group">
 				<label for="lampiran">Lampiran:</label>
-				<input type="file" name="pic" accept="image/*">
+				<input type="file" name="pic" accept="image/*"><p class="text-warning">should not be empty</p>
 				<br>
 				</div>
 

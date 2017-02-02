@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 01 Feb 2017 pada 09.43
+-- Generation Time: 02 Feb 2017 pada 08.45
 -- Versi Server: 10.1.8-MariaDB
 -- PHP Version: 5.6.14
 
@@ -33,9 +33,16 @@ CREATE TABLE `_admin` (
   `_email` text NOT NULL,
   `_password` text NOT NULL,
   `_group_id` text NOT NULL,
-  `_status` text NOT NULL,
+  `_status` tinyint(1) NOT NULL,
   `_desc` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `_admin`
+--
+
+INSERT INTO `_admin` (`_id`, `_username`, `_fullname`, `_email`, `_password`, `_group_id`, `_status`, `_desc`) VALUES
+(1, 'admin', 'Administrator', 'admin@gmail.com', 'sprl1234', '1', 1, 'ini admin, ini form, ugh admin fom');
 
 -- --------------------------------------------------------
 
@@ -198,12 +205,20 @@ CREATE TABLE `_general_cfg` (
 
 CREATE TABLE `_group_priv` (
   `_id` int(11) NOT NULL,
+  `_name` text NOT NULL,
   `_view` tinyint(1) NOT NULL,
   `_add` tinyint(1) NOT NULL,
   `_edit` tinyint(1) NOT NULL,
   `_delete` tinyint(1) NOT NULL,
   `_setting` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `_group_priv`
+--
+
+INSERT INTO `_group_priv` (`_id`, `_name`, `_view`, `_add`, `_edit`, `_delete`, `_setting`) VALUES
+(1, 'Admin', 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -394,7 +409,7 @@ ALTER TABLE `_scope_type`
 -- AUTO_INCREMENT for table `_admin`
 --
 ALTER TABLE `_admin`
-  MODIFY `_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `_affil_type`
 --
@@ -444,7 +459,7 @@ ALTER TABLE `_document_type`
 -- AUTO_INCREMENT for table `_group_priv`
 --
 ALTER TABLE `_group_priv`
-  MODIFY `_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `_manager_type`
 --

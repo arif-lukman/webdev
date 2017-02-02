@@ -1,3 +1,7 @@
+<?php
+	include "koneksiDB.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,7 +89,7 @@
       <a class="navbar-brand" "active" href="index.php">Back</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="indexuser.php">Home</a></li>
+      <li class="active"><a href="#">Home</a></li>
 	  <li><a href="step1.php">Step 1</a></li>
       <li><a href="step2.php">Step 2</a></li>
       <li><a href="step3.php">Step 3</a></li>
@@ -112,8 +116,8 @@
   <div class="list-group">
     <a href="step1.php" class="list-group-item">Menuju ke Step 1</a>
     <a href="dataperusahaan.php" class="list-group-item">Data Perusahaan</a>
-    <a href="gantipassword.php" class="list-group-item">Ganti Password</a>
-    <a href="bantuan.php" class="list-group-item">Bantuan</a>
+    <a href="formubahpassword.php" class="list-group-item">Ganti Password</a>
+    <a href="download.php" class="list-group-item">Bantuan</a>
 	<a href="login.php" class="list-group-item">Logout</a>
   </div>
 </div>

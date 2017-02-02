@@ -55,20 +55,20 @@
 			
 				<div class="form-group">
 			  		<label for="name">Produk:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan">
+				  	<input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
 				</div>
 				
 				<div class="form-group">
 			  		<label for="name">Deskripsi:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan">
+				  	<input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
 				</div>
 						
 <button type="button" class="btn btn-primary">Save</button>
 <button type="button" class="btn btn-primary">Reset</button>
 <hr>
   <ul class="pager">
-    <li><a href="vendor.php">Previous Step</a></li>
-    <li><a href="step2.php">Next Step</a></li>
+    <li><a href="step11.php">Previous Step</a></li>
+    <li><a href="step12.php">Next Step</a></li>
   </ul>
   
 			</form>
