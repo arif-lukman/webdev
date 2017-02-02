@@ -1,15 +1,9 @@
 <?php
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
+	//set variabel nama db
 	$dbname = "_bpms_vendor";
 
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	// Check connection
-	if ($conn->connect_error) {
-	    die("Connection failed: " . $conn->connect_error);
-	} 
+	//include file koneksi
+	include "koneksi_vendor.php";
 
 	//ambil parameter
 	$uname = $_POST["username"];

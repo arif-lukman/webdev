@@ -1,8 +1,13 @@
 <?php
-	$host="localhost";
-	$username="root";
-	$password="";
-	$db="_bpms_vendor";
-	mysql_connect($host,$username,$password) or die ("Koneksi GAGAL");
-	mysql_select_db($db) or die ("database tidak bisa dipilih");
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "_bpms_vendor";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	} 
 ?>
