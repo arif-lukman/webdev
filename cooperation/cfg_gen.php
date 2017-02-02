@@ -97,16 +97,51 @@
 				      		<li><a href="country.php">Negara</a></li>
 				      		<li><a href="province.php">Propinsi</a></li>
 				      		<li><a href="bank.php">Bank</a></li>
-				      		<li><a href="currency.php">Mata Uang</li>
-				      		<li><a href="distributor.php">Distributor</li>
+				      		<li><a href="currency.php">Mata Uang</a></li>
+				      		<li><a href="distributor.php">Distributor</a></li>
 				      	</ul>
 				      </div>
 				    </div>
 				  </div>
 				</div>
 			</div>
-			<div class="col-sm-9">
-				
+			<div class="well col-sm-9">
+				<h3>Konfigurasi Umum</h3><hr>
+				<form>
+					<div class="form-group">
+				  		<label for="nama">Nama Aplikasi:</label>
+					  	<input type="text" class="form-control" id="nama">
+					</div>
+					<div class="form-group">
+				  		<label for="desc">Deskripsi:</label>
+					  	<textarea class="form-control" rows="5" id="desc"></textarea>
+					</div>
+					<div class="form-group">
+				  		<label for="email">Kontak Email:</label>
+					  	<input type="email" class="form-control" id="email">
+					</div>
+					<div class="form-group">
+				  		<label for="email2">Kontak Email2:</label>
+					  	<input type="email" class="form-control" id="email2">
+					</div>
+					<div class="form-group">
+				  		<label for="emailp">Email Procurement:</label>
+					  	<input type="email" class="form-control" id="emailp">
+					</div>
+					<div class="form-group">
+				  		<label for="ttd">Penanda Tangan SKT:</label>
+					  	<input type="text" class="form-control" id="ttd">
+					</div>
+					<div class="form-group">
+				  		<label for="footer">Teks Footer:</label>
+					  	<input type="text" class="form-control" id="footer">
+					</div>
+					<div class="form-group">
+				  		<label for="icon">Favicon:</label>
+					  	<input type="file" class="form-control" id="icon">
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
 			</div>
 		</div>
 	</body>

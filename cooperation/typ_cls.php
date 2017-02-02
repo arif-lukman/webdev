@@ -105,8 +105,30 @@
 				  </div>
 				</div>
 			</div>
-			<div class="col-sm-9">
-				
+			<div class="well col-sm-9">
+				<h3>Tipe Klasifikasi Perusahaan</h3><hr>
+				<form>
+					<div class="form-group">
+				  		<label for="kode">Kode:</label>
+					  	<input type="text" class="form-control" id="kode">
+					</div>
+					<div class="form-group">
+				  		<label for="judul">Judul Klasifikasi Perusahaan:</label>
+					  	<input type="text" class="form-control" id="judul">
+					</div>
+					<div class="form-group">
+				  		<label for="order">Order:</label>
+					  	<input type="text" class="form-control" id="order">
+					</div>
+					<div class="form-group">
+				  		<label for="doc">Status:</label>
+					  	<select class="form-control" id="doc">
+						    <option>Active</option>
+						    <option>Inactive</option>
+						  </select>
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
 			</div>
 		</div>
 	</body>

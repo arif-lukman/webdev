@@ -97,16 +97,34 @@
 				      		<li><a href="country.php">Negara</a></li>
 				      		<li><a href="province.php">Propinsi</a></li>
 				      		<li><a href="bank.php">Bank</a></li>
-				      		<li><a href="currency.php">Mata Uang</li>
-				      		<li><a href="distributor.php">Distributor</li>
+				      		<li><a href="currency.php">Mata Uang</a></li>
+				      		<li><a href="distributor.php">Distributor</a></li>
 				      	</ul>
 				      </div>
 				    </div>
 				  </div>
 				</div>
 			</div>
-			<div class="col-sm-9">
-				
+			<div class="well col-sm-9">
+				<h3>Setting Masa Kadaluarsa</h3><hr>
+				<form>
+					<div class="form-group">
+				  		<label for="doc">Admin Document:</label>
+					  	<select class="form-control" id="doc">
+						    <option>Active</option>
+						    <option>Inactive</option>
+						  </select>
+					</div>
+					<div class="form-group">
+				  		<label for="judul">Masa Kadaluarsa:</label>
+					  	<input type="text" class="form-control" id="judul">Hari
+					</div>
+					<div class="form-group">
+				  		<label for="desc">Deskripsi:</label>
+					  	<textarea class="form-control" rows="5" id="desc"></textarea>
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
 			</div>
 		</div>
 	</body>

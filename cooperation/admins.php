@@ -97,16 +97,53 @@
 				      		<li><a href="country.php">Negara</a></li>
 				      		<li><a href="province.php">Propinsi</a></li>
 				      		<li><a href="bank.php">Bank</a></li>
-				      		<li><a href="currency.php">Mata Uang</li>
-				      		<li><a href="distributor.php">Distributor</li>
+				      		<li><a href="currency.php">Mata Uang</a></li>
+				      		<li><a href="distributor.php">Distributor</a></li>
 				      	</ul>
 				      </div>
 				    </div>
 				  </div>
 				</div>
 			</div>
-			<div class="col-sm-9">
-				
+			<div class="well col-sm-9">
+				<h3>Users</h3><hr>
+				<form>
+					<div class="form-group">
+				  		<label for="uname">Username:</label>
+					  	<input type="text" class="form-control" id="uname">
+					</div>
+					<div class="form-group">
+				  		<label for="fname">Nama Lengkap:</label>
+					  	<input type="text" class="form-control" id="fname">
+					</div>
+					<div class="form-group">
+				  		<label for="email">Email:</label>
+					  	<input type="text" class="form-control" id="email">
+					</div>
+					<div class="form-group">
+				  		<label for="pwd">Password:</label>
+					  	<input type="text" class="form-control" id="pwd">
+					</div>
+					<div class="form-group">
+				  		<label for="grup">Group:</label>
+					  	<select class="form-control" id="grup">
+						    <option>Active</option>
+						    <option>Inactive</option>
+						  </select>
+					</div>
+					<div class="form-group">
+				  		<label for="stat">Status:</label>
+					  	<select class="form-control" id="stat">
+						    <option>Active</option>
+						    <option>Inactive</option>
+						  </select>
+					</div>
+					<div class="form-group">
+				  		<label for="desc">Keterangan:</label>
+					  	<textarea class="form-control" rows="5" id="desc"></textarea>
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
 			</div>
 		</div>
 	</body>

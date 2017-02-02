@@ -105,8 +105,26 @@
 				  </div>
 				</div>
 			</div>
-			<div class="col-sm-9">
-				
+			<div class="well col-sm-9">
+				<h3>Tipe Kualifikasi Perusahaan</h3><hr>
+				<form>
+					<div class="form-group">
+				  		<label for="judul">Judul Tipe Kualifikasi Perusahaan:</label>
+					  	<input type="text" class="form-control" id="judul">
+					</div>
+					<div class="form-group">
+				  		<label for="order">Order:</label>
+					  	<input type="text" class="form-control" id="order">
+					</div>
+					<div class="form-group">
+				  		<label for="doc">Status:</label>
+					  	<select class="form-control" id="doc">
+						    <option>Active</option>
+						    <option>Inactive</option>
+						  </select>
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
 			</div>
 		</div>
 	</body>

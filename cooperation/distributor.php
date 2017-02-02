@@ -106,8 +106,26 @@
 				  </div>
 				</div>
 			</div>
-			<div class="col-sm-9">
-				
+			<div class="well col-sm-9">
+				<h3>Tipe Distributor</h3><hr>
+				<form>
+					<div class="form-group">
+				  		<label for="name">Nama Tipe Distributor:</label>
+					  	<input type="text" class="form-control" id="name">
+					</div>
+					<div class="form-group">
+				  		<label for="order">Order:</label>
+					  	<input type="text" class="form-control" id="order">
+					</div>
+					<div class="form-group">
+				  		<label for="doc">Status:</label>
+					  	<select class="form-control" id="doc">
+						    <option>Active</option>
+						    <option>Inactive</option>
+						  </select>
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
 			</div>
 		</div>
 	</body>

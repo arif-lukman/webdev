@@ -97,16 +97,38 @@
 				      		<li><a href="country.php">Negara</a></li>
 				      		<li><a href="province.php">Propinsi</a></li>
 				      		<li><a href="bank.php">Bank</a></li>
-				      		<li><a href="currency.php">Mata Uang</li>
-				      		<li><a href="distributor.php">Distributor</li>
+				      		<li><a href="currency.php">Mata Uang</a></li>
+				      		<li><a href="distributor.php">Distributor</a></li>
 				      	</ul>
 				      </div>
 				    </div>
 				  </div>
 				</div>
 			</div>
-			<div class="col-sm-9">
-				
+			<div class="well col-sm-9">
+				<h3>Tipe Perusahaan</h3><hr>
+				<form>
+					<div class="form-group">
+				  		<label for="kode">Kode Tipe Perusahaan:</label>
+					  	<input type="text" class="form-control" id="kode">
+					</div>
+					<div class="form-group">
+				  		<label for="judul">Judul Tipe Perusahaan:</label>
+					  	<input type="text" class="form-control" id="judul">
+					</div>
+					<div class="form-group">
+				  		<label for="order">Order:</label>
+					  	<input type="text" class="form-control" id="order">
+					</div>
+					<div class="form-group">
+				  		<label for="doc">Status:</label>
+					  	<select class="form-control" id="doc">
+						    <option>Active</option>
+						    <option>Inactive</option>
+						  </select>
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
 			</div>
 		</div>
 	</body>

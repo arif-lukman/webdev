@@ -105,8 +105,37 @@
 				  </div>
 				</div>
 			</div>
-			<div class="col-sm-9">
-				
+			<div class="well col-sm-9">
+				<h3>Provinsi</h3><hr>
+				<form>
+					<div class="form-group">
+				  		<label for="kode">Kode Provinsi:</label>
+					  	<input type="text" class="form-control" id="kode">
+					</div>
+					<div class="form-group">
+				  		<label for="name">Nama Provinsi:</label>
+					  	<input type="text" class="form-control" id="name">
+					</div>
+					<div class="form-group">
+				  		<label for="order">Order:</label>
+					  	<input type="text" class="form-control" id="order">
+					</div>
+					<div class="form-group">
+				  		<label for="doc">Status:</label>
+					  	<select class="form-control" id="doc">
+						    <option>Active</option>
+						    <option>Inactive</option>
+						  </select>
+					</div>
+					<div class="form-group">
+				  		<label for="ctry">Negara:</label>
+					  	<select class="form-control" id="ctry">
+						    <option>Active</option>
+						    <option>Inactive</option>
+						  </select>
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
 			</div>
 		</div>
 	</body>

@@ -97,16 +97,34 @@
 				      		<li><a href="country.php">Negara</a></li>
 				      		<li><a href="province.php">Propinsi</a></li>
 				      		<li><a href="bank.php">Bank</a></li>
-				      		<li><a href="currency.php">Mata Uang</li>
-				      		<li><a href="distributor.php">Distributor</li>
+				      		<li><a href="currency.php">Mata Uang</a></li>
+				      		<li><a href="distributor.php">Distributor</a></li>
 				      	</ul>
 				      </div>
 				    </div>
 				  </div>
 				</div>
 			</div>
-			<div class="col-sm-9">
-				
+			<div class="well col-sm-9">
+				<h3>Konfigurasi Pendaftaran</h3><hr>
+				<form>
+					<div class="form-group">
+				  		<label for="judul">Judul:</label>
+					  	<input type="text" class="form-control" id="judul">
+					</div>
+					<div class="form-group">
+				  		<label for="desc">Deskripsi:</label>
+					  	<textarea class="form-control" rows="5" id="desc"></textarea>
+					</div>
+					<div class="form-group">
+				  		<label for="stat">Status:</label>
+					  	<select class="form-control" id="stat">
+						    <option>Active</option>
+						    <option>Inactive</option>
+						  </select>
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
 			</div>
 		</div>
 	</body>
