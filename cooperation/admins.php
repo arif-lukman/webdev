@@ -41,7 +41,7 @@
 		<div class="container" style="margin-top: 80px">
 			<!--menu panel-->
 			<div class="col-sm-3">
-				<div class="panel-group" id="accordion">
+				<div class="panel-group lp" id="accordion">
 				  <div class="panel panel-default">
 				    <div class="panel-heading">
 				      <h4 class="panel-title">
@@ -129,20 +129,20 @@
 					  	<select class="form-control" id="grup">
 						    <option>Active</option>
 						    <option>Inactive</option>
-						  </select>
+						 </select>
 					</div>
 					<div class="form-group">
 				  		<label for="stat">Status:</label>
 					  	<select class="form-control" id="stat">
 						    <option>Active</option>
 						    <option>Inactive</option>
-						  </select>
+						</select>
 					</div>
 					<div class="form-group">
 				  		<label for="desc">Keterangan:</label>
 					  	<textarea class="form-control" rows="5" id="desc"></textarea>
 					</div>
-					<button type="submit" class="btn btn-default">Submit</button>
+					<button type="submit" class="btn btn-default">Create</button>
 				</form>
 			</div>
 		</div>

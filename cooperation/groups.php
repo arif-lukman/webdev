@@ -1,3 +1,22 @@
+<!--PENDIIIIIIING!!!!!!!!!-->
+<?php
+	//set variabel nama db
+	$dbname = "_bpms_master";
+
+	//include file koneksi
+	include "controller/koneksi.php";
+
+	//ambil data dari db
+	$sql = "SELECT * FROM _group_priv";
+	$result = $conn->query($sql);
+
+	//fungsi cek yes/no
+	function check($field){
+		if($field){
+			return "checked";
+		}
+	}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -97,16 +116,35 @@
 				      		<li><a href="country.php">Negara</a></li>
 				      		<li><a href="province.php">Propinsi</a></li>
 				      		<li><a href="bank.php">Bank</a></li>
-				      		<li><a href="currency.php">Mata Uang</li>
-				      		<li><a href="distributor.php">Distributor</li>
+				      		<li><a href="currency.php">Mata Uang</a></li>
+				      		<li><a href="distributor.php">Distributor</a></li>
 				      	</ul>
 				      </div>
 				    </div>
 				  </div>
 				</div>
 			</div>
-			<div class="col-sm-9">
-				
+			<div class="well col-sm-9">
+				<h3>Tipe Perusahaan</h3><hr>
+				<form action="controller/group_privs.php" method="post">
+					<table width="100%">
+						<?php
+							while($data = $result->fetch_assoc()){
+								echo "
+									<tr class='form-group'>
+									<td>$data[_name]</td>
+							  		<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "'" . check($data['_view']) . " value='1'>View</label></td>
+									<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "'" . check($data['_add']) . " value='1'>Add</label></td>
+									<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "'" . check($data['_edit']) . " value='1'>Edit</label></td>
+									<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "'" . check($data['_delete']) . " value='" . $data['_delete'] . "'>Delete</label></td>
+									<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "'" . check($data['_setting']) . " value='" . $data['_setting'] . "'>Setting</label></td>
+									</tr>
+								";
+							}
+						?>
+					</table>
+					<button type="submit" class="btn btn-default">Save</button>
+				</form>
 			</div>
 		</div>
 	</body>
