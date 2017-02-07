@@ -111,8 +111,8 @@
 <button type="button" class="btn btn-primary">Reset</button>
 <hr>
   <ul class="pager">
-    <li><a href="step1.php">Previous Step</a></li>
-    <li><a href="step3.php">Next Step</a></li>
+    <li><a href="step7.php">Previous Step</a></li>
+    <li><a href="step9.php">Next Step</a></li>
   </ul>
   
 			</form>
