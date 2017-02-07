@@ -1,3 +1,15 @@
+<?php
+	//set variabel nama db
+	$dbname = "_bpms_master";
+
+	//include file koneksi
+	include "controller/koneksi.php";
+
+	//ambil data dari db
+	$sql = "SELECT * FROM _company_type";
+	$result = $conn->query($sql);
+	$data = $result->fetch_assoc();
+?>
 <!DOCTYPE html>
 <html>
 	<head>

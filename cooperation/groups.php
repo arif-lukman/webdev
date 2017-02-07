@@ -1,5 +1,7 @@
-<!--PENDIIIIIIING!!!!!!!!!-->
 <?php
+	//include library
+	include "lib/library.php";
+
 	//set variabel nama db
 	$dbname = "_bpms_master";
 
@@ -9,13 +11,6 @@
 	//ambil data dari db
 	$sql = "SELECT * FROM _group_priv";
 	$result = $conn->query($sql);
-
-	//fungsi cek yes/no
-	function check($field){
-		if($field){
-			return "checked";
-		}
-	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -126,18 +121,18 @@
 			</div>
 			<div class="well col-sm-9">
 				<h3>Tipe Perusahaan</h3><hr>
-				<form action="controller/group_privs.php" method="post">
+				<form action="controller/groups.php" method="post">
 					<table width="100%">
 						<?php
 							while($data = $result->fetch_assoc()){
 								echo "
 									<tr class='form-group'>
 									<td>$data[_name]</td>
-							  		<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "'" . check($data['_view']) . " value='1'>View</label></td>
-									<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "'" . check($data['_add']) . " value='1'>Add</label></td>
-									<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "'" . check($data['_edit']) . " value='1'>Edit</label></td>
-									<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "'" . check($data['_delete']) . " value='" . $data['_delete'] . "'>Delete</label></td>
-									<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "'" . check($data['_setting']) . " value='" . $data['_setting'] . "'>Setting</label></td>
+							  		<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "'" . checkBox($data['_view']) . " value='1'>View</label></td>
+									<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "'" . checkBox($data['_add']) . " value='1'>Add</label></td>
+									<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "'" . checkBox($data['_edit']) . " value='1'>Edit</label></td>
+									<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "'" . checkBox($data['_delete']) . " value='" . $data['_delete'] . "'>Delete</label></td>
+									<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "'" . checkBox($data['_setting']) . " value='" . $data['_setting'] . "'>Setting</label></td>
 									</tr>
 								";
 							}

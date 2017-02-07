@@ -1,3 +1,38 @@
+<?php
+	//set variabel nama db
+	$dbname = "_bpms_master";
+
+	//include file koneksi
+	include "controller/koneksi.php";
+
+	//query buat ngambil nama field
+	$colQuery = "SHOW columns FROM _admin";
+
+	//eksekusi query colQuery
+	$colExec = $conn->query($colQuery);
+
+	//query buat ngambil isi field
+	$conQuery = "SELECT _admin._id as _id, _admin._username, _admin._fullname, _admin._email, _admin._password, _group_priv._name, _status._nama, _admin._desc FROM _admin, _group_priv, _status WHERE _admin._group_id = _group_priv._id and _admin._status = _status._id";
+
+	//eksekusi query conQuery
+	$conExec = $conn->query($conQuery);
+
+	//array buatan
+	$all_prop = array();
+
+	//push fieldsnya ke all_prop
+	while ($prop = mysqli_fetch_field($conExec)){
+		array_push($all_prop, $prop->name);
+	}
+
+	//konversi tampilan boolean ke text
+	function convert($bool){
+		if($bool)
+			echo "Active";
+		else
+			echo "Inactive";
+	}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -107,43 +142,36 @@
 			</div>
 			<div class="well col-sm-9">
 				<h3>Users</h3><hr>
-				<form>
-					<div class="form-group">
-				  		<label for="uname">Username:</label>
-					  	<input type="text" class="form-control" id="uname">
-					</div>
-					<div class="form-group">
-				  		<label for="fname">Nama Lengkap:</label>
-					  	<input type="text" class="form-control" id="fname">
-					</div>
-					<div class="form-group">
-				  		<label for="email">Email:</label>
-					  	<input type="text" class="form-control" id="email">
-					</div>
-					<div class="form-group">
-				  		<label for="pwd">Password:</label>
-					  	<input type="text" class="form-control" id="pwd">
-					</div>
-					<div class="form-group">
-				  		<label for="grup">Group:</label>
-					  	<select class="form-control" id="grup">
-						    <option>Active</option>
-						    <option>Inactive</option>
-						 </select>
-					</div>
-					<div class="form-group">
-				  		<label for="stat">Status:</label>
-					  	<select class="form-control" id="stat">
-						    <option>Active</option>
-						    <option>Inactive</option>
-						</select>
-					</div>
-					<div class="form-group">
-				  		<label for="desc">Keterangan:</label>
-					  	<textarea class="form-control" rows="5" id="desc"></textarea>
-					</div>
-					<button type="submit" class="btn btn-default">Create</button>
-				</form>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+						<?php
+							while ($colNames = $colExec->fetch_assoc()){
+								echo "
+								<th>$colNames[Field]</th>
+								";
+							}
+						?>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+							while($conNames = $conExec->fetch_assoc()){
+								echo "<tr>";
+								foreach($all_prop as $item){
+									echo "<td>$conNames[$item]</td>";
+								}
+								echo "
+								<td><a href=\"forms/admins.php?op=update&id=$conNames[_id]\">edit</a></td>
+								<td><a href=\"controller/admins.php?op=delete&id=$conNames[_id]\">delete</td>
+								";
+								echo "</tr>";
+							}
+						?>
+					</tbody>
+				</table>
+				<br>
+				<a href="forms/admins.php?op=create" class="btn btn-default" role="button">Create</a>
 			</div>
 		</div>
 	</body>
