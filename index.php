@@ -36,12 +36,12 @@
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">About SPR Langgak
 						<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="profile.php">Profile</a></li>
-							<li><a href="executivesummary.php">Executive Summary</a></li>
-							<li><a href="visimisi.php">Vision & Mission</a></li>
-							<li><a href="langgakfield.php">Langgak Field</a></li>
-							<li><a href="msgdir.php">Message From Director</a></li>
-							<li><a href="obmanager.php">Onboard Manager</a></li>
+							<li><a href="spr-langgak/profile.php">Profile</a></li>
+							<li><a href="spr-langgak/executivesummary.php">Executive Summary</a></li>
+							<li><a href="spr-langgak/visimisi.php">Vision & Mission</a></li>
+							<li><a href="spr-langgak/langgakfield.php">Langgak Field</a></li>
+							<li><a href="spr-langgak/msgdir.php">Message From Director</a></li>
+							<li><a href="spr-langgak/obmanager.php">Onboard Manager</a></li>
 						</ul>
 					</li>
 					<li><a href="spr-langgak/news.php">News & Events</a></li>

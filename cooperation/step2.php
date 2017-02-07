@@ -1,3 +1,28 @@
+<?php
+	include "koneksiDB.php";
+
+	//query buat ngambil nama field
+	$colQuery = 
+	"SHOW columns FROM partner_k3s";
+
+	//eksekusi query colQuery
+	$colExec = mysql_query($colQuery);
+
+	//query buat ngambil isi field
+	$conQuery = "SELECT * FROM partner_k3s";
+
+	//eksekusi query conQuery
+	$conExec = mysql_query($conQuery);
+
+	//array buatan
+	$all_prop = array();
+
+	//push fieldsnya ke all_prop
+	while ($prop = mysql_fetch_field($conExec)){
+		array_push($all_prop, $prop->name);
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +72,7 @@
   <center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
   
 <div class="col-sm-2"></div>
-			<form class="col-sm-8">
+			<form class="col-sm-8" action="step2action.php" method="post">
 				<h2>Step 2</h2>
 				<h3>Partner K3S</h3>
 				<hr>
@@ -55,42 +80,42 @@
 			
 				<div class="form-group">
 			  		<label for="name">Nama K3S:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
+				  	<input type="text" class="form-control" id="namaperusahaan" name="K3S_Name"><p class="text-warning">should not be empty</p>
 				</div>
 				
 				<div class="form-group">
 			  		<label for="name">Nama Kontak:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
+				  	<input type="text" class="form-control" id="namaperusahaan" name="Contact_Name"><p class="text-warning">should not be empty</p>
 				</div>
 				
 				<div class="col-sm-6">
-					<label for="TGL">Tanggal Terbit:</label>
-					<input type="date" class="form-control" id="usr" name="TGL">
+					<label for="Expired_Date">Tanggal Terbit:</label>
+					<input type="date" class="form-control" id="usr" name="Expired_Date"><p class="text-warning">should not be empty</p>
 					</div>
 
 				<div class="col-sm-6">
-					<label for="TGL">Tanggal Kadaluarsa:</label>
-					<input type="date" class="form-control" id="usr" name="TGL">
+					<label for="Expiration_Days">Tanggal Kadaluarsa:</label>
+					<input type="date" class="form-control" id="usr" name="Expiration_Days"><p class="text-warning">should not be empty</p>
 				<br>	
 					</div>
 
 				<div class="form-group">
 			  		<label for="name">Nomor Telepon:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
+				  	<input type="text" class="form-control" name="Phone_Number"><p class="text-warning">should not be empty</p>
 				</div>
 				
 				<div class="form-group">
 			  		<label for="name">Nomor Fax:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan">
+				  	<input type="text" class="form-control" id="namaperusahaan" name="Fax_Number">
 				</div>	
 				
 				<div class="form-group">
-				<input type="file" name="pic" accept="image/*">
+				<input type="file" name="pic" accept="image/*" name="Attachment">
 				<span class="label label-info">Format PDF max. 2Mb </span><p class="text-warning">should not be empty</p>
 				<br>
 				</div>
 
-<button type="button" class="btn btn-primary">Save</button>
+<input type="submit" class="btn btn-primary tisright" value="Confirm"></input>
 <button type="button" class="btn btn-primary">Reset</button>
 <hr>
   <ul class="pager">
@@ -99,7 +124,36 @@
   </ul>
   
 			</form>
-			<div class="well well-sm">Result (Table):</div>
+			<div class="well well-sm">			<table class="table table-bordered">
+				<!--nama field-->
+				<thead>
+					<tr style="font-size:9px">
+					<?php
+						while ($colNames = mysql_fetch_array($colExec)){
+							echo "
+							<th>$colNames[Field]</th>
+							";
+						}
+					?>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+						while($conNames = mysql_fetch_array($conExec)){
+							echo "<tr>";
+							foreach($all_prop as $item){
+								echo "<td>$conNames[$item]</td>";
+							}
+							echo "
+							<td><a href=\"editstep2.php?No=$conNames[No]\">edit</a></td>
+							<td><a href=\"deletestep2.php?No=$conNames[No]\">delete</td>
+							";
+							echo "</tr>";
+						}
+					?>
+				</tbody>
+			</table><br></div>
+			
 		</div>
 
 </body>
