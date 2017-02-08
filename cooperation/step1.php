@@ -45,7 +45,7 @@
   <center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
   
 <div class="col-sm-2"></div>
-			<form class="col-sm-8">
+			<form class="col-sm-8" action="step1action.php" method="post">
 				<h2>Step 1</h2>
 				<h3>Nama dan Tipe Perusahaan</h3>
 				<hr>
@@ -53,29 +53,44 @@
 			
 				<div class="form-group">
 			  		<label for="name">Nama Perusahaan:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
+				  	<input type="text" class="form-control" id="namaperusahaan" name="Company_Name"><p class="text-warning">should not be empty</p>
 				</div>
 						
 				<div class="form-group">
 				  <label for="tipeperusahaan">Tipe Perusahaan:</label>
-				  <select class="form-control" id="tipeperusahaan">
-				    <option>Perseroan Terbatas</option>
-				    <option>Persekutuan Komanditer</option>
-					<option>Koperasi</option>
-					<option>Lembaga</option>
-				  </select><p class="text-warning">should not be empty</p>
+				  <select class="form-control" id="tipeperusahaan" name="Company_Type">
+	<option>---- Pilih Tipe Perusahaan ----</option>
+    <?php
+    mysql_connect("localhost", "root", "");
+    mysql_select_db("labdb");
+    $sql = mysql_query("SELECT * FROM drop_company_type ORDER BY Drop_CT ASC");
+    if(mysql_num_rows($sql) != 0){
+        while($data = mysql_fetch_assoc($sql)){
+            echo '<option>'.$data['Drop_CT'].'</option>';
+        }
+    }
+    ?>
+			</select><p class="text-warning">should not be empty</p>
 				</div>
 
 				<div class="form-group">
 				  <label for="kualifikasiperusahaan">Kualifikasi Perusahaan:</label>
-				  <select class="form-control" id="kualifikasiperusahaan">
-				    <option>Besar</option>
-				    <option>Menengah</option>
-					<option>Kecil</option>
+				  <select class="form-control" id="kualifikasiperusahaan" name="Company_Qualification">
+	<option>---- Pilih Kualifikasi Perusahaan ----</option>
+    <?php
+    mysql_connect("localhost", "root", "");
+    mysql_select_db("labdb");
+    $sql = mysql_query("SELECT * FROM drop_company_qualification ORDER BY Drop_CQ ASC");
+    if(mysql_num_rows($sql) != 0){
+        while($data = mysql_fetch_assoc($sql)){
+            echo '<option>'.$data['Drop_CQ'].'</option>';
+        }
+    }
+    ?>
 				  </select><p class="text-warning">should not be empty</p>
 				</div>
 
-<button type="button" class="btn btn-primary">Save</button>
+<button type="submit" class="btn btn-primary">Save</button>
 <button type="button" class="btn btn-primary">Reset</button>
 <hr>
   <ul class="pager">

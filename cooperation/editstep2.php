@@ -3,8 +3,6 @@
 
 	//parameter diambil sini woi
 		$No = $_GET["No"];
-		
-
 	
 		//ambil semua detail dengan id diatas
 	$query = "SELECT * FROM partner_k3s WHERE No='$No'";

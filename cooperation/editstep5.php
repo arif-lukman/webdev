@@ -1,26 +1,13 @@
 <?php
 	include "koneksiDB.php";
 
-	//query buat ngambil nama field
-	$colQuery = 
-	"SHOW columns FROM daftar_pemilik";
-
-	//eksekusi query colQuery
-	$colExec = mysql_query($colQuery);
-
-	//query buat ngambil isi field
-	$conQuery = "SELECT * FROM daftar_pemilik";
-
-	//eksekusi query conQuery
-	$conExec = mysql_query($conQuery);
-
-	//array buatan
-	$all_prop = array();
-
-	//push fieldsnya ke all_prop
-	while ($prop = mysql_fetch_field($conExec)){
-		array_push($all_prop, $prop->name);
-	}
+	//parameter diambil sini woi
+		$No = $_GET["No"];
+	
+		//ambil semua detail dengan id diatas
+	$query = "SELECT * FROM daftar_pemilik WHERE No='$No'";
+	$result = mysql_query($query);
+	$data = mysql_fetch_array($result);
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +59,7 @@
   <center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
   
 <div class="col-sm-2"></div>
-			<form class="col-sm-8" action="step5action.php" method="post">
+			<form class="col-sm-8" action="updatestep5.php?No=<?php echo $No;?>" method="post">
 				<h2>Step 5</h2>
 				<h3>Daftar Pemilik (Shareholders)</h3>
 				<hr>
@@ -81,39 +68,39 @@
 					 
 				<div class="form-group">
 			  		<label for="name">Nama:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan" name="Name"><p class="text-warning">should not be empty</p>
+				  	<input type="text" class="form-control" id="namaperusahaan" name="Name" value="<?php echo $data['Name']?>"><p class="text-warning">should not be empty</p>
 				</div>
 				
 				<div class="form-group">
 			  		<label for="name">No Identitas:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan" name="Civil_ID"><p class="text-warning">should not be empty</p>
+				  	<input type="text" class="form-control" id="namaperusahaan" name="Civil_ID" value="<?php echo $data['Civil_ID']?>"><p class="text-warning">should not be empty</p>
 				</div>
 				
 				 <div class="form-group">
 					<label for="comment">Alamat:</label>
-					<textarea class="form-control" rows="5" id="comment" name="Address"></textarea><p class="text-warning">should not be empty</p>
+					<textarea class="form-control" rows="5" id="comment" name="Address" value="<?php echo $data['Address']?>"><?php echo $data['Address']?></textarea><p class="text-warning">should not be empty</p>
 				</div>
 	
 				<div class="col-xs-6">
 					<label for="TGL">No Telepon:</label>
-					<input type="text" class="form-control" id="usr" name="Phone_Number"><p class="text-warning">should not be empty</p>
+					<input type="text" class="form-control" id="usr" name="Phone_Number" value="<?php echo $data['Phone_Number']?>"><p class="text-warning">should not be empty</p>
 					</div>
 					
 				<div class="col-xs-6">
 					<label for="TGL">Email:</label>
-					<input type="text" class="form-control" id="usr" name="Email"><p class="text-warning">should not be empty</p>
+					<input type="text" class="form-control" id="usr" name="Email" value="<?php echo $data['Email']?>"><p class="text-warning">should not be empty</p>
 					<br>
 					</div>
 				
 				<div class="col-xs-6">
 					<label for="TGL">Share(%):</label>
-					<input type="text" class="form-control" id="usr" name="Share"><p class="text-warning">should not be empty</p>
+					<input type="text" class="form-control" id="usr" name="Share" value="<?php echo $data['Share']?>"><p class="text-warning">should not be empty</p>
 					<br><br>
 				</div>
 				
 				<div class="col-xs-6">
 					<label for="TGL">Share Value:</label>
-					<input type="text" class="form-control" id="usr" name="Value">
+					<input type="text" class="form-control" id="usr" name="Value" value="<?php echo $data['Value']?>">
 					<span class="label label-info">contoh/example: IDR 15.000.000 / USD 5.000</span>
 					<br><br>
 				</div>
@@ -127,35 +114,6 @@
   </ul>
   
 			</form>
-			<div class="well well-sm">Result (Table):</div>		<table class="table table-bordered">
-							<!--nama field-->
-				<thead>
-					<tr style="font-size:9px">
-					<?php
-						while ($colNames = mysql_fetch_array($colExec)){
-							echo "
-							<th>$colNames[Field]</th>
-							";
-						}
-					?>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
-						while($conNames = mysql_fetch_array($conExec)){
-							echo "<tr>";
-							foreach($all_prop as $item){
-								echo "<td>$conNames[$item]</td>";
-							}
-							echo "
-							<td><a href=\"editstep5.php?No=$conNames[No]\">edit</a></td>
-							<td><a href=\"deletestep5.php?No=$conNames[No]\">delete</td>
-							";
-							echo "</tr>";
-						}
-					?>
-				</tbody>
-				</table>
 		</div>
 		<hr>
 				

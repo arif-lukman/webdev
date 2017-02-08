@@ -1,3 +1,28 @@
+<?php
+	include "koneksiDB.php";
+
+	//query buat ngambil nama field
+	$colQuery = 
+	"SHOW columns FROM alamat_kantor";
+
+	//eksekusi query colQuery
+	$colExec = mysql_query($colQuery);
+
+	//query buat ngambil isi field
+	$conQuery = "SELECT * FROM alamat_kantor";
+
+	//eksekusi query conQuery
+	$conExec = mysql_query($conQuery);
+
+	//array buatan
+	$all_prop = array();
+
+	//push fieldsnya ke all_prop
+	while ($prop = mysql_fetch_field($conExec)){
+		array_push($all_prop, $prop->name);
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +72,7 @@
   <center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
  
 <div class="col-sm-2"></div>
-			<form class="col-sm-8">
+			<form class="col-sm-8" action="step3action.php" method="post">
 				<h2>Step 3</h2>
 				<h3>Alamat Kantor (Office Address)</h3>
 				<hr>
@@ -55,7 +80,7 @@
 
 				<div class="col-xs-4">
 				  <label for="kualifikasiperusahaan">Tipe Kantor:</label>
-				  <select class="form-control" id="kualifikasiperusahaan">
+				  <select class="form-control" id="kualifikasiperusahaan" name="Office_Type">
 				    <option>Pusat</option>
 				    <option>Cabang</option>
 					<option>Perwakilan</option>
@@ -64,7 +89,7 @@
 				
 				<div class="col-xs-4">
 				  <label for="kualifikasiperusahaan">Negara:</label>
-				  <select class="form-control" id="kualifikasiperusahaan">
+				  <select class="form-control" id="kualifikasiperusahaan" name="K3S_Name">
 				    <option>Indonesia</option>
 				    <option>Malaysia</option>
 					<option>Singapura</option>
