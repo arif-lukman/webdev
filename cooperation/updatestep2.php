@@ -1,5 +1,5 @@
 <?php
-	$No=$_POST["No"];
+	$No=$_GET["No"];
 	$K3S_Name=$_POST["K3S_Name"];
 	$Contact_Name=$_POST["Contact_Name"];
 	$Phone_Number=$_POST["Phone_Number"];
@@ -21,15 +21,17 @@
 	} 
 
 	$sql = "UPDATE partner_k3s
-	SET K3S_Name = '$K3S_Name', Contact_Name = '$Contact_Name', Phone_Number = '$Phone_Number', Fax_Number = '$Fax_Number', Expired_Date = '$Expired_Date', Expiration_Days = '$Expiration_Days', Attachment = '$Attachment'
+	SET K3S_Name = '$K3S_Name', Contact_Name = '$Contact_Name', Phone_Number = '$Phone_Number', Fax_Number = '$Fax_Number', Expired_Date = '$Expired_Date', Expiration_Days = '$Expiration_Days' , Attachment = '$Attachment'
 	WHERE No = '$No'";
+	
 	if ($conn->query($sql) === TRUE) {
-				echo "<script> alert('Saving Data Success');
-				location='step2.php';
-				</script>";
+		echo "<script> alert('Update Data Success');
+		</script>";
 	} else {
-	    echo "Saving Data Failed" . $sql . "<br>" . $conn->error;
+	    echo "<script> alert('Update Data Gagal');
+		</script>";
 	}
 
 	$conn->close();
+	header("location:step2.php");
 ?>

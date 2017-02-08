@@ -4,25 +4,7 @@
 	//parameter diambil sini woi
 		$No = $_GET["No"];
 		
-	//query buat ngambil nama field
-	$colQuery = "SHOW columns FROM partner_k3s";
 
-	//eksekusi query colQuery
-	$colExec = mysql_query($colQuery);
-
-	//query buat ngambil isi field
-	$conQuery = "SELECT * FROM partner_k3s";
-
-	//eksekusi query conQuery
-	$conExec = mysql_query($conQuery);
-
-	//array buatan
-	$all_prop = array();
-
-	//push fieldsnya ke all_prop
-	while ($prop = mysql_fetch_field($conExec)){
-		array_push($all_prop, $prop->name);
-	}
 	
 		//ambil semua detail dengan id diatas
 	$query = "SELECT * FROM partner_k3s WHERE No='$No'";

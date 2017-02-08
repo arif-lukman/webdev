@@ -44,5 +44,5 @@
 	}
 
 	$conn->close();
-	header("location:main_menu.php");
+
 ?>
