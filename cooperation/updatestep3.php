@@ -1,4 +1,5 @@
 <?php
+	$No=$_GET["No"];
 	$Office_Type=$_POST["Office_Type"];
 	$Primary_Office=$_POST["Primary_Office"];
 	$Office_Address=$_POST["Office_Address"];
@@ -23,15 +24,16 @@
 	    die("Connection failed: " . $conn->connect_error);
 	} 
 
-	$sql = "INSERT INTO alamat_kantor (Office_Type, Primary_Office, Office_Address, Country, Province, City, ZIP_Code, Office_Phone_Number, Office_Fax_Number, Office_Email, Website)
-	VALUES ('$Office_Type', '$Primary_Office', '$Office_Address', '$Country', '$Province', '$City', '$ZIP_Code', '$Office_Phone_Number', '$Office_Fax_Number', '$Office_Email', '$Website')";
-
+	$sql = "UPDATE alamat_kantor 
+	SET Office_Type = '$Office_Type', Primary_Office = '$Primary_Office', Office_Address = '$Office_Address', Country = '$Country', Province = '$Province', City = '$City', ZIP_Code = '$ZIP_Code', Office_Phone_Number = '$Office_Phone_Number', Office_Fax_Number = '$Office_Fax_Number', Office_Email = '$Office_Email', Website = '$Website'
+	WHERE No = '$No'";
+	
 	if ($conn->query($sql) === TRUE) {
-				echo "<script> alert('Saving Data Success');
+				echo "<script> alert('Update Data Success');
 				location='step3.php';
 				</script>";
 	} else {
-	    echo "Saving Data Failed" . $sql . "<br>" . $conn->error;
+	    echo "Update Data Failed" . $sql . "<br>" . $conn->error;
 	}
 
 	$conn->close();

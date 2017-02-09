@@ -2,26 +2,13 @@
 	include "koneksiDB.php";
 	include "lib/library.php";
 	
-	//query buat ngambil nama field
-	$colQuery = 
-	"SHOW columns FROM alamat_kantor";
-
-	//eksekusi query colQuery
-	$colExec = mysql_query($colQuery);
-
-	//query buat ngambil isi field
-	$conQuery = "SELECT * FROM alamat_kantor";
-
-	//eksekusi query conQuery
-	$conExec = mysql_query($conQuery);
-
-	//array buatan
-	$all_prop = array();
-
-	//push fieldsnya ke all_prop
-	while ($prop = mysql_fetch_field($conExec)){
-		array_push($all_prop, $prop->name);
-	}
+	//parameter diambil sini woi
+		$No = $_GET["No"];
+	
+		//ambil semua detail dengan id diatas
+	$query = "SELECT * FROM alamat_kantor WHERE No='$No'";
+	$result = mysql_query($query);
+	$data = mysql_fetch_array($result);
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +60,7 @@
   <center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
  
 <div class="col-sm-2"></div>
-			<form class="col-sm-8" action="step3action.php" method="post">
+			<form class="col-sm-8" action="updatestep3.php?No=<?php echo $No;?>" method="post">
 				<h2>Step 3</h2>
 				<h3>Alamat Kantor (Office Address)</h3>
 				<hr>
@@ -81,7 +68,7 @@
 
 				<div class="col-xs-4">
 				  <label for="kualifikasiperusahaan">Tipe Kantor:</label>
-				  <select class="form-control" id="kualifikasiperusahaan" name="Office_Type">
+				  <select class="form-control" id="kualifikasiperusahaan" name="Office_Type" value="<?php echo $data['Office_Type']?>">
 				    <option>Pusat</option>
 				    <option>Cabang</option>
 					<option>Perwakilan</option>
@@ -90,7 +77,7 @@
 				
 				<div class="col-xs-4">
 				  <label for="kualifikasiperusahaan">Negara:</label>
-				  <select class="form-control" id="kualifikasiperusahaan" name="Country">
+				  <select class="form-control" id="kualifikasiperusahaan" name="Country" value="<?php echo $data['Country']?>">
 				    <option>Indonesia</option>
 				    <option>Malaysia</option>
 					<option>Singapura</option>
@@ -103,7 +90,7 @@
 				
 				<div class="col-xs-4">
 				  <label for="provinsi">Provinsi:</label>
-				  <select class="form-control" id="provinsi" name="Province">
+				  <select class="form-control" id="provinsi" name="Province" value="<?php echo $data['Province']?>">
 				    <option>Aceh</option>
 				    <option>Bali</option>
 					<option>Banten</option>
@@ -142,47 +129,47 @@
 				<br><br><br><br>
 				 <b>Kantor Utama?</b>
 				 <div class="checkbox">
-				<label><input type="checkbox" value="Kantor Utama" name="Primary_Office"> Yes (salah satu harus sebagai Pengurus Utama / one address must be set to Primary Person)</label>
+				<label><input type="checkbox" value="Kantor Utama" name="Primary_Office" value="<?php echo $data['Primary_Office']?>"> Yes (salah satu harus sebagai Pengurus Utama / one address must be set to Primary Person)</label>
 				<br><br>
 				</div>
 				
 				<?php
-				echo createTextArea(5, "Alamat Kantor", "Office_Address", "Office_Address", "");
+				echo createTextArea(5, "Alamat Kantor", "Office_Address", "Office_Address", $data['Office_Address']);
 				?>
 				
 				<div class="col-xs-4">
 				<?php
-				echo createInputField("text", "Kota", "City", "City", ""); 
+				echo createInputField("text", "Kota", "City", "City", $data['City']); 
 				?>
 				</div>
 				
 				<div class="col-xs-4">
 				<?php
-				echo createInputField("text", "Kode Pos", "ZIP_Code", "ZIP_Code", ""); 
+				echo createInputField("text", "Kode Pos", "ZIP_Code", "ZIP_Code", $data['ZIP_Code']); 
 				?>
 				</div>
 
 				<div class="col-xs-4">
 				<?php
-				echo createInputField("text", "Nomor Telepon Kantor", "Office_Phone_Number", "Office_Phone_Number", ""); 
+				echo createInputField("text", "Nomor Telepon Kantor", "Office_Phone_Number", "Office_Phone_Number", $data['Office_Phone_Number']); 
 				?>
 				</div>
 				
 				<div class="col-xs-4">
 				<?php
-				echo createInputField("text", "Nomor Fax Kantor", "Office_Fax_Number", "Office_Fax_Number", ""); 
+				echo createInputField("text", "Nomor Fax Kantor", "Office_Fax_Number", "Office_Fax_Number", $data['Office_Fax_Number']); 
 				?>
 				</div>
 				
 				<div class="col-xs-4">
 				<?php
-				echo createInputField("text", "Email Kantor", "Office_Email", "Office_Email", ""); 
+				echo createInputField("text", "Email Kantor", "Office_Email", "Office_Email", $data['Office_Email']); 
 				?>
 				</div>
 				
 				<div class="col-xs-4">
 				<?php
-				echo createInputField("text", "Website", "Website", "Website", ""); 
+				echo createInputField("text", "Website", "Website", "Website", $data['Website']); 
 				?>
 				</div>
 
@@ -196,35 +183,6 @@
   </ul>
   
 			</form>
-			<div class="well well-sm">Result (Table):</div>		<table class="table table-bordered">
-				<!--nama field-->
-				<thead>
-					<tr style="font-size:9px">
-					<?php
-						while ($colNames = mysql_fetch_array($colExec)){
-							echo "
-							<th>$colNames[Field]</th>
-							";
-						}
-					?>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
-						while($conNames = mysql_fetch_array($conExec)){
-							echo "<tr>";
-							foreach($all_prop as $item){
-								echo "<td>$conNames[$item]</td>";
-							}
-							echo "
-							<td><a href=\"editstep3.php?No=$conNames[No]\">edit</a></td>
-							<td><a href=\"deletestep3.php?No=$conNames[No]\">delete</td>
-							";
-							echo "</tr>";
-						}
-					?>
-				</tbody>
-			</table>
 		</div>
 
 </body>
