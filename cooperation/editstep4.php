@@ -1,26 +1,13 @@
 <?php
 	include "koneksiDB.php";
 
-	//query buat ngambil nama field
-	$colQuery = 
-	"SHOW columns FROM susunan_pengurus";
-
-	//eksekusi query colQuery
-	$colExec = mysql_query($colQuery);
-
-	//query buat ngambil isi field
-	$conQuery = "SELECT * FROM susunan_pengurus";
-
-	//eksekusi query conQuery
-	$conExec = mysql_query($conQuery);
-
-	//array buatan
-	$all_prop = array();
-
-	//push fieldsnya ke all_prop
-	while ($prop = mysql_fetch_field($conExec)){
-		array_push($all_prop, $prop->name);
-	}
+	//parameter diambil sini woi
+		$No = $_GET["No"];
+	
+		//ambil semua detail dengan id diatas
+	$query = "SELECT * FROM susunan_pengurus WHERE No='$No'";
+	$result = mysql_query($query);
+	$data = mysql_fetch_array($result);
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +59,7 @@
   <center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
  
 <div class="col-sm-2"></div>
-			<form class="col-sm-8" action="step4action.php" method="post">
+			<form class="col-sm-8" action="step4action.php?No=<?php echo $No;?>" method="post">
 				<h2>Step 4</h2>
 				<h3>Susunan pengurus / Struktur organisasi (BOC , BOD)</h3>
 				<hr>
@@ -80,7 +67,7 @@
 
 				<div class="col-xs-4">
 				  <label for="kualifikasiperusahaan">Tipe Pengurus:</label>
-				  <select class="form-control" id="kualifikasiperusahaan" name="Management_Type">
+				  <select class="form-control" id="kualifikasiperusahaan" name="Management_Type" value="<?php echo $data['Management_Type']?>">
 				    <option>Dewan Direksi</option>
 				    <option>Dewan Komisaris</option>
 				  </select><p class="text-warning">should not be empty</p>
@@ -89,39 +76,39 @@
 				<br><br><br><br><br>
 				 <b>Pengurus Utama?</b>
 				 <div class="checkbox">
-				<label><input type="checkbox" value="Pengurus Utama" name="Primary_Person"> Yes (Salah satu pengurus harus dibuat sebagai Pengurus Utama / One person must be set to Primary Person)</label>
+				<label><input type="checkbox" value="Pengurus Utama" name="Primary_Person" value="<?php echo $data['Primary_Person']?>"> Yes (Salah satu pengurus harus dibuat sebagai Pengurus Utama / One person must be set to Primary Person)</label>
 				<br><br>
 				</div>
 				
 				<div class="col-xs-4">
 					<label for="TGL">Posisi:</label>
-					<input type="text" class="form-control" id="usr" name="Position"><p class="text-warning">should not be empty</p>
+					<input type="text" class="form-control" id="usr" name="Position" value="<?php echo $data['Position']?>"><p class="text-warning">should not be empty</p>
 					</div>
 					
 				<div class="col-xs-4">
 					<label for="TGL">Nama:</label>
-					<input type="text" class="form-control" id="usr" name="Name"><p class="text-warning">should not be empty</p>
+					<input type="text" class="form-control" id="usr" name="Name" value="<?php echo $data['Name']?>"><p class="text-warning">should not be empty</p>
 					</div>
 				<div class="col-xs-4">
 					<label for="TGL">No Identitas:</label>
-					<input type="text" class="form-control" id="usr" name="Civil_ID"><p class="text-warning">should not be empty</p>
+					<input type="text" class="form-control" id="usr" name="Civil_ID" value="<?php echo $data['Civil_ID']?>"><p class="text-warning">should not be empty</p>
 					<br><br>	
 					</div>
 				
 				 <div class="form-group">
 					<label for="comment">Alamat Kantor:</label>
-					<textarea class="form-control" rows="5" id="comment" name="Address"></textarea><p class="text-warning">should not be empty</p>	
+					<textarea class="form-control" rows="5" id="comment" name="Address" value="<?php echo $data['Address']?>"><?php echo $data['Address']?></textarea><p class="text-warning">should not be empty</p>
 				</div>
 		
 				<div class="col-xs-6">
 					<label for="TGL">No Telepon:</label>
-					<input type="text" class="form-control" id="usr" name="Phone_Number"><p class="text-warning">should not be empty</p>
+					<input type="text" class="form-control" id="usr" name="Phone_Number" value="<?php echo $data['Phone_Number']?>"><p class="text-warning">should not be empty</p>
 			
 					</div>				
 
 				<div class="col-xs-6">
 					<label for="TGL">Email:</label>
-					<input type="text" class="form-control" id="usr" name="Email"><p class="text-warning">should not be empty</p>
+					<input type="text" class="form-control" id="usr" name="Email" value="<?php echo $data['Email']?>"><p class="text-warning">should not be empty</p>
 					<br><br>
 					</div>
 				
@@ -134,35 +121,6 @@
   </ul>
   
 			</form>
-			<div class="well well-sm">Result (Table):</div>		<table class="table table-bordered">
-							<!--nama field-->
-				<thead>
-					<tr style="font-size:9px">
-					<?php
-						while ($colNames = mysql_fetch_array($colExec)){
-							echo "
-							<th>$colNames[Field]</th>
-							";
-						}
-					?>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
-						while($conNames = mysql_fetch_array($conExec)){
-							echo "<tr>";
-							foreach($all_prop as $item){
-								echo "<td>$conNames[$item]</td>";
-							}
-							echo "
-							<td><a href=\"editstep4.php?No=$conNames[No]\">edit</a></td>
-							<td><a href=\"deletestep4.php?No=$conNames[No]\">delete</td>
-							";
-							echo "</tr>";
-						}
-					?>
-				</tbody>
-				</table>
 		</div>
 
 </body>
