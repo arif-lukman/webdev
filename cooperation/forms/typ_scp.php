@@ -15,9 +15,10 @@
 	//cek operasi
 	if($op == "update"){
 		$id = $_GET["id"];
+		echo $id;
 
 		//ambil data dari db
-		$result = getResults("SELECT * FROM _admin WHERE _id = '$id'", $conn);
+		$result = getResults("SELECT * FROM _scope_type WHERE _id = '$id'", $conn);
 		$data = $result->fetch_assoc();
 	}
 	else{
@@ -44,15 +45,13 @@
 				createMenu(setActiveMenu(MENU, "admins.php", 2));
 			?>
 			<div class="well col-sm-9">
-				<h4>Create User</h4><hr>
-				<form action="<?php echo '../controller/admins.php?op=' . $op; if(isset($id)) echo '&id=' . $id;?>" method="post">
+				<h4>Create Tipe Perusahaan</h4><hr>
+				<form action="<?php echo '../controller/typ_scp.php?op=' . $op; if(isset($id)) echo '&id=' . $id;?>" method="post">
 					<?php
 						//bikin field pada form
-						echo createInputField("text", "Username:", "uname", "uname", checkData($data,"_username"));
-						echo createInputField("text", "Nama Lengkap:", "fname", "fname", checkData($data,"_fullname"));
-						echo createInputField("text", "Email:", "email", "email", checkData($data,"_email"));
-						echo createInputField("text", "Password:", "pwd", "pwd", checkData($data,"_password"));
-						echo createSelectOption("Group:", "grup", "grup", $conn, "SELECT * FROM _group_priv", $conn);
+						echo createInputField("text", "Kode Tipe Bidang Pekerjaan:", "kode", "kode", checkData($data,"_kode"));
+						echo createInputField("text", "Judul Tipe Bidang Pekerjaan:", "judul", "judul", checkData($data,"_judul"));
+						echo createInputField("text", "Order:", "order", "order", checkData($data,"_order"));
 					?>
 					<div class="form-group">
 				  		<label for="stat">Status:</label>
@@ -61,10 +60,6 @@
 						    <option value="0" <?php if(isset($data['_status'])) echo check(!$data['_status']);?>>Inactive</option>
 						</select>
 					</div>
-					<?php
-						//textarea
-						echo createTextArea(3, "Keterangan:", "desc", "desc", checkData($data,"_desc"));
-					?>
 					<button type="submit" class="btn btn-default"><?php echo setButtonText($op);?></button>
 				</form>
 			</div>

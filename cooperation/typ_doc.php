@@ -43,7 +43,7 @@
 					generateTable($fieldNames, $fieldValues, $allValues, "typ_doc.php");
 				?>
 				<br>
-				<a href="forms/typ_cpy.php?op=create" class="btn btn-default" role="button">Create</a>
+				<a href="forms/typ_doc.php?op=create" class="btn btn-default" role="button">Create</a>
 			</div>
 		</div>
 	</body>
