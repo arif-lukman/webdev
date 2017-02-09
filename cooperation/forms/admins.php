@@ -31,13 +31,6 @@
 			//inisialisasi head
 			initHead();
 		?>
-
-		<!-- CSS Overriding -->
-		<style type="text/css">
-			.dis{
-				text-decoration: underline;
-			}
-		</style>
 	</head>
 
 	<body>
@@ -61,19 +54,6 @@
 						echo createInputField("text", "Password:", "pwd", "pwd", checkData($data,"_password"));
 						echo createSelectOption("Group:", "grup", "grup", $conn, "SELECT * FROM _group_priv", $conn);
 					?>
-					<div class="form-group">
-				  		<label for="grup">Group:</label>
-					  	<select class="form-control" id="grup" name="grup">
-							<?php
-								//ambil list group
-								$result1 = getResults("SELECT * FROM _group_priv", $conn);
-
-								while($data1 = $result1->fetch_assoc()){
-									echo "<option value='$data1[_id]'>" . $data1["_name"] . "</option>";
-								}
-							?>
-						</select>
-					</div>
 					<div class="form-group">
 				  		<label for="stat">Status:</label>
 					  	<select class="form-control" id="stat" name="stat">

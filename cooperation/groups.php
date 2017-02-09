@@ -19,12 +19,6 @@
 			//inisialisasi head
 			initHead();
 		?>
-		<!-- CSS Overriding -->
-		<style type="text/css">
-			.dis{
-				text-decoration: underline;
-			}
-		</style>
 	</head>
 
 	<body>

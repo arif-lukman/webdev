@@ -24,12 +24,6 @@
 			//inisialisasi head
 			initHead();
 		?>
-		<!-- CSS Overriding -->
-		<style type="text/css">
-			.dis{
-				text-decoration: underline;
-			}
-		</style>
 	</head>
 
 	<body>
@@ -43,7 +37,7 @@
 				createMenu(setActiveMenu(MENU, "typ_cpy.php", 3));
 			?>
 			<div class="well col-sm-9">
-				<h3>Users</h3><hr>
+				<h3>Tipe Perusahaan</h3><hr>
 				<?php
 					//generate tabelnya
 					generateTable($fieldNames, $fieldValues, $allValues, "typ_cpy.php");

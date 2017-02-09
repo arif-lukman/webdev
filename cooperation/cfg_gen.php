@@ -20,12 +20,6 @@
 			//inisialisasi head
 			initHead();
 		?>
-		<!-- CSS Overriding -->
-		<style type="text/css">
-			.dis{
-				text-decoration: underline;
-			}
-		</style>
 	</head>
 
 	<body>
@@ -41,6 +35,7 @@
 			<div class="well col-sm-9">
 				<h3>Konfigurasi Umum</h3><hr>
 					<?php
+						//bikin input fieldnya
 						echo createInputField("text", "Nama Aplikasi:", "nama", "nama", $data['_nama_app']);
 						echo createTextArea(3, "Deskripsi:", "desc", "desc", $data['_desc']);
 						echo createInputField("email", "Kontak Email:", "email", "email", $data['_email_1']);
