@@ -260,6 +260,25 @@
 		return $textArea;
 	}
 
+	//fungsi buat bikin select option
+	function createSelectOption($label, $id, $name, $conn, $sql){
+		//ambil list group
+		$result1 = getResults($sql, $conn);
+		$options = "";
+		while($data1 = $result1->fetch_assoc()){
+			$options = $options . "<option value='$data1[_id]'>" . $data1["_name"] . "</option>";
+		}
+		$selectOption = "
+		<div class='form-group'>
+	  		<label for='" . $id . "'>" . $label . "</label>
+		  	<select class='form-control' id='" . $id . "' name='" . $name . "'>
+		  	" . $options . "
+			</select>
+		</div>
+		";
+		return $selectOption;
+	}
+
 	//fungsi buat ngambil parameter get kalau ada
 	function getParamGet($paramGet){
 		if(isset($_GET[$paramGet])){

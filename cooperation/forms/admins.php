@@ -20,6 +20,9 @@
 		$result = getResults("SELECT * FROM _admin", $conn);
 		$data = $result->fetch_assoc();
 	}
+	else{
+		$data = "";
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,7 +43,7 @@
 	<body>
 		<?php
 			//bikin navbarnya
-			createNavbar(setActiveNav(NAVBAR, "admin.php"));
+			createNavbar(setActiveNav(NAVBAR, "cfg_gen.php"));
 		?>
 		<div class="container" style="margin-top: 80px">
 			<?php
@@ -56,6 +59,7 @@
 						echo createInputField("text", "Nama Lengkap:", "fname", "fname", checkData($data,"_fullname"));
 						echo createInputField("text", "Email:", "email", "email", checkData($data,"_email"));
 						echo createInputField("text", "Password:", "pwd", "pwd", checkData($data,"_password"));
+						echo createSelectOption("Group:", "grup", "grup", $conn, "SELECT * FROM _group_priv", $conn);
 					?>
 					<div class="form-group">
 				  		<label for="grup">Group:</label>
