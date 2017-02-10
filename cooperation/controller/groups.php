@@ -14,5 +14,5 @@
 	$proc = $_POST['Procurement'];
 
 	//update tabel
-	$sql1 = "UPDATE _group_priv SET WHERE _id = 1";
+	//$sql1 = "UPDATE _group_priv SET WHERE _id = 1";
 ?>

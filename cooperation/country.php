@@ -12,7 +12,7 @@
 	$fieldNames = getResults("SHOW columns FROM _country", $conn);
 
 	//ambil isi field
-	$fieldValues = getResults("SELECT _country._id as _id, _country._kode, _country._nama, _country._order, _status._nama FROM _country, _status WHERE _country._status = _status._id ORDER BY _id ASC", $conn);
+	$fieldValues = getResults("SELECT _country._id as _id, _country._kode, _country._nama as _nama_negara, _country._order, _status._nama FROM _country, _status WHERE _country._status = _status._id ORDER BY _id ASC", $conn);
 
 	//push isi field ke array
 	$allValues = pushArray($fieldValues);
@@ -43,7 +43,7 @@
 					generateTable($fieldNames, $fieldValues, $allValues, "country.php");
 				?>
 				<br>
-				<a href="forms/typ_cpy.php?op=create" class="btn btn-default" role="button">Create</a>
+				<a href="forms/country.php?op=create" class="btn btn-default" role="button">Create</a>
 			</div>
 		</div>
 	</body>

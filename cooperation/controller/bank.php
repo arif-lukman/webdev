@@ -17,22 +17,21 @@
 
 	//ambil parameter lain
 	$kode = getParamPost("kode");
-	$judul = getParamPost("judul");
+	$nama = getParamPost("nama");
 	$order = getParamPost("order");
-	$kelas = getParamPost("kelas");
 	$status = getParamPost("stat");
 
 	//sql commands
 	//create
-	$sqlC = "INSERT INTO _class_type(_kode, _judul, _order, _status, _kelas) VALUES ('$kode', '$judul', '$order', '$status', '$kelas')";
+	$sqlC = "INSERT INTO _bank(_kode, _nama, _order, _status) VALUES ('$kode', '$nama', '$order', '$status')";
 	//update
-	$sqlU = "UPDATE _class_type SET _kode='$kode', _judul='$judul', _order='$order', _status='$status', _kelas='$kelas' WHERE _id='$id'";
+	$sqlU = "UPDATE _bank SET _kode='$kode', _nama='$nama', _order='$order', _status='$status' WHERE _id='$id'";
 	//delete
-	$sqlD = "DELETE FROM _class_type WHERE _id='$id'";
+	$sqlD = "DELETE FROM _bank WHERE _id='$id'";
 	
 	//cek
 	$sql = checkOperation($op, $sqlC, $sqlU, $sqlD);
 
 	//eksekusi
-	execCud($sql, $conn, "../typ_cls.php");
+	execCud($sql, $conn, "../bank.php");
 ?>

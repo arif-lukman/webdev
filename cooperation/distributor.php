@@ -9,10 +9,10 @@
 	include "controller/koneksi.php";
 
 	//ambil nama field
-	$fieldNames = getResults("SHOW columns FROM _dist_type", $conn);
+	$fieldNames = getResults("SHOW columns FROM _distributor", $conn);
 
 	//ambil isi field
-	$fieldValues = getResults("SELECT _dist_type._id as _id, _dist_type._nama, _dist_type._order, _status._nama FROM _dist_type, _status WHERE _dist_type._status = _status._id ORDER BY _id ASC", $conn);
+	$fieldValues = getResults("SELECT _distributor._id as _id, _distributor._nama as _nama_dist, _distributor._order, _status._nama FROM _distributor, _status WHERE _distributor._status = _status._id ORDER BY _id ASC", $conn);
 
 	//push isi field ke array
 	$allValues = pushArray($fieldValues);
@@ -43,7 +43,7 @@
 					generateTable($fieldNames, $fieldValues, $allValues, "distributor.php");
 				?>
 				<br>
-				<a href="forms/typ_cpy.php?op=create" class="btn btn-default" role="button">Create</a>
+				<a href="forms/distributor.php?op=create" class="btn btn-default" role="button">Create</a>
 			</div>
 		</div>
 	</body>

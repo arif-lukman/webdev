@@ -12,7 +12,7 @@
 	$fieldNames = getResults("SHOW columns FROM _bank", $conn);
 
 	//ambil isi field
-	$fieldValues = getResults("SELECT _bank._id as _id, _bank._kode, _bank._nama, _bank._order, _status._nama FROM _bank, _status WHERE _bank._status = _status._id ORDER BY _id ASC", $conn);
+	$fieldValues = getResults("SELECT _bank._id as _id, _bank._kode, _bank._nama as _nama_bank, _bank._order, _status._nama FROM _bank, _status WHERE _bank._status = _status._id ORDER BY _id ASC", $conn);
 
 	//push isi field ke array
 	$allValues = pushArray($fieldValues);
@@ -43,7 +43,7 @@
 					generateTable($fieldNames, $fieldValues, $allValues, "bank.php");
 				?>
 				<br>
-				<a href="forms/typ_cpy.php?op=create" class="btn btn-default" role="button">Create</a>
+				<a href="forms/bank.php?op=create" class="btn btn-default" role="button">Create</a>
 			</div>
 		</div>
 	</body>
