@@ -2,38 +2,25 @@
 	include "koneksiDB.php";
 	include "lib/library.php";
 	
-	//query buat ngambil nama field
-	$colQuery = 
-	"SHOW columns FROM surat_keagenan";
-
-	//eksekusi query colQuery
-	$colExec = mysql_query($colQuery);
-
-	//query buat ngambil isi field
-	$conQuery = "SELECT * FROM surat_keagenan";
-
-	//eksekusi query conQuery
-	$conExec = mysql_query($conQuery);
-
-	//array buatan
-	$all_prop = array();
-
-	//push fieldsnya ke all_prop
-	while ($prop = mysql_fetch_field($conExec)){
-		array_push($all_prop, $prop->name);
-	}
+	//parameter diambil sini woi
+		$No = $_GET["No"];
+	
+		//ambil semua detail dengan id diatas
+	$query = "SELECT * FROM surat_keagenan WHERE No='$No'";
+	$result = mysql_query($query);
+	$data = mysql_fetch_array($result);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Step 7</title>
+  <title>Step 3</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+
   <style>
   a.home {
 				position: fixed;
@@ -71,16 +58,16 @@
   </div>
   
   <center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
-  
+ 
 <div class="col-sm-2"></div>
-			<form class="col-sm-8" action="step7action.php" method="post">
+			<form class="col-sm-8" action="updatestep7.php?No=<?php echo $No;?>" method="post">
 				<h2>Step 7</h2>
 				<h3>Surat Keagenan / Dealer / Distributor</h3>
 				<hr>
 					 <div class="well well-lg">
 
 				<div class="form-group">
-				  <label for="tipeperusahaan" name="distributor">Tipe Distributor/Dealer:</label>
+				  <label for="tipeperusahaan" name="distributor" value="<?php echo $data['Distributor']?>">Tipe Distributor/Dealer:</label>
 				  <select class="form-control" id="tipeperusahaan" name="Distributor">
 				    <option>Agen Tunggal</option>
 				    <option>Agen</option>
@@ -91,43 +78,43 @@
 				
 				<div class="form-group">
 			  		<?php
-					echo createInputField("text", "Nomor Dokumen", "Document_Number", "Document_Number", ""); 
+					echo createInputField("text", "Nomor Dokumen", "Document_Number", "Document_Number", $data['Document_Number']); 
 					?>
 				</div>
 				
 				<div class="form-group">
 			  		<?php
-					echo createInputField("text", "Dikeluarkan oleh", "Issued_By", "Issued_By", ""); 
+					echo createInputField("text", "Dikeluarkan oleh", "Issued_By", "Issued_By", $data['Issued_By']); 
 					?>
 				</div>
 				
 				 <div class="col-xs-6">
 					<?php
-					echo createInputField("date", "Tanggal Dikeluarkan", "Issued_Date", "Issued_Date", ""); 
+					echo createInputField("date", "Tanggal Dikeluarkan", "Issued_Date", "Issued_Date", $data['Issued_Date']); 
 					?>
 					</div>
 	
 				<div class="col-xs-6">
 					<?php
-					echo createInputField("date", "Tanggal Kadaluarsa", "Expired_Date", "Expired_Date", ""); 
+					echo createInputField("date", "Tanggal Kadaluarsa", "Expired_Date", "Expired_Date", $data['Expired_Date']); 
 					?>
 					<br>	
 					</div>
 					
 				<div class="col-xs-12">
 					<?php
-					echo createInputField("text", "Deskripsi", "Description", "Description", ""); 
+					echo createInputField("text", "Deskripsi", "Description", "Description", $data['Description']); 
 					?>
 					<br>
 					</div>
 				
 				<div class="form-group">
 				<input type="file" name="pic" accept="image/*">
-				<span class="label label-info">Format PDF max. 2Mb*</span><p class="text-warning">should not be empty</p>
+				<span class="label label-info">Format PDF max. 8Mb*</span><p class="text-warning">should not be empty</p>
 				<br>
 				</div>
-				
-				
+
+
 <button type="submit" class="btn btn-primary">Save</button>
 <button type="button" class="btn btn-primary">Reset</button>
 <hr>
@@ -137,39 +124,7 @@
   </ul>
   
 			</form>
-			<div class="well well-sm">Result (Table):</div>
-			<table class="table table-bordered">
-				<!--nama field-->
-				<thead>
-					<tr style="font-size:9px">
-					<?php
-						while ($colNames = mysql_fetch_array($colExec)){
-							echo "
-							<th>$colNames[Field]</th>
-							";
-						}
-					?>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
-						while($conNames = mysql_fetch_array($conExec)){
-							echo "<tr>";
-							foreach($all_prop as $item){
-								echo "<td>$conNames[$item]</td>";
-							}
-							echo "
-							<td><a href=\"editstep7.php?No=$conNames[No]\">edit</a></td>
-							<td><a href=\"deletestep7.php?No=$conNames[No]\">delete</td>
-							";
-							echo "</tr>";
-						}
-					?>
-				</tbody>
-			</table>
 		</div>
-		<hr>
-				
 
 </body>
 </html>		
