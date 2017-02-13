@@ -2,26 +2,13 @@
 	include "koneksiDB.php";
 	include "lib/library.php";
 	
-	//query buat ngambil nama field
-	$colQuery = 
-	"SHOW columns FROM daftar_rekening_bank";
-
-	//eksekusi query colQuery
-	$colExec = mysql_query($colQuery);
-
-	//query buat ngambil isi field
-	$conQuery = "SELECT * FROM daftar_rekening_bank";
-
-	//eksekusi query conQuery
-	$conExec = mysql_query($conQuery);
-
-	//array buatan
-	$all_prop = array();
-
-	//push fieldsnya ke all_prop
-	while ($prop = mysql_fetch_field($conExec)){
-		array_push($all_prop, $prop->name);
-	}
+	//parameter diambil sini woi
+		$No = $_GET["No"];
+	
+		//ambil semua detail dengan id diatas
+	$query = "SELECT * FROM daftar_rekening_bank WHERE No='$No'";
+	$result = mysql_query($query);
+	$data = mysql_fetch_array($result);
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +60,7 @@
   <center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
   
 <div class="col-sm-2"></div>
-			<form class="col-sm-8" action="step8action.php" method="post">
+			<form class="col-sm-8" action="updatestep8.php?No=<?php echo $No;?>" method="post">
 				<h2>Step 8</h2>
 				<h3>Partner K3S</h3>
 				<hr>
@@ -81,7 +68,7 @@
 			
 				<div class="col-xs-6">
 				  <label for="tipeperusahaan">Nama Bank:</label>
-				  <select class="form-control" id="tipeperusahaan" name="Bank_Name">
+				  <select class="form-control" id="tipeperusahaan" name="Bank_Name" value="<?php echo $data['Bank_Name']?>">
 				    <option>Bank Negara Indonesia</option>
 				    <option>Bank Rakyat Indonesia</option>
 					<option>Bank Tabungan Negara</option>
@@ -93,13 +80,13 @@
 				
 				<div class="col-xs-6">
 			  		<label for="name">Cabang:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan" name="Branch"><p class="text-warning">should not be empty</p>
+				  	<input type="text" class="form-control" id="namaperusahaan" name="Branch" value="<?php echo $data['Branch']?>"><p class="text-warning">should not be empty</p>
 				<br>
 				</div>
 				
 				<div class="col-xs-6">
 				  <label for="tipeperusahaan">Negara:</label>
-				  <select class="form-control" id="tipeperusahaan" name="Country">
+				  <select class="form-control" id="tipeperusahaan" name="Country" value="<?php echo $data['Country']?>">
 				    <option>Indonesia</option>
 				    <option>Malaysia</option>
 					<option>Singapura</option>
@@ -112,17 +99,17 @@
 				
 				<div class="form-group">
 			  		<label for="name">Pemilik Rekening:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan" name="Acc_Name"><p class="text-warning">should not be empty</p>
+				  	<input type="text" class="form-control" id="namaperusahaan" name="Acc_Name" value="<?php echo $data['Acc_Name']?>"><p class="text-warning">should not be empty</p>
 				</div>
 				
 				<div class="form-group">
 			  		<label for="name">Nomor Rekening:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan" name="Acc_Number"><p class="text-warning">should not be empty</p>
+				  	<input type="text" class="form-control" id="namaperusahaan" name="Acc_Number" value="<?php echo $data['Acc_Number']?>"><p class="text-warning">should not be empty</p>
 				</div>
 				
 				<div class="form-group">
 				  <label for="tipeperusahaan">Mata Uang:</label>
-				  <select class="form-control" id="tipeperusahaan" name="Currency">
+				  <select class="form-control" id="tipeperusahaan" name="Currency" value="<?php echo $data['Currency']?>">
 				    <option>USD-Dolar</option>
 				    <option>MYR-Ringgit</option>
 					<option>IDR-Rupiah</option>
@@ -142,36 +129,6 @@
   </ul>
   
 			</form>
-			<div class="well well-sm">Result (Table):</div>
-			<table class="table table-bordered">
-				<!--nama field-->
-				<thead>
-					<tr style="font-size:9px">
-					<?php
-						while ($colNames = mysql_fetch_array($colExec)){
-							echo "
-							<th>$colNames[Field]</th>
-							";
-						}
-					?>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
-						while($conNames = mysql_fetch_array($conExec)){
-							echo "<tr>";
-							foreach($all_prop as $item){
-								echo "<td>$conNames[$item]</td>";
-							}
-							echo "
-							<td><a href=\"editstep8.php?No=$conNames[No]\">edit</a></td>
-							<td><a href=\"deletestep8.php?No=$conNames[No]\">delete</td>
-							";
-							echo "</tr>";
-						}
-					?>
-				</tbody>
-			</table>
 		</div>
 
 </body>
