@@ -1,4 +1,5 @@
 <?php
+//yo mamen
 
 $host = "localhost";
 
@@ -6,7 +7,7 @@ $username = "root";
 
 $password = "";
 
-$database = "labDB";
+$database = "_bpms_vendor";
 
 $koneksi = mysql_connect($host, $username, $password);
 

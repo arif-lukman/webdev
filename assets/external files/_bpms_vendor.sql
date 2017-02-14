@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 14 Feb 2017 pada 09.02
+-- Generation Time: 14 Feb 2017 pada 09.11
 -- Versi Server: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `labdb`
+-- Database: `_bpms_vendor`
 --
 
 -- --------------------------------------------------------
