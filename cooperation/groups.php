@@ -40,11 +40,11 @@
 								echo "
 									<tr class='form-group'>
 									<td>$data[_name]</td>
-							  		<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "'" . checkBox($data['_view']) . " value='1'>View</label></td>
-									<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "'" . checkBox($data['_add']) . " value='1'>Add</label></td>
-									<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "'" . checkBox($data['_edit']) . " value='1'>Edit</label></td>
-									<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "'" . checkBox($data['_delete']) . " value='" . $data['_delete'] . "'>Delete</label></td>
-									<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "'" . checkBox($data['_setting']) . " value='" . $data['_setting'] . "'>Setting</label></td>
+							  		<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "[0]'" . checkBox($data['_view']) . " value='1'>View</label></td>
+									<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "[1]'" . checkBox($data['_add']) . " value='1'>Add</label></td>
+									<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "[2]'" . checkBox($data['_edit']) . " value='1'>Edit</label></td>
+									<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "[3]'" . checkBox($data['_delete']) . " value='1'>Delete</label></td>
+									<td><label class='checkbox-inline'><input type='checkbox' name='" . $data['_name'] . "[4]'" . checkBox($data['_setting']) . " value='1'>Setting</label></td>
 									</tr>
 								";
 							}
