@@ -2,26 +2,13 @@
 	include "koneksiDB.php";
 	include "lib/library.php";
 	
-	//query buat ngambil nama field
-	$colQuery = 
-	"SHOW columns FROM pengalaman_perusahaan";
-
-	//eksekusi query colQuery
-	$colExec = mysql_query($colQuery);
-
-	//query buat ngambil isi field
-	$conQuery = "SELECT * FROM pengalaman_perusahaan";
-
-	//eksekusi query conQuery
-	$conExec = mysql_query($conQuery);
-
-	//array buatan
-	$all_prop = array();
-
-	//push fieldsnya ke all_prop
-	while ($prop = mysql_fetch_field($conExec)){
-		array_push($all_prop, $prop->name);
-	}
+	//parameter diambil sini woi
+		$No = $_GET["No"];
+	
+		//ambil semua detail dengan id diatas
+	$query = "SELECT * FROM pengalaman_perusahaan WHERE No='$No'";
+	$result = mysql_query($query);
+	$data = mysql_fetch_array($result);
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +60,7 @@
   <center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
   
 <div class="col-sm-2"></div>
-			<form class="col-sm-8" action="step10action.php" method="post">
+			<form class="col-sm-8" action="updatestep10.php?No=<?php echo $No;?>" method="post">
 				<h2>Step 10</h2>
 				<h3>Pengalaman Perusahaan</h3>
 				<hr>
@@ -81,12 +68,12 @@
 				
 				<div class="col-xs-6">
 			  		<label for="name">Nama Pekerjaan:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan" name="Project_Name">
+				  	<input type="text" class="form-control" id="namaperusahaan" name="Project_Name" value="<?php echo $data['Project_Name']?>">
 				</div>
 			
 				<div class="col-xs-6">
 				  <label for="tipeperusahaan">Bidang Pekerjaan:</label>
-				  <select class="form-control" id="tipeperusahaan" name="Activities_Section">
+				  <select class="form-control" id="tipeperusahaan" name="Activities_Section" value="<?php echo $data['Activities_Section']?>">
 				    <option>Pengadaan Barang</option>
 				    <option>Jasa Pemborongan</option>
 					<option>Jasa Konsultasi</option>
@@ -97,13 +84,13 @@
 				
 				<div class="col-xs-6">
 				  <label for="tipeperusahaan">Klasifikasi:</label>
-				  <select class="form-control" id="tipeperusahaan" name="Classification">
+				  <select class="form-control" id="tipeperusahaan" name="Classification" value="<?php echo $data['Classification']?>">
 				    <option>Pengadaan Barang</option>
 				    <option>Jasa Pemborongan</option>
 					<option>Jasa Konsultasi</option>
 					<option>Jasa Lainnya</option>
 				  </select>
-				   <select class="form-control" id="tipeperusahaan" name="Sub_Classification">
+				   <select class="form-control" id="tipeperusahaan" name="Sub_Classification" value="<?php echo $data['Sub_Classification']?>">
 				    <option>Pengadaan Barang</option>
 				    <option>Jasa Pemborongan</option>
 					<option>Jasa Konsultasi</option>
@@ -113,52 +100,52 @@
 				
 				<div class="col-xs-6">
 			  		<label for="name">Perusahaan:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan" name="User_Company">
+				  	<input type="text" class="form-control" id="namaperusahaan" name="User_Company" value="<?php echo $data['User_Company']?>">
 				<br><br><br>
 				</div>
 				
 				 <div class="form-group">
 			  		<label for="name">Nama Kontak:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan" name="Contact_Name">
+				  	<input type="text" class="form-control" id="namaperusahaan" name="Contact_Name" value="<?php echo $data['Contact_Name']?>">
 				
 				</div>
 				
 				<div class="form-group">
 					<label for="comment">Alamat:</label>
-					<textarea class="form-control" rows="5" id="comment" name="Address"></textarea>
+					<textarea class="form-control" rows="5" id="comment" name="Address" value="<?php echo $data['Address']?>"><?php echo $data['Address']?></textarea>
 				</div>
 				
 				<div class="form-group">
 					<label for="comment">Nomor Telepon:</label>
-					<input type="text" class="form-control" id="namaperusahaan" name="Phone_Number">
+					<input type="text" class="form-control" id="namaperusahaan" name="Phone_Number" value="<?php echo $data['Phone_Number']?>">
 				</div>
 				
 				<div class="col-xs-6">
 					<label for="TGL">Tanggal Kontrak:</label>
-					<input type="date" class="form-control" id="usr" name="Contact_Date">
+					<input type="date" class="form-control" id="usr" name="Contact_Date" value="<?php echo $data['Contact_Date']?>">
 					</div>
 
 				<div class="col-xs-6">
 					<label for="TGL">Tanggal Kadaluarsa:</label>
-					<input type="date" class="form-control" id="usr" name="Completion_Date">
+					<input type="date" class="form-control" id="usr" name="Completion_Date" value="<?php echo $data['Completion_Date']?>">
 				<br>	
 					</div>
 					
 				<div class="col-xs-6">
 					<label for="comment">Nomor Dokumen:</label>
-					<input class="form-control" rows="5" id="comment" name="Document_Number"> 
+					<input class="form-control" rows="5" id="comment" name="Document_Number" value="<?php echo $data['Document_Number']?>"> 
 				</div>
 				
 				<div class="col-xs-6">
 					<label for="comment">Progress Terakhir (%):</label>
-					<input class="form-control" rows="5" id="comment" name="Last_Progress">
+					<input class="form-control" rows="5" id="comment" name="Last_Progress" value="<?php echo $data['Last_Progress']?>">
 				<br>
 				</div>
 				
 				<div class="col-xs-4">
 					<label for="comment">Nilai:</label>
-					<input class="form-control" rows="5" id="comment" name="Value">
-				  <select class="form-control" id="tipeperusahaan" name="Sub_Value">
+					<input class="form-control" rows="5" id="comment" name="Value" value="<?php echo $data['Value']?>">
+				  <select class="form-control" id="tipeperusahaan" name="Sub_Value" value="<?php echo $data['Sub_Value']?>">
 				    <option>Indonesia</option>
 				    <option>Malaysia</option>
 					<option>Singapura</option>
@@ -185,36 +172,6 @@
   </ul>
   
 			</form>
-			<div class="well well-sm">Result (Table):</div>
-			<table class="table table-bordered">
-				<!--nama field-->
-				<thead>
-					<tr style="font-size:9px">
-					<?php
-						while ($colNames = mysql_fetch_array($colExec)){
-							echo "
-							<th>$colNames[Field]</th>
-							";
-						}
-					?>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
-						while($conNames = mysql_fetch_array($conExec)){
-							echo "<tr>";
-							foreach($all_prop as $item){
-								echo "<td>$conNames[$item]</td>";
-							}
-							echo "
-							<td><a href=\"editstep10.php?No=$conNames[No]\">edit</a></td>
-							<td><a href=\"deletestep10.php?No=$conNames[No]\">delete</td>
-							";
-							echo "</tr>";
-						}
-					?>
-				</tbody>
-			</table>
 		</div>
 
 </body>

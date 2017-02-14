@@ -5,7 +5,7 @@
 	$No = $_GET["No"];
 
 	//delete coy
-	$query = "DELETE FROM partner_k3s WHERE No = '$No'";
+	$query = "DELETE FROM klasifikasi_perusahaan WHERE No = '$No'";
 	$result = mysql_query($query);
 
 	//balik lagi coy

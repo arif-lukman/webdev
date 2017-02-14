@@ -5,9 +5,9 @@
 	$No = $_GET["No"];
 
 	//delete coy
-	$query = "DELETE FROM partner_k3s WHERE No = '$No'";
+	$query = "DELETE FROM perusahaan_pembuat_barang WHERE No = '$No'";
 	$result = mysql_query($query);
 
 	//balik lagi coy
-	header("location:step12.php");
+	header("location:step11.php");
 ?>

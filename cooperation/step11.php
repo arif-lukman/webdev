@@ -1,3 +1,29 @@
+<?php
+	include "koneksiDB.php";
+	include "lib/library.php";
+	
+	//query buat ngambil nama field
+	$colQuery = 
+	"SHOW columns FROM perusahaan_pembuat_barang";
+
+	//eksekusi query colQuery
+	$colExec = mysql_query($colQuery);
+
+	//query buat ngambil isi field
+	$conQuery = "SELECT * FROM perusahaan_pembuat_barang";
+
+	//eksekusi query conQuery
+	$conExec = mysql_query($conQuery);
+
+	//array buatan
+	$all_prop = array();
+
+	//push fieldsnya ke all_prop
+	while ($prop = mysql_fetch_field($conExec)){
+		array_push($all_prop, $prop->name);
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +73,7 @@
   <center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
   
 <div class="col-sm-2"></div>
-			<form class="col-sm-8">
+			<form class="col-sm-8" action="step11action.php" method="post">
 				<h2>Step 11</h2>
 				<h3>Perusahaan Pembuat Barang</h3>
 				<hr>
@@ -55,15 +81,15 @@
 			
 				<div class="form-group">
 			  		<label for="name">Produk:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
+				  	<input type="text" class="form-control" id="namaperusahaan" name="Product"><p class="text-warning">should not be empty</p>
 				</div>
 				
 				<div class="form-group">
 			  		<label for="name">Deskripsi:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
+				  	<input type="text" class="form-control" id="namaperusahaan" name="Description"><p class="text-warning">should not be empty</p>
 				</div>
 						
-<button type="button" class="btn btn-primary">Save</button>
+<button type="submit" class="btn btn-primary">Save</button>
 <button type="button" class="btn btn-primary">Reset</button>
 <hr>
   <ul class="pager">
@@ -73,6 +99,35 @@
   
 			</form>
 			<div class="well well-sm">Result (Table):</div>
+			<table class="table table-bordered">
+				<!--nama field-->
+				<thead>
+					<tr style="font-size:9px">
+					<?php
+						while ($colNames = mysql_fetch_array($colExec)){
+							echo "
+							<th>$colNames[Field]</th>
+							";
+						}
+					?>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+						while($conNames = mysql_fetch_array($conExec)){
+							echo "<tr>";
+							foreach($all_prop as $item){
+								echo "<td>$conNames[$item]</td>";
+							}
+							echo "
+							<td><a href=\"editstep11.php?No=$conNames[No]\">edit</a></td>
+							<td><a href=\"deletestep11.php?No=$conNames[No]\">delete</td>
+							";
+							echo "</tr>";
+						}
+					?>
+				</tbody>
+			</table>
 		</div>
 		</div>
 

@@ -1,33 +1,19 @@
 <?php
 	include "koneksiDB.php";
-	include "lib/library.php";
+
+	//parameter diambil sini woi
+		$No = $_GET["No"];
 	
-	//query buat ngambil nama field
-	$colQuery = 
-	"SHOW columns FROM surat_dan_dokumen_pelengkap";
-
-	//eksekusi query colQuery
-	$colExec = mysql_query($colQuery);
-
-	//query buat ngambil isi field
-	$conQuery = "SELECT * FROM surat_dan_dokumen_pelengkap";
-
-	//eksekusi query conQuery
-	$conExec = mysql_query($conQuery);
-
-	//array buatan
-	$all_prop = array();
-
-	//push fieldsnya ke all_prop
-	while ($prop = mysql_fetch_field($conExec)){
-		array_push($all_prop, $prop->name);
-	}
+		//ambil semua detail dengan id diatas
+	$query = "SELECT * FROM klasifikasi_perusahaan WHERE No='$No'";
+	$result = mysql_query($query);
+	$data = mysql_fetch_array($result);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Step 14</title>
+  <title>Step 12</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -73,70 +59,70 @@
   <center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
   
 <div class="col-sm-2"></div>
-			<form class="col-sm-8" action="step14action.php" method="post">
-				<h2>Step 14</h2>
-				<h3>Surat dan Dokumen Pelengkap</h3>
+			<form class="col-sm-8" action="updatestep12.php?No=<?php echo $No;?>" method="post">
+				<h2>Step 12</h2>
+				<h3>Klasifikasi Perusahaan</h3>
 				<hr>
 					 <div class="well well-lg">
-			
-				<div class="form-group">
-				  <label for="sel1">Tipe Surat dan Dokumen Pelengkap</label>
-				  <select class="form-control" id="sel1" name="Supporting_Document_Type">
-				    <option>Head Office</option>
-				    <option>Langgak Site</option>
+					 
+				<div class="col-xs-6">
+				  <label for="tipeperusahaan">Bidang Pekerjaan:</label>
+				  <select class="form-control" id="tipeperusahaan" name="Activities_Section" value="<?php echo $data['Activities_Section']?>">
+				    <option>Indonesia</option>
+				    <option>Malaysia</option>
+					<option>Singapura</option>
+					<option>Amerika</option>
+					<option>China</option>
+					<option>Inggris</option>
+					<option>Rusia</option>
 				  </select><p class="text-warning">should not be empty</p>
 				</div>
-						
-				<div class="form-group">
-				  	<label for="email">Deskripsi:</label>
-				  	<input type="input" class="form-control" id="email" name="Description"><p class="text-warning">should not be empty</p>
+				
+				<div class="col-xs-6">
+				  <label for="tipeperusahaan">Klasifikasi:</label>
+				  <select class="form-control" id="tipeperusahaan" name="Classification" value="<?php echo $data['Classification']?>">
+				    <option>Indonesia</option>
+				    <option>Malaysia</option>
+					<option>Singapura</option>
+					<option>Amerika</option>
+					<option>China</option>
+					<option>Inggris</option>
+					<option>Rusia</option>
+				  </select><p class="text-warning">should not be empty</p>
+				  <select class="form-control" id="tipeperusahaan" name="Sub_Classification" value="<?php echo $data['Sub_Classification']?>">
+				    <option>Indonesia</option>
+				    <option>Malaysia</option>
+					<option>Singapura</option>
+					<option>Amerika</option>
+					<option>China</option>
+					<option>Inggris</option>
+					<option>Rusia</option>
+				  </select><p class="text-warning">should not be empty</p>
+				  <br>
 				</div>
-
+			
 				<div class="form-group">
-				<label for="lampiran">Lampiran:</label>
-				<input type="file" name="pic" accept="image/*" name="Attachment"><p class="text-warning">should not be empty</p>
+			  		<label for="name">Deskripsi:</label>
+				  	<textarea type="text" class="form-control" id="namaperusahaan" name="Description" value="<?php echo $data['Description']?>"><?php echo $data['Description']?></textarea><p class="text-warning">should not be empty</p>
 				<br>
 				</div>
-
+				
+				<div class="form-group">
+				<input type="file" name="pic" accept="image/*" name="Attachment" value="<?php echo $data['Attachment']?>">
+				<span class="label label-info">Format PDF max. 2Mb </span><p class="text-warning">should not be empty</p>
+				<br>
+				</div>
+						
 <button type="submit" class="btn btn-primary">Save</button>
 <button type="button" class="btn btn-primary">Reset</button>
 <hr>
   <ul class="pager">
-    <li><a href="step13.php">Previous Step</a></li>
-    <li><a href="step15.php">Next Step</a></li>
+    <li><a href="step11.php">Previous Step</a></li>
+    <li><a href="step13.php">Next Step</a></li>
   </ul>
   
 			</form>
-			<div class="well well-sm">Result (Table):</div>
-			<table class="table table-bordered">
-				<!--nama field-->
-				<thead>
-					<tr style="font-size:9px">
-					<?php
-						while ($colNames = mysql_fetch_array($colExec)){
-							echo "
-							<th>$colNames[Field]</th>
-							";
-						}
-					?>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
-						while($conNames = mysql_fetch_array($conExec)){
-							echo "<tr>";
-							foreach($all_prop as $item){
-								echo "<td>$conNames[$item]</td>";
-							}
-							echo "
-							<td><a href=\"editstep14.php?No=$conNames[No]\">edit</a></td>
-							<td><a href=\"deletestep14.php?No=$conNames[No]\">delete</td>
-							";
-							echo "</tr>";
-						}
-					?>
-				</tbody>
-			</table>
+		</div>
 		</div>
 
 </body>

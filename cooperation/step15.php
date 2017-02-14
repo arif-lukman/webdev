@@ -1,3 +1,29 @@
+<?php
+	include "koneksiDB.php";
+	include "lib/library.php";
+	
+	//query buat ngambil nama field
+	$colQuery = 
+	"SHOW columns FROM surat_dan_dokumen_pelengkap";
+
+	//eksekusi query colQuery
+	$colExec = mysql_query($colQuery);
+
+	//query buat ngambil isi field
+	$conQuery = "SELECT * FROM surat_dan_dokumen_pelengkap";
+
+	//eksekusi query conQuery
+	$conExec = mysql_query($conQuery);
+
+	//array buatan
+	$all_prop = array();
+
+	//push fieldsnya ke all_prop
+	while ($prop = mysql_fetch_field($conExec)){
+		array_push($all_prop, $prop->name);
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,7 +75,7 @@
 <div class="col-sm-2"></div>
 			<form class="col-sm-8">
 				<h2>Step 15</h2>
-				<h3>Nama dan Tipe Perusahaan</h3>
+				<h3>Pengajuan (Submission)</h3>
 				<hr>
 					 <div class="well well-lg">
 			

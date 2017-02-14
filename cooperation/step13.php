@@ -1,3 +1,28 @@
+<?php
+	include "koneksiDB.php";
+	include "lib/library.php";
+	//query buat ngambil nama field
+	$colQuery = 
+	"SHOW columns FROM keadaan_perusahaan";
+
+	//eksekusi query colQuery
+	$colExec = mysql_query($colQuery);
+
+	//query buat ngambil isi field
+	$conQuery = "SELECT * FROM keadaan_perusahaan";
+
+	//eksekusi query conQuery
+	$conExec = mysql_query($conQuery);
+
+	//array buatan
+	$all_prop = array();
+
+	//push fieldsnya ke all_prop
+	while ($prop = mysql_fetch_field($conExec)){
+		array_push($all_prop, $prop->name);
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,45 +72,57 @@
   <center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
   
 <div class="col-sm-2"></div>
-			<form class="col-sm-8">
+			<form class="col-sm-8" action="step13action.php" method="post">
 				<h2>Step 13</h2>
-				<h3>Nama dan Tipe Perusahaan</h3>
+				<h3>Keadaan Perusahaan</h3>
 				<hr>
 					 <div class="well well-lg">
-			
+ 
 				<div class="form-group">
-			  		<label for="name">1. Proses bangkrut(Bankruptcy proceeding)</label>
-				  	<label class="radio-inline"><input type="radio" name="opt1">Yes</label>
-					<label class="radio-inline"><input type="radio" name="opt1">No</label>
+					<tr><td><strong>1. Proses bangkrut (Bancrupty proceeding)</strong></td><td> :
+					<br>
+					<input type=radio name='Proses_Bangkrut' id='a' value='Yes'>Yes
+					<input type=radio name='Proses_Bangkrut' id='a' value='No'>No</td></tr>
+					<?php mysql_query("INSERT INTO keadaan_perusahaan(Proses_Bangkrut)VALUES('$_POST[Proses_Bangkrut]')"); ?>
 				</div>
 				<div class="form-group">
-			  		<label for="name">2. Pengawasan pengadilan(Court supervision)</label>
-				  	<label class="radio-inline"><input type="radio" name="opt2">Yes</label>
-					<label class="radio-inline"><input type="radio" name="opt2">No</label>
+					<tr><td><strong>2. Pengawasan pengadilan (Court supervision)</strong></td><td> :
+					<br>
+					<input type=radio name='Pengawasan_Keadilan' id='a' value='Yes'>Yes
+					<input type=radio name='Pengawasan_Keadilan' id='a' value='No'>No</td></tr>
+					<?php mysql_query("INSERT INTO keadaan_perusahaan(Pengawasan_Keadilan)VALUES('$_POST[Pengawasan_Keadilan]')"); ?>
 				</div>
 				<div class="form-group">
-			  		<label for="name">3. Kegiatan usaha sedang dihentikan(Suspension of business activities)</label>
-				  	<label class="radio-inline"><input type="radio" name="opt3">Yes</label>
-					<label class="radio-inline"><input type="radio" name="opt3">No</label>
+					<tr><td><strong>3. Kegiatan usaha sedang dihentikan (Suspension of business activities)</strong></td><td> :
+					<br>
+					<input type=radio name='Kegiatan_Usaha_Sedang_Dihentikan' id='a' value='Yes'>Yes
+					<input type=radio name='Kegiatan_Usaha_Sedang_Dihentikan' id='a' value='No'>No</td></tr>
+					<?php mysql_query("INSERT INTO keadaan_perusahaan(Kegiatan_Usaha_Sedang_Dihentikan)VALUES('$_POST[Kegiatan_Usaha_Sedang_Dihentikan]')"); ?>
 				</div>
 				<div class="form-group">
-			  		<label for="name">4. Tuntutan atau claim dari pihak ketiga atau pemerintah(Claims or suity with third partes including government agencies)</label>
-				  	<label class="radio-inline"><input type="radio" name="opt4">Yes</label>
-					<label class="radio-inline"><input type="radio" name="opt4">No</label>
+					<tr><td><strong>4. Tuntutan atau claim dari pihak ketiga atau pemerintah (Claims or suity with third parties including government agencies)</strong></td><td> :
+					<br>
+					<input type=radio name='Tuntutan' id='a' value='Yes'>Yes
+					<input type=radio name='Tuntutan' id='a' value='No'>No</td></tr>
+					<?php mysql_query("INSERT INTO keadaan_perusahaan(Tuntutan)VALUES('$_POST[Tuntutan]')"); ?>
 				</div>
 				<div class="form-group">
-			  		<label for="name">5. Sedang dikenakan sanksi hukum berdasarkan undang-undang kriminal(Is being sanctioned by criminal law)</label>
-				  	<label class="radio-inline"><input type="radio" name="opt5">Yes</label>
-					<label class="radio-inline"><input type="radio" name="opt5">No</label>
+					<tr><td><strong>5. Sedang dikenakan sangsi hukum berdasarkan undang-undang kriminal (Is being sanctioned by criminal law)</strong></td><td> :
+					<br>
+					<input type=radio name='Sanksi_Hukum' id='a' value='Yes'>Yes
+					<input type=radio name='Sanksi_Hukum' id='a' value='No'>No</td></tr>
+					<?php mysql_query("INSERT INTO keadaan_perusahaan(Sanksi_Hukum)VALUES('$_POST[Sanksi_Hukum]')"); ?>
 				</div>
 				<div class="form-group">
-			  		<label for="name">6. Sedang dikenakan sanksi oleh perusahaan K3S atau perusahaan migas lainnya(Is being sanctioned by K3S or other oil company)</label>
-				  	<label class="radio-inline"><input type="radio" name="opt6">Yes</label>
-					<label class="radio-inline"><input type="radio" name="opt6">No</label>
+					<tr><td><strong>6. Sedang dikenakan sangsi oleh perusahaan K3S atau perusahaan migas lainnya (Is being sanctioned by K3S or other oil company)</strong></td><td> :
+					<br>
+					<input type=radio name='Sanksi_K3S' id='a' value='Yes'>Yes
+					<input type=radio name='Sanksi_K3S' id='a' value='No'>No</td></tr>
+					<?php mysql_query("INSERT INTO keadaan_perusahaan(Sanksi_K3S)VALUES('$_POST[Sanksi_K3S]')"); ?>
 				</div>
 
 				
-<button type="button" class="btn btn-primary">Save</button>
+<button type="submit" class="btn btn-primary">Save</button>
 <button type="button" class="btn btn-primary">Reset</button>
 <hr>
   <ul class="pager">

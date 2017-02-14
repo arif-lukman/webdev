@@ -1,3 +1,29 @@
+<?php
+	include "koneksiDB.php";
+	include "lib/library.php";
+	
+	//query buat ngambil nama field
+	$colQuery = 
+	"SHOW columns FROM klasifikasi_perusahaan";
+
+	//eksekusi query colQuery
+	$colExec = mysql_query($colQuery);
+
+	//query buat ngambil isi field
+	$conQuery = "SELECT * FROM klasifikasi_perusahaan";
+
+	//eksekusi query conQuery
+	$conExec = mysql_query($conQuery);
+
+	//array buatan
+	$all_prop = array();
+
+	//push fieldsnya ke all_prop
+	while ($prop = mysql_fetch_field($conExec)){
+		array_push($all_prop, $prop->name);
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +73,7 @@
   <center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
   
 <div class="col-sm-2"></div>
-			<form class="col-sm-8">
+			<form class="col-sm-8" action="step12action.php" method="post">
 				<h2>Step 12</h2>
 				<h3>Klasifikasi Perusahaan</h3>
 				<hr>
@@ -55,7 +81,7 @@
 					 
 				<div class="col-xs-6">
 				  <label for="tipeperusahaan">Bidang Pekerjaan:</label>
-				  <select class="form-control" id="tipeperusahaan">
+				  <select class="form-control" id="tipeperusahaan" name="Activities_Section">
 				    <option>Indonesia</option>
 				    <option>Malaysia</option>
 					<option>Singapura</option>
@@ -67,8 +93,8 @@
 				</div>
 				
 				<div class="col-xs-6">
-				  <label for="tipeperusahaan">Bidang Pekerjaan:</label>
-				  <select class="form-control" id="tipeperusahaan">
+				  <label for="tipeperusahaan">Klasifikasi:</label>
+				  <select class="form-control" id="tipeperusahaan" name="Classification">
 				    <option>Indonesia</option>
 				    <option>Malaysia</option>
 					<option>Singapura</option>
@@ -77,7 +103,7 @@
 					<option>Inggris</option>
 					<option>Rusia</option>
 				  </select><p class="text-warning">should not be empty</p>
-				  <select class="form-control" id="tipeperusahaan">
+				  <select class="form-control" id="tipeperusahaan" name="Sub_Classification">
 				    <option>Indonesia</option>
 				    <option>Malaysia</option>
 					<option>Singapura</option>
@@ -91,17 +117,17 @@
 			
 				<div class="form-group">
 			  		<label for="name">Deskripsi:</label>
-				  	<textarea type="text" class="form-control" id="namaperusahaan"></textarea><p class="text-warning">should not be empty</p>
+				  	<textarea type="text" class="form-control" id="namaperusahaan" name="Description"></textarea><p class="text-warning">should not be empty</p>
 				<br>
 				</div>
 				
 				<div class="form-group">
-				<input type="file" name="pic" accept="image/*">
+				<input type="file" name="pic" accept="image/*" name="Attachment">
 				<span class="label label-info">Format PDF max. 2Mb </span><p class="text-warning">should not be empty</p>
 				<br>
 				</div>
 						
-<button type="button" class="btn btn-primary">Save</button>
+<button type="submit" class="btn btn-primary">Save</button>
 <button type="button" class="btn btn-primary">Reset</button>
 <hr>
   <ul class="pager">
@@ -111,6 +137,35 @@
   
 			</form>
 			<div class="well well-sm">Result (Table):</div>
+			<table class="table table-bordered">
+				<!--nama field-->
+				<thead>
+					<tr style="font-size:9px">
+					<?php
+						while ($colNames = mysql_fetch_array($colExec)){
+							echo "
+							<th>$colNames[Field]</th>
+							";
+						}
+					?>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+						while($conNames = mysql_fetch_array($conExec)){
+							echo "<tr>";
+							foreach($all_prop as $item){
+								echo "<td>$conNames[$item]</td>";
+							}
+							echo "
+							<td><a href=\"editstep12.php?No=$conNames[No]\">edit</a></td>
+							<td><a href=\"deletestep12.php?No=$conNames[No]\">delete</td>
+							";
+							echo "</tr>";
+						}
+					?>
+				</tbody>
+			</table>
 		</div>
 		</div>
 
