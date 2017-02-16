@@ -4,13 +4,13 @@
 	
 	//query buat ngambil nama field
 	$colQuery = 
-	"SHOW columns FROM pengalaman_perusahaan";
+	"SHOW columns FROM pengalaman_perusahaan WHERE FIELD = 'No' or FIELD = 'Project_Name' or FIELD = 'Classification' or FIELD = 'User_Company' or FIELD = 'User_Company' or FIELD = 'Contact_Date' or FIELD = 'Value' or FIELD = 'Attachment'";
 
 	//eksekusi query colQuery
 	$colExec = mysql_query($colQuery);
 
 	//query buat ngambil isi field
-	$conQuery = "SELECT * FROM pengalaman_perusahaan";
+	$conQuery = "SELECT No, Project_Name, Classification, User_Company, Contact_Date, Value, Attachment FROM pengalaman_perusahaan";
 
 	//eksekusi query conQuery
 	$conExec = mysql_query($conQuery);

@@ -4,13 +4,13 @@
 	
 	//query buat ngambil nama field
 	$colQuery = 
-	"SHOW columns FROM daftar_rekening_bank";
+	"SHOW columns FROM daftar_rekening_bank WHERE FIELD = 'No' or FIELD = 'Bank_Name' or FIELD = 'Branch' or FIELD = 'Acc_Name' or FIELD = 'Acc_Number' or FIELD = 'Currency'";
 
 	//eksekusi query colQuery
 	$colExec = mysql_query($colQuery);
 
 	//query buat ngambil isi field
-	$conQuery = "SELECT * FROM daftar_rekening_bank";
+	$conQuery = "SELECT No, Bank_Name, Branch, Acc_Name, Acc_Number, Currency FROM daftar_rekening_bank";
 
 	//eksekusi query conQuery
 	$conExec = mysql_query($conQuery);

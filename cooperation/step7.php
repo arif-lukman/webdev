@@ -4,13 +4,13 @@
 	
 	//query buat ngambil nama field
 	$colQuery = 
-	"SHOW columns FROM surat_keagenan";
+	"SHOW columns FROM surat_keagenan WHERE FIELD = 'No' or FIELD = 'Distributor' or FIELD = 'Document_Number' or FIELD = 'Issued_By' or FIELD = 'Issued_Date' or FIELD = 'Expired_Date' or FIELD = 'Description' or FIELD = 'Attachment'";
 
 	//eksekusi query colQuery
 	$colExec = mysql_query($colQuery);
 
 	//query buat ngambil isi field
-	$conQuery = "SELECT * FROM surat_keagenan";
+	$conQuery = "SELECT No, Distributor, Document_Number, Issued_By, Issued_Date, Expired_Date, Description, Attachment FROM surat_keagenan";
 
 	//eksekusi query conQuery
 	$conExec = mysql_query($conQuery);

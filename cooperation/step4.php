@@ -3,13 +3,13 @@
 
 	//query buat ngambil nama field
 	$colQuery = 
-	"SHOW columns FROM susunan_pengurus";
+	"SHOW columns FROM susunan_pengurus WHERE FIELD = 'No' or FIELD = 'Management_Type' or FIELD = 'Name' or FIELD = 'Position' or FIELD = 'Address'";
 
 	//eksekusi query colQuery
 	$colExec = mysql_query($colQuery);
 
 	//query buat ngambil isi field
-	$conQuery = "SELECT * FROM susunan_pengurus";
+	$conQuery = "SELECT No, Management_Type, Position, Name, Address FROM susunan_pengurus";
 
 	//eksekusi query conQuery
 	$conExec = mysql_query($conQuery);

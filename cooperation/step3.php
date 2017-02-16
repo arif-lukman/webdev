@@ -4,13 +4,13 @@
 	
 	//query buat ngambil nama field
 	$colQuery = 
-	"SHOW columns FROM alamat_kantor";
+	"SHOW columns FROM alamat_kantor WHERE FIELD = 'No' or FIELD = 'Office_Type' or FIELD = 'Office_Address' or FIELD = 'Office_Phone_Number' or FIELD = 'Office_Email'";
 
 	//eksekusi query colQuery
 	$colExec = mysql_query($colQuery);
 
 	//query buat ngambil isi field
-	$conQuery = "SELECT * FROM alamat_kantor";
+	$conQuery = "SELECT No, Office_Type, Office_Address, Office_Phone_Number, Office_Email FROM alamat_kantor";
 
 	//eksekusi query conQuery
 	$conExec = mysql_query($conQuery);
