@@ -56,7 +56,7 @@
 				</div>
 				<br>
 				
-				<input type="submit" class="btn btn-primary tisright" value="LOGIN"></input>
+				<center><input type="submit" class="btn btn-primary" value="LOGIN"></input></center>
 			</form>
 			
 			
