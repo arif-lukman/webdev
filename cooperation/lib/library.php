@@ -14,7 +14,7 @@
 					<li><a href='#''>Bantuan</a></li>
 				</ul>
 				<ul class='nav navbar-nav navbar-right'>
-					<li><a href='index.php'>Logout</a></li>
+					<li><a href='../controller/logout.php'>Logout</a></li>
 				</ul>
 			</div>
 		</nav>

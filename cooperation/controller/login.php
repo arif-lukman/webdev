@@ -12,6 +12,11 @@
 	$result = $conn->query($sql);
 
 	if ($result->num_rows > 0) {
+		$row = $result->fetch_assoc();
+		if(!isset($_SESSION)){
+			session_start();
+			$_SESSION['uid'] = $row['_id'];
+		}
 	    echo "<script> alert('Selamat datang~!');
 			location='../admin/main_menu.php';
 			</script>";

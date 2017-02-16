@@ -1,6 +1,9 @@
 <?php
 	//include library
 	include "../lib/library.php";
+	
+	//include session checker
+	include "../controller/check_session.php";
 
 	//set variabel nama db
 	$dbname = "_bpms_master";

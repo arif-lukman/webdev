@@ -1,3 +1,7 @@
+<?php
+	//include session checker
+	include "../controller/check_session.php";
+?>
 <!DOCTYPE html>
 <html>
 	<head>
