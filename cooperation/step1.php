@@ -62,11 +62,11 @@
 	<option>---- Pilih Tipe Perusahaan ----</option>
     <?php
     mysql_connect("localhost", "root", "");
-    mysql_select_db("labdb");
-    $sql = mysql_query("SELECT * FROM drop_company_type ORDER BY Drop_CT ASC");
+    mysql_select_db("_bpms_master");
+    $sql = mysql_query("SELECT * FROM _company_type ORDER BY _judul ASC");
     if(mysql_num_rows($sql) != 0){
         while($data = mysql_fetch_assoc($sql)){
-            echo '<option>'.$data['Drop_CT'].'</option>';
+            echo '<option>'.$data['_judul'].'</option>';
         }
     }
     ?>
@@ -79,11 +79,11 @@
 	<option>---- Pilih Kualifikasi Perusahaan ----</option>
     <?php
     mysql_connect("localhost", "root", "");
-    mysql_select_db("labdb");
-    $sql = mysql_query("SELECT * FROM drop_company_qualification ORDER BY Drop_CQ ASC");
+    mysql_select_db("_bpms_master");
+    $sql = mysql_query("SELECT * FROM _qual_type ORDER BY _judul ASC");
     if(mysql_num_rows($sql) != 0){
         while($data = mysql_fetch_assoc($sql)){
-            echo '<option>'.$data['Drop_CQ'].'</option>';
+            echo '<option>'.$data['_judul'].'</option>';
         }
     }
     ?>

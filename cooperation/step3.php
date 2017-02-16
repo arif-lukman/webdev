@@ -82,59 +82,50 @@
 				<div class="col-xs-4">
 				  <label for="kualifikasiperusahaan">Tipe Kantor:</label>
 				  <select class="form-control" id="kualifikasiperusahaan" name="Office_Type">
-				    <option>Pusat</option>
-				    <option>Cabang</option>
-					<option>Perwakilan</option>
-				  </select><p class="text-warning">should not be empty</p>
-				</div>
-				
+	<option>---- Pilih Tipe Kantor----</option>
+    <?php
+    mysql_connect("localhost", "root", "");
+    mysql_select_db("_bpms_master");
+    $sql = mysql_query("SELECT * FROM _office_type ORDER BY _judul ASC");
+    if(mysql_num_rows($sql) != 0){
+        while($data = mysql_fetch_assoc($sql)){
+            echo '<option>'.$data['_judul'].'</option>';
+        }
+    }
+    ?>
+	</select><p class="text-warning">should not be empty</p>
+	</div>			
 				<div class="col-xs-4">
 				  <label for="kualifikasiperusahaan">Negara:</label>
 				  <select class="form-control" id="kualifikasiperusahaan" name="Country">
-				    <option>Indonesia</option>
-				    <option>Malaysia</option>
-					<option>Singapura</option>
-					<option>Amerika</option>
-					<option>China</option>
-					<option>Inggris</option>
-					<option>Rusia</option>
+				    	<option>---- Pilih Negara  ----</option>
+    <?php
+    mysql_connect("localhost", "root", "");
+    mysql_select_db("_bpms_master");
+    $sql = mysql_query("SELECT * FROM _country ORDER BY _nama ASC");
+    if(mysql_num_rows($sql) != 0){
+        while($data = mysql_fetch_assoc($sql)){
+            echo '<option>'.$data['_nama'].'</option>';
+        }
+    }
+    ?>
 				  </select><p class="text-warning">should not be empty</p>
 				</div>
 				
 				<div class="col-xs-4">
 				  <label for="provinsi">Provinsi:</label>
 				  <select class="form-control" id="provinsi" name="Province">
-				    <option>Aceh</option>
-				    <option>Bali</option>
-					<option>Banten</option>
-					<option>Bengkulu</option>
-					<option>Goranto</option>
-					<option>DKI Jakarta</option>
-					<option>Jambi</option>
-					<option>Jawa Barat</option>
-					<option>Jawa Tengah</option>
-					<option>Jawa Timur</option>
-					<option>Kalimantan Barat</option>
-					<option>Kalimantan Selatan</option>
-					<option>Kalimantan Tengah</option>
-					<option>Kepulauan Bangka Belitung</option>
-					<option>Kepulauan Riau</option>
-					<option>Lampung</option>
-					<option>Maluku</option>
-					<option>Maluku Utara</option>
-					<option>Nusa Tenggara Barat</option>
-					<option>Papua</option>
-					<option>Papua Barat</option>
-					<option>Sulawesi Barat</option>
-					<option>Sulawesi Selatan</option>
-					<option>Sulawesi Tengah</option>
-					<option>Sulawesi Tenggara</option>
-					<option>Sulawesi Utara</option>
-					<option>Sumatera Barat</option>
-					<option>Sumatera Selatan</option>
-					<option>Sumatera Utara</option>
-					<option>Yogyakarta</option>
-					<option>Yang Lain-Lain / Other</option>
+				  <option>---- Pilih Provinsi----</option>
+ <?php
+    mysql_connect("localhost", "root", "");
+    mysql_select_db("_bpms_master");
+    $sql = mysql_query("SELECT * FROM _province ORDER BY _nama ASC");
+    if(mysql_num_rows($sql) != 0){
+        while($data = mysql_fetch_assoc($sql)){
+            echo '<option>'.$data['_nama'].'</option>';
+        }
+    }
+    ?>
 					
 				  </select><p class="text-warning">should not be empty</p>
 				</div>
