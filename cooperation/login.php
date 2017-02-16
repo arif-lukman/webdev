@@ -23,9 +23,17 @@
 
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
 	</head>
 
 	<body>
+	<div class="alert alert-info">
+			<form action="signup.php" method="post" class="col-sm-8">
+			<p>if you dont have any account, then <input type="submit" class="btn btn-primary" value="SIGN-UP"></input></p>
+			</form>
+			<br><br>
+			</div>
+	
 	<br><br><br>
 				<div class="col-sm-12 text-center motto">
 				<img src="../assets/images/cooperation/bannerlogin.png">
@@ -47,13 +55,15 @@
 					<input type="password" class="form-control" id="pwd" name="password">
 				</div>
 				<br>
-				<input class="submit" type="submit" value="LOGIN">
-		
-
+				
+				<input type="submit" class="btn btn-primary tisright" value="LOGIN"></input>
 			</form>
-
+			
+			
 		</div>
 		<div class="container">
+		
+		<br>
 					<center><a href="../index.php"><img src="../assets/images/cooperation/back.png" width="100"></a></center>
 		</div>
 		<div class="panel-footer"><center><strong>Gunakan username dan password yang telah diberikan pada Anda.<br></strong>
