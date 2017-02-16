@@ -83,43 +83,45 @@
 					<br>
 					<input type=radio name='Proses_Bangkrut' id='a' value='Yes'>Yes
 					<input type=radio name='Proses_Bangkrut' id='a' value='No'>No</td></tr>
-					<?php mysql_query("INSERT INTO keadaan_perusahaan(Proses_Bangkrut)VALUES('$_POST[Proses_Bangkrut]')"); ?>
+					<?php 'mysql_query'; ?>
 				</div>
-				<div class="form-group">
+				
+<div class="form-group">
 					<tr><td><strong>2. Pengawasan pengadilan (Court supervision)</strong></td><td> :
 					<br>
 					<input type=radio name='Pengawasan_Keadilan' id='a' value='Yes'>Yes
 					<input type=radio name='Pengawasan_Keadilan' id='a' value='No'>No</td></tr>
-					<?php mysql_query("INSERT INTO keadaan_perusahaan(Pengawasan_Keadilan)VALUES('$_POST[Pengawasan_Keadilan]')"); ?>
+					<?php 'mysql_query'; ?>
 				</div>
 				<div class="form-group">
 					<tr><td><strong>3. Kegiatan usaha sedang dihentikan (Suspension of business activities)</strong></td><td> :
 					<br>
 					<input type=radio name='Kegiatan_Usaha_Sedang_Dihentikan' id='a' value='Yes'>Yes
 					<input type=radio name='Kegiatan_Usaha_Sedang_Dihentikan' id='a' value='No'>No</td></tr>
-					<?php mysql_query("INSERT INTO keadaan_perusahaan(Kegiatan_Usaha_Sedang_Dihentikan)VALUES('$_POST[Kegiatan_Usaha_Sedang_Dihentikan]')"); ?>
+					<?php 'mysql_query'; ?>
 				</div>
 				<div class="form-group">
 					<tr><td><strong>4. Tuntutan atau claim dari pihak ketiga atau pemerintah (Claims or suity with third parties including government agencies)</strong></td><td> :
 					<br>
 					<input type=radio name='Tuntutan' id='a' value='Yes'>Yes
 					<input type=radio name='Tuntutan' id='a' value='No'>No</td></tr>
-					<?php mysql_query("INSERT INTO keadaan_perusahaan(Tuntutan)VALUES('$_POST[Tuntutan]')"); ?>
+					<?php 'mysql_query'; ?>
 				</div>
 				<div class="form-group">
 					<tr><td><strong>5. Sedang dikenakan sangsi hukum berdasarkan undang-undang kriminal (Is being sanctioned by criminal law)</strong></td><td> :
 					<br>
 					<input type=radio name='Sanksi_Hukum' id='a' value='Yes'>Yes
 					<input type=radio name='Sanksi_Hukum' id='a' value='No'>No</td></tr>
-					<?php mysql_query("INSERT INTO keadaan_perusahaan(Sanksi_Hukum)VALUES('$_POST[Sanksi_Hukum]')"); ?>
+					<?php 'mysql_query'; ?>
 				</div>
 				<div class="form-group">
 					<tr><td><strong>6. Sedang dikenakan sangsi oleh perusahaan K3S atau perusahaan migas lainnya (Is being sanctioned by K3S or other oil company)</strong></td><td> :
 					<br>
 					<input type=radio name='Sanksi_K3S' id='a' value='Yes'>Yes
 					<input type=radio name='Sanksi_K3S' id='a' value='No'>No</td></tr>
-					<?php mysql_query("INSERT INTO keadaan_perusahaan(Sanksi_K3S)VALUES('$_POST[Sanksi_K3S]')"); ?>
+					<?php 'mysql_query'; ?>
 				</div>
+				
 
 				
 <button type="submit" class="btn btn-primary">Save</button>

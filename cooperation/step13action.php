@@ -9,7 +9,7 @@
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "labdb";
+	$dbname = "_bpms_vendor";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -18,8 +18,8 @@
 	    die("Connection failed: " . $conn->connect_error);
 	} 
 
-	$sql = "INSERT INTO keadaan_perusahaan (Proses_Bangkrut, Pengawasan_Keadilan, Kegiatan_Usaha_Sedang_Dihentikan, Tuntutan, Sanksi_Hukum, Sanksi_K3S)
-	VALUES ('$Proses_Bangkrut', '$Pengawasan_Keadilan', '$Kegiatan_Usaha_Sedang_Dihentikan', '$Tuntutan', '$Sanksi_Hukum', '$Sanksi_K3S')";
+	$sql = "INSERT INTO keadaan_perusahaan(Proses_Bangkrut, Pengawasan_Keadilan, Kegiatan_Usaha_Sedang_Dihentikan, Tuntutan, Sanksi_Hukum, Sanksi_K3S)
+	VALUES('$_POST[Proses_Bangkrut]', '$_POST[Pengawasan_Keadilan]', '$_POST[Kegiatan_Usaha_Sedang_Dihentikan]', '$_POST[Tuntutan]', '$_POST[Sanksi_Hukum]', '$_POST[Sanksi_K3S]')";
 	
 	if ($conn->query($sql) === TRUE) {
 				echo "<script> alert('Saving Data Success');
