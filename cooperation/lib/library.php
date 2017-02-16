@@ -179,7 +179,7 @@
 	}
 
 	//fungsi buat generate tabel
-	function generateTable($fieldNames, $fieldValues, $allValues, $targetPhp){
+	function generateTable($fieldNames, $fieldValues, $allValues, $targetPhp, $editable){
 		echo "
 		<table class='table table-bordered'>
 			<thead>
@@ -200,10 +200,12 @@
 			foreach($allValues as $item){
 				echo "<td>$colValues[$item]</td>";
 			}
-			echo "
-			<td><a href=\"forms/" . $targetPhp . "?op=update&id=$colValues[_id]\">edit</a></td>
-			<td><a href=\"controller/" . $targetPhp . "?op=delete&id=$colValues[_id]\">delete</td>
-			";
+			if($editable){
+				echo "
+				<td><a href=\"forms/" . $targetPhp . "?op=update&id=$colValues[_id]\">edit</a></td>
+				<td><a href=\"controller/" . $targetPhp . "?op=delete&id=$colValues[_id]\">delete</td>
+				";
+			}
 			echo "</tr>";
 		}
 		echo "

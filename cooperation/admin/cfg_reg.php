@@ -1,12 +1,12 @@
 <?php
 	//include library
-	include "lib/library.php";
+	include "../lib/library.php";
 
 	//set variabel nama db
 	$dbname = "_bpms_master";
 
 	//include file koneksi
-	include "controller/koneksi.php";
+	include "../controller/koneksi.php";
 
 	//ambil data dari db
 	$sql = "SELECT * FROM _regist_cfg";
@@ -34,7 +34,7 @@
 			?>
 			<div class="well col-sm-9">
 				<h3>Konfigurasi Pendaftaran</h3><hr>
-				<form action="controller/registration_config.php" method="post">
+				<form action="../controller/registration_config.php" method="post">
 					<?php
 						//bikin field pada form
 						echo createInputField("text", "Judul:", "judul", "judul", $data['_judul']);

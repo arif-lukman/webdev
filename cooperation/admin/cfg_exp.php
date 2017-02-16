@@ -1,12 +1,12 @@
 <?php
 	//include library
-	include "lib/library.php";
+	include "../lib/library.php";
 
 	//set variabel nama db
 	$dbname = "_bpms_master";
 
 	//include file koneksi
-	include "controller/koneksi.php";
+	include "../controller/koneksi.php";
 
 	//ambil nama field
 	$fieldNames = getResults("SHOW columns FROM _document_type WHERE field = '_id' || field = '_kode' || field = '_judul' || field = '_kadaluarsa'", $conn);
@@ -38,17 +38,18 @@
 			?>
 			<div class="well col-sm-9">
 				<h3>Setting Masa Kadaluarsa</h3><hr>
-				<form>
+				<form action="../controller/expiry_config.php" method="post">
 					<?php
 						//bikin field pada form
-						echo createSelectOption("Admin Document:", "admin", "admin", $conn, "SELECT _id, _judul as _name FROM _document_type ORDER BY _order ASC");
-						echo createInputField("text", "Masa Kadaluarsa:", "judul", "judul", "");
+						echo createSelectOption("Admin Document:", "doc", "doc", $conn, "SELECT _id, _judul as _name FROM _document_type ORDER BY _order ASC");
+						echo createInputField("text", "Masa Kadaluarsa:", "exp", "exp", "");
 					?>
 					<button type="submit" class="btn btn-default">Save</button>
 					<br>
+					<br>
 					<?php
 						//bikin tabel buat nampilin semua datanya
-						generateTable($fieldNames, $fieldValues, $allValues, "typ_doc.php");
+						generateTable($fieldNames, $fieldValues, $allValues, "typ_doc.php", false);
 					?>
 				</form>
 			</div>

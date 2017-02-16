@@ -1,12 +1,12 @@
 <?php
 	//include library
-	include "lib/library.php";
+	include "../lib/library.php";
 
 	//set variabel nama db
 	$dbname = "_bpms_master";
 
 	//include file koneksi
-	include "controller/koneksi.php";
+	include "../controller/koneksi.php";
 
 	//ambil data dari db
 	$sql = "SELECT * FROM _group_priv";
@@ -33,7 +33,7 @@
 			?>
 			<div class="well col-sm-9">
 				<h3>Tipe Perusahaan</h3><hr>
-				<form action="controller/groups.php" method="post">
+				<form action="../controller/groups.php" method="post">
 					<table width="100%">
 						<?php
 							while($data = $result->fetch_assoc()){

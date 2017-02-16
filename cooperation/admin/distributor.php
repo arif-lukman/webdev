@@ -1,12 +1,12 @@
 <?php
 	//include library
-	include "lib/library.php";
+	include "../lib/library.php";
 
 	//set variabel nama db
 	$dbname = "_bpms_master";
 
 	//include file koneksi
-	include "controller/koneksi.php";
+	include "../controller/koneksi.php";
 
 	//ambil nama field
 	$fieldNames = getResults("SHOW columns FROM _distributor", $conn);
@@ -40,10 +40,10 @@
 				<h3>Distributor</h3><hr>
 				<?php
 					//generate tabelnya
-					generateTable($fieldNames, $fieldValues, $allValues, "distributor.php");
+					generateTable($fieldNames, $fieldValues, $allValues, "distributor.php", true);
 				?>
 				<br>
-				<a href="forms/distributor.php?op=create" class="btn btn-default" role="button">Create</a>
+				<a href="../forms/distributor.php?op=create" class="btn btn-default" role="button">Create</a>
 			</div>
 		</div>
 	</body>

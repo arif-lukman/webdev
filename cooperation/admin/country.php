@@ -1,12 +1,12 @@
 <?php
 	//include library
-	include "lib/library.php";
+	include "../lib/library.php";
 
 	//set variabel nama db
 	$dbname = "_bpms_master";
 
 	//include file koneksi
-	include "controller/koneksi.php";
+	include "../controller/koneksi.php";
 
 	//ambil nama field
 	$fieldNames = getResults("SHOW columns FROM _country", $conn);
@@ -40,10 +40,10 @@
 				<h3>Negara</h3><hr>
 				<?php
 					//generate tabelnya
-					generateTable($fieldNames, $fieldValues, $allValues, "country.php");
+					generateTable($fieldNames, $fieldValues, $allValues, "country.php", true);
 				?>
 				<br>
-				<a href="forms/country.php?op=create" class="btn btn-default" role="button">Create</a>
+				<a href="../forms/country.php?op=create" class="btn btn-default" role="button">Create</a>
 			</div>
 		</div>
 	</body>

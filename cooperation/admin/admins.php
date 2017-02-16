@@ -1,12 +1,12 @@
 <?php
 	//include library
-	include "lib/library.php";
+	include "../lib/library.php";
 
 	//set variabel nama db
 	$dbname = "_bpms_master";
 
 	//include file koneksi
-	include "controller/koneksi.php";
+	include "../controller/koneksi.php";
 
 	//ambil nama field
 	$fieldNames = getResults("SHOW columns FROM _admin", $conn);
@@ -41,10 +41,10 @@
 				<h3>Users</h3><hr>
 				<?php
 					//generate tabelnya
-					generateTable($fieldNames, $fieldValues, $allValues, "admins.php");
+					generateTable($fieldNames, $fieldValues, $allValues, "admins.php", true);
 				?>
 				<br>
-				<a href="forms/admins.php?op=create" class="btn btn-default" role="button">Create</a>
+				<a href="../forms/admins.php?op=create" class="btn btn-default" role="button">Create</a>
 			</div>
 		</div>
 	</body>
