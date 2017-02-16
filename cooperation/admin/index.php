@@ -5,6 +5,9 @@
 		session_unset();
 		session_destroy();
 	}
+
+	//include library
+	include "../lib/library.php";
 ?>
 
 <!doctype html>
@@ -13,31 +16,27 @@
 		<title>SPR Langgak</title>
 
 		<!--override css-->
-		<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
 		<style type="text/css">
 			h2{
 				text-align: center;
 			}
 		</style>
 
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-		<!-- jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-		<!-- Latest compiled JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<?php
+			//inisialisasi head
+			initHead();
+		?>
 	</head>
 
 	<body>
 		<!--header-->
 		<div class="container">
 			<div class="col-sm-10">
-				<left><a href="../index.php"><img src="../assets/images/logospr.png" height="100"></left></a>
+				<left><a href="../../index.php"><img src="../../assets/images/logospr.png" height="100"></left></a>
 			</div>
 			<div class="col-sm-2">
-				<center><img src="../assets/images/riau.jpg" width="100" height="100"></center>
+				<center><img src="../../assets/images/riau.jpg" width="100" height="100"></center>
 			</div>
 		</div>
 
@@ -45,7 +44,7 @@
 		<div class="container">
 			<hr>
 			<div class="col-sm-2"></div>
-			<form action="cek_login.php" method="post" class="col-sm-8">
+			<form action="../controller/login.php" method="post" class="col-sm-8">
 				<h2>Business Partner Management System</h2>
 				<hr>
 				<div class="form-group">

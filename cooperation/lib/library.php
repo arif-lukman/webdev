@@ -5,9 +5,6 @@
 		"
 		<nav class='navbar navbar-inverse navbar-fixed-top'>
 			<div class='container-fluid'>
-				<div class='navbar-header'>
-				<a class='navbar-brand' href='#'>SPRL BPMS</a>
-				</div>
 				<ul class='nav navbar-nav'>
 					<li><a href='main_menu.php'>Registrasi</a></li>
 					<li><a href='companies.php'>Data Perusahaan</a></li>
