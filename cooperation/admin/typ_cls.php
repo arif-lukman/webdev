@@ -15,7 +15,7 @@
 	$fieldNames = getResults("SHOW columns FROM _class_type", $conn);
 
 	//ambil isi field
-	$fieldValues = getResults("SELECT _class_type._id as _id, _class_type._kode, _class_type._judul, _class_type._order, _class_type._kelas, _status._nama FROM _class_type, _status WHERE _class_type._status = _status._id ORDER BY _id ASC", $conn);
+	$fieldValues = getResults("SELECT _class_type._id as _id, _class_type._kode, _class_type._judul, _class_type._order, _class._nama as _nama_kelas, _status._nama as _nama_status FROM _class_type, _status, _class WHERE _class_type._status = _status._id and _class_type._kelas = _class._id ORDER BY _id ASC", $conn);
 
 	//push isi field ke array
 	$allValues = pushArray($fieldValues);

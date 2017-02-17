@@ -52,15 +52,10 @@
 						echo createInputField("text", "Kode Tipe Klasifikasi:", "kode", "kode", checkData($data,"_kode"));
 						echo createInputField("text", "Judul Tipe Klasifikasi:", "judul", "judul", checkData($data,"_judul"));
 						echo createInputField("text", "Order:", "order", "order", checkData($data,"_order"));
-						echo createInputField("text", "Kelas:", "kelas", "kelas", checkData($data,"_kelas"));
+						//echo createInputField("text", "Kelas:", "kelas", "kelas", checkData($data,"_kelas"));
+						echo createSelectOption("Kelas:", "kelas", "kelas", $conn, "SELECT _id, _nama as _name FROM _class", $conn);
+						echo createSelectOption("Status:", "stat", "stat", $conn, "SELECT _id, _nama as _name FROM _status ORDER BY _id DESC", $conn);
 					?>
-					<div class="form-group">
-				  		<label for="stat">Status:</label>
-					  	<select class="form-control" id="stat" name="stat">
-						    <option value="1" <?php if(isset($data['_status'])) echo check($data['_status']);?>>Active</option>
-						    <option value="0" <?php if(isset($data['_status'])) echo check(!$data['_status']);?>>Inactive</option>
-						</select>
-					</div>
 					<button type="submit" class="btn btn-default"><?php echo setButtonText($op);?></button>
 				</form>
 			</div>
