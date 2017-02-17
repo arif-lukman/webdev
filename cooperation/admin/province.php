@@ -15,7 +15,7 @@
 	$fieldNames = getResults("SHOW columns FROM _province", $conn);
 
 	//ambil isi field
-	$fieldValues = getResults("SELECT _province._id as _id, _province._kode, _province._nama, _province._order, _status._nama FROM _province, _status WHERE _province._status = _status._id ORDER BY _id ASC", $conn);
+	$fieldValues = getResults("SELECT _province._id as _id, _province._kode, _province._nama as _nama_prov, _province._order, _status._nama FROM _province, _status WHERE _province._status = _status._id ORDER BY _id ASC", $conn);
 
 	//push isi field ke array
 	$allValues = pushArray($fieldValues);
@@ -32,7 +32,7 @@
 	<body>
 		<?php
 			//bikin navbarnya
-			createNavbar(setActiveNav(NAVBAR, "admin.php"));
+			createNavbar(setActiveNav(NAVBAR, "cfg_gen.php"));
 		?>
 		<div class="container" style="margin-top: 80px">
 			<?php

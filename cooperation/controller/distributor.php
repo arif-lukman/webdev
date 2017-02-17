@@ -32,5 +32,5 @@
 	$sql = checkOperation($op, $sqlC, $sqlU, $sqlD);
 
 	//eksekusi
-	execCud($sql, $conn, "../distributor.php");
+	execCud($sql, $conn, "../admin/distributor.php");
 ?>

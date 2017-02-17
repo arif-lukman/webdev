@@ -32,5 +32,5 @@
 	$sql = checkOperation($op, $sqlC, $sqlU, $sqlD);
 
 	//eksekusi
-	execCud($sql, $conn, "../typ_qual.php");
+	execCud($sql, $conn, "../admin/typ_qual.php");
 ?>

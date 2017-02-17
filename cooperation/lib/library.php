@@ -6,11 +6,11 @@
 		<nav class='navbar navbar-inverse navbar-fixed-top'>
 			<div class='container-fluid'>
 				<ul class='nav navbar-nav'>
-					<li><a href='main_menu.php'>Registrasi</a></li>
-					<li><a href='companies.php'>Data Perusahaan</a></li>
-					<li><a href='proposals.php'>Status Pengajuan</a></li>
-					<li><a href='expiry.php'>Kadaluarsa</a></li>
-					<li><a href='cfg_gen.php'>Admin</a></li>
+					<li><a href='../admin/main_menu.php'>Registrasi</a></li>
+					<li><a href='../admin/companies.php'>Data Perusahaan</a></li>
+					<li><a href='../admin/proposals.php'>Status Pengajuan</a></li>
+					<li><a href='../admin/expiry.php'>Kadaluarsa</a></li>
+					<li><a href='../admin/cfg_gen.php'>Admin</a></li>
 					<li><a href='#''>Bantuan</a></li>
 				</ul>
 				<ul class='nav navbar-nav navbar-right'>
@@ -36,9 +36,9 @@
 				    <div id='collapse1' class='panel-collapse collapse'>
 				      <div class='panel-body'>
 				      	<ul>
-				      		<li><a href='cfg_gen.php'>Konfigurasi Umum</a></li>
-				      		<li><a href='cfg_reg.php'>Konfigurasi Pendaftaran</a></li>
-				      		<li><a href='cfg_exp.php'>Setting Kadaluarsa</a></li>
+				      		<li><a href='../admin/cfg_gen.php'>Konfigurasi Umum</a></li>
+				      		<li><a href='../admin/cfg_reg.php'>Konfigurasi Pendaftaran</a></li>
+				      		<li><a href='../admin/cfg_exp.php'>Setting Kadaluarsa</a></li>
 				      	</ul>
 				      </div>
 				    </div>
@@ -53,8 +53,8 @@
 				    <div id='collapse2' class='panel-collapse collapse'>
 				      <div class='panel-body'>
 				      	<ul>
-				      		<li><a href='admins.php'>User</a></li>
-				      		<li><a href='groups.php'>Group Privileges</a></li>
+				      		<li><a href='../admin/admins.php'>User</a></li>
+				      		<li><a href='../admin/groups.php'>Group Privileges</a></li>
 				      	</ul>
 				      </div>
 				    </div>
@@ -69,20 +69,20 @@
 				    <div id='collapse3' class='panel-collapse collapse'>
 				      <div class='panel-body'>
 				      	<ul>
-				      		<li><a href='typ_cpy.php'>Tipe Perusahaan</a></li>
-				      		<li><a href='typ_ofc.php'>Tipe Kantor</a></li>
-				      		<li><a href='typ_mgr.php'>Tipe Pengurus</a></li>
-				      		<li><a href='typ_doc.php'>Tipe Dokumen</a></li>
-				      		<li><a href='typ_doc+.php'>Tipe Dokumen Tambahan</a></li>
-				      		<li><a href='typ_afc.php'>Tipe Afiliasi</a></li>
-				      		<li><a href='typ_scp.php'>Tipe Bidang Pekerjaan</a></li>
-				      		<li><a href='typ_cls.php'>Tipe Klasifikasi Perusahaan</a></li>
-				      		<li><a href='typ_qual.php'>Tipe Kualifikasi Perusahaan</a></li>
-				      		<li><a href='country.php'>Negara</a></li>
-				      		<li><a href='province.php'>Propinsi</a></li>
-				      		<li><a href='bank.php'>Bank</a></li>
-				      		<li><a href='currency.php'>Mata Uang</a></li>
-				      		<li><a href='distributor.php'>Distributor</a></li>
+				      		<li><a href='../admin/typ_cpy.php'>Tipe Perusahaan</a></li>
+				      		<li><a href='../admin/typ_ofc.php'>Tipe Kantor</a></li>
+				      		<li><a href='../admin/typ_mgr.php'>Tipe Pengurus</a></li>
+				      		<li><a href='../admin/typ_doc.php'>Tipe Dokumen</a></li>
+				      		<li><a href='../admin/typ_doc+.php'>Tipe Dokumen Tambahan</a></li>
+				      		<li><a href='../admin/typ_afc.php'>Tipe Afiliasi</a></li>
+				      		<li><a href='../admin/typ_scp.php'>Tipe Bidang Pekerjaan</a></li>
+				      		<li><a href='../admin/typ_cls.php'>Tipe Klasifikasi Perusahaan</a></li>
+				      		<li><a href='../admin/typ_qual.php'>Tipe Kualifikasi Perusahaan</a></li>
+				      		<li><a href='../admin/country.php'>Negara</a></li>
+				      		<li><a href='../admin/province.php'>Propinsi</a></li>
+				      		<li><a href='../admin/bank.php'>Bank</a></li>
+				      		<li><a href='../admin/currency.php'>Mata Uang</a></li>
+				      		<li><a href='../admin/distributor.php'>Distributor</a></li>
 				      	</ul>
 				      </div>
 				    </div>
@@ -199,8 +199,8 @@
 			}
 			if($editable){
 				echo "
-				<td><a href=\"forms/" . $targetPhp . "?op=update&id=$colValues[_id]\">edit</a></td>
-				<td><a href=\"controller/" . $targetPhp . "?op=delete&id=$colValues[_id]\">delete</td>
+				<td><a href=\"../forms/" . $targetPhp . "?op=update&id=$colValues[_id]\">edit</a></td>
+				<td><a href=\"../controller/" . $targetPhp . "?op=delete&id=$colValues[_id]\">delete</td>
 				";
 			}
 			echo "</tr>";
@@ -223,8 +223,8 @@
 
 	//fungsi buat ngeset link navbar jadi aktif
 	function setActiveNav($targetStr, $targetPhp){
-		$search = "<li><a href='" . $targetPhp . "'>";
-		$replace = "<li class='active'><a href='" . $targetPhp . "'>";
+		$search = "<li><a href='../admin/" . $targetPhp . "'>";
+		$replace = "<li class='active'><a href='../admin/" . $targetPhp . "'>";
 		$replacedStr = str_replace($search, $replace, $targetStr);
 		return $replacedStr;
 	}
@@ -232,8 +232,8 @@
 	//fungsi buat ngeset link menu jadi aktif
 	function setActiveMenu($targetStr, $targetPhp, $panelNum){
 		//linknya diaktifin
-		$search = "<li><a href='" . $targetPhp . "'>";
-		$replace = "<li class='dis'><a href='" . $targetPhp . "'>";
+		$search = "<li><a href='../admin/" . $targetPhp . "'>";
+		$replace = "<li class='dis'><a href='../admin/" . $targetPhp . "'>";
 		$replacedActive = str_replace($search, $replace, $targetStr);
 
 		//panel dimana linknya aktif di collpase biar link aktifnya keliatan

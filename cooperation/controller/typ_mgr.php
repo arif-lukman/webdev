@@ -33,5 +33,5 @@
 	$sql = checkOperation($op, $sqlC, $sqlU, $sqlD);
 
 	//eksekusi
-	execCud($sql, $conn, "../typ_mgr.php");
+	execCud($sql, $conn, "../admin/typ_mgr.php");
 ?>

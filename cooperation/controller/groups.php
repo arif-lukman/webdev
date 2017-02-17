@@ -25,6 +25,6 @@
 	//update tabel
 	for($i = 0; $i<sizeof($default); $i++){
 		$sql = "update _group_priv set _view=" . $input[$i][0] . ", _add=" . $input[$i][1] . ", _edit=" . $input[$i][2] . ", _delete=" . $input[$i][3] . ", _setting=" . $input[$i][4] . " where _id=" . ($i+1);
-		execCud($sql, $conn, "../groups.php");
+		execCud($sql, $conn, "../admin/groups.php");
 	}
 ?>

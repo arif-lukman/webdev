@@ -27,7 +27,7 @@
 	<body>
 		<?php
 			//bikin navbarnya
-			createNavbar(setActiveNav(NAVBAR, "admin.php"));
+			createNavbar(setActiveNav(NAVBAR, "cfg_gen.php"));
 		?>
 		<div class="container" style="margin-top: 80px">
 			<?php

@@ -36,5 +36,5 @@
 	$sql = checkOperation($op, $sqlC, $sqlU, $sqlD);
 
 	//eksekusi
-	execCud($sql, $conn, "../admins.php");
+	execCud($sql, $conn, "../admin/admins.php");
 ?>

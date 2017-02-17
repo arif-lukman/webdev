@@ -33,5 +33,5 @@
 	$sql = checkOperation($op, $sqlC, $sqlU, $sqlD);
 
 	//eksekusi
-	execCud($sql, $conn, "../currency.php");
+	execCud($sql, $conn, "../admin/currency.php");
 ?>

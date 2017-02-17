@@ -42,7 +42,7 @@
 		<div class="container" style="margin-top: 80px">
 			<?php
 				//bikin menunya
-				createMenu(setActiveMenu(MENU, "admins.php", 2));
+				createMenu(setActiveMenu(MENU, "province.php", 3));
 			?>
 			<div class="well col-sm-9">
 				<h4>Create Propinsi</h4><hr>

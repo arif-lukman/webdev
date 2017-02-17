@@ -29,7 +29,7 @@
 	//proses commandnya
 	if ($conn->query($sql) === TRUE) {
 				echo "<script> alert('Saving Data Success');
-				location='../cfg_gen.php';
+				location='../admin/cfg_reg.php';
 				</script>";
 	} else {
 	    echo "Saving Data Failed" . $sql . "<br>" . $conn->error;
