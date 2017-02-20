@@ -81,8 +81,17 @@
 				<div class="col-xs-4">
 				  <label for="kualifikasiperusahaan">Tipe Pengurus:</label>
 				  <select class="form-control" id="kualifikasiperusahaan" name="Management_Type">
-				    <option>Dewan Direksi</option>
-				    <option>Dewan Komisaris</option>
+				   <option>---- Pilih Tipe  ----</option>
+    <?php
+    mysql_connect("localhost", "root", "");
+    mysql_select_db("_bpms_master");
+    $sql = mysql_query("SELECT * FROM _manager_type ORDER BY _judul ASC");
+    if(mysql_num_rows($sql) != 0){
+        while($data = mysql_fetch_assoc($sql)){
+            echo '<option>'.$data['_judul'].'</option>';
+        }
+    }
+    ?>
 				  </select><p class="text-warning">should not be empty</p>
 				</div>
 				

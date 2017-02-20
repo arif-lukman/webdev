@@ -82,18 +82,17 @@
 				<div class="form-group">
 				  <label for="tipeperusahaan">Pilih Tipe Dokumen:</label>
 				  <select class="form-control" id="tipeperusahaan" name="Document_Type">
-				    <option>Akte Pendirian Perusahaan (AKT)</option>
-				    <option>SK Mentri Kehakiman dan HAM (SK-MKH)</option>
-					<option>Surat Ijin Usaha Perusahaan (SIUP)</option>
-					<option>Tanda Daftar Perusahaan (TDP)</option>
-					<option>Surat Keterangan Domisili Perusahaan (SKDP)</option>
-					<option>Surat Ijin Gangguan (HO)</option>
-					<option>Surat Ijin Tempat Usaha (SITU)</option>
-					<option>Nomor Pokok Wajib Pajak (NPWP)</option>
-					<option>Penetapan Perusahaan Kena Pajak</option>
-					<option>Bukti Bayar Pajak Tahunan</option>
-					<option>Neraca Audit</option>
-					<option>Lain-lain</option>
+				   <option>---- Pilih Tipe Dokumen----</option>
+    <?php
+    mysql_connect("localhost", "root", "");
+    mysql_select_db("_bpms_master");
+    $sql = mysql_query("SELECT * FROM _document_type ORDER BY _judul ASC");
+    if(mysql_num_rows($sql) != 0){
+        while($data = mysql_fetch_assoc($sql)){
+            echo '<option>'.$data['_judul'].'</option>';
+        }
+    }
+    ?>
 				  </select><p class="text-warning">should not be empty</p>
 				</div>
 				

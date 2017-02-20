@@ -82,11 +82,17 @@
 				<div class="col-xs-6">
 				  <label for="tipeperusahaan">Nama Bank:</label>
 				  <select class="form-control" id="tipeperusahaan" name="Bank_Name">
-				    <option>Bank Negara Indonesia</option>
-				    <option>Bank Rakyat Indonesia</option>
-					<option>Bank Tabungan Negara</option>
-					<option>Bank Mandiri</option>
-					<option>Lain-lain</option>
+				    <option>---- Pilih Bank  ----</option>
+    <?php
+    mysql_connect("localhost", "root", "");
+    mysql_select_db("_bpms_master");
+    $sql = mysql_query("SELECT * FROM _bank ORDER BY _nama ASC");
+    if(mysql_num_rows($sql) != 0){
+        while($data = mysql_fetch_assoc($sql)){
+            echo '<option>'.$data['_nama'].'</option>';
+        }
+    }
+    ?>
 				  </select><p class="text-warning">should not be empty</p>
 				  <input type="text" class="form-control" id="namaperusahaan"><p class="text-warning">should not be empty</p>
 				</div>
@@ -100,13 +106,17 @@
 				<div class="col-xs-6">
 				  <label for="tipeperusahaan">Negara:</label>
 				  <select class="form-control" id="tipeperusahaan" name="Country">
-				    <option>Indonesia</option>
-				    <option>Malaysia</option>
-					<option>Singapura</option>
-					<option>Amerika</option>
-					<option>China</option>
-					<option>Inggris</option>
-					<option>Rusia</option>
+				    <option>---- Pilih Negara  ----</option>
+    <?php
+    mysql_connect("localhost", "root", "");
+    mysql_select_db("_bpms_master");
+    $sql = mysql_query("SELECT * FROM _country ORDER BY _nama ASC");
+    if(mysql_num_rows($sql) != 0){
+        while($data = mysql_fetch_assoc($sql)){
+            echo '<option>'.$data['_nama'].'</option>';
+        }
+    }
+    ?>
 				  </select><p class="text-warning">should not be empty</p>
 				</div>
 				

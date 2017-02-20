@@ -1,6 +1,8 @@
 <?php
 	include "koneksiDB.php";
 	include "lib/library.php";
+	$dbname = "_bpms_master";
+	include "controller/koneksi.php";
 	
 	//query buat ngambil nama field
 	$colQuery = 
@@ -79,13 +81,10 @@
 				<hr>
 					 <div class="well well-lg">
 			
-				<div class="form-group">
-				  <label for="sel1">Tipe Surat dan Dokumen Pelengkap</label>
-				  <select class="form-control" id="sel1" name="Supporting_Document_Type">
-				    <option>Head Office</option>
-				    <option>Langgak Site</option>
-				  </select><p class="text-warning">should not be empty</p>
-				</div>
+				    <?php
+				   echo createSelectOption("Supporting:", "Supporting", "Supporting", "---- Pilih Tipe ----", $conn, "SELECT _id, _judul as _name FROM _docplus_type ORDER BY _order ASC");
+				   ?><p class="text-warning">should not be empty</p>
+
 						
 				<div class="form-group">
 				  	<label for="email">Deskripsi:</label>

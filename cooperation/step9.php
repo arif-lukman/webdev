@@ -1,6 +1,8 @@
 <?php
 	include "koneksiDB.php";
 	include "lib/library.php";
+	$dbname = "_bpms_master";
+	include "controller/koneksi.php";
 	
 	//query buat ngambil nama field
 	$colQuery = 
@@ -82,11 +84,17 @@
 				<div class="col-xs-6">
 				  <label for="tipeperusahaan">Tipe Affiliate / Perusahaan:</label>
 				  <select class="form-control" id="tipeperusahaan" name="Affiliate_Type">
-				    <option>Perusahaan Induk</option>
-				    <option>Grup Perusahaan</option>
-					<option>Rekanan</option>
-					<option>Konsorsium</option>
-					<option>Affiliasi dan Aliansi</option>
+				    <option>---- Pilih Tipe Affiliate  ----</option>
+    <?php
+    mysql_connect("localhost", "root", "");
+    mysql_select_db("_bpms_master");
+    $sql = mysql_query("SELECT * FROM _affil_type ORDER BY _judul ASC");
+    if(mysql_num_rows($sql) != 0){
+        while($data = mysql_fetch_assoc($sql)){
+            echo '<option>'.$data['_judul'].'</option>';
+        }
+    }
+    ?>
 				  </select><p class="text-warning">should not be empty</p>
 				</div>
 				
@@ -104,27 +112,25 @@
 				<div class="col-xs-6">
 				  <label for="tipeperusahaan">Negara:</label>
 				  <select class="form-control" id="tipeperusahaan" name="Country">
-				    <option>Indonesia</option>
-				    <option>Malaysia</option>
-					<option>Singapura</option>
-					<option>Amerika</option>
-					<option>China</option>
-					<option>Inggris</option>
-					<option>Rusia</option>
+				    <option>---- Pilih Negara  ----</option>
+    <?php
+    mysql_connect("localhost", "root", "");
+    mysql_select_db("_bpms_master");
+    $sql = mysql_query("SELECT * FROM _country ORDER BY _nama ASC");
+    if(mysql_num_rows($sql) != 0){
+        while($data = mysql_fetch_assoc($sql)){
+            echo '<option>'.$data['_nama'].'</option>';
+        }
+    }
+    ?>
 				  </select><p class="text-warning">should not be empty</p>
 				</div>
 
 				<div class="col-xs-6">
-				  <label for="tipeperusahaan">Provinsi:</label>
-				  <select class="form-control" id="tipeperusahaan" name="Province">
-				    <option>Indonesia</option>
-				    <option>Malaysia</option>
-					<option>Singapura</option>
-					<option>Amerika</option>
-					<option>China</option>
-					<option>Inggris</option>
-					<option>Rusia</option>
-				  </select><p class="text-warning">should not be empty</p>
+				  <?php
+				   echo createSelectOption("Provinsi:", "Provinsi", "Provinsi", "---- Pilih Tipe Provinsi  ----", $conn, "SELECT _id, _nama as _name FROM _province ORDER BY _order ASC");
+				   ?>
+				 <p class="text-warning">should not be empty</p>
 				</div>
 				
 				<div class="form-group">

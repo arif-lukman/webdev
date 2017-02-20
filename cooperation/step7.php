@@ -82,10 +82,17 @@
 				<div class="form-group">
 				  <label for="tipeperusahaan" name="distributor">Tipe Distributor/Dealer:</label>
 				  <select class="form-control" id="tipeperusahaan" name="Distributor">
-				    <option>Agen Tunggal</option>
-				    <option>Agen</option>
-					<option>Distributor</option>
-					<option>Dealer</option>
+				    <option>---- Pilih Tipe Distributor  ----</option>
+    <?php
+    mysql_connect("localhost", "root", "");
+    mysql_select_db("_bpms_master");
+    $sql = mysql_query("SELECT * FROM _distributor ORDER BY _nama ASC");
+    if(mysql_num_rows($sql) != 0){
+        while($data = mysql_fetch_assoc($sql)){
+            echo '<option>'.$data['_nama'].'</option>';
+        }
+    }
+    ?>
 				  </select><p class="text-warning">should not be empty</p>
 				</div>
 				
