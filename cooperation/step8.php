@@ -133,13 +133,17 @@
 				<div class="form-group">
 				  <label for="tipeperusahaan">Mata Uang:</label>
 				  <select class="form-control" id="tipeperusahaan" name="Currency">
-				    <option>USD-Dolar</option>
-				    <option>MYR-Ringgit</option>
-					<option>IDR-Rupiah</option>
-					<option>SGD-Dolar</option>
-					<option>CNY-Renminbi</option>
-					<option>GBP-Poundsterling</option>
-					<option>RUB-Rubel</option>
+				    <option>--- Pilih Mata Uang ---</option>
+				    <?php
+    mysql_connect("localhost", "root", "");
+    mysql_select_db("_bpms_master");
+    $sql = mysql_query("SELECT * FROM _currency ORDER BY _nama ASC");
+    if(mysql_num_rows($sql) != 0){
+        while($data = mysql_fetch_assoc($sql)){
+            echo '<option>'.$data['_nama'].'</option>';
+        }
+    }
+    ?>
 				  </select><p class="text-warning">should not be empty</p>
 				</div>	
 

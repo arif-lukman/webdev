@@ -81,10 +81,21 @@
 				<hr>
 					 <div class="well well-lg">
 			
-				    <?php
-				   echo createSelectOption("Supporting:", "Supporting", "Supporting", "---- Pilih Tipe ----", $conn, "SELECT _id, _judul as _name FROM _docplus_type ORDER BY _order ASC");
-				   ?><p class="text-warning">should not be empty</p>
-
+				    <label for="tipeperusahaan">Tipe dan Surat Dokumen Pelengkap:</label>
+				  <select class="form-control" id="tipeperusahaan" name="Activities_Section">
+				    <option>--- Pilih Tipe ---</option>
+				<?php
+    mysql_connect("localhost", "root", "");
+    mysql_select_db("_bpms_master");
+    $sql = mysql_query("SELECT * FROM _docplus_type ORDER BY _judul ASC");
+    if(mysql_num_rows($sql) != 0){
+        while($data = mysql_fetch_assoc($sql)){
+            echo '<option>'.$data['_judul'].'</option>';
+        }
+    }
+    ?>
+				  </select>
+				  <br>
 						
 				<div class="form-group">
 				  	<label for="email">Deskripsi:</label>
