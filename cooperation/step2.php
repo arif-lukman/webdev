@@ -9,7 +9,7 @@
 	$colExec = mysql_query($colQuery);
 
 	//query buat ngambil isi field
-	$conQuery = "SELECT * FROM partner_k3s";
+	$conQuery = "SELECT data.* FROM tbl_user as user, partner_k3s as data, data_partner_k3s as conn WHERE user.id = conn.id_user and data.No = conn.id_k3s";
 
 	//eksekusi query conQuery
 	$conExec = mysql_query($conQuery);
