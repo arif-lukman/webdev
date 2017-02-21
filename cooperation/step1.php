@@ -1,3 +1,16 @@
+<?php
+  //include library
+  include "lib/library.php";
+
+  //bikin koneksi ke db yang diperlukan
+  $conn1 = createConnection("localhost", "root", "", "_bpms_master");
+  $conn2 = createConnection("localhost", "root", "", "_bpms_vendor");
+
+  //ambil data dari db
+  $sql = "SELECT data.Company_Name as name, data.Company_Type as type, data.Company_Qualification as qual FROM tbl_user as user, nama_dan_tipe_perusahaan as data, data_nama_dan_tipe_perusahaan as conn WHERE user.id = conn.id_user and data.No = conn.id_nama_dan_tipe_perusahaan";
+  $result = $conn2->query($sql);
+  $data = $result->fetch_assoc();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,11 +22,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
   a.home {
-				position: fixed;
-				top: 0;
-				right: 0;
-				width: 200px;
-				color: white;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 200px;
+        color: white;
   }
 
   </style>
@@ -27,68 +40,35 @@
       <li><a href="step1.php">Step 1 : Nama dan Tipe Perusahaan</a></li>
       <li><a href="step2.php">Step 2 : Partner K3S</a></li>
       <li><a href="step3.php">Step 3 : Alamat Kantor / Office Address</a></li>
-	  <li><a href="step4.php">Step 4 : Susunan pengurus / Struktur organisasi</a></li>
-	  <li><a href="step5.php">Step 5 : Daftar Pemilik / Shareholders</a></li>
-	  <li><a href="step6.php">Step 6 : Dokumen Administrasi / Administration Document</a></li>
-	  <li><a href="step7.php">Step 7 : Surat Keagenan / Dealer / Distributor</a></li>
-	  <li><a href="step8.php">Step 8 : Daftar Rekening Bank Perusahaan / Office Bank Accounts</a></li>
-	  <li><a href="step9.php">Step 9 : Perusahaan Induk, Grup Perusahaan, Rekanan, Konsorsium, Afiliasi dan Aliansi</a></li>
-	  <li><a href="step10.php">Step 10 : Pengalaman Perusahaan / Company Experience</a></li>
-	  <li><a href="step11.php">Step 11 : Perusahaan Pembuat Barang / Good Manufacturer</a></li>
-	  <li><a href="step12.php">Step 12 : Klasifikasi Perusahaan / Company Classification</a></li>
-	  <li><a href="step13.php">Step 13 : Keadaan Perusahaan / Company Subject</a></li>
-	  <li><a href="step14.php">Step 14 : Surat dan Dokumen Pelengkap / Supporting Documents</a></li>
-	  <li><a href="step15.php">Step 15 : Pengajuan / Submission</a></li>
+    <li><a href="step4.php">Step 4 : Susunan pengurus / Struktur organisasi</a></li>
+    <li><a href="step5.php">Step 5 : Daftar Pemilik / Shareholders</a></li>
+    <li><a href="step6.php">Step 6 : Dokumen Administrasi / Administration Document</a></li>
+    <li><a href="step7.php">Step 7 : Surat Keagenan / Dealer / Distributor</a></li>
+    <li><a href="step8.php">Step 8 : Daftar Rekening Bank Perusahaan / Office Bank Accounts</a></li>
+    <li><a href="step9.php">Step 9 : Perusahaan Induk, Grup Perusahaan, Rekanan, Konsorsium, Afiliasi dan Aliansi</a></li>
+    <li><a href="step10.php">Step 10 : Pengalaman Perusahaan / Company Experience</a></li>
+    <li><a href="step11.php">Step 11 : Perusahaan Pembuat Barang / Good Manufacturer</a></li>
+    <li><a href="step12.php">Step 12 : Klasifikasi Perusahaan / Company Classification</a></li>
+    <li><a href="step13.php">Step 13 : Keadaan Perusahaan / Company Subject</a></li>
+    <li><a href="step14.php">Step 14 : Surat dan Dokumen Pelengkap / Supporting Documents</a></li>
+    <li><a href="step15.php">Step 15 : Pengajuan / Submission</a></li>
     </ul>
   </div>
   
   <center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
   
 <div class="col-sm-2"></div>
-			<form class="col-sm-8" action="step1action.php" method="post">
-				<h2>Step 1</h2>
-				<h3>Nama dan Tipe Perusahaan</h3>
-				<hr>
-					 <div class="well well-lg">
-			
-				<div class="form-group">
-			  		<label for="name">Nama Perusahaan:</label>
-				  	<input type="text" class="form-control" id="namaperusahaan" name="Company_Name"><p class="text-warning">should not be empty</p>
-				</div>
-						
-				<div class="form-group">
-				  <label for="tipeperusahaan">Tipe Perusahaan:</label>
-				  <select class="form-control" id="tipeperusahaan" name="Company_Type">
-	<option>---- Pilih Tipe Perusahaan ----</option>
-    <?php
-    mysql_connect("localhost", "root", "");
-    mysql_select_db("_bpms_master");
-    $sql = mysql_query("SELECT * FROM _company_type ORDER BY _judul ASC");
-    if(mysql_num_rows($sql) != 0){
-        while($data = mysql_fetch_assoc($sql)){
-            echo '<option>'.$data['_judul'].'</option>';
-        }
-    }
-    ?>
-			</select><p class="text-warning">should not be empty</p>
-				</div>
-
-				<div class="form-group">
-				  <label for="kualifikasiperusahaan">Kualifikasi Perusahaan:</label>
-				  <select class="form-control" id="kualifikasiperusahaan" name="Company_Qualification">
-	<option>---- Pilih Kualifikasi Perusahaan ----</option>
-    <?php
-    mysql_connect("localhost", "root", "");
-    mysql_select_db("_bpms_master");
-    $sql = mysql_query("SELECT * FROM _qual_type ORDER BY _judul ASC");
-    if(mysql_num_rows($sql) != 0){
-        while($data = mysql_fetch_assoc($sql)){
-            echo '<option>'.$data['_judul'].'</option>';
-        }
-    }
-    ?>
-				  </select><p class="text-warning">should not be empty</p>
-				</div>
+      <form class="col-sm-8" action="step1action.php" method="post">
+        <h2>Step 1</h2>
+        <h3>Nama dan Tipe Perusahaan</h3>
+        <hr>
+           <div class="well well-lg">
+            
+        <?php
+          echo createInputField("text", "Nama Perusahaan:", "namaperusahaan", "Company_Name", $data["name"]);
+          echo createSelectOption("Tipe Perusahaan:", "tipeperusahaan", "Company_Type", "---- Pilih Tipe Perusahaan ----", $conn1, "SELECT _id, _judul as _name FROM _company_type ORDER BY _order ASC", true, $data["type"]);
+          echo createSelectOption("Tipe Kualifikasi Perusahaan:", "kualifikasiperusahaan", "Company_Qualification", "---- Pilih Kualifikasi Perusahaan ----", $conn1, "SELECT _id, _judul as _name FROM _qual_type ORDER BY _order ASC", true, $data["qual"]);
+        ?>
 
 <button type="submit" class="btn btn-primary">Save</button>
 <button type="button" class="btn btn-primary">Reset</button>
@@ -98,8 +78,8 @@
     <li><a href="step2.php">Next Step</a></li>
   </ul>
   
-			</form>
-		</div>
+      </form>
+    </div>
 
 </body>
-</html>		
+</html>   

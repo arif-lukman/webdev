@@ -115,6 +115,18 @@
 		";
 	}
 
+	//fungsi buat bikin koneksi ke db
+	function createConnection($servername, $username, $password, $dbname){
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		// Check connection
+		if ($conn->connect_error) {
+		    die("Connection failed: " . $conn->connect_error);
+		}
+		else{
+			return $conn;
+		}
+	}
+
 	/*<=====================================================Function buat multiform===========================================================>*/
 
 	//fungsi cek yes/no
@@ -267,13 +279,18 @@
 	}
 
 	//fungsi buat bikin select option
-	function createSelectOption($label, $id, $name, $default, $conn, $sql){
+	function createSelectOption($label, $id, $name, $default, $conn, $sql, $allowChecking, $param){
 		//ambil list group
 		$result1 = getResults($sql, $conn);
 		$options = "";
-		$default = "<option>" . $default . "</option>";
+		$default = "<option disabled selected hidden>" . $default . "</option>";
 		while($data1 = $result1->fetch_assoc()){
-			$options = $options . "<option value='$data1[_id]'>" . $data1["_name"] . "</option>";
+			if($allowChecking && $param == $data1["_name"]){
+				$options = $options . "<option value='$data1[_id]' selected>" . $data1["_name"] . "</option>";
+			}
+			else{
+				$options = $options . "<option value='$data1[_id]'>" . $data1["_name"] . "</option>";
+			}
 		}
 		$selectOption = "
 		<div class='form-group'>
