@@ -1,4 +1,10 @@
 <?php
+	//include library
+	include "lib/library.php";
+
+	session_start();
+	$uid = $_SESSION["uid"];
+
 	$Office_Type=$_POST["Office_Type"];
 	$Primary_Office=$_POST["Primary_Office"];
 	$Office_Address=$_POST["Office_Address"];
@@ -14,25 +20,22 @@
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "labdb";
+	$dbname = "_bpms_vendor";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	// Check connection
 	if ($conn->connect_error) {
 	    die("Connection failed: " . $conn->connect_error);
-	} 
+	}
+
+	$result = getResults("SELECT MAX(No) as No FROM alamat_kantor", $conn)->fetch_assoc();
+	$did = $result["No"] + 1;
 
 	$sql = "INSERT INTO alamat_kantor (Office_Type, Primary_Office, Office_Address, Country, Province, City, ZIP_Code, Office_Phone_Number, Office_Fax_Number, Office_Email, Website)
-	VALUES ('$Office_Type', '$Primary_Office', '$Office_Address', '$Country', '$Province', '$City', '$ZIP_Code', '$Office_Phone_Number', '$Office_Fax_Number', '$Office_Email', '$Website')";
+	VALUES ('$Office_Type', '$Primary_Office', '$Office_Address', '$Country', '$Province', '$City', '$ZIP_Code', '$Office_Phone_Number', '$Office_Fax_Number', '$Office_Email', '$Website'); INSERT INTO data_alamat_kantor (id_user, id_alamat_kantor) VALUES ('$uid', '$did')";
 
-	if ($conn->query($sql) === TRUE) {
-				echo "<script> alert('Saving Data Success');
-				location='step3.php';
-				</script>";
-	} else {
-	    echo "Saving Data Failed" . $sql . "<br>" . $conn->error;
-	}
+	execCudMulti($sql, $conn, "step3.php");
 
 	$conn->close();
 ?>

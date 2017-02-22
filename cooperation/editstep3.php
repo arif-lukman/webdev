@@ -9,6 +9,8 @@
 	$query = "SELECT * FROM alamat_kantor WHERE No='$No'";
 	$result = mysql_query($query);
 	$data = mysql_fetch_array($result);
+	//bikin koneksi ke db
+	$conn1 = createConnection("localhost", "root", "", "_bpms_master");
 ?>
 
 <!DOCTYPE html>
@@ -67,62 +69,23 @@
 					 <div class="well well-lg">
 
 				<div class="col-xs-4">
-				  <label for="kualifikasiperusahaan">Tipe Kantor:</label>
-				  <select class="form-control" id="kualifikasiperusahaan" name="Office_Type" value="<?php echo $data['Office_Type']?>">
-				    <option>Pusat</option>
-				    <option>Cabang</option>
-					<option>Perwakilan</option>
+				  <?php
+				  	echo createSelectOption("Tipe Kantor:", "tipekantor", "Office_Type", "---- Pilih Tipe Kantor ----", $conn1, "SELECT _id, _judul as _name FROM _office_type ORDER BY _order ASC", true, $data["Office_Type"]);
+				  ?>
+					</select><p class="text-warning">should not be empty</p>
+				</div>
+				
+				<div class="col-xs-4">
+				  <?php
+				  	echo createSelectOption("Negara:", "negara", "Country", "---- Pilih Negara ----", $conn1, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", true, $data["Country"]);
+				  ?>
 				  </select><p class="text-warning">should not be empty</p>
 				</div>
 				
 				<div class="col-xs-4">
-				  <label for="kualifikasiperusahaan">Negara:</label>
-				  <select class="form-control" id="kualifikasiperusahaan" name="Country" value="<?php echo $data['Country']?>">
-				    <option>Indonesia</option>
-				    <option>Malaysia</option>
-					<option>Singapura</option>
-					<option>Amerika</option>
-					<option>China</option>
-					<option>Inggris</option>
-					<option>Rusia</option>
-				  </select><p class="text-warning">should not be empty</p>
-				</div>
-				
-				<div class="col-xs-4">
-				  <label for="provinsi">Provinsi:</label>
-				  <select class="form-control" id="provinsi" name="Province" value="<?php echo $data['Province']?>">
-				    <option>Aceh</option>
-				    <option>Bali</option>
-					<option>Banten</option>
-					<option>Bengkulu</option>
-					<option>Goranto</option>
-					<option>DKI Jakarta</option>
-					<option>Jambi</option>
-					<option>Jawa Barat</option>
-					<option>Jawa Tengah</option>
-					<option>Jawa Timur</option>
-					<option>Kalimantan Barat</option>
-					<option>Kalimantan Selatan</option>
-					<option>Kalimantan Tengah</option>
-					<option>Kepulauan Bangka Belitung</option>
-					<option>Kepulauan Riau</option>
-					<option>Lampung</option>
-					<option>Maluku</option>
-					<option>Maluku Utara</option>
-					<option>Nusa Tenggara Barat</option>
-					<option>Papua</option>
-					<option>Papua Barat</option>
-					<option>Sulawesi Barat</option>
-					<option>Sulawesi Selatan</option>
-					<option>Sulawesi Tengah</option>
-					<option>Sulawesi Tenggara</option>
-					<option>Sulawesi Utara</option>
-					<option>Sumatera Barat</option>
-					<option>Sumatera Selatan</option>
-					<option>Sumatera Utara</option>
-					<option>Yogyakarta</option>
-					<option>Yang Lain-Lain / Other</option>
-					
+					<?php
+				  		echo createSelectOption("Provinsi:", "provinsi", "Province", "---- Pilih Provinsi ----", $conn1, "SELECT _id, _nama as _name FROM _province ORDER BY _order ASC", true, $data["Province"]);
+				  	?>
 				  </select><p class="text-warning">should not be empty</p>
 				</div>
 				

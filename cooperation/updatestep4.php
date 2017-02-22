@@ -1,4 +1,5 @@
 <?php
+	$No=$_GET["No"];
 	$Management_Type=$_POST["Management_Type"];
 	$Primary_Person=$_POST["Primary_Person"];
 	$Position=$_POST["Position"];
@@ -11,7 +12,7 @@
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "labdb";
+	$dbname = "_bpms_vendor";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);

@@ -59,7 +59,7 @@
   <center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
  
 <div class="col-sm-2"></div>
-			<form class="col-sm-8" action="step4action.php?No=<?php echo $No;?>" method="post">
+			<form class="col-sm-8" action="updatestep4.php?No=<?php echo $No;?>" method="post">
 				<h2>Step 4</h2>
 				<h3>Susunan pengurus / Struktur organisasi (BOC , BOD)</h3>
 				<hr>

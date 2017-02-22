@@ -187,6 +187,17 @@
 		}
 	}
 
+	//fungsi eksekusi banyak operasi CUD(Create, Update, Delete)
+	function execCudMulti($sql, $conn, $location){
+		if ($conn->multi_query($sql) === TRUE) {
+			echo "<script> alert('Saving Data Success');
+			location='" . $location . "';
+			</script>";
+		} else {
+		    echo "Saving Data Failed" . $sql . "<br>" . $conn->error;
+		}
+	}
+
 	//fungsi buat generate tabel
 	function generateTable($fieldNames, $fieldValues, $allValues, $targetPhp, $editable){
 		echo "
@@ -285,7 +296,7 @@
 		$options = "";
 		$default = "<option disabled selected hidden>" . $default . "</option>";
 		while($data1 = $result1->fetch_assoc()){
-			if($allowChecking && $param == $data1["_name"]){
+			if($allowChecking && ($param == $data1["_name"] || $param == $data1["_id"])){
 				$options = $options . "<option value='$data1[_id]' selected>" . $data1["_name"] . "</option>";
 			}
 			else{

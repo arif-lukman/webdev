@@ -1,4 +1,7 @@
 <?php
+	session_start();
+  	$id = $_SESSION["uid"];
+
 	include "koneksiDB.php";
 	include "lib/library.php";
 	
@@ -10,7 +13,7 @@
 	$colExec = mysql_query($colQuery);
 
 	//query buat ngambil isi field
-	$conQuery = "SELECT No, Office_Type, Office_Address, Office_Phone_Number, Office_Email FROM alamat_kantor";
+	$conQuery = "SELECT data.No, data.Office_Type, data.Office_Address, data.Office_Phone_Number, data.Office_Email FROM tbl_user as user, alamat_kantor as data, data_alamat_kantor as conn WHERE user.id = conn.id_user and data.No = conn.id_alamat_kantor and user.id = '$id'";
 
 	//eksekusi query conQuery
 	$conExec = mysql_query($conQuery);
@@ -22,6 +25,9 @@
 	while ($prop = mysql_fetch_field($conExec)){
 		array_push($all_prop, $prop->name);
 	}
+
+	//bikin koneksi ke db
+	$conn1 = createConnection("localhost", "root", "", "_bpms_master");
 ?>
 
 <!DOCTYPE html>
@@ -78,56 +84,25 @@
 				<h3>Alamat Kantor (Office Address)</h3>
 				<hr>
 					 <div class="well well-lg">
+				<div class="col-xs-4">
+				  <?php
+				  	echo createSelectOption("Tipe Kantor:", "tipekantor", "Office_Type", "---- Pilih Tipe Kantor ----", $conn1, "SELECT _id, _judul as _name FROM _office_type ORDER BY _order ASC", false, "");
+				  ?>
+					<p class="text-warning">should not be empty</p>
+				</div>
 
 				<div class="col-xs-4">
-				  <label for="kualifikasiperusahaan">Tipe Kantor:</label>
-				  <select class="form-control" id="kualifikasiperusahaan" name="Office_Type">
-	<option>---- Pilih Tipe Kantor----</option>
-    <?php
-    mysql_connect("localhost", "root", "");
-    mysql_select_db("_bpms_master");
-    $sql = mysql_query("SELECT * FROM _office_type ORDER BY _judul ASC");
-    if(mysql_num_rows($sql) != 0){
-        while($data = mysql_fetch_assoc($sql)){
-            echo '<option>'.$data['_judul'].'</option>';
-        }
-    }
-    ?>
-	</select><p class="text-warning">should not be empty</p>
-	</div>			
-				<div class="col-xs-4">
-				  <label for="kualifikasiperusahaan">Negara:</label>
-				  <select class="form-control" id="kualifikasiperusahaan" name="Country">
-				    	<option>---- Pilih Negara  ----</option>
-    <?php
-    mysql_connect("localhost", "root", "");
-    mysql_select_db("_bpms_master");
-    $sql = mysql_query("SELECT * FROM _country ORDER BY _nama ASC");
-    if(mysql_num_rows($sql) != 0){
-        while($data = mysql_fetch_assoc($sql)){
-            echo '<option>'.$data['_nama'].'</option>';
-        }
-    }
-    ?>
-				  </select><p class="text-warning">should not be empty</p>
+				  <?php
+				  	echo createSelectOption("Negara:", "negara", "Country", "---- Pilih Negara ----", $conn1, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", false, "");
+				  ?>
+				  <p class="text-warning">should not be empty</p>
 				</div>
 				
 				<div class="col-xs-4">
-				  <label for="provinsi">Provinsi:</label>
-				  <select class="form-control" id="provinsi" name="Province">
-				  <option>---- Pilih Provinsi----</option>
- <?php
-    mysql_connect("localhost", "root", "");
-    mysql_select_db("_bpms_master");
-    $sql = mysql_query("SELECT * FROM _province ORDER BY _nama ASC");
-    if(mysql_num_rows($sql) != 0){
-        while($data = mysql_fetch_assoc($sql)){
-            echo '<option>'.$data['_nama'].'</option>';
-        }
-    }
-    ?>
-					
-				  </select><p class="text-warning">should not be empty</p>
+					<?php
+				  		echo createSelectOption("Provinsi:", "provinsi", "Province", "---- Pilih Provinsi ----", $conn1, "SELECT _id, _nama as _name FROM _province ORDER BY _order ASC", false, "");
+				  	?>
+				  <p class="text-warning">should not be empty</p>
 				</div>
 				
 				<br><br><br><br>

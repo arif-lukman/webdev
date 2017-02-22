@@ -1,4 +1,7 @@
 <?php
+  session_start();
+  $id = $_SESSION["uid"];
+
   //include library
   include "lib/library.php";
 
@@ -7,7 +10,7 @@
   $conn2 = createConnection("localhost", "root", "", "_bpms_vendor");
 
   //ambil data dari db
-  $sql = "SELECT data.Company_Name as name, data.Company_Type as type, data.Company_Qualification as qual FROM tbl_user as user, nama_dan_tipe_perusahaan as data, data_nama_dan_tipe_perusahaan as conn WHERE user.id = conn.id_user and data.No = conn.id_nama_dan_tipe_perusahaan";
+  $sql = "SELECT conn.id_nama_dan_tipe_perusahaan as id, data.Company_Name as name, data.Company_Type as type, data.Company_Qualification as qual FROM tbl_user as user, nama_dan_tipe_perusahaan as data, data_nama_dan_tipe_perusahaan as conn WHERE user.id = conn.id_user and data.No = conn.id_nama_dan_tipe_perusahaan and user.id = '$id'";
   $result = $conn2->query($sql);
   $data = $result->fetch_assoc();
 ?>
@@ -58,14 +61,14 @@
   <center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
   
 <div class="col-sm-2"></div>
-      <form class="col-sm-8" action="step1action.php" method="post">
+      <form class="col-sm-8" action="step1action.php?id=<?php echo $data['id'];?>" method="post">
         <h2>Step 1</h2>
         <h3>Nama dan Tipe Perusahaan</h3>
         <hr>
            <div class="well well-lg">
             
         <?php
-          echo createInputField("text", "Nama Perusahaan:", "namaperusahaan", "Company_Name", $data["name"]);
+          echo createInputField("text", "Nama Perusahaan:", "Company_Name", "namaperusahaan", $data["name"]);
           echo createSelectOption("Tipe Perusahaan:", "tipeperusahaan", "Company_Type", "---- Pilih Tipe Perusahaan ----", $conn1, "SELECT _id, _judul as _name FROM _company_type ORDER BY _order ASC", true, $data["type"]);
           echo createSelectOption("Tipe Kualifikasi Perusahaan:", "kualifikasiperusahaan", "Company_Qualification", "---- Pilih Kualifikasi Perusahaan ----", $conn1, "SELECT _id, _judul as _name FROM _qual_type ORDER BY _order ASC", true, $data["qual"]);
         ?>

@@ -1,5 +1,9 @@
 <?php
 	include "koneksiDB.php";
+	include "lib/library.php";
+
+	session_start();
+  	$id = $_SESSION["uid"];
 
 	//query buat ngambil nama field
 	$colQuery = 
@@ -9,7 +13,7 @@
 	$colExec = mysql_query($colQuery);
 
 	//query buat ngambil isi field
-	$conQuery = "SELECT No, Management_Type, Position, Name, Address FROM susunan_pengurus";
+	$conQuery = "SELECT data.No, data.Management_Type, data.Position, data.Name, data.Address FROM tbl_user as user, susunan_pengurus as data, data_susunan_pengurus as conn WHERE user.id = conn.id_user and data.No = conn.id_susunan_pengurus and user.id = '$id'";
 
 	//eksekusi query conQuery
 	$conExec = mysql_query($conQuery);
@@ -21,6 +25,9 @@
 	while ($prop = mysql_fetch_field($conExec)){
 		array_push($all_prop, $prop->name);
 	}
+
+	//bikin koneksi ke db
+	$conn1 = createConnection("localhost", "root", "", "_bpms_master");
 ?>
 
 <!DOCTYPE html>
@@ -79,25 +86,15 @@
 					 <div class="well well-lg">
 
 				<div class="col-xs-4">
-				  <label for="kualifikasiperusahaan">Tipe Pengurus:</label>
-				  <select class="form-control" id="kualifikasiperusahaan" name="Management_Type">
-				   <option>---- Pilih Tipe  ----</option>
-    <?php
-    mysql_connect("localhost", "root", "");
-    mysql_select_db("_bpms_master");
-    $sql = mysql_query("SELECT * FROM _manager_type ORDER BY _judul ASC");
-    if(mysql_num_rows($sql) != 0){
-        while($data = mysql_fetch_assoc($sql)){
-            echo '<option>'.$data['_judul'].'</option>';
-        }
-    }
-    ?>
-				  </select><p class="text-warning">should not be empty</p>
+					<?php
+					  	echo createSelectOption("Tipe Pengurus:", "tipepengurus", "Management_Type", "---- Pilih Tipe Pengurus ----", $conn1, "SELECT _id, _judul as _name FROM _manager_type ORDER BY _order ASC", false, "");
+				  	?>
+				  	<p class="text-warning">should not be empty</p>
 				</div>
 				
 				<br><br><br><br><br>
+				 <div class="col-sm-12 checkbox">
 				 <b>Pengurus Utama?</b>
-				 <div class="checkbox">
 				<label><input type="checkbox" value="Pengurus Utama" name="Primary_Person"> Yes (Salah satu pengurus harus dibuat sebagai Pengurus Utama / One person must be set to Primary Person)</label>
 				<br><br>
 				</div>

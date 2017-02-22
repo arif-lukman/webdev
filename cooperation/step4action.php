@@ -1,4 +1,10 @@
 <?php
+	//include library
+	include "lib/library.php";
+
+	session_start();
+	$uid = $_SESSION["uid"];
+
 	$Management_Type=$_POST["Management_Type"];
 	$Primary_Person=$_POST["Primary_Person"];
 	$Position=$_POST["Position"];
@@ -11,25 +17,22 @@
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "labdb";
+	$dbname = "_bpms_vendor";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	// Check connection
 	if ($conn->connect_error) {
 	    die("Connection failed: " . $conn->connect_error);
-	} 
+	}
+
+	$result = getResults("SELECT MAX(No) as No FROM susunan_pengurus", $conn)->fetch_assoc();
+	$did = $result["No"] + 1;
 
 	$sql = "INSERT INTO susunan_pengurus (Management_Type, Primary_Person, Position, Name, Civil_ID, Address, Phone_Number, Email)
-	VALUES ('$Management_Type', '$Primary_Person', '$Position', '$Name', '$Civil_ID', '$Address', '$Phone_Number', '$Email')";
+	VALUES ('$Management_Type', '$Primary_Person', '$Position', '$Name', '$Civil_ID', '$Address', '$Phone_Number', '$Email'); INSERT INTO data_susunan_pengurus (id_user, id_susunan_pengurus) VALUES ('$uid', '$did')";
 
-	if ($conn->query($sql) === TRUE) {
-				echo "<script> alert('Saving Data Success');
-				location='step4.php';
-				</script>";
-	} else {
-	    echo "Saving Data Failed" . $sql . "<br>" . $conn->error;
-	}
+	execCudMulti($sql, $conn, "step4.php");
 
 	$conn->close();
 ?>
