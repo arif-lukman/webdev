@@ -143,7 +143,6 @@
 					<li><a href="step2.php">Previous Step</a></li>
 					<li><a href="step4.php">Next Step</a></li>
 				</ul>
-			</div>
 		</form>
 		<div class="well well-sm">Result (Table):</div>
 			<table class="table table-bordered">
@@ -175,6 +174,6 @@
 					?>
 				</tbody>
 			</table>
-		</div>
+		</div>	
 	</body>
 </html>		

@@ -49,21 +49,21 @@
 			<button class="step btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Go to step
 			<span class="caret"></span></button>
 			<ul class="dropdown-menu">
-			<li><a href="step1.php">Step 1 : Nama dan Tipe Perusahaan</a></li>
-			<li><a href="step2.php">Step 2 : Partner K3S</a></li>
-			<li><a href="step3.php">Step 3 : Alamat Kantor / Office Address</a></li>
-			<li><a href="step4.php">Step 4 : Susunan pengurus / Struktur organisasi</a></li>
-			<li><a href="step5.php">Step 5 : Daftar Pemilik / Shareholders</a></li>
-			<li><a href="step6.php">Step 6 : Dokumen Administrasi / Administration Document</a></li>
-			<li><a href="step7.php">Step 7 : Surat Keagenan / Dealer / Distributor</a></li>
-			<li><a href="step8.php">Step 8 : Daftar Rekening Bank Perusahaan / Office Bank Accounts</a></li>
-			<li><a href="step9.php">Step 9 : Perusahaan Induk, Grup Perusahaan, Rekanan, Konsorsium, Afiliasi dan Aliansi</a></li>
-			<li><a href="step10.php">Step 10 : Pengalaman Perusahaan / Company Experience</a></li>
-			<li><a href="step11.php">Step 11 : Perusahaan Pembuat Barang / Good Manufacturer</a></li>
-			<li><a href="step12.php">Step 12 : Klasifikasi Perusahaan / Company Classification</a></li>
-			<li><a href="step13.php">Step 13 : Keadaan Perusahaan / Company Subject</a></li>
-			<li><a href="step14.php">Step 14 : Surat dan Dokumen Pelengkap / Supporting Documents</a></li>
-			<li><a href="step15.php">Step 15 : Pengajuan / Submission</a></li>
+				<li><a href="step1.php">Step 1 : Nama dan Tipe Perusahaan</a></li>
+				<li><a href="step2.php">Step 2 : Partner K3S</a></li>
+				<li><a href="step3.php">Step 3 : Alamat Kantor / Office Address</a></li>
+				<li><a href="step4.php">Step 4 : Susunan pengurus / Struktur organisasi</a></li>
+				<li><a href="step5.php">Step 5 : Daftar Pemilik / Shareholders</a></li>
+				<li><a href="step6.php">Step 6 : Dokumen Administrasi / Administration Document</a></li>
+				<li><a href="step7.php">Step 7 : Surat Keagenan / Dealer / Distributor</a></li>
+				<li><a href="step8.php">Step 8 : Daftar Rekening Bank Perusahaan / Office Bank Accounts</a></li>
+				<li><a href="step9.php">Step 9 : Perusahaan Induk, Grup Perusahaan, Rekanan, Konsorsium, Afiliasi dan Aliansi</a></li>
+				<li><a href="step10.php">Step 10 : Pengalaman Perusahaan / Company Experience</a></li>
+				<li><a href="step11.php">Step 11 : Perusahaan Pembuat Barang / Good Manufacturer</a></li>
+				<li><a href="step12.php">Step 12 : Klasifikasi Perusahaan / Company Classification</a></li>
+				<li><a href="step13.php">Step 13 : Keadaan Perusahaan / Company Subject</a></li>
+				<li><a href="step14.php">Step 14 : Surat dan Dokumen Pelengkap / Supporting Documents</a></li>
+				<li><a href="step15.php">Step 15 : Pengajuan / Submission</a></li>
 			</ul>
 		</div>
 		<center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
@@ -88,38 +88,38 @@
 					<li><a href="step10.php">Previous Step</a></li>
 					<li><a href="step12.php">Next Step</a></li>
 				</ul>
-			</div>
 		</form>
-		<div class="well well-sm">Result (Table):
+		<div class="well well-sm">Result (Table):</div>
 			<table class="table table-bordered">
-			<!--nama field-->
-			<thead>
-			<tr style="font-size:9px">
-			<?php
-			while ($colNames = mysql_fetch_array($colExec)){
-			echo "
-			<th>$colNames[Field]</th>
-			";
-			}
-			?>
-			</tr>
-			</thead>
-			<tbody>
-			<?php
-			while($conNames = mysql_fetch_array($conExec)){
-			echo "<tr>";
-			foreach($all_prop as $item){
-			echo "<td>$conNames[$item]</td>";
-			}
-			echo "
-			<td><a href=\"editstep11.php?No=$conNames[No]\">edit</a></td>
-			<td><a href=\"deletestep11.php?No=$conNames[No]\">delete</td>
-			";
-			echo "</tr>";
-			}
-			?>
-			</tbody>
+				<!--nama field-->
+				<thead>
+					<tr style="font-size:9px">
+						<?php
+							while ($colNames = mysql_fetch_array($colExec)){
+								echo "
+								<th>$colNames[Field]</th>
+								";
+							}
+						?>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+						while($conNames = mysql_fetch_array($conExec)){
+							echo "<tr>";
+							foreach($all_prop as $item){
+								echo "<td>$conNames[$item]</td>";
+							}
+							echo "
+							<td><a href=\"editstep11.php?No=$conNames[No]\">edit</a></td>
+							<td><a href=\"deletestep11.php?No=$conNames[No]\">delete</td>
+							";
+							echo "</tr>";
+						}
+					?>
+				</tbody>
 			</table>
+		</div>
 		</div>
 	</body>
 </html>

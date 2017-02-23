@@ -39,18 +39,15 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 	<style>
-	a.home {
-	position: fixed;
-	top: 0;
-	right: 0;
-	width: 200px;
-	color: white;
-	}
-
+		a.home {
+			position: fixed;
+			top: 0;
+			right: 0;
+			width: 200px;
+			color: white;
+		}
 	</style>
-
 	</head>
 
 	<body>
@@ -127,9 +124,8 @@
 					<li><a href="step3.php">Previous Step</a></li>
 					<li><a href="step5.php">Next Step</a></li>
 				</ul>
-			</div>
 		</form>
-		<div class="well well-sm">Result (Table):
+		<div class="well well-sm">Result (Table):</div>
 			<table class="table table-bordered">
 				<!--nama field-->
 				<thead>

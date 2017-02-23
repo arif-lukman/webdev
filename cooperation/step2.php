@@ -111,9 +111,8 @@
 					<li><a href="step1.php">Previous Step</a></li>
 					<li><a href="step3.php">Next Step</a></li>
 				</ul>
-			</div>
 		</form>
-		<div class="well well-sm">
+		<div class="well well-sm">Result Table:</div>
 			<table class="table table-bordered">
 				<!--nama field-->
 				<thead>

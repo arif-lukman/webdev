@@ -124,9 +124,8 @@
 					<li><a href="step11.php">Previous Step</a></li>
 					<li><a href="step13.php">Next Step</a></li>
 				</ul>
-			</div>
 		</form>
-		<div class="well well-sm">Result (Table):
+		<div class="well well-sm">Result (Table):</div>
 			<table class="table table-bordered">
 				<!--nama field-->
 				<thead>
@@ -156,6 +155,7 @@
 					?>
 				</tbody>
 			</table>
+		</div>
 		</div>
 	</body>
 </html>
