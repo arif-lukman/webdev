@@ -33,7 +33,7 @@
 	$did = $result["No"] + 1;
 
 	$sql = "INSERT INTO alamat_kantor (Office_Type, Primary_Office, Office_Address, Country, Province, City, ZIP_Code, Office_Phone_Number, Office_Fax_Number, Office_Email, Website)
-	VALUES ('$Office_Type', '$Primary_Office', '$Office_Address', '$Country', '$Province', '$City', '$ZIP_Code', '$Office_Phone_Number', '$Office_Fax_Number', '$Office_Email', '$Website'); INSERT INTO data_alamat_kantor (id_user, id_alamat_kantor) VALUES ('$uid', '$did')";
+	VALUES ('$Office_Type', '$Primary_Office', '$Office_Address', '$Country', '$Province', '$City', '$ZIP_Code', '$Office_Phone_Number', '$Office_Fax_Number', '$Office_Email', '$Website'); INSERT INTO data_alamat_kantor VALUES ('$uid', '$did')";
 
 	execCudMulti($sql, $conn, "step3.php");
 

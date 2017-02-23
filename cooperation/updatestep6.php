@@ -11,7 +11,7 @@
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "labdb";
+	$dbname = "_bpms_vendor";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -21,7 +21,7 @@
 	} 
 
 	$sql = "UPDATE dokumen_administrasi 
-	SET Document_Type = '$Document_Type', Document_Number = '$Document_Number', Issued_By = '$Issued_By', Issued_Date = '$Issued_Date', Expired_Date = '$Expired_Date', Description = '$Description', Attachment = '$Attachment'
+	SET Document_Type = '$Document_Type', Document_Number = '$Document_Number', Issued_By = '$Issued_By', Issued_Date = '$Issued_Date', Expired_Date = '$Expired_Date', Description = '$Description'
 	WHERE No = '$No'";
 
 	if ($conn->query($sql) === TRUE) {

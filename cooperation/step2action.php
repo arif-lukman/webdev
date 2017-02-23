@@ -30,7 +30,7 @@
 	$did = $result["No"] + 1;
 
 	$sql = "INSERT INTO partner_k3s (K3S_Name, Contact_Name, Phone_Number, Fax_Number, Expired_Date, Expiration_Days)
-	VALUES ('$K3S_Name', '$Contact_Name', '$Phone_Number', '$Fax_Number', '$Expired_Date', '$Expiration_Days'); INSERT INTO data_partner_k3s (id_user, id_k3s) VALUES ('$uid', '$did')";
+	VALUES ('$K3S_Name', '$Contact_Name', '$Phone_Number', '$Fax_Number', '$Expired_Date', '$Expiration_Days'); INSERT INTO data_partner_k3s VALUES ('$uid', '$did')";
 
 	//eksekusi multi sql command
 	execCudMulti($sql, $conn, "step2.php");

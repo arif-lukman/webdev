@@ -1,5 +1,9 @@
 <?php
 	include "koneksiDB.php";
+	include "lib/library.php";
+
+	session_start();
+	$id = $_SESSION["uid"];
 
 	//query buat ngambil nama field
 	$colQuery = 
@@ -9,7 +13,7 @@
 	$colExec = mysql_query($colQuery);
 
 	//query buat ngambil isi field
-	$conQuery = "SELECT No, Name, Phone_Number, Share FROM daftar_pemilik";
+	$conQuery = "SELECT data.No, data.Name, data.Phone_Number, Share FROM tbl_user as user, daftar_pemilik as data, data_daftar_pemilik as conn WHERE user.id = conn.id_user and data.No = conn.id_daftar_pemilik and user.id = '$id'";
 
 	//eksekusi query conQuery
 	$conExec = mysql_query($conQuery);
@@ -21,28 +25,29 @@
 	while ($prop = mysql_fetch_field($conExec)){
 		array_push($all_prop, $prop->name);
 	}
+
+	//bikin koneksi ke db
+	$conn1 = createConnection("localhost", "root", "", "_bpms_master");
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	<title>Step 5</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-	<style>
-		a.home {
-			position: fixed;
-			top: 0;
-			right: 0;
-			width: 200px;
-			color: white;
-		}
-	</style>
-
+		<title>Step 5</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+			a.home {
+				position: fixed;
+				top: 0;
+				right: 0;
+				width: 200px;
+				color: white;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -147,6 +152,5 @@
 			</tbody>
 		</table>
 		</div>
-		<hr>
 	</body>
 </html>

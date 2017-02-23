@@ -30,7 +30,7 @@
 	$did = $result["No"] + 1;
 
 	$sql = "INSERT INTO susunan_pengurus (Management_Type, Primary_Person, Position, Name, Civil_ID, Address, Phone_Number, Email)
-	VALUES ('$Management_Type', '$Primary_Person', '$Position', '$Name', '$Civil_ID', '$Address', '$Phone_Number', '$Email'); INSERT INTO data_susunan_pengurus (id_user, id_susunan_pengurus) VALUES ('$uid', '$did')";
+	VALUES ('$Management_Type', '$Primary_Person', '$Position', '$Name', '$Civil_ID', '$Address', '$Phone_Number', '$Email'); INSERT INTO data_susunan_pengurus VALUES ('$uid', '$did')";
 
 	execCudMulti($sql, $conn, "step4.php");
 

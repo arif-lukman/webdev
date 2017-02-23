@@ -2,6 +2,9 @@
 	include "koneksiDB.php";
 	include "lib/library.php";
 
+	session_start();
+	$id = $_SESSION["uid"];
+
 	//query buat ngambil nama field
 	$colQuery = 
 	"SHOW columns FROM dokumen_administrasi WHERE FIELD = 'No' or FIELD = 'Document_Type' or FIELD = 'Document_Number' or FIELD = 'Issued_By' or FIELD = 'Issued_Date' or FIELD = 'Expired_Date' or FIELD = 'Description' or FIELD = 'Attachment'";
@@ -10,7 +13,7 @@
 	$colExec = mysql_query($colQuery);
 
 	//query buat ngambil isi field
-	$conQuery = "SELECT No, Document_Type, Document_Number, Issued_By, Issued_Date, Expired_Date, Description, Attachment FROM dokumen_administrasi";
+	$conQuery = "SELECT data.No, data.Document_Type, data.Document_Number, data.Issued_By, data.Issued_Date, data.Expired_Date, data.Description, data.Attachment FROM tbl_user as user, dokumen_administrasi as data, data_dokumen_administrasi as conn WHERE user.id = conn.id_user and data.No = conn.id_dokumen_administrasi and user.id = '$id'";
 
 	//eksekusi query conQuery
 	$conExec = mysql_query($conQuery);

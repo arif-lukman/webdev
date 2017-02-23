@@ -2,6 +2,9 @@
 	include "koneksiDB.php";
 	include "lib/library.php";
 
+	session_start();
+	$id = $_SESSION["uid"];	
+
 	//query buat ngambil nama field
 	$colQuery = 
 	"SHOW columns FROM daftar_rekening_bank WHERE FIELD = 'No' or FIELD = 'Bank_Name' or FIELD = 'Branch' or FIELD = 'Acc_Name' or FIELD = 'Acc_Number' or FIELD = 'Currency'";
@@ -10,7 +13,7 @@
 	$colExec = mysql_query($colQuery);
 
 	//query buat ngambil isi field
-	$conQuery = "SELECT No, Bank_Name, Branch, Acc_Name, Acc_Number, Currency FROM daftar_rekening_bank";
+	$conQuery = "SELECT data.No, data.Bank_Name, data.Branch, data.Acc_Name, data.Acc_Number, data.Currency FROM tbl_user as user, daftar_rekening_bank as data, data_daftar_rekening_bank as conn WHERE user.id = conn.id_user and data.No = conn.id_rekening_bank and user.id = '$id'";
 
 	//eksekusi query conQuery
 	$conExec = mysql_query($conQuery);
@@ -27,21 +30,21 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	<title>Step 8</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<style>
-	a.home {
-	position: fixed;
-	top: 0;
-	right: 0;
-	width: 200px;
-	color: white;
-	}
-	</style>
+		<title>Step 8</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+		a.home {
+			position: fixed;
+			top: 0;
+			right: 0;
+			width: 200px;
+			color: white;
+		}
+		</style>
 	</head>
 
 	<body>
