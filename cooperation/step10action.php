@@ -1,4 +1,10 @@
 <?php
+	//include library
+	include "lib/library.php";
+
+	session_start();
+	$uid = $_SESSION["uid"];
+
 	$Project_Name=$_POST["Project_Name"];
 	$Activities_Section=$_POST["Activities_Section"];
 	$Classification=$_POST["Classification"];
@@ -13,12 +19,12 @@
 	$Sub_Value=$_POST["Sub_Value"];
 	$Document_Number=$_POST["Document_Number"];
 	$Last_Progress=$_POST["Last_Progress"];
-	$Attachment=$_POST["Attachment"];
+	//$Attachment=$_POST["Attachment"];
 	
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "labdb";
+	$dbname = "_bpms_vendor";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -27,16 +33,13 @@
 	    die("Connection failed: " . $conn->connect_error);
 	} 
 
-	$sql = "INSERT INTO pengalaman_perusahaan (Project_Name, Activities_Section, Classification, Sub_Classification, User_Company, Contact_Name, Address, Phone_Number, Contact_Date, Completion_Date, Value, Sub_Value, Document_Number, Last_Progress, Attachment)
-	VALUES ('$Project_Name', '$Activities_Section', '$Classification', '$Sub_Classification', '$User_Company', '$Contact_Name', '$Address', '$Phone_Number', '$Contact_Date', '$Completion_Date', '$Value', '$Sub_Value', '$Document_Number', '$Last_Progress', '$Attachment')";
+	$result = getResults("SELECT MAX(No) as No FROM pengalaman_perusahaan", $conn)->fetch_assoc();
+	$did = $result["No"] + 1;
+
+	$sql = "INSERT INTO pengalaman_perusahaan (Project_Name, Activities_Section, Classification, Sub_Classification, User_Company, Contact_Name, Address, Phone_Number, Contact_Date, Completion_Date, Value, Sub_Value, Document_Number, Last_Progress)
+	VALUES ('$Project_Name', '$Activities_Section', '$Classification', '$Sub_Classification', '$User_Company', '$Contact_Name', '$Address', '$Phone_Number', '$Contact_Date', '$Completion_Date', '$Value', '$Sub_Value', '$Document_Number', '$Last_Progress'); INSERT INTO data_pengalaman_perusahaan VALUES ('$uid', '$did')";
 	
-	if ($conn->query($sql) === TRUE) {
-				echo "<script> alert('Saving Data Success');
-				location='step10.php';
-				</script>";
-	} else {
-	    echo "Saving Data Failed" . $sql . "<br>" . $conn->error;
-	}
+	execCudMulti($sql, $conn, "step10.php");
 
 	$conn->close();
 ?>

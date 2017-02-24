@@ -2,6 +2,9 @@
 	include "koneksiDB.php";
 	include "lib/library.php";
 
+	session_start();
+	$id = $_SESSION["uid"];	
+	
 	//query buat ngambil nama field
 	$colQuery = 
 	"SHOW columns FROM perusahaan_pembuat_barang";
@@ -10,7 +13,7 @@
 	$colExec = mysql_query($colQuery);
 
 	//query buat ngambil isi field
-	$conQuery = "SELECT * FROM perusahaan_pembuat_barang";
+	$conQuery = "SELECT data.* FROM tbl_user as user, perusahaan_pembuat_barang as data, data_perusahaan_pembuat_barang as conn WHERE user.id = conn.id_user and data.No = conn.id_perusahaan_pembuat_barang and user.id = '$id'";
 
 	//eksekusi query conQuery
 	$conExec = mysql_query($conQuery);
@@ -20,7 +23,7 @@
 
 	//push fieldsnya ke all_prop
 	while ($prop = mysql_fetch_field($conExec)){
-	array_push($all_prop, $prop->name);
+		array_push($all_prop, $prop->name);
 	}
 ?>
 

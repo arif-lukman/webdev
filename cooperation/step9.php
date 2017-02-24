@@ -1,8 +1,11 @@
-<?php
+	<?php
 	include "koneksiDB.php";
 	include "lib/library.php";
 	$dbname = "_bpms_master";
 	include "controller/koneksi.php";
+
+	session_start();
+	$id = $_SESSION["uid"];	
 
 	//query buat ngambil nama field
 	$colQuery = 
@@ -12,7 +15,7 @@
 	$colExec = mysql_query($colQuery);
 
 	//query buat ngambil isi field
-	$conQuery = "SELECT No, Affiliate_Type, Address, Description FROM perusahaan_induk_dan_rekanan";
+	$conQuery = "SELECT data.No, data.Affiliate_Type, data.Address, data.Description FROM tbl_user as user, perusahaan_induk_dan_rekanan as data, data_perusahaan_induk_dan_rekanan as conn WHERE user.id = conn.id_user and data.No = conn.id_data_perusahaan_induk_dan_rekanan and user.id = '$id'";
 
 	//eksekusi query conQuery
 	$conExec = mysql_query($conQuery);
@@ -29,21 +32,21 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	<title>Step 9</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<style>
-	a.home {
-	position: fixed;
-	top: 0;
-	right: 0;
-	width: 200px;
-	color: white;
-	}
-	</style>
+		<title>Step 9</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+			a.home {
+				position: fixed;
+				top: 0;
+				right: 0;
+				width: 200px;
+				color: white;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -79,16 +82,16 @@
 				<label for="tipeperusahaan">Tipe Affiliate / Perusahaan:</label>
 				<select class="form-control" id="tipeperusahaan" name="Affiliate_Type">
 					<option>---- Pilih Tipe Affiliate  ----</option>
-					<?php
-						mysql_connect("localhost", "root", "");
-						mysql_select_db("_bpms_master");
-						$sql = mysql_query("SELECT * FROM _affil_type ORDER BY _judul ASC");
-						if(mysql_num_rows($sql) != 0){
-							while($data = mysql_fetch_assoc($sql)){
-								echo '<option>'.$data['_judul'].'</option>';
+						<?php
+							mysql_connect("localhost", "root", "");
+							mysql_select_db("_bpms_master");
+							$sql = mysql_query("SELECT * FROM _affil_type ORDER BY _judul ASC");
+							if(mysql_num_rows($sql) != 0){
+								while($data = mysql_fetch_assoc($sql)){
+									echo '<option>'.$data['_judul'].'</option>';
+								}
 							}
-						}
-					?>
+						?>
 				</select><p class="text-warning">should not be empty</p>
 			</div>
 			<div class="col-xs-6">
@@ -118,7 +121,7 @@
 			</div>
 			<div class="col-xs-6">
 				<?php
-					echo createSelectOption("Provinsi:", "Provinsi", "Provinsi", "---- Pilih Tipe Provinsi  ----", $conn, "SELECT _id, _nama as _name FROM _province ORDER BY _order ASC", false, "");
+					echo createSelectOption("Provinsi:", "Province", "Province", "---- Pilih Tipe Provinsi  ----", $conn, "SELECT _id, _nama as _name FROM _province ORDER BY _order ASC", false, "");
 				?>
 			<p class="text-warning">should not be empty</p>
 			</div>

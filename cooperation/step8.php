@@ -3,7 +3,7 @@
 	include "lib/library.php";
 
 	session_start();
-	$id = $_SESSION["uid"];	
+	$id = $_SESSION["uid"];
 
 	//query buat ngambil nama field
 	$colQuery = 
@@ -23,7 +23,7 @@
 
 	//push fieldsnya ke all_prop
 	while ($prop = mysql_fetch_field($conExec)){
-	array_push($all_prop, $prop->name);
+		array_push($all_prop, $prop->name);
 	}
 ?>
 
