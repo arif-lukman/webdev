@@ -1,5 +1,6 @@
 <?php
 	include "koneksiDB.php";
+	include "check_session.php";
 ?>
 
 <!DOCTYPE html>
@@ -95,7 +96,7 @@
 			<a href="dataperusahaan.php" class="list-group-item">Data Perusahaan</a>
 			<a href="formubahpassword.php" class="list-group-item">Ganti Password</a>
 			<a href="download.php" class="list-group-item">Bantuan</a>
-			<a href="login.php" class="list-group-item">Logout</a>
+			<a href="logout.php" class="list-group-item">Logout</a>
 		</div>
 	</div>
 	</body>
