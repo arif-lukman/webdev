@@ -66,9 +66,7 @@
 	<body>
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" "active" href="index.php">Back</a>
-			</div>
+
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#">Home</a></li>
 				<li><a href="step1.php">Step 1</a></li>
@@ -89,6 +87,7 @@
 			</ul>
 		</div>
 	</nav>
+
 	<div class="col-sm-2">
 		<div class="list-group">
 			<a href="step1.php" class="list-group-item">Menuju ke Step 1</a>
