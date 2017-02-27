@@ -2,6 +2,12 @@
 	include "koneksiDB.php";
 	include "lib/library.php";
 
+	//bikin koneksi ke db
+	$conn = createConnection("localhost", "root", "", "_bpms_master");
+
+	session_start();
+	$id = $_SESSION["uid"];
+
 	//query buat ngambil nama field
 	$colQuery = 
 	"SHOW columns FROM klasifikasi_perusahaan WHERE FIELD = 'No' or FIELD = 'Classification' or FIELD = 'Description'or FIELD = 'Attachment'";
@@ -10,7 +16,7 @@
 	$colExec = mysql_query($colQuery);
 
 	//query buat ngambil isi field
-	$conQuery = "SELECT No, Classification, Description, Attachment FROM klasifikasi_perusahaan";
+	$conQuery = "SELECT data.No, data.Classification, data.Description, data.Attachment FROM tbl_user as user, klasifikasi_perusahaan as data, data_klasifikasi_perusahaan as conn WHERE user.id = conn.id_user and data.No = conn.id_klasifikasi_perusahaan and user.id = '$id'";
 
 	//eksekusi query conQuery
 	$conExec = mysql_query($conQuery);
@@ -74,37 +80,14 @@
 			<hr>
 			<div class="well well-lg">
 				<div class="col-xs-6">
-				<label for="tipeperusahaan">Bidang Pekerjaan:</label>
-				<select class="form-control" id="tipeperusahaan" name="Activities_Section">
-					<option>Indonesia</option>
-					<option>Malaysia</option>
-					<option>Singapura</option>
-					<option>Amerika</option>
-					<option>China</option>
-					<option>Inggris</option>
-					<option>Rusia</option>
-				</select><p class="text-warning">should not be empty</p>
+					<?php echo createSelectOption("Bidang Pekerjaan:", "Activities_Section", "Activities_Section", "---Pilih Bidang Pekerjaan---", $conn, "SELECT _id, _judul as _name FROM _scope_type ORDER BY _order ASC", false, "");?>
+					<p class="text-warning">should not be empty</p>
 				</div>
 				<div class="col-xs-6">
-				<label for="tipeperusahaan">Klasifikasi:</label>
-				<select class="form-control" id="tipeperusahaan" name="Classification">
-					<option>Indonesia</option>
-					<option>Malaysia</option>
-					<option>Singapura</option>
-					<option>Amerika</option>
-					<option>China</option>
-					<option>Inggris</option>
-					<option>Rusia</option>
-				</select><p class="text-warning">should not be empty</p>
-				<select class="form-control" id="tipeperusahaan" name="Sub_Classification">
-					<option>Indonesia</option>
-					<option>Malaysia</option>
-					<option>Singapura</option>
-					<option>Amerika</option>
-					<option>China</option>
-					<option>Inggris</option>
-					<option>Rusia</option>
-				</select><p class="text-warning">should not be empty</p>
+					<?php echo createSelectOption("Klasifikasi:", "Classification", "Classification", "---Pilih Klasifikasi Perusahaan---", $conn, "SELECT _id, _kode, _judul as _name FROM _class_type WHERE LENGTH(_kode) <= 3 ORDER BY _order ASC", false, "");?>
+					<p class="text-warning">should not be empty</p>
+					<?php echo createSelectOption("Sub Klasifikasi:", "Sub_Classification", "Sub_Classification", "---Pilih Sub Klasifikasi Perusahaan---", $conn, "SELECT _id, _kode, _judul as _name FROM _class_type WHERE LENGTH(_kode) > 3 ORDER BY _order ASC", false, "");?>
+					<p class="text-warning">should not be empty</p>
 				<br>
 				</div>
 				<div class="form-group">

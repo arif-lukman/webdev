@@ -3,6 +3,9 @@
 	include "lib/library.php";
 	$dbname = "_bpms_master";
 	include "controller/koneksi.php";
+
+	session_start();
+	$id = $_SESSION["uid"];
 	
 	//query buat ngambil nama field
 	$colQuery = 
@@ -12,7 +15,7 @@
 	$colExec = mysql_query($colQuery);
 
 	//query buat ngambil isi field
-	$conQuery = "SELECT * FROM surat_dan_dokumen_pelengkap";
+	$conQuery = "SELECT data.* FROM tbl_user as user, surat_dan_dokumen_pelengkap as data, data_surat_dan_dokumen_pelengkap as conn WHERE user.id = conn.id_user and data.No = conn.id_surat_dan_dokumen_pelengkap and user.id = '$id'";
 
 	//eksekusi query conQuery
 	$conExec = mysql_query($conQuery);
@@ -79,14 +82,14 @@
 				<select class="form-control" id="tipeperusahaan" name="Activities_Section">
 					<option>--- Pilih Tipe ---</option>
 					<?php
-					mysql_connect("localhost", "root", "");
-					mysql_select_db("_bpms_master");
-					$sql = mysql_query("SELECT * FROM _docplus_type ORDER BY _judul ASC");
-					if(mysql_num_rows($sql) != 0){
-						while($data = mysql_fetch_assoc($sql)){
-							echo '<option>'.$data['_judul'].'</option>';
+						mysql_connect("localhost", "root", "");
+						mysql_select_db("_bpms_master");
+						$sql = mysql_query("SELECT * FROM _docplus_type ORDER BY _judul ASC");
+						if(mysql_num_rows($sql) != 0){
+							while($data = mysql_fetch_assoc($sql)){
+								echo '<option>'.$data['_judul'].'</option>';
+							}
 						}
-					}
 					?>
 				</select>
 				<br>

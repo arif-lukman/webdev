@@ -1,26 +1,20 @@
 <?php
 	include "koneksiDB.php";
 	include "lib/library.php";
-	//query buat ngambil nama field
-	$colQuery = 
-	"SHOW columns FROM keadaan_perusahaan";
 
-	//eksekusi query colQuery
-	$colExec = mysql_query($colQuery);
+	session_start();
+	$id = $_SESSION["uid"];
 
-	//query buat ngambil isi field
-	$conQuery = "SELECT * FROM keadaan_perusahaan";
+	//set variabel nama db
+	$dbname = "_bpms_vendor";
 
-	//eksekusi query conQuery
-	$conExec = mysql_query($conQuery);
+	//include file koneksi
+	include "controller/koneksi.php";
 
-	//array buatan
-	$all_prop = array();
-
-	//push fieldsnya ke all_prop
-	while ($prop = mysql_fetch_field($conExec)){
-		array_push($all_prop, $prop->name);
-	}
+	//ambil data dari db
+	$sql = "SELECT * FROM keadaan_perusahaan WHERE user_id = '$id'";
+	$result = $conn->query($sql);
+	$data = $result->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +34,7 @@
 			width: 200px;
 			color: white;
 		}
-	</style>
+		</style>
 	</head>
 
 	<body>
@@ -75,44 +69,38 @@
 				<div class="form-group">
 					<tr><td><strong>1. Proses bangkrut (Bancrupty proceeding)</strong></td><td> :
 					<br>
-					<input type=radio name='Proses_Bangkrut' id='a' value='Yes'>Yes
-					<input type=radio name='Proses_Bangkrut' id='a' value='No'>No</td></tr>
-					<?php 'mysql_query'; ?>
+					<input type="radio" name="Proses_Bangkrut" id="a" value="1" <?php echo checkBox($data['Proses_Bangkrut']);?>>Yes
+					<input type="radio" name="Proses_Bangkrut" id="a" value="0" <?php echo checkBox(!$data['Proses_Bangkrut']);?>>No</td></tr>
 				</div>
 				<div class="form-group">
 					<tr><td><strong>2. Pengawasan pengadilan (Court supervision)</strong></td><td> :
 					<br>
-					<input type=radio name='Pengawasan_Keadilan' id='a' value='Yes'>Yes
-					<input type=radio name='Pengawasan_Keadilan' id='a' value='No'>No</td></tr>
-					<?php 'mysql_query'; ?>
+					<input type="radio" name="Pengawasan_Keadilan" id="a" value="1" <?php echo checkBox($data['Pengawasan_Keadilan']);?>>Yes
+					<input type="radio" name="Pengawasan_Keadilan" id="a" value="0" <?php echo checkBox(!$data['Pengawasan_Keadilan']);?>>No</td></tr>
 				</div>
 				<div class="form-group">
 					<tr><td><strong>3. Kegiatan usaha sedang dihentikan (Suspension of business activities)</strong></td><td> :
 					<br>
-					<input type=radio name='Kegiatan_Usaha_Sedang_Dihentikan' id='a' value='Yes'>Yes
-					<input type=radio name='Kegiatan_Usaha_Sedang_Dihentikan' id='a' value='No'>No</td></tr>
-					<?php 'mysql_query'; ?>
+					<input type="radio" name="Kegiatan_Usaha_Sedang_Dihentikan" id="a" value="1" <?php echo checkBox($data['Kegiatan_Usaha_Sedang_Dihentikan']);?>>Yes
+					<input type="radio" name="Kegiatan_Usaha_Sedang_Dihentikan" id="a" value="0" <?php echo checkBox(!$data['Kegiatan_Usaha_Sedang_Dihentikan']);?>>No</td></tr>
 				</div>
 				<div class="form-group">
 					<tr><td><strong>4. Tuntutan atau claim dari pihak ketiga atau pemerintah (Claims or suity with third parties including government agencies)</strong></td><td> :
 					<br>
-					<input type=radio name='Tuntutan' id='a' value='Yes'>Yes
-					<input type=radio name='Tuntutan' id='a' value='No'>No</td></tr>
-					<?php 'mysql_query'; ?>
+					<input type="radio" name="Tuntutan" id="a" value="1" <?php echo checkBox($data['Tuntutan']);?>>Yes
+					<input type="radio" name="Tuntutan" id="a" value="0" <?php echo checkBox(!$data['Tuntutan']);?>>No</td></tr>
 				</div>
 				<div class="form-group">
 					<tr><td><strong>5. Sedang dikenakan sangsi hukum berdasarkan undang-undang kriminal (Is being sanctioned by criminal law)</strong></td><td> :
 					<br>
-					<input type=radio name='Sanksi_Hukum' id='a' value='Yes'>Yes
-					<input type=radio name='Sanksi_Hukum' id='a' value='No'>No</td></tr>
-					<?php 'mysql_query'; ?>
+					<input type="radio" name="Sanksi_Hukum" id="a" value="1" <?php echo checkBox($data['Sanksi_Hukum']);?>>Yes
+					<input type="radio" name="Sanksi_Hukum" id="a" value="0" <?php echo checkBox(!$data['Sanksi_Hukum']);?>>No</td></tr>
 				</div>
 				<div class="form-group">
 					<tr><td><strong>6. Sedang dikenakan sangsi oleh perusahaan K3S atau perusahaan migas lainnya (Is being sanctioned by K3S or other oil company)</strong></td><td> :
 					<br>
-					<input type=radio name='Sanksi_K3S' id='a' value='Yes'>Yes
-					<input type=radio name='Sanksi_K3S' id='a' value='No'>No</td></tr>
-					<?php 'mysql_query'; ?>
+					<input type="radio" name="Sanksi_K3S" id="a" value="1" <?php echo checkBox($data['Sanksi_K3S']);?>>Yes
+					<input type="radio" name="Sanksi_K3S" id="a" value="0" <?php echo checkBox(!$data['Sanksi_K3S']);?>>No</td></tr>
 				</div>
 				<button type="submit" class="btn btn-primary">Save</button>
 				<button type="button" class="btn btn-primary">Reset</button>

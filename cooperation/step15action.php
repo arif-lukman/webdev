@@ -5,10 +5,10 @@
 	session_start();
 	$uid = $_SESSION["uid"];
 
-	$Supporting_Document_Type=$_POST["Supporting_Document_Type"];
-	$Description=$_POST["Description"];
+	$stat = $_POST["Registration_Status"];
+	$note = $_POST["Notes"];
 	//$Attachment=$_POST["Attachment"];
-	
+
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
@@ -21,13 +21,13 @@
 	    die("Connection failed: " . $conn->connect_error);
 	}
 
-	$result = getResults("SELECT MAX(No) as No FROM surat_dan_dokumen_pelengkap", $conn)->fetch_assoc();
+	$result = getResults("SELECT MAX(No) as No FROM pengajuan", $conn)->fetch_assoc();
 	$did = $result["No"] + 1;
 
-	$sql = "INSERT INTO surat_dan_dokumen_pelengkap (Supporting_Document_Type, Description)
-	VALUES ('$Supporting_Document_Type', '$Description'); INSERT INTO data_surat_dan_dokumen_pelengkap VALUES ('$uid', '$did')";
+	$sql = "INSERT INTO pengajuan (Registration_Status, Notes)
+	VALUES ('$stat', '$note'); INSERT INTO data_pengajuan VALUES ('$uid', '$did')";
 	
-	execCudMulti($sql, $conn, "step14.php");
+	execCudMulti($sql, $conn, "step15.php");
 
 	$conn->close();
 ?>

@@ -1,14 +1,20 @@
 <?php
+	//include library
+	include "lib/library.php";
+
+	session_start();
+	$uid = $_SESSION["uid"];
+
 	$Activities_Section=$_POST["Activities_Section"];
 	$Classification=$_POST["Classification"];
 	$Sub_Classification=$_POST["Sub_Classification"];
 	$Description=$_POST["Description"];
-	$Attachment=$_POST["Attachment"];
+	//$Attachment=$_POST["Attachment"];
 	
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "labdb";
+	$dbname = "_bpms_vendor";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -17,16 +23,13 @@
 	    die("Connection failed: " . $conn->connect_error);
 	} 
 
-	$sql = "INSERT INTO klasifikasi_perusahaan (Activities_Section, Classification, Sub_Classification, Description, Attachment)
-	VALUES ('$Activities_Section', '$Classification', '$Sub_Classification', '$Description', '$Attachment')";
+	$result = getResults("SELECT MAX(No) as No FROM klasifikasi_perusahaan", $conn)->fetch_assoc();
+	$did = $result["No"] + 1;
+
+	$sql = "INSERT INTO klasifikasi_perusahaan (Activities_Section, Classification, Sub_Classification, Description)
+	VALUES ('$Activities_Section', '$Classification', '$Sub_Classification', '$Description'); INSERT INTO data_klasifikasi_perusahaan VALUES ('$uid', '$did')";
 	
-	if ($conn->query($sql) === TRUE) {
-				echo "<script> alert('Saving Data Success');
-				location='step12.php';
-				</script>";
-	} else {
-	    echo "Saving Data Failed" . $sql . "<br>" . $conn->error;
-	}
+	execCudMulti($sql, $conn, "step12.php");
 
 	$conn->close();
 ?>
