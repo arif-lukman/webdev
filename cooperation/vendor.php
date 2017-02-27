@@ -89,7 +89,6 @@
 			</ul>
 		</div>
 	</nav>
-	<a class="home" href="../index.php"><img src="../assets/images/cooperation/backindex.png" height="100" width="100"></a>
 	<div class="col-sm-2">
 		<div class="list-group">
 			<a href="step1.php" class="list-group-item">Menuju ke Step 1</a>
