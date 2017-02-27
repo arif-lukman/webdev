@@ -19,9 +19,13 @@
 		//ambil data dari db
 		$result = getResults("SELECT * FROM _admin WHERE _id = '$id'", $conn);
 		$data = $result->fetch_assoc();
+		$allowChecking = true;
+		$param = $data["_group_id"];
 	}
 	else{
 		$data = "";
+		$allowChecking = false;
+		$param = "";
 	}
 ?>
 <!DOCTYPE html>
@@ -52,7 +56,7 @@
 						echo createInputField("text", "Nama Lengkap:", "fname", "fname", checkData($data,"_fullname"));
 						echo createInputField("text", "Email:", "email", "email", checkData($data,"_email"));
 						echo createInputField("text", "Password:", "pwd", "pwd", checkData($data,"_password"));
-						echo createSelectOption("Group:", "grup", "grup", $conn, "SELECT * FROM _group_priv", $conn);
+						echo createSelectOption("Group:", "grup", "grup", "---Pilih Hak Akses---", $conn, "SELECT * FROM _group_priv", $allowChecking, $param);
 					?>
 					<div class="form-group">
 				  		<label for="stat">Status:</label>

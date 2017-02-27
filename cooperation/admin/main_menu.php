@@ -5,21 +5,18 @@
 	//include session checker
 	include "../controller/check_session.php";
 
-	//set variabel nama db
-	$dbname = "_bpms_master";
-
-	//include file koneksi
-	include "../controller/koneksi.php";
+	$master = createConnection("localhost", "root", "", "_bpms_master");
+	$vendor = createConnection("localhost", "root", "", "_bpms_vendor");
 
 	//data untuk select option negara
 	//ambil nama field
-	$fieldNames1 = getResults("SHOW columns FROM _document_type WHERE field = '_id' || field = '_kode' || field = '_judul' || field = '_kadaluarsa'", $conn);
+	$fieldNames = getResults("SHOW columns FROM tbl_user", $vendor);
 
 	//ambil isi field
-	$fieldValues1 = getResults("SELECT _id, _kode, _judul, _kadaluarsa FROM _document_type ORDER BY _id ASC", $conn);
+	$fieldValues = getResults("SELECT * FROM tbl_user ORDER BY id ASC", $vendor);
 
 	//push isi field ke array
-	$allValues1 = pushArray($fieldValues1);
+	$allValues = pushArray($fieldValues);
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,14 +39,17 @@
 					<?php
 						echo createInputField("text", "Username:", "uname", "uname", "");
 						echo createInputField("text", "Nama Perusahaan:", "cpname", "cpname", "");
-						echo createSelectOption("Negara:", "country", "country", $conn, "SELECT _id, _nama as _name FROM _country");
-						echo createSelectOption("Propinsi:", "province", "province", $conn, "SELECT _id, _nama as _name FROM _province");
+						echo createSelectOption("Negara:", "country", "country", "---Pilih Negara---", $master, "SELECT _id, _nama as _name FROM _country", false, "");
+						echo createSelectOption("Propinsi:", "province", "province", "---Pilih Propinsi---", $master, "SELECT _id, _nama as _name FROM _province", false, "");
 						echo createInputField("email", "Email:", "email", "email", "");
 						echo createInputField("password", "Kata Sandi:", "password", "password", "");
 						echo createTextArea(3, "Keterangan:", "desc", "desc", "");
 					?>
 					<input type="submit" value="Create">
 				</form>
+				<?php
+					generateTable($fieldNames, $fieldValues, $allValues, "", false);
+				?>
 			</div>
 		</div>
 	</body>

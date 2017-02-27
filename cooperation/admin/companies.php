@@ -31,10 +31,10 @@
 				<form action="search_comp.php" method="post">
 					<?php
 						echo createInputField("text", "Kata kunci:", "keyword", "keyword", "");
-						echo createSelectOption("Negara:", "country", "country", $conn, "SELECT _id, _nama as _name FROM _country");
-						echo createSelectOption("Propinsi:", "province", "province", $conn, "SELECT _id, _nama as _name FROM _province");
-						echo createSelectOption("Klasifikasi:", "class", "class", $conn, "SELECT _id, _judul as _name FROM _class_type");
-						echo createSelectOption("Kualifikasi:", "qual", "qual", $conn, "SELECT _id, _judul as _name FROM _qual_type");
+						echo createSelectOption("Negara:", "country", "country", "---Pilih Negara---", $conn, "SELECT _id, _nama as _name FROM _country", false, "");
+						echo createSelectOption("Propinsi:", "province", "province", "---Pilih Propinsi---", $conn, "SELECT _id, _nama as _name FROM _province", false, "");
+						echo createSelectOption("Klasifikasi:", "class", "class", "---Pilih Klasifikasi Perusahaan---", $conn, "SELECT _id, _judul as _name FROM _class_type", false, "");
+						echo createSelectOption("Kualifikasi:", "qual", "qual", "---Pilih Kualifikasi Perusahaan---", $conn, "SELECT _id, _judul as _name FROM _qual_type", false, "");
 					?>
 					<input type="submit" value="Search">
 				</form>

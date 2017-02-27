@@ -20,9 +20,15 @@
 		//ambil data dari db
 		$result = getResults("SELECT * FROM _class_type WHERE _id = '$id'", $conn);
 		$data = $result->fetch_assoc();
+		$allowChecking = true;
+		$param = $data["_kelas"];
+		$param2 = $data["_status"];
 	}
 	else{
 		$data = "";
+		$allowChecking = false;
+		$param = "";
+		$param2 = "";
 	}
 ?>
 <!DOCTYPE html>
@@ -53,8 +59,8 @@
 						echo createInputField("text", "Judul Tipe Klasifikasi:", "judul", "judul", checkData($data,"_judul"));
 						echo createInputField("text", "Order:", "order", "order", checkData($data,"_order"));
 						//echo createInputField("text", "Kelas:", "kelas", "kelas", checkData($data,"_kelas"));
-						echo createSelectOption("Kelas:", "kelas", "kelas", $conn, "SELECT _id, _nama as _name FROM _class", $conn);
-						echo createSelectOption("Status:", "stat", "stat", $conn, "SELECT _id, _nama as _name FROM _status ORDER BY _id DESC", $conn);
+						echo createSelectOption("Kelas:", "kelas", "kelas", "---Pilih Kelas---", $conn, "SELECT _id, _nama as _name FROM _class", $conn, $allowChecking, $param);
+						echo createSelectOption("Status:", "stat", "stat", "---Pilih Status---", $conn, "SELECT _id, _nama as _name FROM _status ORDER BY _id DESC", $conn, $allowChecking, $param2);
 					?>
 					<button type="submit" class="btn btn-default"><?php echo setButtonText($op);?></button>
 				</form>
