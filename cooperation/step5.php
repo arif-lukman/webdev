@@ -28,6 +28,7 @@
 
 	//bikin koneksi ke db
 	$conn1 = createConnection("localhost", "root", "", "_bpms_master");
+	$warning = "should not be empty";
 ?>
 
 <!DOCTYPE html>
@@ -81,45 +82,27 @@
 			<h3>Daftar Pemilik (Shareholders)</h3>
 			<hr>
 			<div class="well well-lg">
-			<div class="form-group">
-				<label for="name">Nama:</label>
-				<input type="text" class="form-control" id="namaperusahaan" name="Name"><p class="text-warning">should not be empty</p>
-			</div>
-			<div class="form-group">
-				<label for="name">No Identitas:</label>
-				<input type="text" class="form-control" id="namaperusahaan" name="Civil_ID"><p class="text-warning">should not be empty</p>
-			</div>
-			<div class="form-group">
-			<label for="comment">Alamat:</label>
-			<textarea class="form-control" rows="5" id="comment" name="Address"></textarea><p class="text-warning">should not be empty</p>
-			</div>
-			<div class="col-xs-6">
-				<label for="TGL">No Telepon:</label>
-				<input type="text" class="form-control" id="usr" name="Phone_Number"><p class="text-warning">should not be empty</p>
-			</div>
-			<div class="col-xs-6">
-				<label for="TGL">Email:</label>
-				<input type="text" class="form-control" id="usr" name="Email"><p class="text-warning">should not be empty</p>
-				<br>
-			</div>
-			<div class="col-xs-6">
-				<label for="TGL">Share(%):</label>
-				<input type="text" class="form-control" id="usr" name="Share"><p class="text-warning">should not be empty</p>
-				<br><br>
-			</div>
-			<div class="col-xs-6">
-				<label for="TGL">Share Value:</label>
-				<input type="text" class="form-control" id="usr" name="Value">
-				<span class="label label-info">contoh/example: IDR 15.000.000 / USD 5.000</span>
-				<br><br>
-			</div>
-			<button type="submit" class="btn btn-primary">Save</button>
-			<button type="button" class="btn btn-primary">Reset</button>
-			<hr>
-			<ul class="pager">
-				<li><a href="step4.php">Previous Step</a></li>
-				<li><a href="step6.php">Next Step</a></li>
-			</ul>
+				<?php
+					echo createInputField("text", "Nama:", "Name", "Name", "", "", true, $warning);
+					echo createInputField("text", "No Identitas:", "Civil_ID", "Civil_ID", "", "", true, $warning);
+					echo createInputField("text", "Alamat:", "Address", "Address", "", "", true, $warning);
+					echo createInputField("text", "No Telepon:", "Phone_Number", "Phone_Number", "", "col-xs-6", true, $warning);
+					echo createInputField("email", "Email:", "Email", "Email", "", "col-xs-6", true, $warning);
+					echo createInputField("text", "Share(%):", "Share", "Share", "", "col-xs-6", true, $warning);
+				?>
+				<div class="col-xs-6">
+					<label for="TGL">Share Value:</label>
+					<input type="text" class="form-control" id="usr" name="Value" value="">
+					<span class="label label-info">contoh/example: IDR 15.000.000 / USD 5.000</span>
+					<br><br>
+				</div>
+				<button type="submit" class="btn btn-primary">Save</button>
+				<button type="button" class="btn btn-primary">Reset</button>
+				<hr>
+				<ul class="pager">
+					<li><a href="step4.php">Previous Step</a></li>
+					<li><a href="step6.php">Next Step</a></li>
+				</ul>
 		</form>
 		<div class="well well-sm">Result (Table):</div>
 		<table class="table table-bordered">

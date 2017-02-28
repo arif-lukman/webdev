@@ -1,14 +1,16 @@
 <?php
 	include "koneksiDB.php";
+	include "lib/library.php";
 
 	//parameter diambil sini woi
-		$No = $_GET["No"];
+	$No = $_GET["No"];
 	
-		//ambil semua detail dengan id diatas
+	//ambil semua detail dengan id diatas
 	$query = "SELECT * FROM pengajuan WHERE No='$No'";
 	$result = mysql_query($query);
 	$data = mysql_fetch_array($result);
-	}
+	$conn1 = createConnection("localhost", "root", "", "_bpms_master");
+	$warning = "should not be empty";
 ?>
 
 <!DOCTYPE html>

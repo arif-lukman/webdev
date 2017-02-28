@@ -267,30 +267,42 @@
 	}
 
 	//fungsi buat bikin input field
-	function createInputField($type, $label, $name, $id, $value){
+	function createInputField($type, $label, $name, $id, $value, $class, $warn, $warningText){
 		//tambahin dulu atribut-atributnya
+		if($warn)
+			$warning = "<p class='text-warning'>" . $warningText . "</p>";
+		else
+			$warning = "";
+		
 		$inputField = "
-			<div class='form-group'>
+			<div class='form-group " . $class . "'>
 		  		<label for='" . $id . "'>" . $label . "</label>
 			  	<input type='" . $type . "' class='form-control' name='" . $name . "' id='" . $id . "' value='" . $value . "'>
+			  	" . $warning . "
 			</div>
 		";
 		return $inputField;
 	}
 
 	//fungsi buat bikin textarea
-	function createTextArea($rows, $label, $name, $id, $value){
+	function createTextArea($rows, $label, $name, $id, $value, $class, $warn, $warningText){
+		if($warn)
+			$warning = "<p class='text-warning'>" . $warningText . "</p>";
+		else
+			$warning = "";
+		
 		$textArea = "
-		<div class='form-group'>
+		<div class='form-group " . $class . "'>
 	  		<label for='" . $id . "'>" . $label . "</label>
 		  	<textarea class='form-control' rows='" . $rows . "' id='" . $id . "' name='" . $name . "'>" . $value . "</textarea>
+		  	" . $warning . "
 		</div>
 		";
 		return $textArea;
 	}
 
 	//fungsi buat bikin select option
-	function createSelectOption($label, $id, $name, $default, $conn, $sql, $allowChecking, $param){
+	function createSelectOption($label, $id, $name, $default, $conn, $sql, $allowChecking, $param, $class, $warn, $warningText){
 		//ambil list group
 		$result1 = getResults($sql, $conn);
 		$options = "";
@@ -303,12 +315,19 @@
 				$options = $options . "<option value='$data1[_id]'>" . $data1["_name"] . "</option>";
 			}
 		}
+
+		if($warn)
+			$warning = "<p class='text-warning'>" . $warningText . "</p>";
+		else
+			$warning = "";
+
 		$selectOption = "
-		<div class='form-group'>
+		<div class='form-group " . $class . "'>
 	  		<label for='" . $id . "'>" . $label . "</label>
 		  	<select class='form-control' id='" . $id . "' name='" . $name . "'>
 		  	" . $default . $options . "
 			</select>
+			" . $warning . "
 		</div>
 		";
 		return $selectOption;

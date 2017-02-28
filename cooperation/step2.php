@@ -3,6 +3,8 @@
 	$id = $_SESSION["uid"];
 
 	include "koneksiDB.php";
+	include "lib/library.php";
+	$warning = "should not be empty";
 
 	//query buat ngambil nama field
 	$colQuery = 
@@ -74,31 +76,14 @@
 			<h3>Partner K3S</h3>
 			<hr>
 			<div class="well well-lg">
-				<div class="form-group">
-					<label for="name">Nama K3S:</label>
-					<input type="text" class="form-control" id="namaperusahaan" name="K3S_Name"><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="form-group">
-					<label for="name">Nama Kontak:</label>
-					<input type="text" class="form-control" id="namaperusahaan" name="Contact_Name"><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="col-sm-6">
-					<label for="Expired_Date">Tanggal Terbit:</label>
-					<input type="date" class="form-control" id="usr" name="Expired_Date"><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="col-sm-6">
-					<label for="Expiration_Days">Tanggal Kadaluarsa:</label>
-					<input type="date" class="form-control" id="usr" name="Expiration_Days"><p class="text-warning">should not be empty</p>
-					<br>
-				</div>
-				<div class="form-group">
-					<label for="name">Nomor Telepon:</label>
-					<input type="text" class="form-control" name="Phone_Number"><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="form-group">
-					<label for="name">Nomor Fax:</label>
-					<input type="text" class="form-control" id="namaperusahaan" name="Fax_Number">
-				</div>
+				<?php
+					echo createInputField("text", "Nama K3S:", "K3S_Name", "K3S_Name", "", "", true, $warning);
+					echo createInputField("text", "Nama Kontak:", "Contact_Name", "Contact_Name", "", "", true, $warning);
+					echo createInputField("text", "Tanggal Terbit:", "Expired_Date", "Expired_Date", "", "col-sm-6", true, $warning);
+					echo createInputField("text", "Tanggal Kadaluarsa:", "Expiration_Days", "Expiration_Days", "", "col-sm-6", true, $warning);
+					echo createInputField("text", "Nomor Telepon:", "Phone_Number", "Phone_Number", "", "", true, $warning);
+					echo createInputField("text", "Nomor Fax", "Fax_Number", "Fax_Number", "", "", true, $warning);
+				?>
 				<div class="form-group">
 					<input type="file" name="pic" accept="image/*" name="Attachment">
 					<span class="label label-info">Format PDF max. 2Mb </span><p class="text-warning">should not be empty</p>

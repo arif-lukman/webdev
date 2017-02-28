@@ -25,6 +25,8 @@
 	while ($prop = mysql_fetch_field($conExec)){
 		array_push($all_prop, $prop->name);
 	}
+	$conn1 = createConnection("localhost", "root", "", "_bpms_master");
+	$warning = "should not be empty";
 ?>
 
 <!DOCTYPE html>
@@ -76,61 +78,27 @@
 			<h3>Surat Keagenan / Dealer / Distributor</h3>
 			<hr>
 			<div class="well well-lg">
-			<div class="form-group">
-				<label for="tipeperusahaan" name="distributor">Tipe Distributor/Dealer:</label>
-				<select class="form-control" id="tipeperusahaan" name="Distributor">
-					<option>---- Pilih Tipe Distributor  ----</option>
+				<div class="form-group">
 					<?php
-						mysql_connect("localhost", "root", "");
-						mysql_select_db("_bpms_master");
-						$sql = mysql_query("SELECT * FROM _distributor ORDER BY _nama ASC");
-						if(mysql_num_rows($sql) != 0){
-							while($data = mysql_fetch_assoc($sql)){
-								echo '<option>'.$data['_nama'].'</option>';
-							}
-						}
+						echo createSelectOption("Tipe Distributor/Dealer:", "Distributor", "Distributor", "---Pilih Tipe Distributor---", $conn1, "SELECT _id, _nama as _name FROM _distributor ORDER BY _order ASC", true, "", "", true, $warning);
+						echo createInputField("text", "Nomor Dokumen:", "Document_Number", "Document_Number", "", "", true, $warning);
+						echo createInputField("text", "Dikeluarkan oleh:", "Issued_By", "Issued_By", "", "", true, $warning); 
+						echo createInputField("date", "Tanggal Dikeluarkan:", "Issued_Date", "Issued_Date", "", "col-xs-6", true, $warning);
+						echo createInputField("date", "Tanggal Kadaluarsa:", "Expired_Date", "Expired_Date", "", "col-xs-6", true, $warning);
+						echo createInputField("text", "Deskripsi:", "Description", "Description", "", "col-xs-12", true, $warning);
 					?>
-				</select><p class="text-warning">should not be empty</p>
-			</div>
-			<div class="form-group">
-				<?php
-					echo createInputField("text", "Nomor Dokumen", "Document_Number", "Document_Number", ""); 
-				?>
-			</div>
-			<div class="form-group">
-				<?php
-					echo createInputField("text", "Dikeluarkan oleh", "Issued_By", "Issued_By", ""); 
-				?>
-			</div>
-			<div class="col-xs-6">
-				<?php
-					echo createInputField("date", "Tanggal Dikeluarkan", "Issued_Date", "Issued_Date", ""); 
-				?>
-			</div>
-			<div class="col-xs-6">
-				<?php
-					echo createInputField("date", "Tanggal Kadaluarsa", "Expired_Date", "Expired_Date", ""); 
-				?>
-				<br>	
-			</div>
-			<div class="col-xs-12">
-				<?php
-					echo createInputField("text", "Deskripsi", "Description", "Description", ""); 
-				?>
-				<br>
-			</div>
-			<div class="form-group">
-				<input type="file" name="pic" accept="image/*">
-				<span class="label label-info">Format PDF max. 2Mb*</span><p class="text-warning">should not be empty</p>
-				<br>
-			</div>
-			<button type="submit" class="btn btn-primary">Save</button>
-			<button type="button" class="btn btn-primary">Reset</button>
-			<hr>
-			<ul class="pager">
-				<li><a href="step6.php">Previous Step</a></li>
-				<li><a href="step8.php">Next Step</a></li>
-			</ul>
+				<div class="form-group">
+					<input type="file" name="pic" accept="image/*">
+					<span class="label label-info">Format PDF max. 8Mb*</span><p class="text-warning">should not be empty</p>
+					<br>
+				</div>
+				<button type="submit" class="btn btn-primary">Save</button>
+				<button type="button" class="btn btn-primary">Reset</button>
+				<hr>
+				<ul class="pager">
+					<li><a href="step6.php">Previous Step</a></li>
+					<li><a href="step8.php">Next Step</a></li>
+				</ul>
 		</form>
 		<div class="well well-sm">Result (Table):</div>
 		<table class="table table-bordered">

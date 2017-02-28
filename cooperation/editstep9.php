@@ -9,26 +9,28 @@
 	$query = "SELECT * FROM perusahaan_induk_dan_rekanan WHERE No='$No'";
 	$result = mysql_query($query);
 	$data = mysql_fetch_array($result);
+	$conn1 = createConnection("localhost", "root", "", "_bpms_master");
+	$warning = "should not be empty";
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	<title>Step 9</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<style>
-	a.home {
-	position: fixed;
-	top: 0;
-	right: 0;
-	width: 200px;
-	color: white;
-	}
-	</style>
+		<title>Step 9</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+			a.home {
+				position: fixed;
+				top: 0;
+				right: 0;
+				width: 200px;
+				color: white;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -60,80 +62,20 @@
 			<h3>Perusahaan Induk, Grup Perusahaan, Rekanan, Konsorsium, Afiliasi dan Aliansi</h3>
 			<hr>
 			<div class="well well-lg">
-				<div class="col-xs-6">
-					<label for="tipeperusahaan">Tipe Affiliate / Perusahaan:</label>
-					<select class="form-control" id="tipeperusahaan" name="Affiliate_Type" value="<?php echo $data['Affiliate_Type']?>">
-						<option>Perusahaan Induk</option>
-						<option>Grup Perusahaan</option>
-						<option>Rekanan</option>
-						<option>Konsorsium</option>
-						<option>Affiliasi dan Aliansi</option>
-					</select><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="col-xs-6">
-					<label for="name">Nama Perusahaan:</label>
-					<input type="text" class="form-control" id="namaperusahaan" name="Company_Name" value="<?php echo $data['Company_Name']?>"><p class="text-warning">should not be empty</p>
-					<br>
-				</div>
-				<div class="form-group">
-					<label for="comment">Alamat:</label>
-					<textarea class="form-control" rows="5" id="comment" name="Address" value="<?php echo $data['Company_Name']?>"><?php echo $data['Address']?></textarea><p class="text-warning">should not be empty</p>	
-				</div>
-				<div class="col-xs-6">
-					<label for="tipeperusahaan">Negara:</label>
-					<select class="form-control" id="tipeperusahaan" name="Country">
-						<option>Indonesia</option>
-						<option>Malaysia</option>
-						<option>Singapura</option>
-						<option>Amerika</option>
-						<option>China</option>
-						<option>Inggris</option>
-						<option>Rusia</option>
-					</select><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="col-xs-6">
-					<label for="tipeperusahaan">Provinsi:</label>
-					<select class="form-control" id="tipeperusahaan" name="Province" value="<?php echo $data['Province']?>">
-						<option>Indonesia</option>
-						<option>Malaysia</option>
-						<option>Singapura</option>
-						<option>Amerika</option>
-						<option>China</option>
-						<option>Inggris</option>
-						<option>Rusia</option>
-					</select><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="form-group">
-					<label for="name">Nomor Telepon:</label>
-					<input type="text" class="form-control" id="namaperusahaan" name="Phone_Number" value="<?php echo $data['Phone_Number']?>"><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="form-group">
-					<label for="name">Email:</label>
-					<input type="text" class="form-control" id="namaperusahaan" name="Email" value="<?php echo $data['Email']?>"><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="form-group">
-					<label for="comment">Deskripsi:</label>
-					<textarea class="form-control" rows="5" id="comment" name="Description" value="<?php echo $data['Description']?>"><?php echo $data['Description']?></textarea><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="col-xs-6">
-					<label for="name">Kota:</label>
-					<input type="text" class="form-control" id="namaperusahaan" name="City" value="<?php echo $data['City']?>"><p class="text-warning">should not be empty</p>
-					<br>
-				</div>
-				<div class="col-xs-6">
-					<label for="name">Kode Pos:</label>
-					<input type="text" class="form-control" id="namaperusahaan" name="ZIP_Code" value="<?php echo $data['ZIP_Code']?>"><p class="text-warning">should not be empty</p>
-					<br>
-				</div>
-				<div class="col-xs-6">
-					<label for="name">Kode Fax:</label>
-					<input type="text" class="form-control" id="namaperusahaan" name="Fax_Number" value="<?php echo $data['Fax_Number']?>"><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="col-xs-6">
-					<label for="name">Website:</label>
-					<input type="text" class="form-control" id="namaperusahaan" name="Website" value="<?php echo $data['Website']?>">
-					<br><br>
-				</div>
+				<?php
+					echo createSelectOption("Tipe Affiliate / Perusahaan:", "Affiliate_Type", "Affiliate_Type", "---Pilih Tipe Afiliasi---", $conn1, "SELECT _id, _judul as _name FROM _affil_type ORDER BY _order ASC", true, $data["Affiliate_Type"], "col-xs-6", true, $warning);
+					echo createInputField("text", "Nama Perusahaan:", "Company_Name", "Company_Name", $data['Company_Name'], "col-xs-6", true, $warning);
+					echo createInputField("text", "Alamat:", "Address", "Address", $data['Address'], "", true, $warning);
+					echo createSelectOption("Negara:", "Country", "Country", "---Pilih Negara---", $conn1, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", true, $data["Country"], "col-xs-6", true, $warning);
+					echo createSelectOption("Provinsi:", "Province", "Province", "---Pilih Provinsi---", $conn1, "SELECT _id, _nama as _name FROM _province ORDER BY _order ASC", true, $data["Province"], "col-xs-6", true, $warning);
+					echo createInputField("text", "Nomor Telefon:", "Phone_Number", "Phone_Number", $data['Phone_Number'], "", true, $warning);
+					echo createInputField("text", "Email:", "Email", "Email", $data['Email'], "", true, $warning);
+					echo createTextArea(5, "Deskripsi:", "Description", "Description", $data['Description'], "", true, $warning);
+					echo createInputField("text", "Kota:", "City", "City", $data['City'], "col-xs-6", true, $warning);
+					echo createInputField("text", "Kode Pos:", "ZIP_Code", "ZIP_Code", $data['ZIP_Code'], "col-xs-6", true, $warning);
+					echo createInputField("text", "Kode Fax:", "Fax_Number", "Fax_Number", $data['Fax_Number'], "col-xs-6", true, $warning);
+					echo createInputField("text", "Website:", "Website", "Website", $data['Website'], "col-xs-6", true, $warning);
+				?>
 				<button type="submit" class="btn btn-primary">Save</button>
 				<button type="button" class="btn btn-primary">Reset</button>
 				<hr>

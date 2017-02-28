@@ -9,26 +9,28 @@
 	$query = "SELECT * FROM perusahaan_pembuat_barang WHERE No='$No'";
 	$result = mysql_query($query);
 	$data = mysql_fetch_array($result);
+	$conn1 = createConnection("localhost", "root", "", "_bpms_master");
+	$warning = "should not be empty";
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	<title>Step 11</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<style>
-	a.home {
-	position: fixed;
-	top: 0;
-	right: 0;
-	width: 200px;
-	color: white;
-	}
-	</style>
+		<title>Step 11</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+			a.home {
+				position: fixed;
+				top: 0;
+				right: 0;
+				width: 200px;
+				color: white;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -60,14 +62,10 @@
 			<h3>Perusahaan Pembuat Barang</h3>
 			<hr>
 			<div class="well well-lg">
-				<div class="form-group">
-					<label for="name">Produk:</label>
-					<input type="text" class="form-control" id="namaperusahaan" name="Product" value="<?php echo $data['Product']?>"><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="form-group">
-					<label for="name">Deskripsi:</label>
-					<input type="text" class="form-control" id="namaperusahaan" name="Description" value="<?php echo $data['Description']?>"><p class="text-warning">should not be empty</p>
-				</div>
+				<?php
+					echo createInputField("text", "Produk:", "Product", "Product", $data['Product'], "", true, $warning);
+					echo createInputField("text", "Deskripsi:", "Description", "Description", $data['Description'], "", true, $warning);
+				?>
 				<button type="submit" class="btn btn-primary">Save</button>
 				<button type="button" class="btn btn-primary">Reset</button>
 				<hr>

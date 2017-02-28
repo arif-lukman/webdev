@@ -1,5 +1,6 @@
 <?php
 	include "koneksiDB.php";
+	include "lib/library.php";
 
 	//parameter diambil sini woi
 	$No = $_GET["No"];
@@ -8,6 +9,8 @@
 	$query = "SELECT * FROM daftar_pemilik WHERE No='$No'";
 	$result = mysql_query($query);
 	$data = mysql_fetch_array($result);
+	$conn1 = createConnection("localhost", "root", "", "_bpms_master");
+	$warning = "should not be empty";
 ?>
 
 <!DOCTYPE html>
@@ -59,32 +62,14 @@
 			<h3>Daftar Pemilik (Shareholders)</h3>
 			<hr>
 			<div class="well well-lg">
-				<div class="form-group">
-					<label for="name">Nama:</label>
-					<input type="text" class="form-control" id="namaperusahaan" name="Name" value="<?php echo $data['Name']?>"><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="form-group">
-					<label for="name">No Identitas:</label>
-					<input type="text" class="form-control" id="namaperusahaan" name="Civil_ID" value="<?php echo $data['Civil_ID']?>"><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="form-group">
-					<label for="comment">Alamat:</label>
-					<textarea class="form-control" rows="5" id="comment" name="Address" value="<?php echo $data['Address']?>"><?php echo $data['Address']?></textarea><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="col-xs-6">
-					<label for="TGL">No Telepon:</label>
-					<input type="text" class="form-control" id="usr" name="Phone_Number" value="<?php echo $data['Phone_Number']?>"><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="col-xs-6">
-					<label for="TGL">Email:</label>
-					<input type="text" class="form-control" id="usr" name="Email" value="<?php echo $data['Email']?>"><p class="text-warning">should not be empty</p>
-					<br>
-				</div>
-				<div class="col-xs-6">
-					<label for="TGL">Share(%):</label>
-					<input type="text" class="form-control" id="usr" name="Share" value="<?php echo $data['Share']?>"><p class="text-warning">should not be empty</p>
-					<br><br>
-				</div>
+				<?php
+					echo createInputField("text", "Nama:", "Name", "Name", $data['Name'], "", true, $warning);
+					echo createInputField("text", "No Identitas:", "Civil_ID", "Civil_ID", $data['Civil_ID'], "", true, $warning);
+					echo createInputField("text", "Alamat:", "Address", "Address", $data['Address'], "", true, $warning);
+					echo createInputField("text", "No Telepon:", "Phone_Number", "Phone_Number", $data['Phone_Number'], "col-xs-6", true, $warning);
+					echo createInputField("email", "Email:", "Email", "Email", $data['Email'], "col-xs-6", true, $warning);
+					echo createInputField("text", "Share(%):", "Share", "Share", $data['Share'], "col-xs-6", true, $warning);
+				?>
 				<div class="col-xs-6">
 					<label for="TGL">Share Value:</label>
 					<input type="text" class="form-control" id="usr" name="Value" value="<?php echo $data['Value']?>">

@@ -1,13 +1,16 @@
 <?php
-include "koneksiDB.php";
+	include "koneksiDB.php";
+	include "lib/library.php";
 
-//parameter diambil sini woi
-$No = $_GET["No"];
+	//parameter diambil sini woi
+	$No = $_GET["No"];
 
-//ambil semua detail dengan id diatas
-$query = "SELECT * FROM susunan_pengurus WHERE No='$No'";
-$result = mysql_query($query);
-$data = mysql_fetch_array($result);
+	//ambil semua detail dengan id diatas
+	$query = "SELECT * FROM susunan_pengurus WHERE No='$No'";
+	$result = mysql_query($query);
+	$data = mysql_fetch_array($result);
+	$conn1 = createConnection("localhost", "root", "", "_bpms_master");
+	$warning = "should not be empty";
 ?>
 
 <!DOCTYPE html>
@@ -20,13 +23,13 @@ $data = mysql_fetch_array($result);
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<style>
-		a.home {
-		position: fixed;
-		top: 0;
-		right: 0;
-		width: 200px;
-		color: white;
-		}
+			a.home {
+				position: fixed;
+				top: 0;
+				right: 0;
+				width: 200px;
+				color: white;
+			}
 		</style>
 	</head>
 
@@ -58,53 +61,32 @@ $data = mysql_fetch_array($result);
 			<h2>Step 4</h2>
 			<h3>Susunan pengurus / Struktur organisasi (BOC , BOD)</h3>
 			<hr>
-			<div class="well well-lg">
-			<div class="col-xs-4">
-				<label for="kualifikasiperusahaan">Tipe Pengurus:</label>
-				<select class="form-control" id="kualifikasiperusahaan" name="Management_Type" value="<?php echo $data['Management_Type']?>">
-				<option>Dewan Direksi</option>
-				<option>Dewan Komisaris</option>
-				</select><p class="text-warning">should not be empty</p>
-			</div>
-			<br><br><br><br><br>
-			<b>Pengurus Utama?</b>
-			<div class="checkbox">
-				<label><input type="checkbox" value="Pengurus Utama" name="Primary_Person" value="<?php echo $data['Primary_Person']?>"> Yes (Salah satu pengurus harus dibuat sebagai Pengurus Utama / One person must be set to Primary Person)</label>
-				<br><br>
-			</div>
-			<div class="col-xs-4">
-				<label for="TGL">Posisi:</label>
-				<input type="text" class="form-control" id="usr" name="Position" value="<?php echo $data['Position']?>"><p class="text-warning">should not be empty</p>
-			</div>
-			<div class="col-xs-4">
-				<label for="TGL">Nama:</label>
-				<input type="text" class="form-control" id="usr" name="Name" value="<?php echo $data['Name']?>"><p class="text-warning">should not be empty</p>
-			</div>
-			<div class="col-xs-4">
-				<label for="TGL">No Identitas:</label>
-				<input type="text" class="form-control" id="usr" name="Civil_ID" value="<?php echo $data['Civil_ID']?>"><p class="text-warning">should not be empty</p>
-				<br><br>
-			</div>
-			<div class="form-group">
-				<label for="comment">Alamat Kantor:</label>
-				<textarea class="form-control" rows="5" id="comment" name="Address" value="<?php echo $data['Address']?>"><?php echo $data['Address']?></textarea><p class="text-warning">should not be empty</p>
-			</div>
-			<div class="col-xs-6">
-				<label for="TGL">No Telepon:</label>
-				<input type="text" class="form-control" id="usr" name="Phone_Number" value="<?php echo $data['Phone_Number']?>"><p class="text-warning">should not be empty</p>
-			</div>
-			<div class="col-xs-6">
-				<label for="TGL">Email:</label>
-				<input type="text" class="form-control" id="usr" name="Email" value="<?php echo $data['Email']?>"><p class="text-warning">should not be empty</p>
-				<br><br>
-			</div>
-			<button type="submit" class="btn btn-primary">Save</button>
-			<button type="button" class="btn btn-primary">Reset</button>
-			<hr>
-			<ul class="pager">
-				<li><a href="step3.php">Previous Step</a></li>
-				<li><a href="step5.php">Next Step</a></li>
-			</ul>
+			<div class="col-sm-12 well well-lg">
+				<?php
+					echo createSelectOption("Tipe Pengurus:", "Management_Type", "Management_Type", "---Pilih Tipe Kantor---", $conn1, "SELECT _id, _judul as _name FROM _manager_type ORDER BY _order ASC", true, $data["Management_Type"], "col-xs-4", true, $warning);
+				?>			
+				<div class="checkbox col-sm-12">
+					<b>Pengurus Utama?</b>
+					<label><input type="checkbox" value="Pengurus Utama" name="Primary_Person" value="<?php echo $data['Primary_Person']?>"> Yes (Salah satu pengurus harus dibuat sebagai Pengurus Utama / One person must be set to Primary Person)</label>
+					<br><br>
+				</div>
+				<?php
+					echo createInputField("text", "Posisi:", "Position", "Position", $data['Position'], "col-xs-4", true, $warning);
+					echo createInputField("text", "Nama:", "Name", "Name", $data['Name'], "col-xs-4", true, $warning);
+					echo createInputField("text", "No Identitas:", "Civil_ID", "Civil_ID", $data['Civil_ID'], "col-xs-4", true, $warning);
+					echo createTextArea(5, "Alamat Kantor:", "Address", "Address", $data['Address'], "col-sm-12", true, $warning);
+					echo createInputField("text", "No Telepon:", "Phone_Number", "Phone_Number", $data['Phone_Number'], "col-xs-6", true, $warning);
+					echo createInputField("email", "Email:", "Email", "Email", $data['Email'], "col-xs-6", true, $warning);
+				?>
+				<div class="col-sm-12">
+					<button type="submit" class="btn btn-primary">Save</button>
+					<button type="button" class="btn btn-primary">Reset</button>
+					<hr>
+					<ul class="pager">
+						<li><a href="step3.php">Previous Step</a></li>
+						<li><a href="step5.php">Next Step</a></li>
+					</ul>
+				</div>
 			</div>
 		</form>
 	</body>

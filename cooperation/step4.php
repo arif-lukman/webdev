@@ -1,9 +1,10 @@
 <?php
 	include "koneksiDB.php";
-	include "lib/library.php";
 
 	session_start();
 	$id = $_SESSION["uid"];
+	include "lib/library.php";
+	$warning = "should not be empty";
 
 	//query buat ngambil nama field
 	$colQuery = 
@@ -78,52 +79,31 @@
 			<h2>Step 4</h2>
 			<h3>Susunan pengurus / Struktur organisasi (BOC , BOD)</h3>
 			<hr>
-			<div class="well well-lg">
-				<div class="col-xs-4">
-					<?php
-						echo createSelectOption("Tipe Pengurus:", "tipepengurus", "Management_Type", "---- Pilih Tipe Pengurus ----", $conn1, "SELECT _id, _judul as _name FROM _manager_type ORDER BY _order ASC", false, "");
-					?>
-					<p class="text-warning">should not be empty</p>
-				</div>
-				<br><br><br><br><br>
-				<div class="col-sm-12 checkbox">
+			<div class="col-sm-12 well well-lg">
+				<?php
+					echo createSelectOption("Tipe Pengurus:", "Management_Type", "Management_Type", "---Pilih Tipe Kantor---", $conn1, "SELECT _id, _judul as _name FROM _manager_type ORDER BY _order ASC", false, "", "col-xs-4", true, $warning);
+				?>			
+				<div class="checkbox col-sm-12">
 					<b>Pengurus Utama?</b>
-					<label><input type="checkbox" value="Pengurus Utama" name="Primary_Person"> Yes (Salah satu pengurus harus dibuat sebagai Pengurus Utama / One person must be set to Primary Person)</label>
+					<label><input type="checkbox" value="Pengurus Utama" name="Primary_Person" value="<?php echo $data['Primary_Person']?>"> Yes (Salah satu pengurus harus dibuat sebagai Pengurus Utama / One person must be set to Primary Person)</label>
 					<br><br>
 				</div>
-				<div class="col-xs-4">
-					<label for="TGL">Posisi:</label>
-					<input type="text" class="form-control" id="usr" name="Position"><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="col-xs-4">
-					<label for="TGL">Nama:</label>
-					<input type="text" class="form-control" id="usr" name="Name"><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="col-xs-4">
-					<label for="TGL">No Identitas:</label>
-					<input type="text" class="form-control" id="usr" name="Civil_ID"><p class="text-warning">should not be empty</p>
-					<br><br>
-				</div>
-				<div class="form-group">
-					<label for="comment">Alamat Kantor:</label>
-					<textarea class="form-control" rows="5" id="comment" name="Address"></textarea><p class="text-warning">should not be empty</p>	
-				</div>
-				<div class="col-xs-6">
-					<label for="TGL">No Telepon:</label>
-					<input type="text" class="form-control" id="usr" name="Phone_Number"><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="col-xs-6">
-					<label for="TGL">Email:</label>
-					<input type="text" class="form-control" id="usr" name="Email"><p class="text-warning">should not be empty</p>
-					<br><br>
-				</div>
-				<button type="submit" class="btn btn-primary">Save</button>
-				<button type="button" class="btn btn-primary">Reset</button>
-				<hr>
-				<ul class="pager">
-					<li><a href="step3.php">Previous Step</a></li>
-					<li><a href="step5.php">Next Step</a></li>
-				</ul>
+				<?php
+					echo createInputField("text", "Posisi:", "Position", "Position", "", "col-xs-4", true, $warning);
+					echo createInputField("text", "Nama:", "Name", "Name", "", "col-xs-4", true, $warning);
+					echo createInputField("text", "No Identitas:", "Civil_ID", "Civil_ID", "", "col-xs-4", true, $warning);
+					echo createTextArea(5, "Alamat Kantor:", "Address", "Address", "", "col-sm-12", true, $warning);
+					echo createInputField("text", "No Telepon:", "Phone_Number", "Phone_Number", "", "col-xs-6", true, $warning);
+					echo createInputField("email", "Email:", "Email", "Email", "", "col-xs-6", true, $warning);
+				?>
+				<div class="col-sm-12">
+					<button type="submit" class="btn btn-primary">Save</button>
+					<button type="button" class="btn btn-primary">Reset</button>
+					<hr>
+					<ul class="pager">
+						<li><a href="step3.php">Previous Step</a></li>
+						<li><a href="step5.php">Next Step</a></li>
+					</ul>
 		</form>
 		<div class="well well-sm">Result (Table):</div>
 			<table class="table table-bordered">

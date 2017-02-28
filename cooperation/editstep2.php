@@ -1,11 +1,14 @@
 <?php
 	include "koneksiDB.php";
+	include "lib/library.php";
+
 	//parameter diambil sini woi
 	$No = $_GET["No"];
 	//ambil semua detail dengan id diatas
 	$query = "SELECT * FROM partner_k3s WHERE No='$No'";
 	$result = mysql_query($query);
 	$data = mysql_fetch_array($result);
+	$warning = "should not be empty";
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +30,7 @@
 			}
 		</style>
 	</head>
+
 	<body>
 		<div class="dropdown">
 			<a href="step2.php">BACK</a>
@@ -38,31 +42,14 @@
 			<h3>Partner K3S</h3>
 			<hr>
 			<div class="well well-lg">
-				<div class="form-group">
-					<label for="name">Nama K3S:</label>
-					<input type="text" class="form-control" id="gp" name="K3S_Name" value="<?php echo $data['K3S_Name']?>"><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="form-group">
-					<label for="name">Nama Kontak:</label>
-					<input type="text" class="form-control" id="gp" name="Contact_Name" value="<?php echo $data['Contact_Name']?>"><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="col-sm-6">
-					<label for="Expired_Date">Tanggal Terbit:</label>
-					<input type="date" class="form-control" id="usr" name="Expired_Date" value="<?php echo $data['Expired_Date']?>"><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="col-sm-6">
-					<label for="Expiration_Days">Tanggal Kadaluarsa:</label>
-					<input type="date" class="form-control" id="usr" name="Expiration_Days" value="<?php echo $data['Expiration_Days']?>"><p class="text-warning">should not be empty</p>
-				<br>	
-				</div>
-				<div class="form-group">
-					<label for="name">Nomor Telepon:</label>
-					<input type="text" class="form-control" id="gp" name="Phone_Number" value="<?php echo $data['Phone_Number']?>"><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="form-group">
-					<label for="name">Nomor Fax:</label>
-					<input type="text" class="form-control" id="gp" name="Fax_Number" value="<?php echo $data['Fax_Number']?>"><p class="text-warning">should not be empty</p>
-				</div>	
+				<?php
+					echo createInputField("text", "Nama K3S:", "K3S_Name", "K3S_Name", $data['K3S_Name'], "", true, $warning);
+					echo createInputField("text", "Nama Kontak:", "Contact_Name", "Contact_Name", $data['Contact_Name'], "", true, $warning);
+					echo createInputField("text", "Tanggal Terbit:", "Expired_Date", "Expired_Date", $data['Expired_Date'], "col-sm-6", true, $warning);
+					echo createInputField("text", "Tanggal Kadaluarsa:", "Expiration_Days", "Expiration_Days", $data['Expiration_Days'], "col-sm-6", true, $warning);
+					echo createInputField("text", "Nomor Telepon:", "Phone_Number", "Phone_Number", $data['Phone_Number'], "", true, $warning);
+					echo createInputField("text", "Nomor Fax", "Fax_Number", "Fax_Number", $data['Fax_Number'], "", true, $warning);
+				?>
 				<div class="form-group">
 					<input type="file" name="pic" accept="image/*" name="Attachment" value="<?php echo $data['Attachment']?>">
 					<span class="label label-info">Format PDF max. 2Mb </span><p class="text-warning">should not be empty</p>

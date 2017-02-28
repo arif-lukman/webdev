@@ -9,6 +9,8 @@
 	$query = "SELECT * FROM dokumen_administrasi WHERE No='$No'";
 	$result = mysql_query($query);
 	$data = mysql_fetch_array($result);
+	$conn1 = createConnection("localhost", "root", "", "_bpms_master");
+	$warning = "should not be empty";
 ?>
 
 <!DOCTYPE html>
@@ -60,50 +62,14 @@
 			<h3>Dokumen Administrasi (Administration Document)</h3>
 			<hr>
 			<div class="well well-lg">
-			<div class="form-group">
-				<label for="tipeperusahaan">Pilih Tipe Dokumen:</label>
-				<select class="form-control" id="tipeperusahaan" name="Document_Type" value="<?php echo $data['Document_Type']?>">
-					<option>Akte Pendirian Perusahaan (AKT)</option>
-					<option>SK Mentri Kehakiman dan HAM (SK-MKH)</option>
-					<option>Surat Ijin Usaha Perusahaan (SIUP)</option>
-					<option>Tanda Daftar Perusahaan (TDP)</option>
-					<option>Surat Keterangan Domisili Perusahaan (SKDP)</option>
-					<option>Surat Ijin Gangguan (HO)</option>
-					<option>Surat Ijin Tempat Usaha (SITU)</option>
-					<option>Nomor Pokok Wajib Pajak (NPWP)</option>
-					<option>Penetapan Perusahaan Kena Pajak</option>
-					<option>Bukti Bayar Pajak Tahunan</option>
-					<option>Neraca Audit</option>
-					<option>Lain-lain</option>
-				</select><p class="text-warning">should not be empty</p>
-			</div>
-			<div class="form-group">
 				<?php
-					echo createInputField("text", "Nomor Dokumen", "Document_Number", "Document_Number", $data['Document_Number']); 
+					echo createSelectOption("Pilih Tipe Dokumen:", "Document_Type", "Document_Type", "---Pilih Tipe Dokumen---", $conn1, "SELECT _id, _judul as _name FROM _document_type ORDER BY _order ASC", true, $data["Document_Type"], "", true, $warning);
+					echo createInputField("text", "Nomor Dokumen:", "Document_Number", "Document_Number", $data['Document_Number'], "", true, $warning);				
+					echo createInputField("text", "Dikeluarkan oleh:", "Issued_By", "Issued_By", $data['Issued_By'], "", true, $warning);		
+					echo createInputField("date", "Tanggal Dikeluarkan:", "Issued_Date", "Issued_Date", $data['Issued_Date'], "col-xs-6", true, $warning);				
+					echo createInputField("date", "Tanggal Kadaluarsa:", "Expired_Date", "Expired_Date", $data['Expired_Date'], "col-xs-6", true, $warning);
+					echo createInputField("text", "Deskripsi:", "Description", "Description", $data['Description'], "col-xs-12", true, $warning); 
 				?>
-			</div>
-			<div class="form-group">
-				<?php
-					echo createInputField("text", "Dikeluarkan oleh", "Issued_By", "Issued_By", $data['Issued_By']); 
-				?>
-			</div>
-			<div class="col-xs-6">
-				<?php
-					echo createInputField("date", "Tanggal Dikeluarkan", "Issued_Date", "Issued_Date", $data['Issued_Date']); 
-				?>
-			</div>
-			<div class="col-xs-6">
-				<?php
-					echo createInputField("date", "Tanggal Kadaluarsa", "Expired_Date", "Expired_Date", $data['Expired_Date']); 
-				?>
-				<br>
-			</div>
-			<div class="col-xs-12">
-				<?php
-					echo createInputField("text", "Deskripsi", "Description", "Description", $data['Description']); 
-				?>
-				<br>
-			</div>
 			<div class="form-group">
 				<input type="file" name="pic" accept="image/*">
 				<span class="label label-info">Format PDF max. 8Mb*</span><p class="text-warning">should not be empty</p>

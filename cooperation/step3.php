@@ -4,6 +4,7 @@
 
 	include "koneksiDB.php";
 	include "lib/library.php";
+	$warning = "should not be empty";
 
 	//query buat ngambil nama field
 	$colQuery = 
@@ -79,24 +80,11 @@
 			<h3>Alamat Kantor (Office Address)</h3>
 			<hr>
 			<div class="well well-lg">
-				<div class="col-xs-4">
-					<?php
-					echo createSelectOption("Tipe Kantor:", "tipekantor", "Office_Type", "---- Pilih Tipe Kantor ----", $conn1, "SELECT _id, _judul as _name FROM _office_type ORDER BY _order ASC", false, "");
-					?>
-					<p class="text-warning">should not be empty</p>
-				</div>
-				<div class="col-xs-4">
-					<?php
-					echo createSelectOption("Negara:", "negara", "Country", "---- Pilih Negara ----", $conn1, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", false, "");
-					?>
-					<p class="text-warning">should not be empty</p>
-				</div>
-				<div class="col-xs-4">
-					<?php
-					echo createSelectOption("Provinsi:", "provinsi", "Province", "---- Pilih Provinsi ----", $conn1, "SELECT _id, _nama as _name FROM _province ORDER BY _order ASC", false, "");
-					?>
-					<p class="text-warning">should not be empty</p>
-				</div>
+				<?php
+					echo createSelectOption("Tipe Kantor:", "tipekantor", "Office_Type", "---- Pilih Tipe Kantor ----", $conn1, "SELECT _id, _judul as _name FROM _office_type ORDER BY _order ASC", false, "", "col-xs-4", true, $warning);
+					echo createSelectOption("Negara:", "negara", "Country", "---- Pilih Negara ----", $conn1, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", false, "", "col-xs-4", true, $warning);
+					echo createSelectOption("Provinsi:", "provinsi", "Province", "---- Pilih Provinsi ----", $conn1, "SELECT _id, _nama as _name FROM _province ORDER BY _order ASC", false, "", "col-xs-4", true, $warning);
+				?>
 				<br><br><br><br>
 				<b>Kantor Utama?</b>
 				<div class="checkbox">
@@ -104,38 +92,14 @@
 					<br><br>
 				</div>
 				<?php
-					echo createTextArea(5, "Alamat Kantor", "Office_Address", "Office_Address", "");
+					echo createTextArea(5, "Alamat Kantor:", "Office_Address", "Office_Address", "", "", true, $warning);
+					echo createInputField("text", "Kota:", "City", "City", "", "col-xs-4", true, $warning);
+					echo createInputField("text", "Kode Pos:", "ZIP_Code", "ZIP_Code", "", "col-xs-4", true, $warning);
+					echo createInputField("text", "Nomor Telepon Kantor:", "Office_Phone_Number", "Office_Phone_Number", "", "col-xs-4", true, $warning);
+					echo createInputField("text", "Nomor Fax Kantor:", "Office_Fax_Number", "Office_Fax_Number", "", "col-xs-4", true, $warning);
+					echo createInputField("text", "Email Kantor:", "Office_Email", "Office_Email", "", "col-xs-4", true, $warning);
+					echo createInputField("text", "Website:", "Website", "Website", "", "col-xs-4", true, $warning); 
 				?>
-				<div class="col-xs-4">
-					<?php
-						echo createInputField("text", "Kota", "City", "City", ""); 
-					?>
-				</div>
-				<div class="col-xs-4">
-					<?php
-						echo createInputField("text", "Kode Pos", "ZIP_Code", "ZIP_Code", ""); 
-					?>
-				</div>
-				<div class="col-xs-4">
-					<?php
-						echo createInputField("text", "Nomor Telepon Kantor", "Office_Phone_Number", "Office_Phone_Number", ""); 
-					?>
-				</div>
-				<div class="col-xs-4">
-					<?php
-						echo createInputField("text", "Nomor Fax Kantor", "Office_Fax_Number", "Office_Fax_Number", ""); 
-					?>
-				</div>
-				<div class="col-xs-4">
-					<?php
-						echo createInputField("text", "Email Kantor", "Office_Email", "Office_Email", ""); 
-					?>
-				</div>
-				<div class="col-xs-4">
-					<?php
-						echo createInputField("text", "Website", "Website", "Website", ""); 
-					?>
-				</div>
 				<button type="submit" class="btn btn-primary">Save</button>
 				<button type="button" class="btn btn-primary">Reset</button>
 				<hr>
