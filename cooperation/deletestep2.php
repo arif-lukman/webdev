@@ -9,5 +9,5 @@
 	$result = mysql_query($query);
 
 	//balik lagi coy
-	header("location:step12.php");
+	header("location:step2.php");
 ?>

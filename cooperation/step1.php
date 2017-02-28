@@ -59,7 +59,7 @@
 		</div>
 		<center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
 		<div class="col-sm-2"></div>
-		<form class="col-sm-8" action="step1action.php?id=<?php echo $data['id'];?>" method="post">
+		<form class="col-sm-8" action="step1action.php" method="post">
 			<h2>Step 1</h2>
 			<h3>Nama dan Tipe Perusahaan</h3>
 			<hr>
