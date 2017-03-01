@@ -1,4 +1,4 @@
-	<?php
+<?php
 	include "koneksiDB.php";
 	include "lib/library.php";
 	$dbname = "_bpms_master";
@@ -27,6 +27,9 @@
 	while ($prop = mysql_fetch_field($conExec)){
 		array_push($all_prop, $prop->name);
 	}
+
+	$conn1 = createConnection("localhost", "root", "", "_bpms_master");
+	$warning = "should not be empty";
 ?>
 
 <!DOCTYPE html>
@@ -78,91 +81,27 @@
 			<h3>Perusahaan Induk, Grup Perusahaan, Rekanan, Konsorsium, Afiliasi dan Aliansi</h3>
 			<hr>
 			<div class="well well-lg">
-			<div class="col-xs-6">
-				<label for="tipeperusahaan">Tipe Affiliate / Perusahaan:</label>
-				<select class="form-control" id="tipeperusahaan" name="Affiliate_Type">
-					<option>---- Pilih Tipe Affiliate  ----</option>
-						<?php
-							mysql_connect("localhost", "root", "");
-							mysql_select_db("_bpms_master");
-							$sql = mysql_query("SELECT * FROM _affil_type ORDER BY _judul ASC");
-							if(mysql_num_rows($sql) != 0){
-								while($data = mysql_fetch_assoc($sql)){
-									echo '<option>'.$data['_judul'].'</option>';
-								}
-							}
-						?>
-				</select><p class="text-warning">should not be empty</p>
-			</div>
-			<div class="col-xs-6">
-				<label for="name">Nama Perusahaan:</label>
-				<input type="text" class="form-control" id="namaperusahaan" name="Company_Name"><p class="text-warning">should not be empty</p>
-				<br>
-			</div>
-			<div class="form-group">
-				<label for="comment">Alamat:</label>
-				<textarea class="form-control" rows="5" id="comment" name="Address"></textarea><p class="text-warning">should not be empty</p>	
-			</div>
-			<div class="col-xs-6">
-				<label for="tipeperusahaan">Negara:</label>
-				<select class="form-control" id="tipeperusahaan" name="Country">
-					<option>---- Pilih Negara  ----</option>
-						<?php
-							mysql_connect("localhost", "root", "");
-							mysql_select_db("_bpms_master");
-							$sql = mysql_query("SELECT * FROM _country ORDER BY _nama ASC");
-							if(mysql_num_rows($sql) != 0){
-								while($data = mysql_fetch_assoc($sql)){
-									echo '<option>'.$data['_nama'].'</option>';
-								}
-							}
-						?>
-				</select><p class="text-warning">should not be empty</p>
-			</div>
-			<div class="col-xs-6">
 				<?php
-					echo createSelectOption("Provinsi:", "Province", "Province", "---- Pilih Tipe Provinsi  ----", $conn, "SELECT _id, _nama as _name FROM _province ORDER BY _order ASC", false, "");
+					echo createSelectOption("Tipe Affiliate / Perusahaan:", "Affiliate_Type", "Affiliate_Type", "---Pilih Tipe Afiliasi---", $conn1, "SELECT _id, _judul as _name FROM _affil_type ORDER BY _order ASC", false, "", "col-xs-6", true, $warning);
+					echo createInputField("text", "Nama Perusahaan:", "Company_Name", "Company_Name", "", "col-xs-6", true, $warning);
+					echo createInputField("text", "Alamat:", "Address", "Address", "", "", true, $warning);
+					echo createSelectOption("Negara:", "Country", "Country", "---Pilih Negara---", $conn1, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", false, "", "col-xs-6", true, $warning);
+					echo createSelectOption("Provinsi:", "Province", "Province", "---Pilih Provinsi---", $conn1, "SELECT _id, _nama as _name FROM _province ORDER BY _order ASC", false, "", "col-xs-6", true, $warning);
+					echo createInputField("text", "Nomor Telefon:", "Phone_Number", "Phone_Number", "", "", true, $warning);
+					echo createInputField("text", "Email:", "Email", "Email", "", "", true, $warning);
+					echo createTextArea(5, "Deskripsi:", "Description", "Description", "", "", true, $warning);
+					echo createInputField("text", "Kota:", "City", "City", "", "col-xs-6", true, $warning);
+					echo createInputField("text", "Kode Pos:", "ZIP_Code", "ZIP_Code", "", "col-xs-6", true, $warning);
+					echo createInputField("text", "Kode Fax:", "Fax_Number", "Fax_Number", "", "col-xs-6", true, $warning);
+					echo createInputField("text", "Website:", "Website", "Website", "", "col-xs-6", true, $warning);
 				?>
-			<p class="text-warning">should not be empty</p>
-			</div>
-			<div class="form-group">
-				<label for="name">Nomor Telepon:</label>
-				<input type="text" class="form-control" id="namaperusahaan" name="Phone_Number"><p class="text-warning">should not be empty</p>
-			</div>
-			<div class="form-group">
-				<label for="name">Email:</label>
-				<input type="text" class="form-control" id="namaperusahaan" name="Email"><p class="text-warning">should not be empty</p>
-			</div>
-			<div class="form-group">
-				<label for="comment">Deskripsi:</label>
-				<textarea class="form-control" rows="5" id="comment" name="Description"></textarea><p class="text-warning">should not be empty</p>
-			</div>
-			<div class="col-xs-6">
-				<label for="name">Kota:</label>
-				<input type="text" class="form-control" id="namaperusahaan" name="City"><p class="text-warning">should not be empty</p>
-				<br>
-			</div>
-			<div class="col-xs-6">
-				<label for="name">Kode Pos:</label>
-				<input type="text" class="form-control" id="namaperusahaan" name="ZIP_Code"><p class="text-warning">should not be empty</p>
-				<br>
-			</div>
-			<div class="col-xs-6">
-				<label for="name">Kode Fax:</label>
-				<input type="text" class="form-control" id="namaperusahaan" name="Fax_Number"><p class="text-warning">should not be empty</p>
-			</div>
-			<div class="col-xs-6">
-				<label for="name">Website:</label>
-				<input type="text" class="form-control" id="namaperusahaan" name="Website">
-				<br><br>
-			</div>
-			<button type="submit" class="btn btn-primary">Save</button>
-			<button type="button" class="btn btn-primary">Reset</button>
-			<hr>
-			<ul class="pager">
-				<li><a href="step8.php">Previous Step</a></li>
-				<li><a href="step10.php">Next Step</a></li>
-			</ul>
+				<button type="submit" class="btn btn-primary">Save</button>
+				<button type="button" class="btn btn-primary">Reset</button>
+				<hr>
+				<ul class="pager">
+					<li><a href="step8.php">Previous Step</a></li>
+					<li><a href="step10.php">Next Step</a></li>
+				</ul>
 		</form>
 		<div class="well well-sm">Result (Table):</div>
 		<table class="table table-bordered">

@@ -25,6 +25,9 @@
 	while ($prop = mysql_fetch_field($conExec)){
 		array_push($all_prop, $prop->name);
 	}
+
+	$conn1 = createConnection("localhost", "root", "", "_bpms_master");
+	$warning = "should not be empty";
 ?>
 
 <!DOCTYPE html>
@@ -76,96 +79,46 @@
 			<h3>Pengalaman Perusahaan</h3>
 			<hr>
 			<div class="well well-lg">
-			<div class="col-xs-6">
-				<label for="name">Nama Pekerjaan:</label>
-				<input type="text" class="form-control" id="namaperusahaan" name="Project_Name">
-			</div>
-			<div class="col-xs-6">
-				<label for="tipeperusahaan">Bidang Pekerjaan:</label>
-				<select class="form-control" id="tipeperusahaan" name="Activities_Section">
-					<option>Pengadaan Barang</option>
-					<option>Jasa Pemborongan</option>
-					<option>Jasa Konsultasi</option>
-					<option>Jasa Lainnya</option>
-				</select>
-				<br>
-			</div>
-			<div class="col-xs-6">
-				<label for="tipeperusahaan">Klasifikasi:</label>
-				<select class="form-control" id="tipeperusahaan" name="Classification">
-					<option>Pengadaan Barang</option>
-					<option>Jasa Pemborongan</option>
-					<option>Jasa Konsultasi</option>
-					<option>Jasa Lainnya</option>
-				</select>
-				<select class="form-control" id="tipeperusahaan" name="Sub_Classification">
-					<option>Pengadaan Barang</option>
-					<option>Jasa Pemborongan</option>
-					<option>Jasa Konsultasi</option>
-					<option>Jasa Lainnya</option>
-				</select>
-			</div>
-			<div class="col-xs-6">
-				<label for="name">Perusahaan:</label>
-				<input type="text" class="form-control" id="namaperusahaan" name="User_Company">
-				<br><br><br>
-			</div>
-			<div class="form-group">
-				<label for="name">Nama Kontak:</label>
-				<input type="text" class="form-control" id="namaperusahaan" name="Contact_Name">
-			</div>
-			<div class="form-group">
-				<label for="comment">Alamat:</label>
-				<textarea class="form-control" rows="5" id="comment" name="Address"></textarea>
-			</div>
-			<div class="form-group">
-				<label for="comment">Nomor Telepon:</label>
-				<input type="text" class="form-control" id="namaperusahaan" name="Phone_Number">
-			</div>
-			<div class="col-xs-6">
-				<label for="TGL">Tanggal Kontrak:</label>
-				<input type="date" class="form-control" id="usr" name="Contact_Date">
-			</div>
-			<div class="col-xs-6">
-				<label for="TGL">Tanggal Kadaluarsa:</label>
-				<input type="date" class="form-control" id="usr" name="Completion_Date">
-				<br>	
-			</div>
-			<div class="col-xs-6">
-				<label for="comment">Nomor Dokumen:</label>
-				<input class="form-control" rows="5" id="comment" name="Document_Number"> 
-			</div>
-			<div class="col-xs-6">
-				<label for="comment">Progress Terakhir (%):</label>
-				<input class="form-control" rows="5" id="comment" name="Last_Progress">
-				<br>
-			</div>
-			<div class="col-xs-4">
-				<label for="comment">Nilai:</label>
-				<input class="form-control" rows="5" id="comment" name="Value">
-				<select class="form-control" id="tipeperusahaan" name="Sub_Value">
-					<option>Indonesia</option>
-					<option>Malaysia</option>
-					<option>Singapura</option>
-					<option>Amerika</option>
-					<option>China</option>
-					<option>Inggris</option>
-					<option>Rusia</option>
-				</select>
-			</div>
-			<div class="col-xs-8">
-				<br><br>
-				<input type="file" name="pic" accept="image/*">
-				<span class="label label-info">Format PDF max. 2Mb </span>
-				<br><br><br>
-			</div>
-			<button type="submit" class="btn btn-primary">Save</button>
-			<button type="button" class="btn btn-primary">Reset</button>
-			<hr>
-			<ul class="pager">
-				<li><a href="step9.php">Previous Step</a></li>
-				<li><a href="step11.php">Next Step</a></li>
-			</ul>
+				<?php
+					echo createInputField("text", "Nama Pekerjaan:", "Project_Name", "Project_Name", "", "col-xs-6", true, $warning);
+					echo createSelectOption("Bidang Pekerjaan:", "Activities_Section", "Activities_Section", "---Pilih Bidang Pekerjaan---", $conn1, "SELECT _id, _judul as _name FROM _scope_type ORDER BY _order ASC", false, "", "col-xs-6", true, $warning);
+					echo createSelectOption("Klasifikasi:", "Classification", "Classification", "---Pilih Klasifikasi Perusahaan---", $conn1, "SELECT _id, _kode, _judul as _name FROM _class_type WHERE LENGTH(_kode) <= 3 ORDER BY _order ASC", false, "", "col-xs-6", true, $warning);
+					echo createSelectOption("Sub Klasifikasi:", "Sub_Classification", "Sub_Classification", "---Pilih Sub Klasifikasi Perusahaan---", $conn1, "SELECT _id, _kode, _judul as _name FROM _class_type WHERE LENGTH(_kode) > 3 ORDER BY _order ASC", false, "", "col-xs-6", true, $warning);
+					echo createInputField("text", "Perusahaan:", "User_Company", "User_Company", "", "col-xs-6", true, $warning);
+					echo createInputField("text", "Nama Kontak:", "Contact_Name", "Contact_Name", "", "col-xs-6", true, $warning);
+					echo createTextArea(5, "Alamat:", "Address", "Address", "", "", true, $warning);
+					echo createInputField("text", "Nomor Telepon:", "Phone_Number", "Phone_Number", "", "", true, $warning);
+					echo createInputField("date", "Tanggal Kontrak:", "Contact_Date", "Contact_Date", "", "col-xs-6", true, $warning);
+					echo createInputField("date", "Tanggal Kadaluarsa:", "Completion_Date", "Completion_Date", "", "col-xs-6", true, $warning);
+					echo createInputField("text", "Nomor Dokumen:", "Document_Number", "Document_Number", "", "col-xs-6", true, $warning);
+					echo createInputField("text", "Progress Terakhir (%):", "Last_Progress", "Last_Progress", "", "col-xs-6", true, $warning);
+				?>
+				<div class="col-xs-4">
+					<label for="comment">Nilai:</label>
+					<input class="form-control" rows="5" id="comment" name="Value" value="">
+					<select class="form-control" id="tipeperusahaan" name="Sub_Value" value="">
+						<option>Indonesia</option>
+						<option>Malaysia</option>
+						<option>Singapura</option>
+						<option>Amerika</option>
+						<option>China</option>
+						<option>Inggris</option>
+						<option>Rusia</option>
+					</select>
+				</div>
+				<div class="col-xs-8">
+					<br><br>
+					<input type="file" name="pic" accept="image/*">
+					<span class="label label-info">Format PDF max. 2Mb </span>
+					<br><br><br>
+				</div>
+				<button type="submit" class="btn btn-primary">Save</button>
+				<button type="button" class="btn btn-primary">Reset</button>
+				<hr>
+				<ul class="pager">
+					<li><a href="step9.php">Previous Step</a></li>
+					<li><a href="step11.php">Next Step</a></li>
+				</ul>
 		</form>
 		<div class="well well-sm">Result (Table):</div>
 		<table class="table table-bordered">

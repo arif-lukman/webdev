@@ -28,6 +28,8 @@
 	while ($prop = mysql_fetch_field($conExec)){
 		array_push($all_prop, $prop->name);
 	}
+	$conn1 = createConnection("localhost", "root", "", "_bpms_master");
+	$warning = "should not be empty";
 ?>
 
 <!DOCTYPE html>
@@ -78,28 +80,19 @@
 			<h2>Step 12</h2>
 			<h3>Klasifikasi Perusahaan</h3>
 			<hr>
-			<div class="well well-lg">
-				<div class="col-xs-6">
-					<?php echo createSelectOption("Bidang Pekerjaan:", "Activities_Section", "Activities_Section", "---Pilih Bidang Pekerjaan---", $conn, "SELECT _id, _judul as _name FROM _scope_type ORDER BY _order ASC", false, "");?>
-					<p class="text-warning">should not be empty</p>
-				</div>
-				<div class="col-xs-6">
-					<?php echo createSelectOption("Klasifikasi:", "Classification", "Classification", "---Pilih Klasifikasi Perusahaan---", $conn, "SELECT _id, _kode, _judul as _name FROM _class_type WHERE LENGTH(_kode) <= 3 ORDER BY _order ASC", false, "");?>
-					<p class="text-warning">should not be empty</p>
-					<?php echo createSelectOption("Sub Klasifikasi:", "Sub_Classification", "Sub_Classification", "---Pilih Sub Klasifikasi Perusahaan---", $conn, "SELECT _id, _kode, _judul as _name FROM _class_type WHERE LENGTH(_kode) > 3 ORDER BY _order ASC", false, "");?>
-					<p class="text-warning">should not be empty</p>
+			<div class="col-sm-12 well well-lg">
+			<?php
+				echo createSelectOption("Bidang Pekerjaan:", "Activities_Section", "Activities_Section", "---Pilih Bidang Pekerjaan---", $conn1, "SELECT _id, _judul as _name FROM _scope_type ORDER BY _order ASC", false, "", "col-xs-6", true, $warning);
+				echo createSelectOption("Klasifikasi:", "Classification", "Classification", "---Pilih Klasifikasi Perusahaan---", $conn1, "SELECT _id, _kode, _judul as _name FROM _class_type WHERE LENGTH(_kode) <= 3 ORDER BY _order ASC", false, "", "col-xs-6", true, $warning);
+				echo createSelectOption("Sub Klasifikasi:", "Sub_Classification", "Sub_Classification", "---Pilih Sub Klasifikasi Perusahaan---", $conn1, "SELECT _id, _kode, _judul as _name FROM _class_type WHERE LENGTH(_kode) > 3 ORDER BY _order ASC", false, "", "col-xs-6", true, $warning);
+				echo createTextArea(5, "Deskripsi:", "Description", "Address", "", "col-sm-12", true, $warning);
+			?>
+			<div class="form-group col-sm-12">
+				<input type="file" name="pic" accept="image/*" name="Attachment" value="<?php echo $data['Attachment']?>">
+				<span class="label label-info">Format PDF max. 2Mb </span><p class="text-warning">should not be empty</p>
 				<br>
-				</div>
-				<div class="form-group">
-					<label for="name">Deskripsi:</label>
-					<textarea type="text" class="form-control" id="namaperusahaan" name="Description"></textarea><p class="text-warning">should not be empty</p>
-					<br>
-				</div>
-				<div class="form-group">
-					<input type="file" name="pic" accept="image/*" name="Attachment">
-					<span class="label label-info">Format PDF max. 2Mb </span><p class="text-warning">should not be empty</p>
-					<br>
-				</div>
+			</div>
+			<div class="col-sm-12">
 				<button type="submit" class="btn btn-primary">Save</button>
 				<button type="button" class="btn btn-primary">Reset</button>
 				<hr>

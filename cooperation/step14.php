@@ -27,6 +27,8 @@
 	while ($prop = mysql_fetch_field($conExec)){
 		array_push($all_prop, $prop->name);
 	}
+	$conn1 = createConnection("localhost", "root", "", "_bpms_master");
+	$warning = "should not be empty";
 ?>
 
 <!DOCTYPE html>
@@ -78,36 +80,22 @@
 			<h3>Surat dan Dokumen Pelengkap</h3>
 			<hr>
 			<div class="well well-lg">
-				<label for="tipeperusahaan">Tipe dan Surat Dokumen Pelengkap:</label>
-				<select class="form-control" id="tipeperusahaan" name="Activities_Section">
-					<option>--- Pilih Tipe ---</option>
-					<?php
-						mysql_connect("localhost", "root", "");
-						mysql_select_db("_bpms_master");
-						$sql = mysql_query("SELECT * FROM _docplus_type ORDER BY _judul ASC");
-						if(mysql_num_rows($sql) != 0){
-							while($data = mysql_fetch_assoc($sql)){
-								echo '<option>'.$data['_judul'].'</option>';
-							}
-						}
-					?>
-				</select>
+			<?php
+				echo createSelectOption("Tipe Surat dan Dokumen Pelengkap:", "Supporting_Document_Type", "Supporting_Document_Type", "---Pilih Tipe Surat/Dokumen---", $conn1, "SELECT _id, _judul as _name FROM _docplus_type ORDER BY _order ASC", false, "", "", true, $warning);
+				echo createInputField("text", "Deskripsi:", "Description", "Description", "", "", true, $warning);
+			?>
+			<div class="form-group">
+				<label for="lampiran">Lampiran:</label>
+				<input type="file" name="pic" accept="image/*" name="Attachment" value="<?php echo $data['Attachment']?>"><p class="text-warning">should not be empty</p>
 				<br>
-				<div class="form-group">
-					<label for="email">Deskripsi:</label>
-					<input type="input" class="form-control" id="email" name="Description"><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="form-group">
-					<label for="lampiran">Lampiran:</label>
-					<input type="file" name="pic" accept="image/*" name="Attachment"><p class="text-warning">should not be empty</p>
-					<br>
-				</div>
-				<button type="submit" class="btn btn-primary">Save</button>
-				<button type="button" class="btn btn-primary">Reset</button>
-				<hr><ul class="pager">
-					<li><a href="step13.php">Previous Step</a></li>
-					<li><a href="step15.php">Next Step</a></li>
-				</ul>
+			</div>
+			<button type="submit" class="btn btn-primary">Save</button>
+			<button type="button" class="btn btn-primary">Reset</button>
+			<hr>
+			<ul class="pager">
+				<li><a href="step13.php">Previous Step</a></li>
+				<li><a href="step15.php">Next Step</a></li>
+			</ul>
 		</form>
 		<div class="well well-sm">Result (Table):</div>
 		<table class="table table-bordered">

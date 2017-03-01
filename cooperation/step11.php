@@ -25,6 +25,8 @@
 	while ($prop = mysql_fetch_field($conExec)){
 		array_push($all_prop, $prop->name);
 	}
+	$conn1 = createConnection("localhost", "root", "", "_bpms_master");
+	$warning = "should not be empty";
 ?>
 
 <!DOCTYPE html>
@@ -76,14 +78,10 @@
 			<h3>Perusahaan Pembuat Barang</h3>
 			<hr>
 			<div class="well well-lg">
-				<div class="form-group">
-					<label for="name">Produk:</label>
-					<input type="text" class="form-control" id="namaperusahaan" name="Product"><p class="text-warning">should not be empty</p>
-				</div>
-				<div class="form-group">
-					<label for="name">Deskripsi:</label>
-					<input type="text" class="form-control" id="namaperusahaan" name="Description"><p class="text-warning">should not be empty</p>
-				</div>
+				<?php
+					echo createInputField("text", "Produk:", "Product", "Product", "", "", true, $warning);
+					echo createInputField("text", "Deskripsi:", "Description", "Description", "", "", true, $warning);
+				?>
 				<button type="submit" class="btn btn-primary">Save</button>
 				<button type="button" class="btn btn-primary">Reset</button>
 				<hr>
