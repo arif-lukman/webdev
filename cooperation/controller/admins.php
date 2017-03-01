@@ -37,4 +37,5 @@
 
 	//eksekusi
 	execCud($sql, $conn, "../admin/admins.php");
+	//echo $sql;
 ?>
