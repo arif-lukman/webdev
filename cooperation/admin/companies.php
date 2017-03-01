@@ -30,11 +30,11 @@
 				<h3>Data Perusahaan</h3><hr>
 				<form action="search_comp.php" method="post">
 					<?php
-						echo createInputField("text", "Kata kunci:", "keyword", "keyword", "");
-						echo createSelectOption("Negara:", "country", "country", "---Pilih Negara---", $conn, "SELECT _id, _nama as _name FROM _country", false, "");
-						echo createSelectOption("Propinsi:", "province", "province", "---Pilih Propinsi---", $conn, "SELECT _id, _nama as _name FROM _province", false, "");
-						echo createSelectOption("Klasifikasi:", "class", "class", "---Pilih Klasifikasi Perusahaan---", $conn, "SELECT _id, _judul as _name FROM _class_type", false, "");
-						echo createSelectOption("Kualifikasi:", "qual", "qual", "---Pilih Kualifikasi Perusahaan---", $conn, "SELECT _id, _judul as _name FROM _qual_type", false, "");
+						echo createInputField("text", "Kata kunci:", "keyword", "keyword", "", "", false, "");
+						echo createSelectOption("Negara:", "country", "country", "---Pilih Negara---", $conn, "SELECT _id, _nama as _name FROM _country", false, "", "", false, "");
+						echo createSelectOption("Propinsi:", "province", "province", "---Pilih Propinsi---", $conn, "SELECT _id, _nama as _name FROM _province", false, "", "", false, "");
+						echo createSelectOption("Klasifikasi:", "class", "class", "---Pilih Klasifikasi Perusahaan---", $conn, "SELECT _id, _judul as _name FROM _class_type", false, "", "", false, "");
+						echo createSelectOption("Kualifikasi:", "qual", "qual", "---Pilih Kualifikasi Perusahaan---", $conn, "SELECT _id, _judul as _name FROM _qual_type", false, "", "", false, "");
 					?>
 					<input type="submit" value="Search">
 				</form>

@@ -40,8 +40,8 @@
 				<form action="../controller/registration_config.php" method="post">
 					<?php
 						//bikin field pada form
-						echo createInputField("text", "Judul:", "judul", "judul", $data['_judul']);
-						echo createTextArea(3, "Deskripsi:", "desc", "desc", $data['_desc']);
+						echo createInputField("text", "Judul:", "judul", "judul", $data['_judul'], "", false, "");
+						echo createTextArea(3, "Deskripsi:", "desc", "desc", $data['_desc'], "", false, "");
 					?>
 					<div class="form-group">
 				  		<label for="stat">Status:</label>

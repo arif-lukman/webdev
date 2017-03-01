@@ -49,9 +49,9 @@
 				<form action="<?php echo '../controller/typ_mgr.php?op=' . $op; if(isset($id)) echo '&id=' . $id;?>" method="post">
 					<?php
 						//bikin field pada form
-						echo createInputField("text", "Kode Tipe Pengurus:", "kode", "kode", checkData($data,"_kode"));
-						echo createInputField("text", "Judul Tipe Pengurus:", "judul", "judul", checkData($data,"_judul"));
-						echo createInputField("text", "Order:", "order", "order", checkData($data,"_order"));
+						echo createInputField("text", "Kode Tipe Pengurus:", "kode", "kode", checkData($data,"_kode"), "", false, "");
+						echo createInputField("text", "Judul Tipe Pengurus:", "judul", "judul", checkData($data,"_judul"), "", false, "");
+						echo createInputField("text", "Order:", "order", "order", checkData($data,"_order"), "", false, "");
 					?>
 					<div class="form-group">
 				  		<label for="stat">Status:</label>

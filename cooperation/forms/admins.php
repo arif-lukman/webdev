@@ -52,11 +52,11 @@
 				<form action="<?php echo '../controller/admins.php?op=' . $op; if(isset($id)) echo '&id=' . $id;?>" method="post">
 					<?php
 						//bikin field pada form
-						echo createInputField("text", "Username:", "uname", "uname", checkData($data,"_username"));
-						echo createInputField("text", "Nama Lengkap:", "fname", "fname", checkData($data,"_fullname"));
-						echo createInputField("text", "Email:", "email", "email", checkData($data,"_email"));
-						echo createInputField("text", "Password:", "pwd", "pwd", checkData($data,"_password"));
-						echo createSelectOption("Group:", "grup", "grup", "---Pilih Hak Akses---", $conn, "SELECT * FROM _group_priv", $allowChecking, $param);
+						echo createInputField("text", "Username:", "uname", "uname", checkData($data,"_username"), "", false, "");
+						echo createInputField("text", "Nama Lengkap:", "fname", "fname", checkData($data,"_fullname"), "", false, "");
+						echo createInputField("text", "Email:", "email", "email", checkData($data,"_email"), "", false, "");
+						echo createInputField("text", "Password:", "pwd", "pwd", checkData($data,"_password"), "", false, "");
+						echo createSelectOption("Group:", "grup", "grup", "---Pilih Hak Akses---", $conn, "SELECT * FROM _group_priv", $allowChecking, $param, "", "", false, "");
 					?>
 					<div class="form-group">
 				  		<label for="stat">Status:</label>
@@ -67,7 +67,7 @@
 					</div>
 					<?php
 						//textarea
-						echo createTextArea(3, "Keterangan:", "desc", "desc", checkData($data,"_desc"));
+						echo createTextArea(3, "Keterangan:", "desc", "desc", checkData($data,"_desc"), "", "", false, "");
 					?>
 					<button type="submit" class="btn btn-default"><?php echo setButtonText($op);?></button>
 				</form>

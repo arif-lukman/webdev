@@ -55,12 +55,12 @@
 				<form action="<?php echo '../controller/typ_cls.php?op=' . $op; if(isset($id)) echo '&id=' . $id;?>" method="post">
 					<?php
 						//bikin field pada form
-						echo createInputField("text", "Kode Tipe Klasifikasi:", "kode", "kode", checkData($data,"_kode"));
-						echo createInputField("text", "Judul Tipe Klasifikasi:", "judul", "judul", checkData($data,"_judul"));
-						echo createInputField("text", "Order:", "order", "order", checkData($data,"_order"));
+						echo createInputField("text", "Kode Tipe Klasifikasi:", "kode", "kode", checkData($data,"_kode"), "", false, "");
+						echo createInputField("text", "Judul Tipe Klasifikasi:", "judul", "judul", checkData($data,"_judul"), "", false, "");
+						echo createInputField("text", "Order:", "order", "order", checkData($data,"_order"), "", false, "");
 						//echo createInputField("text", "Kelas:", "kelas", "kelas", checkData($data,"_kelas"));
-						echo createSelectOption("Kelas:", "kelas", "kelas", "---Pilih Kelas---", $conn, "SELECT _id, _nama as _name FROM _class", $conn, $allowChecking, $param);
-						echo createSelectOption("Status:", "stat", "stat", "---Pilih Status---", $conn, "SELECT _id, _nama as _name FROM _status ORDER BY _id DESC", $conn, $allowChecking, $param2);
+						echo createSelectOption("Kelas:", "kelas", "kelas", "---Pilih Kelas---", $conn, "SELECT _id, _nama as _name FROM _class", $conn, $allowChecking, $param, "", false, "");
+						echo createSelectOption("Status:", "stat", "stat", "---Pilih Status---", $conn, "SELECT _id, _nama as _name FROM _status ORDER BY _id DESC", $conn, $allowChecking, $param2, "", false, "");
 					?>
 					<button type="submit" class="btn btn-default"><?php echo setButtonText($op);?></button>
 				</form>

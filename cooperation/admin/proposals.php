@@ -30,9 +30,9 @@
 				<h3>Status Pengajuan</h3><hr>
 				<form action="search_stat.php">
 					<?php
-						echo createInputField("text", "Kata kunci:", "keyword", "keyword", "");
-						echo createSelectOption("Negara:", "country", "country", "---Pilih Negara---", $conn, "SELECT _id, _nama as _name FROM _country", false, "");
-						echo createSelectOption("Propinsi:", "province", "province", "---Pilih Negara---", $conn, "SELECT _id, _nama as _name FROM _province", false, "");
+						echo createInputField("text", "Kata kunci:", "keyword", "keyword", "", "", false, "");
+						echo createSelectOption("Negara:", "country", "country", "---Pilih Negara---", $conn, "SELECT _id, _nama as _name FROM _country", false, "", "", false, "");
+						echo createSelectOption("Propinsi:", "province", "province", "---Pilih Negara---", $conn, "SELECT _id, _nama as _name FROM _province", false, "", "", false, "");
 					?>
 					<input type="submit" value="Search">
 				</form>

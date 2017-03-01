@@ -49,8 +49,8 @@
 				<form action="<?php echo '../controller/distributor.php?op=' . $op; if(isset($id)) echo '&id=' . $id;?>" method="post">
 					<?php
 						//bikin field pada form
-						echo createInputField("text", "Nama Tipe Distributor:", "nama", "nama", checkData($data,"_nama"));
-						echo createInputField("text", "Order:", "order", "order", checkData($data,"_order"));
+						echo createInputField("text", "Nama Tipe Distributor:", "nama", "nama", checkData($data,"_nama"), "", false, "");
+						echo createInputField("text", "Order:", "order", "order", checkData($data,"_order"), "", false, "");
 					?>
 					<div class="form-group">
 				  		<label for="stat">Status:</label>

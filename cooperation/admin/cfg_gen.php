@@ -40,14 +40,14 @@
 				<form action="../controller/general_config.php" method="post">
 					<?php
 						//bikin input fieldnya
-						echo createInputField("text", "Nama Aplikasi:", "nama", "nama", $data['_nama_app']);
-						echo createTextArea(3, "Deskripsi:", "desc", "desc", $data['_desc']);
-						echo createInputField("email", "Kontak Email:", "email", "email", $data['_email_1']);
-						echo createInputField("email", "Kontak Email2:", "email2", "email2", $data['_email_2']);
-						echo createInputField("email", "Email Procurement", "emailp", "emailp", $data['_email_proc']);
-						echo createInputField("text", "Penanda Tangan SKT:", "ttd", "ttd", $data['_ttd_skt']);
-						echo createInputField("text", "Teks Footer:", "footer", "footer", $data['_footer_txt']);
-						echo createInputField("file", "Favicon:", "image", "image", $data['_img']);
+						echo createInputField("text", "Nama Aplikasi:", "nama", "nama", $data['_nama_app'], "", false, "");
+						echo createTextArea(3, "Deskripsi:", "desc", "desc", $data['_desc'], "", false, "");
+						echo createInputField("email", "Kontak Email:", "email", "email", $data['_email_1'], "", false, "");
+						echo createInputField("email", "Kontak Email2:", "email2", "email2", $data['_email_2'], "", false, "");
+						echo createInputField("email", "Email Procurement", "emailp", "emailp", $data['_email_proc'], "", false, "");
+						echo createInputField("text", "Penanda Tangan SKT:", "ttd", "ttd", $data['_ttd_skt'], "", false, "");
+						echo createInputField("text", "Teks Footer:", "footer", "footer", $data['_footer_txt'], "", false, "");
+						echo createInputField("file", "Favicon:", "image", "image", $data['_img'], "", false, "");
 					?>
 					<button type="submit" class="btn btn-default">Submit</button>
 				</form>

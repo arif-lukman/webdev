@@ -49,9 +49,9 @@
 				<form action="<?php echo '../controller/currency.php?op=' . $op; if(isset($id)) echo '&id=' . $id;?>" method="post">
 					<?php
 						//bikin field pada form
-						echo createInputField("text", "Kode Mata Uang:", "kode", "kode", checkData($data,"_kode"));
-						echo createInputField("text", "Nama Mata Uang:", "nama", "nama", checkData($data,"_nama"));
-						echo createInputField("text", "Order:", "order", "order", checkData($data,"_order"));
+						echo createInputField("text", "Kode Mata Uang:", "kode", "kode", checkData($data,"_kode"), "", false, "");
+						echo createInputField("text", "Nama Mata Uang:", "nama", "nama", checkData($data,"_nama"), "", false, "");
+						echo createInputField("text", "Order:", "order", "order", checkData($data,"_order"), "", false, "");
 					?>
 					<div class="form-group">
 				  		<label for="stat">Status:</label>
