@@ -75,7 +75,7 @@
 		</div>
 		<center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
 		<div class="col-sm-2"></div>
-		<form class="col-sm-8" action="step14action.php" method="post">
+		<form class="col-sm-8" action="step14action.php" method="post" enctype="multipart/form-data">
 			<h2>Step 14</h2>
 			<h3>Surat dan Dokumen Pelengkap</h3>
 			<hr>
@@ -86,7 +86,7 @@
 			?>
 			<div class="form-group">
 				<label for="lampiran">Lampiran:</label>
-				<input type="file" name="pic" accept="image/*" name="Attachment" value="<?php echo $data['Attachment']?>"><p class="text-warning">should not be empty</p>
+				<input type="file" name="Attachment" id="Attachment"><p class="text-warning">should not be empty</p>
 				<br>
 			</div>
 			<button type="submit" class="btn btn-primary">Save</button>

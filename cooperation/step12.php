@@ -76,7 +76,7 @@
 		</div>
 		<center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
 		<div class="col-sm-2"></div>
-		<form class="col-sm-8" action="step12action.php" method="post">
+		<form class="col-sm-8" action="step12action.php" method="post" enctype="multipart/form-data">
 			<h2>Step 12</h2>
 			<h3>Klasifikasi Perusahaan</h3>
 			<hr>
@@ -88,7 +88,7 @@
 				echo createTextArea(5, "Deskripsi:", "Description", "Address", "", "col-sm-12", true, $warning);
 			?>
 			<div class="form-group col-sm-12">
-				<input type="file" name="pic" accept="image/*" name="Attachment" value="<?php echo $data['Attachment']?>">
+				<input type="file" name="Attachment" id="Attachment">
 				<span class="label label-info">Format PDF max. 2Mb </span><p class="text-warning">should not be empty</p>
 				<br>
 			</div>

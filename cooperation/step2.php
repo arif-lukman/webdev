@@ -71,7 +71,7 @@
 		</div>
 		<center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
 		<div class="col-sm-2"></div>
-		<form class="col-sm-8" action="step2action.php" method="post">
+		<form class="col-sm-8" action="step2action.php" method="post" enctype="multipart/form-data">
 			<h2>Step 2</h2>
 			<h3>Partner K3S</h3>
 			<hr>
@@ -79,13 +79,13 @@
 				<?php
 					echo createInputField("text", "Nama K3S:", "K3S_Name", "K3S_Name", "", "", true, $warning);
 					echo createInputField("text", "Nama Kontak:", "Contact_Name", "Contact_Name", "", "", true, $warning);
-					echo createInputField("text", "Tanggal Terbit:", "Expired_Date", "Expired_Date", "", "col-sm-6", true, $warning);
-					echo createInputField("text", "Tanggal Kadaluarsa:", "Expiration_Days", "Expiration_Days", "", "col-sm-6", true, $warning);
+					echo createInputField("date", "Tanggal Terbit:", "Expired_Date", "Expired_Date", "", "col-sm-6", true, $warning);
+					echo createInputField("date", "Tanggal Kadaluarsa:", "Expiration_Days", "Expiration_Days", "", "col-sm-6", true, $warning);
 					echo createInputField("text", "Nomor Telepon:", "Phone_Number", "Phone_Number", "", "", true, $warning);
 					echo createInputField("text", "Nomor Fax", "Fax_Number", "Fax_Number", "", "", true, $warning);
 				?>
 				<div class="form-group">
-					<input type="file" name="pic" accept="image/*" name="Attachment">
+					<input type="file" name="Attachment" id="Attachment">
 					<span class="label label-info">Format PDF max. 2Mb </span><p class="text-warning">should not be empty</p>
 					<br>
 				</div>

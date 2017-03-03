@@ -72,7 +72,7 @@
 		</div>
 		<center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
 		<div class="col-sm-2"></div>
-		<form class="col-sm-8" action="step6action.php" method="post">
+		<form class="col-sm-8" action="step6action.php" method="post" enctype="multipart/form-data">
 			<h2>Step 6</h2>
 			<h3>Dokumen Administrasi (Administration Document)</h3>
 			<hr>
@@ -86,7 +86,7 @@
 					echo createInputField("text", "Deskripsi:", "Description", "Description", "", "col-xs-12", true, $warning); 
 				?>
 			<div class="form-group">
-				<input type="file" name="pic" accept="image/*">
+				<input type="file" name="Attachment" id="Attachment">
 				<span class="label label-info">Format PDF max. 8Mb*</span><p class="text-warning">should not be empty</p>
 				<br>
 			</div>
