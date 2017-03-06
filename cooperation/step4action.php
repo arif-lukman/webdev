@@ -5,8 +5,14 @@
 	session_start();
 	$uid = $_SESSION["uid"];
 
+	if(isset($_POST["Primary_Person"])){
+		$Primary_Person = 1;
+	}
+	else{
+		$Primary_Person = 0;
+	}
+
 	$Management_Type=$_POST["Management_Type"];
-	$Primary_Person=$_POST["Primary_Person"];
 	$Position=$_POST["Position"];
 	$Name=$_POST["Name"];
 	$Civil_ID=$_POST["Civil_ID"];

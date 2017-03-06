@@ -5,8 +5,14 @@
 	session_start();
 	$uid = $_SESSION["uid"];
 
+	if(isset($_POST["Primary_Office"])){
+		$Primary_Office = 1;
+	}
+	else{
+		$Primary_Office = 0;
+	}
+
 	$Office_Type=$_POST["Office_Type"];
-	$Primary_Office=$_POST["Primary_Office"];
 	$Office_Address=$_POST["Office_Address"];
 	$Country=$_POST["Country"];
 	$Province=$_POST["Province"];

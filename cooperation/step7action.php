@@ -46,8 +46,8 @@
 	$result1 = getResults("SELECT MAX(id) as id FROM attachment_surat_keagenan", $conn)->fetch_assoc();
 	$aid = $result1["id"] + 1;
 
-	$sql = "INSERT INTO surat_keagenan (Distributor, Document_Number, Issued_By, Issued_Date, Expired_Date, Description)
-	VALUES ('$Distributor', '$Document_Number', '$Issued_By', '$Issued_Date', '$Expired_Date', '$Description'); INSERT INTO data_surat_keagenan VALUES ('$uid', '$did'); INSERT INTO attachment_surat_keagenan (id_user, filename, filesize, data, type) VALUES ('$uid', '$fileName', '$fileSize', '$content', '$fileType')";
+	$sql = "INSERT INTO surat_keagenan (Distributor, Document_Number, Issued_By, Issued_Date, Expired_Date, Description, Attachment)
+	VALUES ('$Distributor', '$Document_Number', '$Issued_By', '$Issued_Date', '$Expired_Date', '$Description', '$aid'); INSERT INTO data_surat_keagenan VALUES ('$uid', '$did'); INSERT INTO attachment_surat_keagenan (id_user, filename, filesize, data, type) VALUES ('$uid', '$fileName', '$fileSize', '$content', '$fileType')";
 
 	execCudMulti($sql, $conn, "step7.php");
 
