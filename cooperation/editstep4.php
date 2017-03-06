@@ -67,7 +67,7 @@
 				?>			
 				<div class="checkbox col-sm-12">
 					<b>Pengurus Utama?</b>
-					<label><input type="checkbox" value="Pengurus Utama" name="Primary_Person" value="<?php echo $data['Primary_Person']?>"> Yes (Salah satu pengurus harus dibuat sebagai Pengurus Utama / One person must be set to Primary Person)</label>
+					<label><input type="checkbox" value="1" name="Primary_Person" value="<?php echo $data['Primary_Person']?>"> Yes (Salah satu pengurus harus dibuat sebagai Pengurus Utama / One person must be set to Primary Person)</label>
 					<br><br>
 				</div>
 				<?php

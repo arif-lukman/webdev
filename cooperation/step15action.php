@@ -7,7 +7,6 @@
 
 	$stat = $_POST["Registration_Status"];
 	$note = $_POST["Notes"];
-	//$Attachment=$_POST["Attachment"];
 
 	$servername = "localhost";
 	$username = "root";

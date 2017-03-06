@@ -7,7 +7,7 @@
 	
 	//query buat ngambil nama field
 	$colQuery = 
-	"SHOW columns FROM surat_dan_dokumen_pelengkap";
+	"SHOW columns FROM pengajuan";
 
 	//eksekusi query colQuery
 	$colExec = mysql_query($colQuery);
@@ -79,10 +79,7 @@
 				<div class="form-group">
 					<label for="tipeperusahaan">Status Registrasi:</label>
 					<select class="form-control" id="tipeperusahaan" name="Registration_Status">
-						<option>Perseroan Terbatas</option>
-						<option>Persekutuan Komanditer</option>
-						<option>Koperasi</option>
-						<option>Lembaga</option>
+						<option>Proposed</option>
 					</select><p class="text-warning">should not be empty</p>
 				</div>
 				<div class="form-group">
@@ -94,7 +91,6 @@
 				<hr>
 				<ul class="pager">
 					<li><a href="step14.php">Previous Step</a></li>
-					<li><input type="submit" name="submit"></li>
 				</ul>
 		</form>
 		<div class="well well-sm">Result (Table):</div>
@@ -118,10 +114,6 @@
 							foreach($all_prop as $item){
 							echo "<td>$conNames[$item]</td>";
 						}
-						echo "
-						<td><a href=\"editstep14.php?No=$conNames[No]\">edit</a></td>
-						<td><a href=\"deletestep14.php?No=$conNames[No]\">delete</td>
-						";
 						echo "</tr>";
 					}
 				?>
