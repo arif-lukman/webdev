@@ -31,8 +31,6 @@
 
 	//ambil data terkait nilai data id diatas
 	for($i = 0; $i < sizeof($arrMaxIds); $i++){
-		//$result3 = getResults("SELECT data.No as _id, data.Date, data.Registration_Status, data.Notes, user.nama_perusahaan FROM tbl_user as user, pengajuan as data, data_pengajuan as conn WHERE user.id = conn.id_user and data.No = conn.id_pengajuan and data.No = '$arrMaxIds[$i]'", $conn2);
-		//$allValues = pushArray($fieldValues);
 		if($i == 0){
 			$addition = " and (data.No = '$arrMaxIds[$i]'";
 		}
