@@ -12,12 +12,44 @@
 	include "../controller/koneksi.php";
 	$conn2 = createConnection("localhost", "root", "", "_bpms_vendor");
 
+	//ambil max user id
+	$result1 = getResults("SELECT MAX(id) as id FROM tbl_user", $conn2)->fetch_assoc();
+	$maxId = $result1["id"];
+
+	//ambil nilai max data id dari masing2 user id
+	$arrMaxIds = array();
+	for($i = 0; $i <= $maxId; $i++){
+		$result2 = getResults("SELECT MAX(id_pengajuan) as id FROM data_pengajuan WHERE id_user='$i'", $conn2)->fetch_assoc();
+		$maxDataId = $result2["id"];
+		if($maxDataId != "" || $maxDataId != 0){
+			array_push($arrMaxIds, $maxDataId);
+		}
+	}
+
+	//default sql command
+	$sql = "SELECT data.No as _id, data.Date, data.Registration_Status, data.Notes, user.nama_perusahaan FROM tbl_user as user, pengajuan as data, data_pengajuan as conn WHERE user.id = conn.id_user and data.No = conn.id_pengajuan";
+
+	//ambil data terkait nilai data id diatas
+	for($i = 0; $i < sizeof($arrMaxIds); $i++){
+		//$result3 = getResults("SELECT data.No as _id, data.Date, data.Registration_Status, data.Notes, user.nama_perusahaan FROM tbl_user as user, pengajuan as data, data_pengajuan as conn WHERE user.id = conn.id_user and data.No = conn.id_pengajuan and data.No = '$arrMaxIds[$i]'", $conn2);
+		//$allValues = pushArray($fieldValues);
+		if($i == 0){
+			$addition = " and (data.No = '$arrMaxIds[$i]'";
+		}
+		else if($i == (sizeof($arrMaxIds)-1)){
+			$addition = " or data.No = '$arrMaxIds[$i]')";
+		}
+		else{
+			$addition = " or data.No = '$arrMaxIds[$i]'";	
+		}		
+		$sql .= $addition;
+	}
+
 	//ambil nama field
-	//$fieldNames = getResults("SHOW columns FROM tbl_user, pengajuan WHERE FIELD = 'No' or FIELD = 'nama_perusahaan' or FIELD = 'Date' or FIELD = 'Registration_Status' or FIELD = 'Notes'", $conn2);
 	$fieldNames = getResults("SELECT column_name FROM `information_schema`.`columns` WHERE `table_schema` = '_bpms_vendor' AND `table_name` IN ('tbl_user', 'pengajuan') AND (column_name = 'No' OR column_name = 'nama_perusahaan' OR column_name = 'Date' OR column_name = 'Registration_Status' OR column_name = 'Notes')", $conn);
 
 	//ambil isi field
-	$fieldValues = getResults("SELECT data.No as _id, data.Date, data.Registration_Status, data.Notes, user.nama_perusahaan FROM tbl_user as user, pengajuan as data, data_pengajuan as conn WHERE user.id = conn.id_user and data.No = conn.id_pengajuan", $conn2);
+	$fieldValues = getResults($sql, $conn2);
 
 	//push isi field ke array
 	$allValues = pushArray($fieldValues);
