@@ -10,7 +10,18 @@
 
 	//include file koneksi
 	include "../controller/koneksi.php";
-?>
+	$conn2 = createConnection("localhost", "root", "", "_bpms_vendor");
+
+	//ambil nama field
+	//$fieldNames = getResults("SHOW columns FROM tbl_user, pengajuan WHERE FIELD = 'No' or FIELD = 'nama_perusahaan' or FIELD = 'Date' or FIELD = 'Registration_Status' or FIELD = 'Notes'", $conn2);
+	$fieldNames = getResults("SELECT column_name FROM `information_schema`.`columns` WHERE `table_schema` = '_bpms_vendor' AND `table_name` IN ('tbl_user', 'pengajuan') AND (column_name = 'No' OR column_name = 'nama_perusahaan' OR column_name = 'Date' OR column_name = 'Registration_Status' OR column_name = 'Notes')", $conn);
+
+	//ambil isi field
+	$fieldValues = getResults("SELECT data.No as _id, data.Date, data.Registration_Status, data.Notes, user.nama_perusahaan FROM tbl_user as user, pengajuan as data, data_pengajuan as conn WHERE user.id = conn.id_user and data.No = conn.id_pengajuan", $conn2);
+
+	//push isi field ke array
+	$allValues = pushArray($fieldValues);
+	?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -36,6 +47,37 @@
 					?>
 					<input type="submit" value="Search">
 				</form>
+				<?php
+					echo "
+						<table class='table table-bordered'>
+							<thead>
+								<tr>
+						";
+								while ($colNames = $fieldNames->fetch_assoc()){
+									echo "
+									<th>$colNames[column_name]</th>
+									";
+								}
+						echo "
+								</tr>
+							</thead>
+							<tbody>
+						";
+						while($colValues = $fieldValues->fetch_assoc()){
+							echo "<tr>";
+							foreach($allValues as $item){
+								echo "<td>$colValues[$item]</td>";
+							}
+							echo "
+							<td><a href=\"../forms/proposals.php?No=$colValues[_id]\">respond</a></td>
+							";
+							echo "</tr>";
+						}
+						echo "
+							</tbody>
+						</table>
+						";
+				?>
 			</div>
 		</div>
 	</body>

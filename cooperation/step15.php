@@ -25,6 +25,8 @@
 	while ($prop = mysql_fetch_field($conExec)){
 		array_push($all_prop, $prop->name);
 	}
+
+	$date = date('Y-m-d');
 ?>
 
 <!DOCTYPE html>
@@ -85,6 +87,7 @@
 				<div class="form-group">
 					<label for="kualifikasiperusahaan">Catatan:</label>
 					<textarea class="form-control" rows="5" id="comment" name="Notes"></textarea><p class="text-warning">should not be empty</p>
+					<input type="hidden" name="date" value="<?php echo date('Y-m-d');?>">
 				</div>
 				<button type="submit" class="btn btn-primary">Save</button>
 				<button type="button" class="btn btn-primary">Reset</button>
