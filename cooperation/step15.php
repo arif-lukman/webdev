@@ -80,13 +80,13 @@
 			<div class="well well-lg">
 				<div class="form-group">
 					<label for="tipeperusahaan">Status Registrasi:</label>
-					<select class="form-control" id="tipeperusahaan" name="Registration_Status">
+					<select class="form-control" id="tipeperusahaan" name="Registration_Status" required>
 						<option>Proposed</option>
 					</select><p class="text-warning">should not be empty</p>
 				</div>
 				<div class="form-group">
 					<label for="kualifikasiperusahaan">Catatan:</label>
-					<textarea class="form-control" rows="5" id="comment" name="Notes"></textarea><p class="text-warning">should not be empty</p>
+					<textarea class="form-control" rows="5" id="comment" name="Notes" required></textarea><p class="text-warning">should not be empty</p>
 					<input type="hidden" name="date" value="<?php echo date('Y-m-d');?>">
 				</div>
 				<button type="submit" class="btn btn-primary">Save</button>

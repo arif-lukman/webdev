@@ -60,6 +60,16 @@
 					while($data = $result1->fetch_assoc()){
 						$result2 = getResults("SELECT pengalaman_perusahaan.Sub_Classification, klasifikasi_perusahaan.Description, pengalaman_perusahaan.Value, nama_dan_tipe_perusahaan.Company_Qualification FROM pengalaman_perusahaan, data_pengalaman_perusahaan, klasifikasi_perusahaan, data_klasifikasi_perusahaan, tbl_user, nama_dan_tipe_perusahaan, data_nama_dan_tipe_perusahaan WHERE pengalaman_perusahaan.No = data_pengalaman_perusahaan.id_pengalaman_perusahaan and klasifikasi_perusahaan.No = data_klasifikasi_perusahaan.id_klasifikasi_perusahaan and nama_dan_tipe_perusahaan.No = data_nama_dan_tipe_perusahaan.id_nama_dan_tipe_perusahaan and data_pengalaman_perusahaan.id_user = tbl_user.id and data_klasifikasi_perusahaan.id_user = tbl_user.id and data_nama_dan_tipe_perusahaan.id_user = tbl_user.id and klasifikasi_perusahaan.Sub_Classification = pengalaman_perusahaan.Sub_Classification and tbl_user.id = '$data[id]'", $conn1);
 						$rowspan = $result2->num_rows;
+						if(!$rowspan){
+							echo "
+								<tr>
+									<td rowspan='" . $rowspan . "'>" . $data['nama_perusahaan'] . "</td>
+									<td>" . $data2['Sub_Classification'] . "</td>
+									<td>" . $data2['Description'] . "</td>
+									<td rowspan='" . $rowspan . "'>" . $data2['Company_Qualification'] . "</td>
+								</tr>
+							";
+						}
 						while($data2 = $result2->fetch_assoc()){
 							if($count == 0){
 								echo "

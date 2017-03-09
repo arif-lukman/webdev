@@ -68,7 +68,7 @@
 			?>
 			<div class="form-group">
 				<label for="lampiran">Lampiran:</label>
-				<input type="file" name="pic" accept="image/*" name="Attachment" value="<?php echo $data['Attachment']?>"><p class="text-warning">should not be empty</p>
+				<input type="file" name="Attachment" id="Attachment" required><p class="text-warning">should not be empty</p>
 				<br>
 			</div>
 			<button type="submit" class="btn btn-primary">Save</button>

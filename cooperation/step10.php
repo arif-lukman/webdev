@@ -95,8 +95,8 @@
 				?>
 				<div class="col-xs-4">
 					<label for="comment">Nilai:</label>
-					<input class="form-control" rows="5" id="comment" name="Value" value="">
-					<select class="form-control" id="tipeperusahaan" name="Sub_Value" value="">
+					<input class="form-control" rows="5" id="comment" name="Value" value="" required>
+					<select class="form-control" id="tipeperusahaan" name="Sub_Value" value="" required>
 						<option>Indonesia</option>
 						<option>Malaysia</option>
 						<option>Singapura</option>
@@ -108,7 +108,7 @@
 				</div>
 				<div class="col-xs-8">
 					<br><br>
-					<input type="file" name="Attachment" id="Attachment">
+					<input type="file" name="Attachment" id="Attachment" required>
 					<span class="label label-info">Format PDF max. 2Mb </span>
 					<br><br><br>
 				</div>

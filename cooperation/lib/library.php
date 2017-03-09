@@ -277,7 +277,7 @@
 		$inputField = "
 			<div class='form-group " . $class . "'>
 		  		<label for='" . $id . "'>" . $label . "</label>
-			  	<input type='" . $type . "' class='form-control' name='" . $name . "' id='" . $id . "' value='" . $value . "'>
+			  	<input type='" . $type . "' class='form-control' name='" . $name . "' id='" . $id . "' value='" . $value . "' required>
 			  	" . $warning . "
 			</div>
 		";

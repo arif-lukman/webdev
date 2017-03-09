@@ -85,7 +85,7 @@
 					echo createInputField("text", "Nomor Fax", "Fax_Number", "Fax_Number", "", "", true, $warning);
 				?>
 				<div class="form-group">
-					<input type="file" name="Attachment" id="Attachment">
+					<input type="file" name="Attachment" id="Attachment" required>
 					<span class="label label-info">Format PDF max. 2Mb </span><p class="text-warning">should not be empty</p>
 					<br>
 				</div>

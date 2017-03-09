@@ -14,18 +14,20 @@
 	$Expiration_Days=$_POST["Expiration_Days"];
 	//$Attachment=$_POST["Attachment"];
 
-	$fileName = $_FILES["Attachment"]["name"];
-	$tmpName  = $_FILES["Attachment"]["tmp_name"];
-	$fileSize = $_FILES["Attachment"]["size"];
-	$fileType = $_FILES["Attachment"]["type"];
+	if(isset($_FILES["Attachment"])){
+		$fileName = $_FILES["Attachment"]["name"];
+		$tmpName  = $_FILES["Attachment"]["tmp_name"];
+		$fileSize = $_FILES["Attachment"]["size"];
+		$fileType = $_FILES["Attachment"]["type"];
 
-	$fp      = fopen($tmpName, 'r');
-	$content = fread($fp, filesize($tmpName));
-	$content = addslashes($content);
-	fclose($fp);
+		$fp      = fopen($tmpName, 'r');
+		$content = fread($fp, filesize($tmpName));
+		$content = addslashes($content);
+		fclose($fp);
 
-	if(!get_magic_quotes_gpc()){
-	    $fileName = addslashes($fileName);
+		if(!get_magic_quotes_gpc()){
+		    $fileName = addslashes($fileName);
+		}
 	}
 
 	$servername = "localhost";

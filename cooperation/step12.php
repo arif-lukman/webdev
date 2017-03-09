@@ -88,7 +88,7 @@
 				echo createTextArea(5, "Deskripsi:", "Description", "Address", "", "col-sm-12", true, $warning);
 			?>
 			<div class="form-group col-sm-12">
-				<input type="file" name="Attachment" id="Attachment">
+				<input type="file" name="Attachment" id="Attachment" required>
 				<span class="label label-info">Format PDF max. 2Mb </span><p class="text-warning">should not be empty</p>
 				<br>
 			</div>

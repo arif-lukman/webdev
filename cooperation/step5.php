@@ -92,7 +92,7 @@
 				?>
 				<div class="col-xs-6">
 					<label for="TGL">Share Value:</label>
-					<input type="text" class="form-control" id="usr" name="Value" value="">
+					<input type="text" class="form-control" id="usr" name="Value" value="" required>
 					<span class="label label-info">contoh/example: IDR 15.000.000 / USD 5.000</span>
 					<br><br>
 				</div>

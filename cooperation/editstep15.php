@@ -64,7 +64,7 @@
 			<div class="well well-lg">
 				<div class="form-group">
 					<label for="tipeperusahaan">Status Registrasi:</label>
-					<select class="form-control" id="tipeperusahaan" name="Registration_Status">
+					<select class="form-control" id="tipeperusahaan" name="Registration_Status" required>
 						<option>Perseroan Terbatas</option>
 						<option>Persekutuan Komanditer</option>
 						<option>Koperasi</option>
@@ -73,7 +73,7 @@
 				</div>
 				<div class="form-group">
 					<label for="kualifikasiperusahaan">Catatan:</label>
-					<textarea class="form-control" rows="5" id="comment" name="Notes"><?php echo $data["Notes"];?></textarea><p class="text-warning">should not be empty</p>
+					<textarea class="form-control" rows="5" id="comment" name="Notes" required><?php echo $data["Notes"];?></textarea><p class="text-warning">should not be empty</p>
 				</div>
 				<button type="button" class="btn btn-primary">Save</button>
 				<button type="button" class="btn btn-primary">Reset</button>

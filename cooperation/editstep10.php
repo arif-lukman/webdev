@@ -79,7 +79,7 @@
 				?>
 				<div class="col-xs-4">
 					<label for="comment">Nilai:</label>
-					<input class="form-control" rows="5" id="comment" name="Value" value="<?php echo $data['Value']?>">
+					<input class="form-control" rows="5" id="comment" name="Value" value="<?php echo $data['Value']?>" required>
 					<select class="form-control" id="tipeperusahaan" name="Sub_Value" value="<?php echo $data['Sub_Value']?>">
 						<option>Indonesia</option>
 						<option>Malaysia</option>
@@ -92,7 +92,7 @@
 				</div>
 				<div class="col-xs-8">
 					<br><br>
-					<input type="file" name="pic" accept="image/*">
+					<input type="file" name="Attachment" id="Attachment" required>
 					<span class="label label-info">Format PDF max. 2Mb </span>
 					<br><br><br>
 				</div>
