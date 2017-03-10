@@ -87,12 +87,12 @@
 					echo createInputField("text", "Alamat:", "Address", "Address", "", "", true, $warning);
 					echo createSelectOption("Negara:", "Country", "Country", "---Pilih Negara---", $conn1, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", false, "", "col-xs-6", true, $warning);
 					echo createSelectOption("Provinsi:", "Province", "Province", "---Pilih Provinsi---", $conn1, "SELECT _id, _nama as _name FROM _province ORDER BY _order ASC", false, "", "col-xs-6", true, $warning);
-					echo createInputField("text", "Nomor Telefon:", "Phone_Number", "Phone_Number", "", "", true, $warning);
+					echo createInputField("number", "Nomor Telefon:", "Phone_Number", "Phone_Number", "", "", true, $warning);
 					echo createInputField("text", "Email:", "Email", "Email", "", "", true, $warning);
 					echo createTextArea(5, "Deskripsi:", "Description", "Description", "", "", true, $warning);
 					echo createInputField("text", "Kota:", "City", "City", "", "col-xs-6", true, $warning);
-					echo createInputField("text", "Kode Pos:", "ZIP_Code", "ZIP_Code", "", "col-xs-6", true, $warning);
-					echo createInputField("text", "Kode Fax:", "Fax_Number", "Fax_Number", "", "col-xs-6", true, $warning);
+					echo createInputField("number", "Kode Pos:", "ZIP_Code", "ZIP_Code", "", "col-xs-6", true, $warning);
+					echo createInputField("number", "Kode Fax:", "Fax_Number", "Fax_Number", "", "col-xs-6", true, $warning);
 					echo createInputField("text", "Website:", "Website", "Website", "", "col-xs-6", true, $warning);
 				?>
 				<button type="submit" class="btn btn-primary">Save</button>

@@ -302,17 +302,19 @@
 	}
 
 	//fungsi buat bikin select option
-	function createSelectOption($label, $id, $name, $default, $conn, $sql, $allowChecking, $param, $class, $warn, $warningText){
+	function createSelectOption($label, $id, $name, $default, $conn, $sql, $allowChecking, $param, $class, $warn, $warningText, $js){
 		//ambil list group
-		$result1 = getResults($sql, $conn);
 		$options = "";
 		$default = "<option disabled selected hidden>" . $default . "</option>";
-		while($data1 = $result1->fetch_assoc()){
-			if($allowChecking && ($param == $data1["_name"] || $param == $data1["_id"])){
-				$options = $options . "<option selected>" . $data1["_name"] . "</option>";
-			}
-			else{
-				$options = $options . "<option>" . $data1["_name"] . "</option>";
+		if($sql != ""){
+			$result1 = getResults($sql, $conn);
+			while($data1 = $result1->fetch_assoc()){
+				if($allowChecking && ($param == $data1["_name"] || $param == $data1["_id"])){
+					$options = $options . "<option selected>" . $data1["_name"] . "</option>";
+				}
+				else{
+					$options = $options . "<option>" . $data1["_name"] . "</option>";
+				}
 			}
 		}
 
@@ -324,13 +326,18 @@
 		$selectOption = "
 		<div class='form-group " . $class . "'>
 	  		<label for='" . $id . "'>" . $label . "</label>
-		  	<select class='form-control' id='" . $id . "' name='" . $name . "'>
+		  	<select class='form-control' id='" . $id . "' name='" . $name . "' " . $js . ">
 		  	" . $default . $options . "
 			</select>
 			" . $warning . "
 		</div>
 		";
 		return $selectOption;
+	}
+
+	//fungsi buat ngisi option pakai data dari db
+	function getData(){
+
 	}
 
 	//fungsi buat ngambil parameter get kalau ada

@@ -71,7 +71,7 @@
 			<br><br><br><br>
 			<b>Kantor Utama?</b>
 			<div class="checkbox">
-			<label><input type="checkbox" value="1" name="Primary_Office" value="<?php echo $data['Primary_Office']?>"> Yes (salah satu harus sebagai Pengurus Utama / one address must be set to Primary Person)</label>
+			<label><input type="checkbox" value="1" name="Primary_Office" <?php echo checkBox($data['Primary_Office']);?>> Yes (salah satu harus sebagai Pengurus Utama / one address must be set to Primary Person)</label>
 			<br><br>
 			</div>
 				<?php

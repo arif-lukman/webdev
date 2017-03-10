@@ -81,8 +81,8 @@
 					echo createInputField("text", "Nama Kontak:", "Contact_Name", "Contact_Name", "", "", true, $warning);
 					echo createInputField("date", "Tanggal Terbit:", "Expired_Date", "Expired_Date", "", "col-sm-6", true, $warning);
 					echo createInputField("date", "Tanggal Kadaluarsa:", "Expiration_Days", "Expiration_Days", "", "col-sm-6", true, $warning);
-					echo createInputField("text", "Nomor Telepon:", "Phone_Number", "Phone_Number", "", "", true, $warning);
-					echo createInputField("text", "Nomor Fax", "Fax_Number", "Fax_Number", "", "", true, $warning);
+					echo createInputField("number", "Nomor Telepon:", "Phone_Number", "Phone_Number", "", "", true, $warning);
+					echo createInputField("number", "Nomor Fax", "Fax_Number", "Fax_Number", "", "", true, $warning);
 				?>
 				<div class="form-group">
 					<input type="file" name="Attachment" id="Attachment" required>

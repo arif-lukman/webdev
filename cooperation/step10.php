@@ -38,6 +38,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="../assets/js/functions.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<style>
 			a.home {
@@ -87,15 +88,20 @@
 					echo createInputField("text", "Perusahaan:", "User_Company", "User_Company", "", "col-xs-6", true, $warning);
 					echo createInputField("text", "Nama Kontak:", "Contact_Name", "Contact_Name", "", "col-xs-6", true, $warning);
 					echo createTextArea(5, "Alamat:", "Address", "Address", "", "", true, $warning);
-					echo createInputField("text", "Nomor Telepon:", "Phone_Number", "Phone_Number", "", "", true, $warning);
+					echo createInputField("number", "Nomor Telepon:", "Phone_Number", "Phone_Number", "", "", true, $warning);
 					echo createInputField("date", "Tanggal Kontrak:", "Contact_Date", "Contact_Date", "", "col-xs-6", true, $warning);
 					echo createInputField("date", "Tanggal Kadaluarsa:", "Completion_Date", "Completion_Date", "", "col-xs-6", true, $warning);
 					echo createInputField("text", "Nomor Dokumen:", "Document_Number", "Document_Number", "", "col-xs-6", true, $warning);
-					echo createInputField("text", "Progress Terakhir (%):", "Last_Progress", "Last_Progress", "", "col-xs-6", true, $warning);
+					//echo createInputField("number", "Progress Terakhir (%):", "Last_Progress", "Last_Progress", "", "col-xs-6", true, $warning);
 				?>
+				<div class='form-group col-xs-6'>
+			  		<label for='Last_Progress'>Progress Terakhir (%):</label>
+				  	<input type='number' class='form-control' name='Last_Progress' id='Last_Progress' value='' required onfocusout="vldProg();">
+				  	<p class='text-warning'>should not be empty</p>
+				</div>
 				<div class="col-xs-4">
-					<label for="comment">Nilai:</label>
-					<input class="form-control" rows="5" id="comment" name="Value" value="" required>
+					<label for="value">Nilai:</label>
+					<input type="number" class="form-control" rows="5" id="value" name="Value" value="" required onfocusout="noMinus('value');">
 					<select class="form-control" id="tipeperusahaan" name="Sub_Value" value="" required>
 						<option>Indonesia</option>
 						<option>Malaysia</option>

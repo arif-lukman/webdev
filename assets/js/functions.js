@@ -1,3 +1,4 @@
+//=================================================fungsi buat SOT============================================================
 //fungsi validasi angka
 function validateNum(x,y){
 	if(isNaN(x)||x==""||x==null){
@@ -60,4 +61,51 @@ function setDlg(){
 	var ap = document.getElementById("ap").value;
 	var gp = document.getElementById("gp").value;
 	document.getElementById("dlg").value = ap-gp;
+}
+
+//========================================================fungsi buat procurement================================================
+
+//validasi progress
+function vldProg(){
+	var element = document.getElementById("Last_Progress");
+	console.log(element.value);
+	if(element.value<0 || element.value>100){
+		element.value = "";
+		element.placeholder = "Nilai harus diantara 0-100!";
+	}
+}
+
+//validasi nilai yang ga boleh minus
+function noMinus(x){
+	var element = document.getElementById(x);
+	if(element.value<0){
+		element.value = "";
+		element.placeholder = "Nilai tidak boleh minus!";
+	}
+}
+
+//ambil propinsi berdasarkan negaranya
+function getProvince(parent_element, child_element, default, allowChecking, param){
+	console.log(default);
+	var xhttp = new XMLHttpRequest();
+
+	//ambil value parent
+	var parent = document.getElementById(parent_element);
+	var name = parent.value;
+
+	//ambil elemen child
+	var child = document.getElementById(child_element);
+
+	//build command sql dari semua parameter yang ada
+	var sql = "SELECT " + column + "FROM " + table + " " + addition;
+
+	xhttp.onreadystatechange = function(){
+		if (this.readyState == 4 && this.status == 200){
+			child.innerHTML = this.responseText;
+		}
+	};
+
+	xhttp.open("POST", "../../cooperation/controller/combobox.php", true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("command="+sql+"&default="+default+"&allowChecking="+allowChecking+"&param="+param);
 }
