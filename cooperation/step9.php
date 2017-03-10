@@ -40,6 +40,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="../assets/js/functions.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<style>
 			a.home {
@@ -82,11 +83,11 @@
 			<hr>
 			<div class="well well-lg">
 				<?php
-					echo createSelectOption("Tipe Affiliate / Perusahaan:", "Affiliate_Type", "Affiliate_Type", "---Pilih Tipe Afiliasi---", $conn1, "SELECT _id, _judul as _name FROM _affil_type ORDER BY _order ASC", false, "", "col-xs-6", true, $warning);
+					echo createSelectOption("Tipe Affiliate / Perusahaan:", "Affiliate_Type", "Affiliate_Type", "---Pilih Tipe Afiliasi---", $conn1, "SELECT _id, _judul as _name FROM _affil_type ORDER BY _order ASC", false, "", "col-xs-6", true, $warning, "");
 					echo createInputField("text", "Nama Perusahaan:", "Company_Name", "Company_Name", "", "col-xs-6", true, $warning);
 					echo createInputField("text", "Alamat:", "Address", "Address", "", "", true, $warning);
-					echo createSelectOption("Negara:", "Country", "Country", "---Pilih Negara---", $conn1, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", false, "", "col-xs-6", true, $warning);
-					echo createSelectOption("Provinsi:", "Province", "Province", "---Pilih Provinsi---", $conn1, "SELECT _id, _nama as _name FROM _province ORDER BY _order ASC", false, "", "col-xs-6", true, $warning);
+					echo createSelectOption("Negara:", "Country", "Country", "---Pilih Negara---", $conn1, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", false, "", "col-xs-6", true, $warning, "onchange = \"getProvince('Country', 'Province', '---- Pilih Provinsi ----', false, '', 'SELECT _province._id, _province._nama as _name FROM _province, _country WHERE _country._id = _province._id_negara and _country._nama = ', ' ORDER BY _province._order ASC')\"");
+					echo createSelectOption("Provinsi:", "Province", "Province", "---Pilih Provinsi---", $conn1, "SELECT _id, _nama as _name FROM _province ORDER BY _order ASC", false, "", "col-xs-6", true, $warning, "");
 					echo createInputField("number", "Nomor Telefon:", "Phone_Number", "Phone_Number", "", "", true, $warning);
 					echo createInputField("text", "Email:", "Email", "Email", "", "", true, $warning);
 					echo createTextArea(5, "Deskripsi:", "Description", "Description", "", "", true, $warning);

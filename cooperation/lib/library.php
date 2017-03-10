@@ -301,6 +301,41 @@
 		return $textArea;
 	}
 
+	//fungsi buat bikin JS Array dari database
+	function createJSArray($sql, $conn){
+		$jsarray = array();
+		$jsarraystring = "";
+		$result = getResults($sql, $conn);
+		while($data = $result->fetch_assoc()){
+			$jsarraystring = "{display: \"" . $data["_name"] . "\", value: \"" . $data["_name"] . "\"}";
+			array_push($jsarray, $jsarraystring);
+		}
+		return implode(",
+			", $jsarray);
+	}
+
+	//fungsi buat bikin fungsi JS onchange
+	function createFunction($sql, $conn, $name){
+		$result = getResults($sql, $conn);
+		$cases = "";
+		while($data = $result->fetch_assoc()){
+			$cases .= "case '" . $data["_name"] . "':
+            list(" . $data["_name"] . ");
+            break;
+            ";
+		}
+		$function = "
+			\$(\"" . $name . "\").change(function(){
+				var parent = $(this).val();
+				switch(parent){
+					"
+				. $cases .
+				"}
+			});
+		";
+		return $function;
+	}
+
 	//fungsi buat bikin select option
 	function createSelectOption($label, $id, $name, $default, $conn, $sql, $allowChecking, $param, $class, $warn, $warningText, $js){
 		//ambil list group
@@ -335,9 +370,38 @@
 		return $selectOption;
 	}
 
-	//fungsi buat ngisi option pakai data dari db
-	function getData(){
+	//fungsi buat bikin select option
+	function createSelectOptionCode($label, $id, $name, $default, $conn, $sql, $allowChecking, $param, $class, $warn, $warningText, $js){
+		//ambil list group
+		$options = "";
+		$default = "<option disabled selected hidden>" . $default . "</option>";
+		if($sql != ""){
+			$result1 = getResults($sql, $conn);
+			while($data1 = $result1->fetch_assoc()){
+				if($allowChecking && ($param == $data1["_name"] || $param == $data1["_id"])){
+					$options = $options . "<option selected>" . $data1["_name"] . "</option>";
+				}
+				else{
+					$options = $options . "<option>" . $data1["_name"] . "</option>";
+				}
+			}
+		}
 
+		if($warn)
+			$warning = "<p class='text-warning'>" . $warningText . "</p>";
+		else
+			$warning = "";
+
+		$selectOption = "
+		<div class='form-group " . $class . "'>
+	  		<label for='" . $id . "'>" . $label . "</label>
+		  	<select class='form-control' id='" . $id . "' name='" . $name . "' " . $js . ">
+		  	" . $default . $options . "
+			</select>
+			" . $warning . "
+		</div>
+		";
+		return $selectOption;
 	}
 
 	//fungsi buat ngambil parameter get kalau ada

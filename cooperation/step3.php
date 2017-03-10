@@ -82,10 +82,9 @@
 			<hr>
 			<div class="well well-lg">
 				<?php
-					$string = "onfocusout = \"getProvince('negara', 'provinsi', '---- Pilih Provinsi ----', false, '')\"";
 					echo createSelectOption("Tipe Kantor:", "tipekantor", "Office_Type", "---- Pilih Tipe Kantor ----", $conn1, "SELECT _id, _judul as _name FROM _office_type ORDER BY _order ASC", false, "", "col-xs-12", true, $warning, "");
-					echo createSelectOption("Negara:", "negara", "Country", "---- Pilih Negara ----", $conn1, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", false, "", "col-xs-6", true, $warning, $string);
-					echo createSelectOption("Provinsi:", "provinsi", "Province", "---- Pilih Negara Terlebih Dahulu ----", $conn1, "", false, "", "col-xs-6", true, $warning, '');
+					echo createSelectOption("Negara:", "negara", "Country", "---- Pilih Negara ----", $conn1, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", false, "", "col-xs-6", true, $warning, "onchange = \"getProvince('negara', 'provinsi', '---- Pilih Provinsi ----', false, '', 'SELECT _province._id, _province._nama as _name FROM _province, _country WHERE _country._id = _province._id_negara and _country._nama = ', ' ORDER BY _province._order ASC')\"");
+					echo createSelectOption("Provinsi:", "provinsi", "Province", "---- Pilih Negara Terlebih Dahulu ----", $conn1, "", false, "", "col-xs-6", true, $warning, "");
 					//SELECT _id, _nama as _name FROM _province ORDER BY _order ASC
 				?>
 				<br><br><br><br>

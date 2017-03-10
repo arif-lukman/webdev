@@ -82,9 +82,10 @@
 			<div class="well well-lg">
 				<?php
 					echo createInputField("text", "Nama Pekerjaan:", "Project_Name", "Project_Name", "", "col-xs-6", true, $warning);
-					echo createSelectOption("Bidang Pekerjaan:", "Activities_Section", "Activities_Section", "---Pilih Bidang Pekerjaan---", $conn1, "SELECT _id, _judul as _name FROM _scope_type ORDER BY _order ASC", false, "", "col-xs-6", true, $warning);
-					echo createSelectOption("Klasifikasi:", "Classification", "Classification", "---Pilih Klasifikasi Perusahaan---", $conn1, "SELECT _id, _kode, _judul as _name FROM _class_type WHERE LENGTH(_kode) <= 3 ORDER BY _order ASC", false, "", "col-xs-6", true, $warning);
-					echo createSelectOption("Sub Klasifikasi:", "Sub_Classification", "Sub_Classification", "---Pilih Sub Klasifikasi Perusahaan---", $conn1, "SELECT _id, _kode, _judul as _name FROM _class_type WHERE LENGTH(_kode) > 3 ORDER BY _order ASC", false, "", "col-xs-6", true, $warning);
+					echo createSelectOption("Bidang Pekerjaan:", "Activities_Section", "Activities_Section", "---Pilih Bidang Pekerjaan---", $conn1, "SELECT _id, _judul as _name FROM _scope_type ORDER BY _order ASC", false, "", "col-xs-6", true, $warning, "");
+					//"SELECT _class_type._id, _class_type._kode, _class_type._judul as _name FROM _class_type, _scope_type WHERE LENGTH(_kode) <= 3 LIKE '' ORDER BY _order ASC"
+					echo createSelectOption("Klasifikasi:", "Classification", "Classification", "---Pilih Klasifikasi Perusahaan---", $conn1, "SELECT _id, _kode, _judul as _name FROM _class_type WHERE LENGTH(_kode) <= 3 ORDER BY _order ASC", false, "", "col-xs-6", true, $warning, "");
+					echo createSelectOption("Sub Klasifikasi:", "Sub_Classification", "Sub_Classification", "---Pilih Sub Klasifikasi Perusahaan---", $conn1, "SELECT _id, _kode, _judul as _name FROM _class_type WHERE LENGTH(_kode) > 3 ORDER BY _order ASC", false, "", "col-xs-6", true, $warning, "");
 					echo createInputField("text", "Perusahaan:", "User_Company", "User_Company", "", "col-xs-6", true, $warning);
 					echo createInputField("text", "Nama Kontak:", "Contact_Name", "Contact_Name", "", "col-xs-6", true, $warning);
 					echo createTextArea(5, "Alamat:", "Address", "Address", "", "", true, $warning);

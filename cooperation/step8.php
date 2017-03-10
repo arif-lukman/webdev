@@ -79,12 +79,12 @@
 			<hr>
 			<div class="col-sm-12 well well-lg">
 				<?php
-					echo createSelectOption("Nama Bank:", "Bank_Name", "Bank_Name", "---Pilih Bank---", $conn1, "SELECT _id, _nama as _name FROM _bank ORDER BY _order ASC", true, "", "col-xs-6", true, $warning);
+					echo createSelectOption("Nama Bank:", "Bank_Name", "Bank_Name", "---Pilih Bank---", $conn1, "SELECT _id, _nama as _name FROM _bank ORDER BY _order ASC", true, "", "col-xs-6", true, $warning, "");
 					echo createInputField("text", "Cabang:", "Branch", "Branch", "", "col-xs-6", true, $warning);
-					echo createSelectOption("Negara:", "Country", "Country", "---Pilih Negara---", $conn1, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", true, "", "col-xs-6", true, $warning);
+					echo createSelectOption("Negara:", "Country", "Country", "---Pilih Negara---", $conn1, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", true, "", "col-xs-6", true, $warning, "");
 					echo createInputField("text", "Pemilik Rekening:", "Acc_Name", "Acc_Name", "", "col-sm-12", true, $warning);
 					echo createInputField("text", "Nomor Rekening:", "Acc_Number", "Acc_Number", "", "col-sm-12", true, $warning);
-					echo createSelectOption("Mata Uang:", "Currency", "Currency", "---Pilih Mata Uang---", $conn1, "SELECT _id, _nama as _name FROM _currency ORDER BY _order ASC", true, "", "col-xs-6", true, $warning);
+					echo createSelectOption("Mata Uang:", "Currency", "Currency", "---Pilih Mata Uang---", $conn1, "SELECT _id, _nama as _name FROM _currency ORDER BY _order ASC", true, "", "col-xs-6", true, $warning, "");
 				?>
 				<div class="col-sm-12">
 					<button type="submit" class="btn btn-primary">Save</button>

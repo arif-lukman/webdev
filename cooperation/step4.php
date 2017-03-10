@@ -81,7 +81,7 @@
 			<hr>
 			<div class="col-sm-12 well well-lg">
 				<?php
-					echo createSelectOption("Tipe Pengurus:", "Management_Type", "Management_Type", "---Pilih Tipe Kantor---", $conn1, "SELECT _id, _judul as _name FROM _manager_type ORDER BY _order ASC", false, "", "col-xs-4", true, $warning);
+					echo createSelectOption("Tipe Pengurus:", "Management_Type", "Management_Type", "---Pilih Tipe Kantor---", $conn1, "SELECT _id, _judul as _name FROM _manager_type ORDER BY _order ASC", false, "", "col-xs-4", true, $warning, "");
 				?>			
 				<div class="checkbox col-sm-12">
 					<b>Pengurus Utama?</b>

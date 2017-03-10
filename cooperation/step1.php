@@ -67,8 +67,8 @@
 
 			<?php
 				echo createInputField("text", "Nama Perusahaan:", "Company_Name", "namaperusahaan", $data["name"], "", false, "");
-				echo createSelectOption("Tipe Perusahaan:", "tipeperusahaan", "Company_Type", "---- Pilih Tipe Perusahaan ----", $conn1, "SELECT _id, _judul as _name FROM _company_type ORDER BY _order ASC", true, $data["type"], "", false, "");
-				echo createSelectOption("Tipe Kualifikasi Perusahaan:", "kualifikasiperusahaan", "Company_Qualification", "---- Pilih Kualifikasi Perusahaan ----", $conn1, "SELECT _id, _judul as _name FROM _qual_type ORDER BY _order ASC", true, $data["qual"], "", false, "");
+				echo createSelectOption("Tipe Perusahaan:", "tipeperusahaan", "Company_Type", "---- Pilih Tipe Perusahaan ----", $conn1, "SELECT _id, _judul as _name FROM _company_type ORDER BY _order ASC", true, $data["type"], "", false, "", "");
+				echo createSelectOption("Tipe Kualifikasi Perusahaan:", "kualifikasiperusahaan", "Company_Qualification", "---- Pilih Kualifikasi Perusahaan ----", $conn1, "SELECT _id, _judul as _name FROM _qual_type ORDER BY _order ASC", true, $data["qual"], "", false, "", "");
 			?>
 
 			<button type="submit" class="btn btn-primary">Save</button>

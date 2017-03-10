@@ -9,12 +9,12 @@
 	include "koneksi.php";
 
 	$sql = $_POST["command"];
-	$default = $_POST["default"];
+	$default_text = $_POST["default_text"];
 	$allowChecking = $_POST["allowChecking"];
 	$param = $_POST["param"];
 
 	$options = "";
-	$default = "<option disabled selected hidden>" . $default . "</option>";
+	$default = "<option disabled selected hidden>" . $default_text . "</option>";
 	if($sql != ""){
 		$result1 = getResults($sql, $conn);
 		while($data1 = $result1->fetch_assoc()){
