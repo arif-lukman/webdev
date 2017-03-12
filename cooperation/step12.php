@@ -40,6 +40,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="../assets/js/functions.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<style>
 			a.home {
@@ -82,9 +83,9 @@
 			<hr>
 			<div class="col-sm-12 well well-lg">
 			<?php
-				echo createSelectOption("Bidang Pekerjaan:", "Activities_Section", "Activities_Section", "---Pilih Bidang Pekerjaan---", $conn1, "SELECT _id, _judul as _name FROM _scope_type ORDER BY _order ASC", false, "", "col-xs-6", true, $warning, "");
-				echo createSelectOption("Klasifikasi:", "Classification", "Classification", "---Pilih Klasifikasi Perusahaan---", $conn1, "SELECT _id, _kode, _judul as _name FROM _class_type WHERE LENGTH(_kode) <= 3 ORDER BY _order ASC", false, "", "col-xs-6", true, $warning, "");
-				echo createSelectOption("Sub Klasifikasi:", "Sub_Classification", "Sub_Classification", "---Pilih Sub Klasifikasi Perusahaan---", $conn1, "SELECT _id, _kode, _judul as _name FROM _class_type WHERE LENGTH(_kode) > 3 ORDER BY _order ASC", false, "", "col-xs-6", true, $warning, "");
+				echo createSelectOptionByName("Bidang Pekerjaan:", "Activities_Section", "Activities_Section", "---Pilih Bidang Pekerjaan---", $conn1, "SELECT _id, _judul as _name FROM _scope_type ORDER BY _order ASC", false, "", "col-xs-6", true, $warning, "onchange = \"getClassification('Activities_Section', 'Classification', '---- Pilih Klasifikasi Perusahaan ----', false, '', 'SELECT _class_type._id, CONCAT(_class_type._kode, \' - \', _class_type._judul) as _name FROM _class_type, _scope_type WHERE LENGTH(_class_type._kode) <= 3 and _class_type._bidang = _scope_type._id and _scope_type._judul = ', ' ORDER BY _class_type._order ASC', '../cooperation/controller/combobox.php')\"");
+				echo createSelectOptionByName("Klasifikasi:", "Classification", "Classification", "---Pilih Bidang Dahulu---", $conn1, "", false, "", "col-xs-6", true, $warning, "onchange = \"getSubClassification('Classification', 'Sub_Class', '---- Pilih Sub Klasifikasi Perusahaan ----', false, '', '../cooperation/controller/combobox1.php')\"");
+				echo createSelectOptionByName("Sub Klasifikasi:", "Sub_Class", "Sub_Class", "---Pilih Klasifikasi Dahulu---", $conn1, "", false, "", "col-xs-6", true, $warning, "");
 				echo createTextArea(5, "Deskripsi:", "Description", "Address", "", "col-sm-12", true, $warning);
 			?>
 			<div class="form-group col-sm-12">

@@ -135,6 +135,7 @@ function getClassification(parent_element, child_element, default_text, allowChe
 
 	xhttp.onreadystatechange = function(){
 		if (this.readyState == 4 && this.status == 200){
+			//console.log(this.responseText);
 			child.innerHTML = this.responseText;
 		}
 	};
@@ -145,7 +146,7 @@ function getClassification(parent_element, child_element, default_text, allowChe
 }
 
 //ambil propinsi berdasarkan negaranya
-function getSubClassification(parent_element, child_element, default_text, allowChecking, param, sect1, sect2, target){
+function getSubClassification(parent_element, child_element, default_text, allowChecking, param, target){
 	//console.log(default);
 	var xhttp = new XMLHttpRequest();
 
@@ -153,7 +154,7 @@ function getSubClassification(parent_element, child_element, default_text, allow
 	var parent = document.getElementById(parent_element);
 	var val = parent.value;
 	var pos = val.indexOf(" ");
-	var name = val.slice(0, pos);
+	var pattern = val.slice(0, pos);
 
 	//ambil elemen child
 	var child = document.getElementById(child_element);
@@ -161,17 +162,16 @@ function getSubClassification(parent_element, child_element, default_text, allow
 	//build command sql dari semua parameter yang ada
 	//var sql = "SELECT _province._id, _province._nama as _name FROM _province, _country WHERE _country._id = _province._id_negara "+
 	//"and _country._nama = '" + name + "' ORDER BY _province._order ASC";
-	var sql = sect1 + "\'\%" + name + "\%\'" + sect2;
-	console.log(sql);
+	//var sql = sect1 + "\'\%" + name + "\%\'" + sect2;
+	console.log(pattern);
 
 	xhttp.onreadystatechange = function(){
 		if (this.readyState == 4 && this.status == 200){
-			console.log(this.responseText);
 			child.innerHTML = this.responseText;
 		}
 	};
 
 	xhttp.open("POST", target, true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("command="+sql+"&default_text="+default_text+"&allowChecking="+allowChecking+"&param="+param);
+	xhttp.send("pattern="+pattern+"&default_text="+default_text+"&allowChecking="+allowChecking+"&param="+param);
 }

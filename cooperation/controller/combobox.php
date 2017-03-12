@@ -15,6 +15,7 @@
 
 	$options = "";
 	$default = "<option disabled selected hidden>" . $default_text . "</option>";
+	$options .= $default;
 	if($sql != ""){
 		$result1 = getResults($sql, $conn);
 		while($data1 = $result1->fetch_assoc()){
