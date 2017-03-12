@@ -85,7 +85,7 @@ function noMinus(x){
 }
 
 //ambil propinsi berdasarkan negaranya
-function getProvince(parent_element, child_element, default_text, allowChecking, param, sect1, sect2){
+function getProvince(parent_element, child_element, default_text, allowChecking, param, sect1, sect2, target){
 	//console.log(default);
 	var xhttp = new XMLHttpRequest();
 
@@ -108,19 +108,21 @@ function getProvince(parent_element, child_element, default_text, allowChecking,
 		}
 	};
 
-	xhttp.open("POST", "../cooperation/controller/combobox.php", true);
+	xhttp.open("POST", target, true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("command="+sql+"&default_text="+default_text+"&allowChecking="+allowChecking+"&param="+param);
 }
 
 //ambil propinsi berdasarkan negaranya
-function getClassification(parent_element, child_element, default_text, allowChecking, param, sect1, sect2){
+function getClassification(parent_element, child_element, default_text, allowChecking, param, sect1, sect2, target){
 	//console.log(default);
 	var xhttp = new XMLHttpRequest();
 
 	//ambil value parent
 	var parent = document.getElementById(parent_element);
-	var name = parent.value;
+	var val = parent.value;
+	//var pos = val.indexOf(" ");
+	//var name = val.slice(0, pos);
 
 	//ambil elemen child
 	var child = document.getElementById(child_element);
@@ -128,7 +130,7 @@ function getClassification(parent_element, child_element, default_text, allowChe
 	//build command sql dari semua parameter yang ada
 	//var sql = "SELECT _province._id, _province._nama as _name FROM _province, _country WHERE _country._id = _province._id_negara "+
 	//"and _country._nama = '" + name + "' ORDER BY _province._order ASC";
-	var sql = sect1 + "\'" + name + "\'" + sect2;
+	var sql = sect1 + "\'" + val + "\'" + sect2;
 	console.log(sql);
 
 	xhttp.onreadystatechange = function(){
@@ -137,7 +139,39 @@ function getClassification(parent_element, child_element, default_text, allowChe
 		}
 	};
 
-	xhttp.open("POST", "../cooperation/controller/combobox.php", true);
+	xhttp.open("POST", target, true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("command="+sql+"&default_text="+default_text+"&allowChecking="+allowChecking+"&param="+param);
+}
+
+//ambil propinsi berdasarkan negaranya
+function getSubClassification(parent_element, child_element, default_text, allowChecking, param, sect1, sect2, target){
+	//console.log(default);
+	var xhttp = new XMLHttpRequest();
+
+	//ambil value parent
+	var parent = document.getElementById(parent_element);
+	var val = parent.value;
+	var pos = val.indexOf(" ");
+	var name = val.slice(0, pos);
+
+	//ambil elemen child
+	var child = document.getElementById(child_element);
+
+	//build command sql dari semua parameter yang ada
+	//var sql = "SELECT _province._id, _province._nama as _name FROM _province, _country WHERE _country._id = _province._id_negara "+
+	//"and _country._nama = '" + name + "' ORDER BY _province._order ASC";
+	var sql = sect1 + "\'\%" + name + "\%\'" + sect2;
+	console.log(sql);
+
+	xhttp.onreadystatechange = function(){
+		if (this.readyState == 4 && this.status == 200){
+			console.log(this.responseText);
+			child.innerHTML = this.responseText;
+		}
+	};
+
+	xhttp.open("POST", target, true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("command="+sql+"&default_text="+default_text+"&allowChecking="+allowChecking+"&param="+param);
 }

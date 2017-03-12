@@ -20,9 +20,13 @@
 		//ambil data dari db
 		$result = getResults("SELECT * FROM _province WHERE _id = '$id'", $conn);
 		$data = $result->fetch_assoc();
+		$allowChecking = true;
+		$param = $data["_id_negara"];
 	}
 	else{
 		$data = "";
+		$allowChecking = false;
+		$param = "";
 	}
 ?>
 <!DOCTYPE html>
@@ -52,6 +56,7 @@
 						echo createInputField("text", "Kode Propinsi:", "kode", "kode", checkData($data,"_kode"), "", false, "");
 						echo createInputField("text", "Nama Propinsi:", "nama", "nama", checkData($data,"_nama"), "", false, "");
 						echo createInputField("text", "Order:", "order", "order", checkData($data,"_order"), "", false, "");
+						echo createSelectOptionById("Negara:", "negara", "negara", "---Pilih Negara---", $conn, "SELECT _id, _nama as _name FROM _country", $allowChecking, $param, "", "", false, "", "");
 					?>
 					<div class="form-group">
 				  		<label for="stat">Status:</label>

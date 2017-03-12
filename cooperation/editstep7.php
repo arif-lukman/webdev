@@ -64,7 +64,7 @@
 			<div class="well well-lg">
 				<div class="form-group">
 					<?php
-						echo createSelectOption("Tipe Distributor/Dealer:", "Distributor", "Distributor", "---Pilih Tipe Distributor---", $conn1, "SELECT _id, _nama as _name FROM _distributor ORDER BY _order ASC", true, $data["Distributor"], "", true, $warning);
+						echo createSelectOptionByName("Tipe Distributor/Dealer:", "Distributor", "Distributor", "---Pilih Tipe Distributor---", $conn1, "SELECT _id, _nama as _name FROM _distributor ORDER BY _order ASC", true, $data["Distributor"], "", true, $warning, "");
 						echo createInputField("text", "Nomor Dokumen:", "Document_Number", "Document_Number", $data['Document_Number'], "", true, $warning);
 						echo createInputField("text", "Dikeluarkan oleh:", "Issued_By", "Issued_By", $data['Issued_By'], "", true, $warning); 
 						echo createInputField("date", "Tanggal Dikeluarkan:", "Issued_Date", "Issued_Date", $data['Issued_Date'], "col-xs-6", true, $warning);

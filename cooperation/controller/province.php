@@ -11,7 +11,7 @@
 	//ambil parameter
 	//parameter operasi: create/update/delete
 	$op = $_GET["op"];
-	echo $op;
+	//echo $op;
 	//parameter id
 	$id = getParamGet("id");
 
@@ -20,12 +20,13 @@
 	$nama = getParamPost("nama");
 	$order = getParamPost("order");
 	$status = getParamPost("stat");
+	$negara = getParamPost("negara");
 
 	//sql commands
 	//create
-	$sqlC = "INSERT INTO _province(_kode, _nama, _order, _status) VALUES ('$kode', '$nama', '$order', '$status')";
+	$sqlC = "INSERT INTO _province(_kode, _nama, _order, _status, _id_negara) VALUES ('$kode', '$nama', '$order', '$status', '$negara')";
 	//update
-	$sqlU = "UPDATE _province SET _kode='$kode', _nama='$nama', _order='$order', _status='$status' WHERE _id='$id'";
+	$sqlU = "UPDATE _province SET _kode='$kode', _nama='$nama', _order='$order', _status='$status', _id_negara='$negara' WHERE _id='$id'";
 	//delete
 	$sqlD = "DELETE FROM _province WHERE _id='$id'";
 	

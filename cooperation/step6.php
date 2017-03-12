@@ -78,7 +78,7 @@
 			<hr>
 			<div class="well well-lg">
 				<?php
-					echo createSelectOption("Pilih Tipe Dokumen:", "Document_Type", "Document_Type", "---Pilih Tipe Dokumen---", $conn1, "SELECT _id, _judul as _name FROM _document_type ORDER BY _order ASC", false, "", "", true, $warning, "");
+					echo createSelectOptionByName("Pilih Tipe Dokumen:", "Document_Type", "Document_Type", "---Pilih Tipe Dokumen---", $conn1, "SELECT _id, _judul as _name FROM _document_type ORDER BY _order ASC", false, "", "", true, $warning, "");
 					echo createInputField("text", "Nomor Dokumen:", "Document_Number", "Document_Number", "", "", true, $warning);				
 					echo createInputField("text", "Dikeluarkan oleh:", "Issued_By", "Issued_By", "", "", true, $warning);		
 					echo createInputField("date", "Tanggal Dikeluarkan:", "Issued_Date", "Issued_Date", "", "col-xs-6", true, $warning);		

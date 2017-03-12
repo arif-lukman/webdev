@@ -12,7 +12,7 @@
 	include "../controller/koneksi.php";
 
 	//ambil nama field
-	$fieldNames = getResults("SHOW columns FROM _province", $conn);
+	$fieldNames = getResults("SHOW columns FROM _province WHERE FIELD!='_id_negara'", $conn);
 
 	//ambil isi field
 	$fieldValues = getResults("SELECT _province._id as _id, _province._kode, _province._nama as _nama_prov, _province._order, _status._nama FROM _province, _status WHERE _province._status = _status._id ORDER BY _id ASC", $conn);

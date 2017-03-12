@@ -63,7 +63,7 @@
 			<hr>
 			<div class="well well-lg">
 			<?php
-				echo createSelectOption("Tipe Surat dan Dokumen Pelengkap:", "Supporting_Document_Type", "Supporting_Document_Type", "---Pilih Tipe Surat/Dokumen---", $conn1, "SELECT _id, _judul as _name FROM _docplus_type ORDER BY _order ASC", true, $data["Supporting_Document_Type"], "", true, $warning);
+				echo createSelectOptionByName("Tipe Surat dan Dokumen Pelengkap:", "Supporting_Document_Type", "Supporting_Document_Type", "---Pilih Tipe Surat/Dokumen---", $conn1, "SELECT _id, _judul as _name FROM _docplus_type ORDER BY _order ASC", true, $data["Supporting_Document_Type"], "", true, $warning, "");
 				echo createInputField("text", "Deskripsi:", "Description", "Description", $data['Description'], "", true, $warning);
 			?>
 			<div class="form-group">

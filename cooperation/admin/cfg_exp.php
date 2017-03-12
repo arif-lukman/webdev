@@ -44,7 +44,7 @@
 				<form action="../controller/expiry_config.php" method="post">
 					<?php
 						//bikin field pada form
-						echo createSelectOption("Admin Document:", "doc", "doc", "---Pilih Tipe Dokumen---", $conn, "SELECT _id, _judul as _name FROM _document_type ORDER BY _order ASC", false, "", "", false, "");
+						echo createSelectOptionByName("Admin Document:", "doc", "doc", "---Pilih Tipe Dokumen---", $conn, "SELECT _id, _judul as _name FROM _document_type ORDER BY _order ASC", false, "", "", false, "", "");
 						echo createInputField("text", "Masa Kadaluarsa:", "exp", "exp", "", "", false, "");
 					?>
 					<button type="submit" class="btn btn-default">Save</button>

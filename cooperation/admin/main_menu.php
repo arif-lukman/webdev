@@ -39,8 +39,8 @@
 					<?php
 						echo createInputField("text", "Username:", "uname", "uname", "", "", false, "");
 						echo createInputField("text", "Nama Perusahaan:", "cpname", "cpname", "", "", false, "");
-						echo createSelectOption("Negara:", "country", "country", "---Pilih Negara---", $master, "SELECT _id, _nama as _name FROM _country", false, "", "", false, "");
-						echo createSelectOption("Propinsi:", "province", "province", "---Pilih Propinsi---", $master, "SELECT _id, _nama as _name FROM _province", false, "", "", false, "");
+						echo createSelectOptionById("Negara:", "country", "country", "---Pilih Negara---", $master, "SELECT _id, _nama as _name FROM _country", false, "", "", false, "", "");
+						echo createSelectOptionById("Propinsi:", "province", "province", "---Pilih Propinsi---", $master, "SELECT _id, _nama as _name FROM _province", false, "", "", false, "", "");
 						echo createInputField("email", "Email:", "email", "email", "", "", false, "");
 						echo createInputField("password", "Kata Sandi:", "password", "password", "", "", false, "");
 						echo createTextArea(3, "Keterangan:", "desc", "desc", "", "", false, "");

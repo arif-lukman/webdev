@@ -337,7 +337,7 @@
 	}
 
 	//fungsi buat bikin select option
-	function createSelectOption($label, $id, $name, $default, $conn, $sql, $allowChecking, $param, $class, $warn, $warningText, $js){
+	function createSelectOptionByName($label, $id, $name, $default, $conn, $sql, $allowChecking, $param, $class, $warn, $warningText, $js){
 		//ambil list group
 		$options = "";
 		$default = "<option disabled selected hidden>" . $default . "</option>";
@@ -371,7 +371,7 @@
 	}
 
 	//fungsi buat bikin select option
-	function createSelectOptionCode($label, $id, $name, $default, $conn, $sql, $allowChecking, $param, $class, $warn, $warningText, $js){
+	function createSelectOptionById($label, $id, $name, $default, $conn, $sql, $allowChecking, $param, $class, $warn, $warningText, $js){
 		//ambil list group
 		$options = "";
 		$default = "<option disabled selected hidden>" . $default . "</option>";
@@ -379,10 +379,10 @@
 			$result1 = getResults($sql, $conn);
 			while($data1 = $result1->fetch_assoc()){
 				if($allowChecking && ($param == $data1["_name"] || $param == $data1["_id"])){
-					$options = $options . "<option selected>" . $data1["_name"] . "</option>";
+					$options = $options . "<option value='" . $data1["_id"] . "' selected>" . $data1["_name"] . "</option>";
 				}
 				else{
-					$options = $options . "<option>" . $data1["_name"] . "</option>";
+					$options = $options . "<option value='" . $data1["_id"] . "'>" . $data1["_name"] . "</option>";
 				}
 			}
 		}
