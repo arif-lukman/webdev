@@ -8,14 +8,11 @@
 	//include file koneksi
 	include "koneksi.php";
 
-	//$sql = $_POST["command"];
-	$pattern = $_POST["pattern"];
-	$sql = "SELECT _id, CONCAT(_kode, ' - ', _judul) as _name FROM _class_type WHERE LENGTH(_kode) > 3 and _kode LIKE '%" . $pattern . "%' ORDER BY _order ASC";
+	$sql = $_POST["command"];
 	$default_text = $_POST["default_text"];
 	$allowChecking = $_POST["allowChecking"];
 	$param = $_POST["param"];
 
-	$a = "biasa cuks";
 	$options = "";
 	$default = "<option disabled selected hidden>" . $default_text . "</option>";
 	$options .= $default;
