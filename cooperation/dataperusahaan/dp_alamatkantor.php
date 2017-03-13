@@ -67,7 +67,7 @@
 				generateTable($fieldNames, $fieldValues, $allValues, "dp_alamatkantor.php", "false");
 				?>
 <br><br><br><br><br><br><br><br><br><br><br><br><br>				
-<center><a href="operation.php"><img src="../assets/images/back.png" height="30"></img></a>
+<center><a href="../vendor.php"><img src="../../assets/images/icons/back.png" height="30"></img></a>
 <button type="submit" class="btn btn-primary">Save</button></center>
 <hr>
 </div>
