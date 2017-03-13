@@ -1,19 +1,28 @@
 <?php
-	
-	include "../lib/library.php";
-	include "check_session.php";
-	
-	$conn = createConnection("localhost", "root", "", "_bpms_vendor");
-	
-	//data untuk select option negara
-	//ambil nama field
-	$fieldNames = getResults("SHOW columns FROM alamat_kantor",$conn);
+	include "koneksiDB.php";
+	include "../libraryproc.php";
 
+	session_start();
+	$id = $_SESSION["uid"];
+
+	//query buat ngambil nama field
+	$colQuery = "SHOW columns FROM alamat_kantor WHERE FIELD = 'No' or FIELD = 'Office_Type' or FIELD = 'Office_Address' or FIELD = 'Office_Phone_Number' or FIELD = 'Office_Email' ";
+
+	$colExec = mysql_query($colQuery);
+	
 	//ambil isi field
-	$fieldValues = getResults("SELECT * FROM alamat_kantor ORDER BY No ASC",$conn);
+	$conQuery = "SELECT No, Office_Type, Office_Address, Office_Phone_Number, Office_Email FROM alamat_kantor ORDER BY No ASC";
 
-	//push isi field ke array
-	$allValues = pushArray($fieldValues);
+	//eksekusi query conQuery
+	$conExec = mysql_query($conQuery);
+
+	//array buatan
+	$all_prop = array();
+
+	//push fieldsnya ke all_prop
+	while ($prop = mysql_fetch_field($conExec)){
+		array_push($all_prop, $prop->name);
+	}
 ?>
 
 <!DOCTYPE html>
@@ -63,9 +72,35 @@
 
 <div class="col-sm-9">
 				<h1>Alamat KAntor (Company Address)</h1>
-				<?php
-				generateTable($fieldNames, $fieldValues, $allValues, "dp_alamatkantor.php", "false");
-				?>
+		<table class="table table-bordered">
+				<!--nama field-->
+				<thead>
+					<tr style="font-size:9px">
+					<?php
+						while ($colNames = mysql_fetch_array($colExec)){
+							echo "
+							<th>$colNames[Field]</th>
+							";
+						}
+					?>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+						while($conNames = mysql_fetch_array($conExec)){
+							echo "<tr>";
+							foreach($all_prop as $item){
+								echo "<td>$conNames[$item]</td>";
+							}
+							echo "
+							<td><a href=\"../editstep3.php?No=$conNames[No]\">edit</a></td>
+							<td><a href=\"delete.php?No=$conNames[No]\" onclick='return hapusBarang(\"Seluruh isi data field ini akan dihapus. Anda Yakin? \")'>delete</a></td> </tr>
+							";
+							echo "</tr>";
+						}
+					?>
+				</tbody>
+			</table><br>
 <br><br><br><br><br><br><br><br><br><br><br><br><br>				
 <center><a href="../vendor.php"><img src="../../assets/images/icons/back.png" height="30"></img></a>
 <button type="submit" class="btn btn-primary">Save</button></center>
