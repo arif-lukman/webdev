@@ -1,6 +1,5 @@
 <?php
 	session_start();
-	$id = $_SESSION["uid"];
 
 	include "lib/library.php";
 	//bikin koneksi ke db
@@ -31,7 +30,7 @@
 
 			<div class="col-sm-2"></div>
 			<form class="col-sm-8" action="controller/signup.php" method="post">
-				<h2>Contact Us</h2>
+				<h2>Registrasi Vendor</h2>
 				<hr>
 				<?php
 					echo createInputField("text", "Nama:", "nama", "nama", "", "", false, "");

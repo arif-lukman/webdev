@@ -17,6 +17,8 @@
 
 	//push isi field ke array
 	$allValues = pushArray($fieldValues);
+
+	$warning = "should not be empty";
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,6 +27,7 @@
 			//inisialisasi head
 			initHead();
 		?>
+		<script src="../../assets/js/functions.js"></script>
 	</head>
 
 	<body>
@@ -35,17 +38,18 @@
 		<div class="container" style="margin-top: 80px">
 			<div class="well">
 				<h3>Registrasi</h3><hr>
-				<form action="controller/register_company.php" method="post">
+				<form action="../controller/register_company.php" method="post">
 					<?php
-						echo createInputField("text", "Username:", "uname", "uname", "", "", false, "");
-						echo createInputField("text", "Nama Perusahaan:", "cpname", "cpname", "", "", false, "");
-						echo createSelectOptionById("Negara:", "country", "country", "---Pilih Negara---", $master, "SELECT _id, _nama as _name FROM _country", false, "", "", false, "", "");
-						echo createSelectOptionById("Propinsi:", "province", "province", "---Pilih Propinsi---", $master, "SELECT _id, _nama as _name FROM _province", false, "", "", false, "", "");
-						echo createInputField("email", "Email:", "email", "email", "", "", false, "");
-						echo createInputField("password", "Kata Sandi:", "password", "password", "", "", false, "");
-						echo createTextArea(3, "Keterangan:", "desc", "desc", "", "", false, "");
+						echo createInputFieldB("text", "Username:", "uname", "uname", "", "col-sm-6", false, "");
+						echo createInputFieldB("text", "Nama Perusahaan:", "cpname", "cpname", "", "col-sm-6", false, "");
+						echo createSelectOptionById("Negara:", "country", "country", "---- Pilih Negara ----", $master, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", false, "", "col-sm-6", false, "", "onchange = \"getProvince('country', 'province', '---- Pilih Provinsi ----', false, '', 'SELECT _province._id as _id, _province._nama as _name FROM _province, _country WHERE _country._id = _province._id_negara and _country._id = ', ' ORDER BY _province._order ASC', '../controller/combobox2.php')\"");
+						echo createSelectOptionById("Provinsi:", "province", "province", "---- Pilih Negara Terlebih Dahulu ----", $master, "", false, "", "col-sm-6", false, "", "");
+						echo createInputFieldB("email", "Email:", "email", "email", "", "col-sm-6", false, "");
+						echo createInputFieldB("password", "Kata Sandi:", "password", "password", "", "col-sm-6", false, "");
+						echo createTextArea(3, "Keterangan:", "desc", "desc", "", "col-sm-12", false, "");
 					?>
-					<input type="submit" value="Create">
+					<center><input type="submit" value="Create"></center>
+					<br><br>
 				</form>
 				<?php
 					generateTable($fieldNames, $fieldValues, $allValues, "", false);

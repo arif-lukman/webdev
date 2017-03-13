@@ -65,8 +65,8 @@
 			<div class="col-sm-12 well well-lg">
 			<?php
 				echo createSelectOptionByName("Bidang Pekerjaan:", "Activities_Section", "Activities_Section", "---Pilih Bidang Pekerjaan---", $conn1, "SELECT _id, _judul as _name FROM _scope_type ORDER BY _order ASC", true, $data["Activities_Section"], "col-xs-6", true, $warning, "onchange = \"getClassification('Activities_Section', 'Classification', '---- Pilih Klasifikasi Perusahaan ----', false, '', 'SELECT _class_type._id, CONCAT(_class_type._kode, \' - \', _class_type._judul) as _name FROM _class_type, _scope_type WHERE LENGTH(_class_type._kode) <= 3 and _class_type._bidang = _scope_type._id and _scope_type._judul = ', ' ORDER BY _class_type._order ASC', '../cooperation/controller/combobox.php')\"");
-				echo createSelectOptionByName("Klasifikasi:", "Classification", "Classification", "---Pilih Bidang Dahulu---", $conn1, "", true, $data["Classification"], "col-xs-6", true, $warning, "onchange = \"getSubClassification('Classification', 'Sub_Class', '---- Pilih Sub Klasifikasi Perusahaan ----', false, '', '../cooperation/controller/combobox1.php')\"");
-				echo createSelectOptionByName("Sub Klasifikasi:", "Sub_Class", "Sub_Class", "---Pilih Klasifikasi Dahulu---", $conn1, "", true, $data["Sub_Classification"], "col-xs-6", true, $warning, "");
+				echo createSelectOptionByName("Klasifikasi:", "Classification", "Classification", "---Pilih Bidang Dahulu---", $conn1, "", true, $data["Classification"], "col-xs-6", true, $warning, "onchange = \"getSubClassification('Classification', 'Sub_Classification', '---- Pilih Sub Klasifikasi Perusahaan ----', false, '', '../cooperation/controller/combobox1.php')\"");
+				echo createSelectOptionByName("Sub Klasifikasi:", "Sub_Classification", "Sub_Classification", "---Pilih Klasifikasi Dahulu---", $conn1, "", true, $data["Sub_Classification"], "col-xs-6", true, $warning, "");
 				echo createTextArea(5, "Deskripsi:", "Description", "Address", $data['Description'], "col-sm-12", true, $warning);
 			?>
 			<div class="form-group col-sm-12">

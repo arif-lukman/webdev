@@ -284,6 +284,24 @@
 		return $inputField;
 	}
 
+	//fungsi buat bikin input field
+	function createInputFieldB($type, $label, $name, $id, $value, $class, $warn, $warningText){
+		//tambahin dulu atribut-atributnya
+		if($warn)
+			$warning = "<p class='text-warning'>" . $warningText . "</p>";
+		else
+			$warning = "";
+		
+		$inputField = "
+			<div class='form-group " . $class . "'>
+		  		<label for='" . $id . "'>" . $label . "</label>
+			  	<input type='" . $type . "' class='form-control' name='" . $name . "' id='" . $id . "' value='" . $value . "'>
+			  	" . $warning . "
+			</div>
+		";
+		return $inputField;
+	}
+
 	//fungsi buat bikin textarea
 	function createTextArea($rows, $label, $name, $id, $value, $class, $warn, $warningText){
 		if($warn)

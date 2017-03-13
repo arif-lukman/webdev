@@ -83,8 +83,8 @@
 				<?php
 					echo createInputField("text", "Nama Pekerjaan:", "Project_Name", "Project_Name", "", "col-xs-6", true, $warning);
 					echo createSelectOptionByName("Bidang Pekerjaan:", "Activities_Section", "Activities_Section", "---Pilih Bidang Pekerjaan---", $conn1, "SELECT _id, _judul as _name FROM _scope_type ORDER BY _order ASC", false, "", "col-xs-6", true, $warning, "onchange = \"getClassification('Activities_Section', 'Classification', '---- Pilih Klasifikasi Perusahaan ----', false, '', 'SELECT _class_type._id, CONCAT(_class_type._kode, \' - \', _class_type._judul) as _name FROM _class_type, _scope_type WHERE LENGTH(_class_type._kode) <= 3 and _class_type._bidang = _scope_type._id and _scope_type._judul = ', ' ORDER BY _class_type._order ASC', '../cooperation/controller/combobox.php')\"");
-					echo createSelectOptionByName("Klasifikasi:", "Classification", "Classification", "---Pilih Bidang Dahulu---", $conn1, "", false, "", "col-xs-6", true, $warning, "onchange = \"getSubClassification('Classification', 'Sub_Class', '---- Pilih Sub Klasifikasi Perusahaan ----', false, '', '../cooperation/controller/combobox1.php')\"");
-					echo createSelectOptionByName("Sub Klasifikasi:", "Sub_Class", "Sub_Class", "---Pilih Klasifikasi Dahulu---", $conn1, "", false, "", "col-xs-6", true, $warning, "");
+					echo createSelectOptionByName("Klasifikasi:", "Classification", "Classification", "---Pilih Bidang Dahulu---", $conn1, "", false, "", "col-xs-6", true, $warning, "onchange = \"getSubClassification('Classification', 'Sub_Classification', '---- Pilih Sub Klasifikasi Perusahaan ----', false, '', '../cooperation/controller/combobox1.php')\"");
+					echo createSelectOptionByName("Sub Klasifikasi:", "Sub_Classification", "Sub_Classification", "---Pilih Klasifikasi Dahulu---", $conn1, "", false, "", "col-xs-6", true, $warning, "");
 					echo createInputField("text", "Perusahaan:", "User_Company", "User_Company", "", "col-xs-6", true, $warning);
 					echo createInputField("text", "Nama Kontak:", "Contact_Name", "Contact_Name", "", "col-xs-6", true, $warning);
 					echo createTextArea(5, "Alamat:", "Address", "Address", "", "", true, $warning);

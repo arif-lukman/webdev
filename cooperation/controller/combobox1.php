@@ -23,10 +23,10 @@
 		$result1 = getResults($sql, $conn);
 		while($data1 = $result1->fetch_assoc()){
 			if($allowChecking && ($param == $data1["_name"] || $param == $data1["_id"])){
-				$options = $options . "<option value='" . $data1["_id"] . "' selected>" . $data1["_name"] . "</option>";
+				$options = $options . "<option selected>" . $data1["_name"] . "</option>";
 			}
 			else{
-				$options = $options . "<option value='" . $data1["_id"] . "'>" . $data1["_name"] . "</option>";
+				$options = $options . "<option>" . $data1["_name"] . "</option>";
 			}
 		}
 	}

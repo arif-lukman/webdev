@@ -12,6 +12,40 @@
 	include "../controller/koneksi.php";
 	$conn2 = createConnection("localhost", "root", "", "_bpms_vendor");
 
+	//search processing
+	//bikin array buat nampung tambahan string
+	$arrStrs = array();
+	//string tambahan
+	$addition1 = "";
+	$and = "";
+
+	if($_GET["keyword"] == "" && (isset($_GET["country"]) || isset($_GET["province"]))){
+		$and = " and";
+	}
+	if(isset($_GET["keyword"]) && isset($_GET["country"]) || isset($_GET["province"])){
+		$and = " and";
+	}
+	if(isset($_GET["keyword"]) && $_GET["keyword"] != ""){
+		$and = " and";
+	}
+
+	//keyword
+	if(isset($_GET["keyword"]) && $_GET["keyword"] != ""){
+		array_push($arrStrs, " (data.Notes LIKE '%" . $_GET["keyword"] . "%' or user.nama_perusahaan LIKE '%" . $_GET["keyword"] . "%') ");
+	}
+
+	//negara
+	if(isset($_GET["country"]) && $_GET["country"] != ""){
+		array_push($arrStrs, " id_negara = '" . $_GET["country"] . "'");
+	}
+
+	//provinsi
+	if(isset($_GET["province"]) && $_GET["province"] != ""){
+		array_push($arrStrs, " id_propinsi = '" . $_GET["province"] . "'");		
+	}
+
+	$addition1 = implode(" and ", $arrStrs);
+
 	//ambil max user id
 	$result1 = getResults("SELECT MAX(id) as id FROM tbl_user", $conn2)->fetch_assoc();
 	$maxId = $result1["id"];
@@ -34,13 +68,10 @@
 		if($i == 0){
 			$addition = " and (data.No = '$arrMaxIds[$i]'";
 		}
-		else if($i == (sizeof($arrMaxIds)-1)){
-			$addition = " or data.No = '$arrMaxIds[$i]')";
-		}
 		else{
 			$addition = " or data.No = '$arrMaxIds[$i]'";	
 		}		
-		$sql .= $addition;
+		$sql .= $addition . ")" . $and . $addition1;
 	}
 
 	//ambil nama field
@@ -59,6 +90,7 @@
 			//inisialisasi head
 			initHead();
 		?>
+		<script src="../../assets/js/functions.js"></script>
 	</head>
 
 	<body>
@@ -69,15 +101,17 @@
 		<div class="container" style="margin-top: 80px">
 			<div class="well">
 				<h3>Status Pengajuan</h3><hr>
-				<form action="search_stat.php">
+				<form action="proposals.php">
 					<?php
-						echo createInputField("text", "Kata kunci:", "keyword", "keyword", "", "", false, "");
-						echo createSelectOptionByName("Negara:", "country", "country", "---Pilih Negara---", $conn, "SELECT _id, _nama as _name FROM _country", false, "", "", false, "", "");
-						echo createSelectOptionByName("Propinsi:", "province", "province", "---Pilih Negara---", $conn, "SELECT _id, _nama as _name FROM _province", false, "", "", false, "", "");
+						echo createInputFieldB("text", "Kata kunci:", "keyword", "keyword", "", "col-sm-12", false, "");
+						echo createSelectOptionById("Negara:", "country", "country", "---- Pilih Negara ----", $conn, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", false, "", "col-sm-6", false, "", "onchange = \"getProvince('country', 'province', '---- Pilih Provinsi ----', false, '', 'SELECT _province._id as _id, _province._nama as _name FROM _province, _country WHERE _country._id = _province._id_negara and _country._id = ', ' ORDER BY _province._order ASC', '../controller/combobox2.php')\"");
+						echo createSelectOptionById("Provinsi:", "province", "province", "---- Pilih Negara Terlebih Dahulu ----", $conn, "", false, "", "col-sm-6", false, "", "");
 					?>
-					<input type="submit" value="Search">
+					<center><input type="submit" value="Search"></center>
+					<br>
 				</form>
 				<?php
+					//echo $sql;
 					echo "
 						<table class='table table-bordered'>
 							<thead>
