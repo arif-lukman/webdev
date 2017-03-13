@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 03 Mar 2017 pada 16.45
+-- Generation Time: 13 Mar 2017 pada 09.09
 -- Versi Server: 10.1.8-MariaDB
 -- PHP Version: 5.6.14
 
@@ -29,14 +29,14 @@ SET time_zone = "+00:00";
 CREATE TABLE `alamat_kantor` (
   `No` int(50) NOT NULL,
   `Office_Type` varchar(50) NOT NULL,
-  `Primary_Office` varchar(30) NOT NULL,
+  `Primary_Office` tinyint(1) NOT NULL,
   `Office_Address` varchar(50) NOT NULL,
   `Country` varchar(50) NOT NULL,
   `Province` varchar(30) NOT NULL,
   `City` varchar(30) NOT NULL,
-  `ZIP_Code` int(20) NOT NULL,
-  `Office_Phone_Number` int(12) NOT NULL,
-  `Office_Fax_Number` int(20) NOT NULL,
+  `ZIP_Code` text NOT NULL,
+  `Office_Phone_Number` text NOT NULL,
+  `Office_Fax_Number` text NOT NULL,
   `Office_Email` varchar(50) NOT NULL,
   `Website` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -142,9 +142,9 @@ CREATE TABLE `daftar_pemilik` (
   `Name` varchar(50) NOT NULL,
   `Civil_ID` int(50) NOT NULL,
   `Address` varchar(50) NOT NULL,
-  `Phone_Number` int(50) NOT NULL,
+  `Phone_Number` varchar(50) NOT NULL,
   `Email` varchar(50) NOT NULL,
-  `Share` int(50) NOT NULL,
+  `Share` varchar(50) NOT NULL,
   `Value` bigint(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -158,9 +158,9 @@ CREATE TABLE `daftar_rekening_bank` (
   `No` int(50) NOT NULL,
   `Bank_Name` varchar(50) NOT NULL,
   `Branch` varchar(50) NOT NULL,
-  `Country` varchar(20) NOT NULL,
+  `Country` varchar(50) NOT NULL,
   `Acc_Name` varchar(50) NOT NULL,
-  `Acc_Number` int(50) NOT NULL,
+  `Acc_Number` varchar(50) NOT NULL,
   `Currency` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -331,7 +331,7 @@ CREATE TABLE `dokumen_administrasi` (
   `Issued_By` varchar(50) NOT NULL,
   `Issued_Date` date NOT NULL,
   `Expired_Date` date NOT NULL,
-  `Description` varchar(100) NOT NULL,
+  `Description` text NOT NULL,
   `Attachment` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -359,10 +359,10 @@ CREATE TABLE `keadaan_perusahaan` (
 
 CREATE TABLE `klasifikasi_perusahaan` (
   `No` int(50) NOT NULL,
-  `Activities_Section` varchar(30) NOT NULL,
-  `Classification` varchar(50) NOT NULL,
-  `Sub_Classification` varchar(30) NOT NULL,
-  `Description` varchar(190) NOT NULL,
+  `Activities_Section` varchar(50) NOT NULL,
+  `Classification` varchar(100) NOT NULL,
+  `Sub_Classification` varchar(200) NOT NULL,
+  `Description` text NOT NULL,
   `Attachment` longblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -386,11 +386,11 @@ CREATE TABLE `nama_dan_tipe_perusahaan` (
 --
 
 CREATE TABLE `partner_k3s` (
-  `No` int(30) NOT NULL,
-  `K3S_Name` varchar(30) NOT NULL,
-  `Contact_Name` varchar(30) NOT NULL,
-  `Phone_Number` int(12) NOT NULL,
-  `Fax_Number` int(12) NOT NULL,
+  `No` int(50) NOT NULL,
+  `K3S_Name` varchar(50) NOT NULL,
+  `Contact_Name` varchar(50) NOT NULL,
+  `Phone_Number` varchar(50) NOT NULL,
+  `Fax_Number` varchar(50) NOT NULL,
   `Expired_Date` date NOT NULL,
   `Expiration_Days` date NOT NULL,
   `Attachment` int(11) NOT NULL
@@ -403,8 +403,9 @@ CREATE TABLE `partner_k3s` (
 --
 
 CREATE TABLE `pengajuan` (
-  `No` int(11) NOT NULL,
-  `Registration_Status` text NOT NULL,
+  `No` int(50) NOT NULL,
+  `Date` date NOT NULL,
+  `Registration_Status` varchar(50) NOT NULL,
   `Notes` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -418,18 +419,18 @@ CREATE TABLE `pengalaman_perusahaan` (
   `No` int(50) NOT NULL,
   `Project_Name` varchar(50) NOT NULL,
   `Activities_Section` varchar(50) NOT NULL,
-  `Classification` varchar(50) NOT NULL,
-  `Sub_Classification` varchar(50) NOT NULL,
+  `Classification` varchar(100) NOT NULL,
+  `Sub_Classification` varchar(200) NOT NULL,
   `User_Company` varchar(50) NOT NULL,
   `Contact_Name` varchar(50) NOT NULL,
-  `Address` varchar(50) NOT NULL,
-  `Phone_Number` int(12) NOT NULL,
+  `Address` text NOT NULL,
+  `Phone_Number` varchar(50) NOT NULL,
   `Contact_Date` date NOT NULL,
   `Completion_Date` date NOT NULL,
   `Value` int(255) NOT NULL,
-  `Sub_Value` varchar(20) NOT NULL,
-  `Document_Number` bigint(100) NOT NULL,
-  `Last_Progress` int(100) NOT NULL,
+  `Sub_Value` varchar(50) NOT NULL,
+  `Document_Number` varchar(50) NOT NULL,
+  `Last_Progress` int(2) NOT NULL,
   `Attachment` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -443,16 +444,16 @@ CREATE TABLE `perusahaan_induk_dan_rekanan` (
   `No` int(50) NOT NULL,
   `Affiliate_Type` varchar(50) NOT NULL,
   `Company_Name` varchar(50) NOT NULL,
-  `Address` varchar(50) NOT NULL,
-  `Country` varchar(30) NOT NULL,
-  `City` varchar(30) NOT NULL,
-  `Phone_Number` int(12) NOT NULL,
-  `Email` varchar(30) NOT NULL,
-  `Description` varchar(50) NOT NULL,
-  `Province` varchar(30) NOT NULL,
-  `ZIP_Code` int(10) NOT NULL,
-  `Fax_Number` int(10) NOT NULL,
-  `Website` varchar(40) NOT NULL
+  `Address` text NOT NULL,
+  `Country` varchar(50) NOT NULL,
+  `City` varchar(50) NOT NULL,
+  `Phone_Number` varchar(50) NOT NULL,
+  `Email` varchar(50) NOT NULL,
+  `Description` text NOT NULL,
+  `Province` varchar(50) NOT NULL,
+  `ZIP_Code` varchar(50) NOT NULL,
+  `Fax_Number` varchar(50) NOT NULL,
+  `Website` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -464,7 +465,7 @@ CREATE TABLE `perusahaan_induk_dan_rekanan` (
 CREATE TABLE `perusahaan_pembuat_barang` (
   `No` int(50) NOT NULL,
   `Product` varchar(50) NOT NULL,
-  `Description` varchar(190) NOT NULL
+  `Description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -476,7 +477,7 @@ CREATE TABLE `perusahaan_pembuat_barang` (
 CREATE TABLE `surat_dan_dokumen_pelengkap` (
   `No` int(50) NOT NULL,
   `Supporting_Document_Type` varchar(50) NOT NULL,
-  `Description` varchar(290) NOT NULL,
+  `Description` text NOT NULL,
   `Attachment` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -493,7 +494,7 @@ CREATE TABLE `surat_keagenan` (
   `Issued_By` varchar(50) NOT NULL,
   `Issued_Date` date NOT NULL,
   `Expired_Date` date NOT NULL,
-  `Description` varchar(90) NOT NULL,
+  `Description` text NOT NULL,
   `Attachment` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -506,12 +507,12 @@ CREATE TABLE `surat_keagenan` (
 CREATE TABLE `susunan_pengurus` (
   `No` int(50) NOT NULL,
   `Management_Type` varchar(50) NOT NULL,
-  `Primary_Person` varchar(30) NOT NULL,
+  `Primary_Person` varchar(50) NOT NULL,
   `Position` varchar(50) NOT NULL,
   `Name` varchar(50) NOT NULL,
   `Civil_ID` int(50) NOT NULL,
-  `Address` varchar(100) NOT NULL,
-  `Phone_Number` int(12) NOT NULL,
+  `Address` text NOT NULL,
+  `Phone_Number` varchar(50) NOT NULL,
   `Email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -523,12 +524,12 @@ CREATE TABLE `susunan_pengurus` (
 
 CREATE TABLE `tbl_user` (
   `id` int(11) NOT NULL,
-  `username` varchar(75) NOT NULL,
-  `nama_perusahaan` text NOT NULL,
-  `id_negara` int(11) NOT NULL,
-  `id_propinsi` int(11) NOT NULL,
-  `email` text NOT NULL,
-  `password` varchar(255) NOT NULL
+  `username` varchar(50) NOT NULL,
+  `nama_perusahaan` varchar(50) NOT NULL,
+  `id_negara` varchar(50) NOT NULL,
+  `id_propinsi` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -536,8 +537,8 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id`, `username`, `nama_perusahaan`, `id_negara`, `id_propinsi`, `email`, `password`) VALUES
-(1, '123akbar', 'PT. Akbar Makmur', 1, 2, 'akbar@gmail.com', 'akbar123'),
-(2, '123arif', 'PT. Arif Sejahtera', 2, 2, 'arif@gmail.com', 'arif123');
+(1, '123akbar', 'PT. Akbar Makmur', '1', '2', 'akbar@gmail.com', 'akbar123'),
+(2, '123arif', 'PT. Arif Sejahtera', '2', '2', 'arif@gmail.com', 'arif123');
 
 --
 -- Indexes for dumped tables
@@ -827,12 +828,12 @@ ALTER TABLE `nama_dan_tipe_perusahaan`
 -- AUTO_INCREMENT for table `partner_k3s`
 --
 ALTER TABLE `partner_k3s`
-  MODIFY `No` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `No` int(50) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `pengajuan`
 --
 ALTER TABLE `pengajuan`
-  MODIFY `No` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `No` int(50) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `pengalaman_perusahaan`
 --
