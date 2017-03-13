@@ -28,7 +28,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Status - Lokasi</title>
+  <title>SPR Langgak</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -47,32 +47,9 @@
   </style>
 </head>
 <body>
-
-<div class="container">
-  <div class="row">
-    <nav class="col-sm-3">
-<ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
-	<li class="active"><a href="step2.php?NIK=<?php echo $NIK;?>">Alamat Kantor (Office Address)</a></li>
-	<li><a href="step1.php?NIK=<?php echo $NIK;?>">Susunan Pengurus / Struktur Organisasi (BOC,BOD)</a></li>
-	<li><a href="step1.php?NIK=<?php echo $NIK;?>">Daftar Pemilik (Shareholders)</a></li>
-	<li><a href="step1.php?NIK=<?php echo $NIK;?>">Dokumen Administrasi (Administration Document)</a></li>
-	<li><a href="step1.php?NIK=<?php echo $NIK;?>">Surat Keagenan / Dealer / Distributor (Agency / Distributor Appointmen Letter)</a></li>
-	<li><a href="step1.php?NIK=<?php echo $NIK;?>">Daftar Rekening Bank (Bank Account)</a></li>
-	<li><a href="step1.php?NIK=<?php echo $NIK;?>">Perusahaan Induk dan Rekanan (Holding Company and Partner)</a></li>
-	<li><a href="step1.php?NIK=<?php echo $NIK;?>">Pengalaman Perusahaan (Company Experience)</a></li>
-	<li><a href="step1.php?NIK=<?php echo $NIK;?>">Perusahaan Pembuat Barang (Good Manufacturer)</a></li>
-	<li><a href="step1.php?NIK=<?php echo $NIK;?>">Klasifikasi Perusahaan (Company Classification)</a></li>
-	<li><a href="step1.php?NIK=<?php echo $NIK;?>">Keadaan Perusahaan (Company Subject)</a></li>
-	<li><a href="step1.php?NIK=<?php echo $NIK;?>">Surat dan Dokumen Pelengkap (Supporting Document)</a></li>
-	<li><a href="step1.php?NIK=<?php echo $NIK;?>">History Dokumen Pelengkap (Supporting Document)</a></li>
-	<li><a href="main_menu.php">Home</a></li>
-  </ul>
-</nav>
-
-
-<div class="col-sm-9">
-				<h1>Alamat KAntor (Company Address)</h1>
-		<table class="table table-bordered">
+<div class="container-fluid" style="height:1000px">
+				<h1>Alamat Kantor (Company Address)</h1>
+				<table class="table table-bordered">
 				<!--nama field-->
 				<thead>
 					<tr style="font-size:9px">
@@ -92,21 +69,16 @@
 							foreach($all_prop as $item){
 								echo "<td>$conNames[$item]</td>";
 							}
-							echo "
-							<td><a href=\"../editstep3.php?No=$conNames[No]\">edit</a></td>
-							<td><a href=\"delete.php?No=$conNames[No]\" onclick='return hapusBarang(\"Seluruh isi data field ini akan dihapus. Anda Yakin? \")'>delete</a></td> </tr>
-							";
-							echo "</tr>";
 						}
 					?>
 				</tbody>
 			</table><br>
 <br><br><br><br><br><br><br><br><br><br><br><br><br>				
-<center><a href="../vendor.php"><img src="../../assets/images/icons/back.png" height="30"></img></a>
+<center><a href="dataperusahaan.php"><img src="../../assets/images/icons/back.png" height="30"></img></a>
 <button type="submit" class="btn btn-primary">Save</button></center>
 <hr>
 </div>
-</div>
+
 </div>
 </div>
 </body>

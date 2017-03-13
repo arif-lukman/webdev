@@ -91,7 +91,7 @@
 	<div class="col-sm-2">
 		<div class="list-group">
 			<a href="step1.php" class="list-group-item">Menuju ke Step 1</a>
-			<a href="dataperusahaan/dp_alamatkantor.php" class="list-group-item">Data Perusahaan</a>
+			<a href="dataperusahaan/dataperusahaan.php" class="list-group-item">Data Perusahaan</a>
 			<a href="formubahpassword.php" class="list-group-item">Ganti Password</a>
 			<a href="download.php" class="list-group-item">Bantuan</a>
 			<a href="logout.php" class="list-group-item">Logout</a>

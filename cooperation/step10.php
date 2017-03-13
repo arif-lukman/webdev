@@ -7,13 +7,13 @@
 
 	//query buat ngambil nama field
 	$colQuery = 
-	"SHOW columns FROM pengalaman_perusahaan WHERE FIELD = 'No' or FIELD = 'Project_Name' or FIELD = 'Classification' or FIELD = 'User_Company' or FIELD = 'User_Company' or FIELD = 'Contact_Date' or FIELD = 'Value' or FIELD = 'Attachment'";
+	"SHOW columns FROM pengalaman_perusahaan WHERE FIELD = 'No' or FIELD = 'Project_Name' or FIELD = 'Classification' or FIELD = 'User_Company' or FIELD = 'User_Company' or FIELD = 'Contract_Date' or FIELD = 'Value' or FIELD = 'Attachment'";
 
 	//eksekusi query colQuery
 	$colExec = mysql_query($colQuery);
 
 	//query buat ngambil isi field
-	$conQuery = "SELECT data.No, data.Project_Name, data.Classification, data.User_Company, data.Contact_Date, data.Value, data.Attachment FROM tbl_user as user, pengalaman_perusahaan as data, data_pengalaman_perusahaan as conn WHERE user.id = conn.id_user and data.No = conn.id_pengalaman_perusahaan and user.id = '$id'";
+	$conQuery = "SELECT data.No, data.Project_Name, data.Classification, data.User_Company, data.Contract_Date, data.Value, data.Attachment FROM tbl_user as user, pengalaman_perusahaan as data, data_pengalaman_perusahaan as conn WHERE user.id = conn.id_user and data.No = conn.id_pengalaman_perusahaan and user.id = '$id'";
 
 	//eksekusi query conQuery
 	$conExec = mysql_query($conQuery);
@@ -89,7 +89,7 @@
 					echo createInputField("text", "Nama Kontak:", "Contact_Name", "Contact_Name", "", "col-xs-6", true, $warning);
 					echo createTextArea(5, "Alamat:", "Address", "Address", "", "", true, $warning);
 					echo createInputField("number", "Nomor Telepon:", "Phone_Number", "Phone_Number", "", "", true, $warning);
-					echo createInputField("date", "Tanggal Kontrak:", "Contact_Date", "Contact_Date", "", "col-xs-6", true, $warning);
+					echo createInputField("date", "Tanggal Kontrak:", "Contract_Date", "Contract_Date", "", "col-xs-6", true, $warning);
 					echo createInputField("date", "Tanggal Kadaluarsa:", "Completion_Date", "Completion_Date", "", "col-xs-6", true, $warning);
 					echo createInputField("text", "Nomor Dokumen:", "Document_Number", "Document_Number", "", "col-xs-6", true, $warning);
 					//echo createInputField("number", "Progress Terakhir (%):", "Last_Progress", "Last_Progress", "", "col-xs-6", true, $warning);
