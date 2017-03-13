@@ -137,6 +137,7 @@
 							<th>$colNames[Field]</th>
 							";
 						}
+						//halo
 					?>
 				</tr>
 			</thead>
