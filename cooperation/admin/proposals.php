@@ -72,8 +72,9 @@
 		else{
 			$addition = " or data.No = '$arrMaxIds[$i]'";	
 		}		
-		$sql .= $addition . ")" . $and . $addition1;
+		$sql .= $addition;
 	}
+	$sql .= ")" . $and . $addition1;
 
 	//ambil nama field
 	$fieldNames = getResults("SELECT column_name FROM `information_schema`.`columns` WHERE `table_schema` = '_bpms_vendor' AND `table_name` IN ('tbl_user', 'pengajuan') AND (column_name = 'No' OR column_name = 'nama_perusahaan' OR column_name = 'Date' OR column_name = 'Registration_Status' OR column_name = 'Notes')", $master);
@@ -120,9 +121,11 @@
 								<tr>
 						";
 								while ($colNames = $fieldNames->fetch_assoc()){
-									echo "
-									<th>$colNames[column_name]</th>
-									";
+									if($colNames['column_name']!="hidden_id"){
+										echo "
+										<th>$colNames[column_name]</th>
+										";
+									}
 								}
 						echo "
 								</tr>
@@ -132,10 +135,13 @@
 						while($colValues = $fieldValues->fetch_assoc()){
 							echo "<tr>";
 							foreach($allValues as $item){
-								echo "<td>$colValues[$item]</td>";
+								if($item != "hidden_id"){
+									echo "<td>$colValues[$item]</td>";
+								}								
 							}
 							echo "
 								<td><a href=\"../forms/proposals.php?No=$colValues[_id]&NP=$colValues[nama_perusahaan]\">respond</a></td>
+								<td><a href=\"../dataperusahaanadmin/dataperusahaan.php?uid=$colValues[hidden_id]\">info</td>
 							";
 							echo "</tr>";
 						}

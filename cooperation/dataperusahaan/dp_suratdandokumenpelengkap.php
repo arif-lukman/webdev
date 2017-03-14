@@ -11,7 +11,7 @@
 	$colExec = mysql_query($colQuery);
 	
 	//ambil isi field
-	$conQuery = "SELECT No, Supporting_Document_Type, Description, Attachment FROM surat_dan_dokumen_pelengkap";
+	$conQuery = "SELECT data.No, data.Supporting_Document_Type, data.Description, attachment.filename, attachment.id FROM tbl_user as user, surat_dan_dokumen_pelengkap as data, data_surat_dan_dokumen_pelengkap as conn, attachment_surat_dan_dokumen_pelengkap as attachment WHERE user.id = conn.id_user and data.No = conn.id_surat_dan_dokumen_pelengkap and data.Attachment = attachment.id and user.id = '$id'";
 
 	//eksekusi query conQuery
 	$conExec = mysql_query($conQuery);
@@ -67,14 +67,18 @@
 						while($conNames = mysql_fetch_array($conExec)){
 							echo "<tr>";
 							foreach($all_prop as $item){
-								echo "<td>$conNames[$item]</td>";
+								if($item == "filename")
+									echo "<td><a href=\"download.php?id=$conNames[id]&tn=attachment_surat_dan_dokumen_pelengkap\">$conNames[$item]</a></td>";
+								else
+								if($item != "id")
+									echo "<td>$conNames[$item]</td>";
 							}
 						}
 					?>
 				</tbody>
 			</table><br>
 <br><br><br><br><br><br><br><br><br><br><br><br><br>				
-<center><a href="dataperusahaan.php"><img src="../../assets/images/icons/back.png" height="30"></img></a>
+<center><a href="dataperusahaan.php?uid=<?php echo $id;?>"><img src="../../assets/images/icons/back.png" height="30"></img></a>
 <button type="submit" class="btn btn-primary">Save</button></center>
 <hr>
 </div>

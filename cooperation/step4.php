@@ -49,6 +49,7 @@
 				color: white;
 			}
 		</style>
+		<link rel="stylesheet" type="text/css" href="../assets/css/styleuser.css">
 	</head>
 
 	<body>
@@ -76,10 +77,10 @@
 		<center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
 		<div class="col-sm-2"></div>
 		<form class="col-sm-8" action="step4action.php" method="post">
+			<div class="col-sm-12 well well-lg">
 			<h2>Step 4</h2>
 			<h3>Susunan pengurus / Struktur organisasi (BOC , BOD)</h3>
 			<hr>
-			<div class="col-sm-12 well well-lg">
 				<?php
 					echo createSelectOptionByName("Tipe Pengurus:", "Management_Type", "Management_Type", "---Pilih Tipe Kantor---", $conn1, "SELECT _id, _judul as _name FROM _manager_type ORDER BY _order ASC", false, "", "col-xs-4", true, $warning, "");
 				?>			
@@ -98,7 +99,7 @@
 				?>
 				<div class="col-sm-12">
 					<button type="submit" class="btn btn-primary">Save</button>
-					<button type="button" class="btn btn-primary">Reset</button>
+					<button type="reset" class="btn btn-primary">Reset</button>
 					<hr>
 					<ul class="pager">
 						<li><a href="step3.php">Previous Step</a></li>

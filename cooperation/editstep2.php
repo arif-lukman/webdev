@@ -29,6 +29,7 @@
 				color: white;
 			}
 		</style>
+		<link rel="stylesheet" type="text/css" href="../assets/css/styleuser.css">
 	</head>
 
 	<body>
@@ -38,10 +39,10 @@
 		<center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
 		<div class="col-sm-2"></div>
 		<form class="col-sm-8" action="updatestep2.php?No=<?php echo $No;?>" method="post">
+			<div class="well well-lg">
 			<h2>Step 2</h2>
 			<h3>Partner K3S</h3>
 			<hr>
-			<div class="well well-lg">
 				<?php
 					echo createInputField("text", "Nama K3S:", "K3S_Name", "K3S_Name", $data['K3S_Name'], "", true, $warning);
 					echo createInputField("text", "Nama Kontak:", "Contact_Name", "Contact_Name", $data['Contact_Name'], "", true, $warning);
@@ -50,13 +51,8 @@
 					echo createInputField("text", "Nomor Telepon:", "Phone_Number", "Phone_Number", $data['Phone_Number'], "", true, $warning);
 					echo createInputField("text", "Nomor Fax", "Fax_Number", "Fax_Number", $data['Fax_Number'], "", true, $warning);
 				?>
-				<div class="form-group">
-					<input type="file" name="Attachment" id="Attachment" required>
-					<span class="label label-info">Format PDF max. 2Mb </span><p class="text-warning">should not be empty</p>
-					<br>
-				</div>
 				<input type="submit" class="btn btn-primary tisright" value="Confirm"></input>
-				<button type="button" class="btn btn-primary">Reset</button>
+				<button type="reset" class="btn btn-primary">Reset</button>
 				<hr>
 				<ul class="pager">
 					<li><a href="step1.php">Previous Step</a></li>

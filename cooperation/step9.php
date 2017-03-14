@@ -51,6 +51,7 @@
 				color: white;
 			}
 		</style>
+		<link rel="stylesheet" type="text/css" href="../assets/css/styleuser.css">
 	</head>
 
 	<body>
@@ -78,10 +79,10 @@
 		<center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
 		<div class="col-sm-2"></div>
 		<form class="col-sm-8" action="step9action.php" method="post">
+			<div class="well well-lg">
 			<h2>Step 9</h2>
 			<h3>Perusahaan Induk, Grup Perusahaan, Rekanan, Konsorsium, Afiliasi dan Aliansi</h3>
 			<hr>
-			<div class="well well-lg">
 				<?php
 					echo createSelectOptionByName("Tipe Affiliate / Perusahaan:", "Affiliate_Type", "Affiliate_Type", "---Pilih Tipe Afiliasi---", $conn1, "SELECT _id, _judul as _name FROM _affil_type ORDER BY _order ASC", false, "", "col-xs-6", true, $warning, "");
 					echo createInputField("text", "Nama Perusahaan:", "Company_Name", "Company_Name", "", "col-xs-6", true, $warning);
@@ -97,7 +98,7 @@
 					echo createInputField("text", "Website:", "Website", "Website", "", "col-xs-6", true, $warning);
 				?>
 				<button type="submit" class="btn btn-primary">Save</button>
-				<button type="button" class="btn btn-primary">Reset</button>
+				<button type="reset" class="btn btn-primary">Reset</button>
 				<hr>
 				<ul class="pager">
 					<li><a href="step8.php">Previous Step</a></li>

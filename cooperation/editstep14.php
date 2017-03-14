@@ -31,6 +31,7 @@
 				color: white;
 			}
 		</style>
+		<link rel="stylesheet" type="text/css" href="../assets/css/styleuser.css">
 	</head>
 
 	<body>
@@ -58,21 +59,16 @@
 		<center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
 		<div class="col-sm-2"></div>
 		<form class="col-sm-8" action="updatestep14.php?No=<?php echo $No;?>" method="post">
+			<div class="well well-lg">
 			<h2>Step 14</h2>
 			<h3>Surat dan Dokumen Pelengkap</h3>
 			<hr>
-			<div class="well well-lg">
 			<?php
 				echo createSelectOptionByName("Tipe Surat dan Dokumen Pelengkap:", "Supporting_Document_Type", "Supporting_Document_Type", "---Pilih Tipe Surat/Dokumen---", $conn1, "SELECT _id, _judul as _name FROM _docplus_type ORDER BY _order ASC", true, $data["Supporting_Document_Type"], "", true, $warning, "");
 				echo createInputField("text", "Deskripsi:", "Description", "Description", $data['Description'], "", true, $warning);
 			?>
-			<div class="form-group">
-				<label for="lampiran">Lampiran:</label>
-				<input type="file" name="Attachment" id="Attachment" required><p class="text-warning">should not be empty</p>
-				<br>
-			</div>
 			<button type="submit" class="btn btn-primary">Save</button>
-			<button type="button" class="btn btn-primary">Reset</button>
+			<button type="reset" class="btn btn-primary">Reset</button>
 			<hr>
 			<ul class="pager">
 				<li><a href="step13.php">Previous Step</a></li>

@@ -16,7 +16,7 @@
 		<title>SPR Langgak</title>
 
 		<!--override css-->
-		<link rel="stylesheet" type="text/css" href="../../assets/css/style2.css">
+		<link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
 		<style type="text/css">
 			h2{
 				text-align: center;

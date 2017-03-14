@@ -14,7 +14,6 @@
 	$Sub_Value=$_POST["Sub_Value"];
 	$Document_Number=$_POST["Document_Number"];
 	$Last_Progress=$_POST["Last_Progress"];
-	$Attachment=$_POST["Attachment"];
 	
 	$servername = "localhost";
 	$username = "root";
@@ -29,7 +28,7 @@
 	} 
 
 	$sql = "UPDATE pengalaman_perusahaan 
-	SET Project_Name = '$Project_Name', Activities_Section = '$Activities_Section', Classification = '$Classification', Sub_Classification = '$Sub_Classification', User_Company = '$User_Company', Contact_Name = '$Contact_Name', Address = '$Address', Phone_Number = '$Phone_Number', Contact_Date = '$Contact_Date', Completion_Date = '$Completion_Date', Value = '$Value', Sub_Value = '$Sub_Value', Document_Number = '$Document_Number', Last_Progress = '$Last_Progress', Attachment = '$Attachment'
+	SET Project_Name = '$Project_Name', Activities_Section = '$Activities_Section', Classification = '$Classification', Sub_Classification = '$Sub_Classification', User_Company = '$User_Company', Contact_Name = '$Contact_Name', Address = '$Address', Phone_Number = '$Phone_Number', Contact_Date = '$Contact_Date', Completion_Date = '$Completion_Date', Value = '$Value', Sub_Value = '$Sub_Value', Document_Number = '$Document_Number', Last_Progress = '$Last_Progress'
 	WHERE No = '$No'";
 	
 	if ($conn->query($sql) === TRUE) {

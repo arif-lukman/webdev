@@ -6,12 +6,12 @@
 	$id = $_SESSION["uid"];
 
 	//query buat ngambil nama field
-	$colQuery = "SHOW columns FROM pengalaman_perusahaan WHERE FIELD = 'No' or FIELD = 'Project_Name' or FIELD = 'Classification' or FIELD = 'User_Company' or FIELD = 'Contract_Date' or FIELD = 'Value' or FIELD = 'Attachment'";
+	$colQuery = "SHOW columns FROM pengalaman_perusahaan WHERE FIELD = 'No' or FIELD = 'Project_Name' or FIELD = 'Classification' or FIELD = 'User_Company' or FIELD = 'Contact_Date' or FIELD = 'Value' or FIELD = 'Attachment'";
 
 	$colExec = mysql_query($colQuery);
 	
 	//ambil isi field
-	$conQuery = "SELECT No, Project_Name , Classification, User_Company, Contract_Date, Value, Attachment FROM pengalaman_perusahaan ORDER BY No ASC";
+	$conQuery = "SELECT data.No, data.Project_Name , data.Classification, data.User_Company, data.Contact_Date, data.Value, attachment.filename, attachment.id FROM tbl_user as user, pengalaman_perusahaan as data, data_pengalaman_perusahaan as conn, attachment_pengalaman_perusahaan as attachment WHERE user.id = conn.id_user and data.No = conn.id_pengalaman_perusahaan and data.Attachment = attachment.id and user.id = '$id'";
 
 	//eksekusi query conQuery
 	$conExec = mysql_query($conQuery);
@@ -67,14 +67,18 @@
 						while($conNames = mysql_fetch_array($conExec)){
 							echo "<tr>";
 							foreach($all_prop as $item){
-								echo "<td>$conNames[$item]</td>";
+								if($item == "filename")
+									echo "<td><a href=\"download.php?id=$conNames[id]&tn=attachment_pengalaman_perusahaan\">$conNames[$item]</a></td>";
+								else
+								if($item != "id")
+									echo "<td>$conNames[$item]</td>";
 							}
 						}
 					?>
 				</tbody>
 			</table><br>
 <br><br><br><br><br><br><br><br><br><br><br><br><br>				
-<center><a href="dataperusahaan.php"><img src="../../assets/images/icons/back.png" height="30"></img></a>
+<center><a href="dataperusahaan.php?uid=<?php echo $id;?>"><img src="../../assets/images/icons/back.png" height="30"></img></a>
 <button type="submit" class="btn btn-primary">Save</button></center>
 <hr>
 </div>

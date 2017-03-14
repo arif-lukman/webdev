@@ -22,6 +22,8 @@
 	while ($prop = mysql_fetch_field($conExec)){
 		array_push($all_prop, $prop->name);
 	}
+
+	$id = $_SESSION["uid"];
 ?>
 
 <!DOCTYPE html>
@@ -108,10 +110,10 @@
 							foreach($all_prop as $item){
 								echo "<td>$conNames[$item]</td>";
 							}
-							echo "
-							<td><a href=\"edit.php?id=$conNames[ID]\">edit</a></td>
-							<td><a href=\"delete.php?id=$conNames[ID]\">delete</td>
-							";
+								echo "<td><a href=\"edit.php?id=$conNames[ID]\">edit</a></td>";
+							if($id == 1){	
+								echo "<td><a href=\"delete.php?id=$conNames[ID]\">delete</td>";
+							}
 							echo "</tr>";
 						}
 					?>

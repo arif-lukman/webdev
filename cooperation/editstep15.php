@@ -31,6 +31,7 @@
 				color: white;
 			}
 		</style>
+		<link rel="stylesheet" type="text/css" href="../assets/css/styleuser.css">
 	</head>
 
 	<body>
@@ -58,10 +59,10 @@
 		<center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
 		<div class="col-sm-2"></div>
 		<form class="col-sm-8">
+			<div class="well well-lg">
 			<h2>Step 15</h2>
 			<h3>Pengajuan (Submission)</h3>
 			<hr>
-			<div class="well well-lg">
 				<div class="form-group">
 					<label for="tipeperusahaan">Status Registrasi:</label>
 					<select class="form-control" id="tipeperusahaan" name="Registration_Status" required>
@@ -76,7 +77,7 @@
 					<textarea class="form-control" rows="5" id="comment" name="Notes" required><?php echo $data["Notes"];?></textarea><p class="text-warning">should not be empty</p>
 				</div>
 				<button type="button" class="btn btn-primary">Save</button>
-				<button type="button" class="btn btn-primary">Reset</button>
+				<button type="reset" class="btn btn-primary">Reset</button>
 				<hr>
 				<ul class="pager">
 					<li><a href="step14.php">Previous Step</a></li>

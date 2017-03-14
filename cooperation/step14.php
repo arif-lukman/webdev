@@ -34,21 +34,22 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	<title>Step 14</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<style>
-	a.home {
-	position: fixed;
-	top: 0;
-	right: 0;
-	width: 200px;
-	color: white;
-	}
-	</style>
+		<title>Step 14</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+			a.home {
+				position: fixed;
+				top: 0;
+				right: 0;
+				width: 200px;
+				color: white;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="../assets/css/styleuser.css">
 	</head>
 
 	<body>
@@ -76,10 +77,10 @@
 		<center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
 		<div class="col-sm-2"></div>
 		<form class="col-sm-8" action="step14action.php" method="post" enctype="multipart/form-data">
+			<div class="well well-lg">
 			<h2>Step 14</h2>
 			<h3>Surat dan Dokumen Pelengkap</h3>
 			<hr>
-			<div class="well well-lg">
 			<?php
 				echo createSelectOptionByName("Tipe Surat dan Dokumen Pelengkap:", "Supporting_Document_Type", "Supporting_Document_Type", "---Pilih Tipe Surat/Dokumen---", $conn1, "SELECT _id, _judul as _name FROM _docplus_type ORDER BY _order ASC", false, "", "", true, $warning, "");
 				echo createInputField("text", "Deskripsi:", "Description", "Description", "", "", true, $warning);
@@ -90,7 +91,7 @@
 				<br>
 			</div>
 			<button type="submit" class="btn btn-primary">Save</button>
-			<button type="button" class="btn btn-primary">Reset</button>
+			<button type="reset" class="btn btn-primary">Reset</button>
 			<hr>
 			<ul class="pager">
 				<li><a href="step13.php">Previous Step</a></li>

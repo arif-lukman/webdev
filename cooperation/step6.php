@@ -47,6 +47,7 @@
 				color: white;
 			}
 		</style>
+		<link rel="stylesheet" type="text/css" href="../assets/css/styleuser.css">
 	</head>
 	<body>
 		<div class="dropdown">
@@ -73,10 +74,10 @@
 		<center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
 		<div class="col-sm-2"></div>
 		<form class="col-sm-8" action="step6action.php" method="post" enctype="multipart/form-data">
+			<div class="well well-lg">
 			<h2>Step 6</h2>
 			<h3>Dokumen Administrasi (Administration Document)</h3>
 			<hr>
-			<div class="well well-lg">
 				<?php
 					echo createSelectOptionByName("Pilih Tipe Dokumen:", "Document_Type", "Document_Type", "---Pilih Tipe Dokumen---", $conn1, "SELECT _id, _judul as _name FROM _document_type ORDER BY _order ASC", false, "", "", true, $warning, "");
 					echo createInputField("text", "Nomor Dokumen:", "Document_Number", "Document_Number", "", "", true, $warning);				
@@ -91,7 +92,7 @@
 				<br>
 			</div>
 			<button type="submit" class="btn btn-primary">Save</button>
-			<button type="button" class="btn btn-primary">Reset</button>
+			<button type="reset" class="btn btn-primary">Reset</button>
 			<hr>
 			<ul class="pager">
 				<li><a href="step5.php">Previous Step</a></li>

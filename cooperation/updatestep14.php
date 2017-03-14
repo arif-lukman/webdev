@@ -2,7 +2,6 @@
 	$No=$_GET["No"];
 	$Supporting_Document_Type=$_POST["Supporting_Document_Type"];
 	$Description=$_POST["Description"];
-	$Attachment=$_POST["Attachment"];
 	
 	$servername = "localhost";
 	$username = "root";
@@ -17,7 +16,7 @@
 	} 
 
 	$sql = "UPDATE surat_dan_dokumen_pelengkap
-	SET Supporting_Document_Type = '$Supporting_Document_Type', Description = '$Description', Attachment = '$Attachment'
+	SET Supporting_Document_Type = '$Supporting_Document_Type', Description = '$Description'
 	WHERE No = '$No'";
 	
 	if ($conn->query($sql) === TRUE) {

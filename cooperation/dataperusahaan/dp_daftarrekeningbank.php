@@ -74,7 +74,7 @@
 				</tbody>
 			</table><br>
 <br><br><br><br><br><br><br><br><br><br><br><br><br>				
-<center><a href="dataperusahaan.php"><img src="../../assets/images/icons/back.png" height="30"></img></a>
+<center><a href="dataperusahaan.php?uid=<?php echo $id;?>"><img src="../../assets/images/icons/back.png" height="30"></img></a>
 <button type="submit" class="btn btn-primary">Save</button></center>
 <hr>
 </div>

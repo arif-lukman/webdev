@@ -37,8 +37,8 @@
 	// Check connection
 	if ($conn->connect_error) {
 	    die("Connection failed: " . $conn->connect_error);
-	} 
-
+	}
+	
 	$result = getResults("SELECT MAX(No) as No FROM dokumen_administrasi", $conn)->fetch_assoc();
 	$did = $result["No"] + 1;
 

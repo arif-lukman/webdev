@@ -33,6 +33,7 @@
 			color: white;
 		}
 		</style>
+		<link rel="stylesheet" type="text/css" href="../assets/css/styleuser.css">
 	</head>
 
 	<body>
@@ -60,11 +61,10 @@
 		<center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
 		<div class="col-sm-2"></div>
 		<form class="col-sm-8" action="step1action.php" method="post">
+		<div class="well well-lg">
 			<h2>Step 1</h2>
 			<h3>Nama dan Tipe Perusahaan</h3>
-			<hr>
-			<div class="well well-lg">
-
+			<hr>			
 			<?php
 				echo createInputField("text", "Nama Perusahaan:", "Company_Name", "namaperusahaan", $data["name"], "", false, "");
 				echo createSelectOptionByName("Tipe Perusahaan:", "tipeperusahaan", "Company_Type", "---- Pilih Tipe Perusahaan ----", $conn1, "SELECT _id, _judul as _name FROM _company_type ORDER BY _order ASC", true, $data["type"], "", false, "", "");
@@ -72,7 +72,7 @@
 			?>
 
 			<button type="submit" class="btn btn-primary">Save</button>
-			<button type="button" class="btn btn-primary">Reset</button>
+			<button type="reset" class="btn btn-primary">Reset</button>
 			<hr>
 			<ul class="pager">
 				<li><a href="vendor.php">Home</a></li>

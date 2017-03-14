@@ -19,7 +19,7 @@
 	} 
 
 	$sql = "UPDATE klasifikasi_perusahaan
-	SET Activities_Section = '$Activities_Section', Classification = '$Classification', Sub_Classification = '$Sub_Classification', Description = '$Description', Attachment = '$Attachment'
+	SET Activities_Section = '$Activities_Section', Classification = '$Classification', Sub_Classification = '$Sub_Classification', Description = '$Description'
 	WHERE No = '$No'";
 	
 	if ($conn->query($sql) === TRUE) {

@@ -37,8 +37,8 @@
 					echo createInputField("text", "Jabatan:", "jabatan", "jabatan", "", "", false, "");
 					echo createInputField("text", "Nama Perusahaan:", "nama_perusahaan", "nama_perusahaan", "", "", false, "");
 					echo createInputField("text", "Alamat:", "alamat", "alamat", "", "", false, "");
-					echo createSelectOptionById("Negara:", "negara", "negara", "---- Pilih Negara ----", $conn1, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", false, "", "col-m-6", false, "", "onchange = \"getProvince('negara', 'provinsi', '---- Pilih Provinsi ----', false, '', 'SELECT _province._id as _id, _province._nama as _name FROM _province, _country WHERE _country._id = _province._id_negara and _country._id = ', ' ORDER BY _province._order ASC', '../cooperation/controller/combobox2.php')\"");
-					echo createSelectOptionById("Provinsi:", "provinsi", "provinsi", "---- Pilih Negara Terlebih Dahulu ----", $conn1, "", false, "", "col-m-6", false, "", "");
+					echo createSelectOptionByName("Negara:", "negara", "negara", "---- Pilih Negara ----", $conn1, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", false, "", "col-m-6", false, "", "onchange = \"getProvince('negara', 'provinsi', '---- Pilih Provinsi ----', false, '', 'SELECT _province._id as _id, _province._nama as _name FROM _province, _country WHERE _country._id = _province._id_negara and _country._nama = ', ' ORDER BY _province._order ASC', '../cooperation/controller/combobox.php')\"");
+					echo createSelectOptionByName("Provinsi:", "provinsi", "provinsi", "---- Pilih Negara Terlebih Dahulu ----", $conn1, "", false, "", "col-m-6", false, "", "");
 					echo createInputField("email", "Email:", "email", "email", "", "", false, "");
 					echo createInputField("number", "NPWP:", "npwp", "npwp", "", "", false, "");
 					//nanti bikin captchanya

@@ -35,6 +35,7 @@
 			color: white;
 		}
 		</style>
+		<link rel="stylesheet" type="text/css" href="../assets/css/styleuser.css">
 	</head>
 
 	<body>
@@ -62,10 +63,10 @@
 		<center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
 		<div class="col-sm-2"></div>
 		<form class="col-sm-8" action="step13action.php" method="post">
+			<div class="well well-lg">
 			<h2>Step 13</h2>
 			<h3>Keadaan Perusahaan</h3>
 			<hr>
-			<div class="well well-lg">
 				<div class="form-group">
 					<tr><td><strong>1. Proses bangkrut (Bancrupty proceeding)</strong></td><td> :
 					<br>
@@ -103,7 +104,7 @@
 					<input type="radio" name="Sanksi_K3S" id="a" value="0" <?php echo checkBox(!$data['Sanksi_K3S']);?>>No</td></tr>
 				</div>
 				<button type="submit" class="btn btn-primary">Save</button>
-				<button type="button" class="btn btn-primary">Reset</button>
+				<button type="reset" class="btn btn-primary">Reset</button>
 				<hr>
 				<ul class="pager">
 					<li><a href="step12.php">Previous Step</a></li>

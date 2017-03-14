@@ -33,6 +33,7 @@
 				color: white;
 			}
 		</style>
+		<link rel="stylesheet" type="text/css" href="../assets/css/styleuser.css">
 	</head>
 
 	<body>
@@ -60,10 +61,10 @@
 		<center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
 		<div class="col-sm-2"></div>
 		<form class="col-sm-8" action="updatestep3.php?No=<?php echo $No;?>" method="post">
+			<div class="well well-lg">
 			<h2>Step 3</h2>
 			<h3>Alamat Kantor (Office Address)</h3>
 			<hr>
-			<div class="well well-lg">
 				<?php
 					echo createSelectOptionByName("Tipe Kantor:", "tipekantor", "Office_Type", "---- Pilih Tipe Kantor ----", $conn1, "SELECT _id, _judul as _name FROM _office_type ORDER BY _order ASC", true, $data["Office_Type"], "col-xs-4", true, $warning, "");
 					echo createSelectOptionByName("Negara:", "negara", "Country", "---- Pilih Negara ----", $conn1, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", true, $data["Country"], "col-xs-4", true, $warning, "onchange = \"getProvince('negara', 'provinsi', '---- Pilih Provinsi ----', false, '', 'SELECT _province._id, _province._nama as _name FROM _province, _country WHERE _country._id = _province._id_negara and _country._nama = ', ' ORDER BY _province._order ASC', '../cooperation/controller/combobox.php')\"");
@@ -85,7 +86,7 @@
 					echo createInputField("text", "Website:", "Website", "Website", $data['Website'], "col-xs-4", true, $warning); 
 				?>
 			<button type="submit" class="btn btn-primary">Save</button>
-			<button type="button" class="btn btn-primary">Reset</button>
+			<button type="reset" class="btn btn-primary">Reset</button>
 			<hr>
 			<ul class="pager">
 				<li><a href="step2.php">Previous Step</a></li>

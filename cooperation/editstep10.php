@@ -33,6 +33,7 @@
 			color: white;
 			}
 		</style>
+		<link rel="stylesheet" type="text/css" href="../assets/css/styleuser.css">
 	</head>
 
 	<body>
@@ -60,10 +61,10 @@
 		<center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
 		<div class="col-sm-2"></div>
 		<form class="col-sm-8" action="updatestep10.php?No=<?php echo $No;?>" method="post">
+			<div class="well well-lg">
 			<h2>Step 10</h2>
 			<h3>Pengalaman Perusahaan</h3>
 			<hr>
-			<div class="well well-lg">
 				<?php
 					echo createInputField("text", "Nama Pekerjaan:", "Project_Name", "Project_Name", $data['Project_Name'], "col-xs-6", true, $warning);
 					echo createSelectOptionByName("Bidang Pekerjaan:", "Activities_Section", "Activities_Section", "---Pilih Bidang Pekerjaan---", $conn1, "SELECT _id, _judul as _name FROM _scope_type ORDER BY _order ASC", true, $data["Activities_Section"], "col-xs-6", true, $warning, "onchange = \"getClassification('Activities_Section', 'Classification', '---- Pilih Klasifikasi Perusahaan ----', false, '', 'SELECT _class_type._id, CONCAT(_class_type._kode, \' - \', _class_type._judul) as _name FROM _class_type, _scope_type WHERE LENGTH(_class_type._kode) <= 3 and _class_type._bidang = _scope_type._id and _scope_type._judul = ', ' ORDER BY _class_type._order ASC', '../cooperation/controller/combobox.php')\"");
@@ -91,14 +92,8 @@
 						<option>Rusia</option>
 					</select>
 				</div>
-				<div class="col-xs-8">
-					<br><br>
-					<input type="file" name="Attachment" id="Attachment" required>
-					<span class="label label-info">Format PDF max. 2Mb </span>
-					<br><br><br>
-				</div>
 				<button type="submit" class="btn btn-primary">Save</button>
-				<button type="button" class="btn btn-primary">Reset</button>
+				<button type="reset" class="btn btn-primary">Reset</button>
 				<hr>
 				<ul class="pager">
 					<li><a href="step9.php">Previous Step</a></li>

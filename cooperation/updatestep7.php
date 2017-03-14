@@ -6,7 +6,6 @@
 	$Issued_Date=$_POST["Issued_Date"];
 	$Expired_Date=$_POST["Expired_Date"];
 	$Description=$_POST["Description"];
-	$Attachment=$_POST["Attachment"];
 	
 	$servername = "localhost";
 	$username = "root";
@@ -21,7 +20,7 @@
 	} 
 
 	$sql = "UPDATE surat_keagenan
-	SET Distributor = '$Distributor', Document_Number = '$Document_Number', Issued_By = '$Issued_By', Issued_Date = '$Issued_Date', Expired_Date = '$Expired_Date', Description = '$Description', Attachment = '$Attachment'
+	SET Distributor = '$Distributor', Document_Number = '$Document_Number', Issued_By = '$Issued_By', Issued_Date = '$Issued_Date', Expired_Date = '$Expired_Date', Description = '$Description'
 	WHERE No = '$No'";
 
 	if ($conn->query($sql) === TRUE) {

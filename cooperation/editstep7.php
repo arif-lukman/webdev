@@ -31,6 +31,7 @@
 				color: white;
 			}
 		</style>
+		<link rel="stylesheet" type="text/css" href="../assets/css/styleuser.css">
 	</head>
 
 	<body>
@@ -58,10 +59,10 @@
 		<center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
 		<div class="col-sm-2"></div>
 		<form class="col-sm-8" action="updatestep7.php?No=<?php echo $No;?>" method="post">
+			<div class="well well-lg">
 			<h2>Step 7</h2>
 			<h3>Surat Keagenan / Dealer / Distributor</h3>
 			<hr>
-			<div class="well well-lg">
 				<div class="form-group">
 					<?php
 						echo createSelectOptionByName("Tipe Distributor/Dealer:", "Distributor", "Distributor", "---Pilih Tipe Distributor---", $conn1, "SELECT _id, _nama as _name FROM _distributor ORDER BY _order ASC", true, $data["Distributor"], "", true, $warning, "");
@@ -71,13 +72,8 @@
 						echo createInputField("date", "Tanggal Kadaluarsa:", "Expired_Date", "Expired_Date", $data['Expired_Date'], "col-xs-6", true, $warning);
 						echo createInputField("text", "Deskripsi:", "Description", "Description", $data['Description'], "col-xs-12", true, $warning);
 					?>
-				<div class="form-group">
-					<input type="file" name="Attachment" id="Attachment" required>
-					<span class="label label-info">Format PDF max. 8Mb*</span><p class="text-warning">should not be empty</p>
-					<br>
-				</div>
 				<button type="submit" class="btn btn-primary">Save</button>
-				<button type="button" class="btn btn-primary">Reset</button>
+				<button type="reset" class="btn btn-primary">Reset</button>
 				<hr>
 				<ul class="pager">
 					<li><a href="step6.php">Previous Step</a></li>

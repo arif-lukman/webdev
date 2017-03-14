@@ -6,7 +6,6 @@
 	$Issued_Date=$_POST["Issued_Date"];
 	$Expired_Date=$_POST["Expired_Date"];
 	$Description=$_POST["Description"];
-	$Attachment=$_POST["Attachment"];
 	
 	$servername = "localhost";
 	$username = "root";

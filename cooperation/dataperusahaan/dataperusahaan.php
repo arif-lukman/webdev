@@ -2,6 +2,18 @@
 	include "koneksiDB.php";
 	include "lib/library.php";
 	include "check_session.php";
+	$id = $_SESSION["uid"];
+
+	$conn = createConnection("localhost", "root", "", "_bpms_vendor");
+
+	//ambil status registrasi
+	$result = getResults("SELECT data.No as _id, data.Date, data.Registration_Status, data.Notes, user.nama_perusahaan, user.id as hidden_id FROM tbl_user as user, pengajuan as data, data_pengajuan as conn WHERE user.id = conn.id_user and data.No = conn.id_pengajuan and data.Registration_Status = 'Final Approved' and user.id = '$id'", $conn);
+	if($result->num_rows > 0){
+		$printSKT = true;
+	}
+	else{
+		$printSKT = false;
+	}
 
 ?>
 <!DOCTYPE html>
@@ -36,7 +48,7 @@
 		<th><a href="dp_daftarpemilik.php">Step 5 Daftar Pemilik (Shareholders)</a></th>
     </tr>
     <tr>
-		<th><a href="dp_dokumenadministrasi.php">Step 6 Dokumen Administrasi (Administration Document)</a></th>	  
+		<th><a href="dp_dokumenadministrasi.php>">Step 6 Dokumen Administrasi (Administration Document)</a></th>	  
 		<th><a href="dp_suratkeagenan.php">Step 7 Surat Keagenan / Dealer / Distributor (Agency / Distributor Appointmen Letter)</a></th>
     </tr>
     <tr>
@@ -59,6 +71,14 @@
 	</tbody>
   </table>
   <li><a href="../vendor.php">Home</a></li>
+  <?php
+  //echo $printSKT;
+  	if($printSKT){
+  		echo "
+  			<li><a href='skt/skt.pdf' download>Download SKT</a></li>
+  		";
+  	}
+  ?>
 </div>
 
 </body>

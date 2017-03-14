@@ -31,6 +31,7 @@
 			color: white;
 		}
 		</style>
+		<link rel="stylesheet" type="text/css" href="../assets/css/styleuser.css">
 	</head>
 
 	<body>
@@ -58,10 +59,10 @@
 		<center><a class="home" href="vendor.php"><img src="../assets/images/icons/iconhome.png"></a> </center>
 		<div class="col-sm-2"></div>
 		<form class="col-sm-8" action="updatestep8.php?No=<?php echo $No;?>" method="post">
+			<div class="col-sm-12 well well-lg">
 			<h2>Step 8</h2>
 			<h3>Partner K3S</h3>
 			<hr>
-			<div class="col-sm-12 well well-lg">
 				<?php
 					echo createSelectOptionByName("Nama Bank:", "Bank_Name", "Bank_Name", "---Pilih Bank---", $conn1, "SELECT _id, _nama as _name FROM _bank ORDER BY _order ASC", true, $data["Bank_Name"], "col-xs-6", true, $warning, "");
 					echo createInputField("text", "Cabang:", "Branch", "Branch", $data['Branch'], "col-xs-6", true, $warning, "");
@@ -72,7 +73,7 @@
 				?>
 				<div class="col-sm-12">
 					<button type="submit" class="btn btn-primary">Save</button>
-					<button type="button" class="btn btn-primary">Reset</button>
+					<button type="reset" class="btn btn-primary">Reset</button>
 					<hr>
 					<ul class="pager">
 						<li><a href="step7.php">Previous Step</a></li>

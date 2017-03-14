@@ -252,6 +252,47 @@
 		";
 	}
 
+	//fungsi buat generate tabel
+	function generateTableGO($fieldNames, $fieldValues, $allValues, $targetPhp, $editable, $info){
+		echo "
+		<table class='table table-bordered'>
+			<thead>
+				<tr>
+		";
+				while ($colNames = $fieldNames->fetch_assoc()){
+					echo "
+					<th>$colNames[Field]</th>
+					";
+				}
+		echo "
+				</tr>
+			</thead>
+			<tbody>
+		";
+		while($colValues = $fieldValues->fetch_assoc()){
+			echo "<tr>";
+			foreach($allValues as $item){
+				echo "<td>$colValues[$item]</td>";
+			}
+			if($editable){
+				echo "
+				<td><a href=\"../forms/" . $targetPhp . "?op=update&id=$colValues[_id]\">edit</a></td>
+				<td><a href=\"../controller/" . $targetPhp . "?op=delete&id=$colValues[_id]\">delete</td>
+				";
+			}
+			if($info){
+				echo "
+				<td><a href=\"../admin/" . $targetPhp . "?id=$colValues[_id]\">info</a></td>
+				";
+			}
+			echo "</tr>";
+		}
+		echo "
+			</tbody>
+		</table>
+		";
+	}
+
 	//fungsi buat bikin navbar
 	function createNavbar($content){
 		echo $content;
@@ -479,5 +520,23 @@
 		else{
 			return "";
 		}
+	}
+
+	//fungsi buat download attachment
+	function downloadFile($tableName, $fileId, $conn){
+		$sql = "SELECT * FROM " . $tableName . " WHERE  id = " . $fileId;
+		//echo $sql;
+		$data = getResults($sql, $conn)->fetch_assoc();
+		$filesize = $data['filesize'];
+		$type = $data['type'];
+		$filename = $data['filename'];
+		$content = $data['data'];
+		//echo $filesize . $type . $filename . $content;
+		header("Content-length: $filesize");
+	    header("Content-type: $type");
+	    header("Content-Disposition: attachment; filename=$filename");
+	    ob_clean();
+	    flush();
+	    echo $content;
 	}
 ?>
