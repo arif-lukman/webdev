@@ -5,14 +5,12 @@
 	//include session checker
 	include "../controller/check_session.php";
 
-	//set variabel nama db
-	$dbname = "_bpms_master";
-
-	//include file koneksi
-	include "../controller/koneksi.php";
-
 	//create connection
-	$conn1 = createConnection("localhost","root","","_bpms_vendor");
+	$master = createConnection("localhost", "root", "", "_bpms_master");
+	$vendor = createConnection("localhost", "root", "", "_bpms_vendor");
+
+	//include privilege checker
+	include "../controller/check_priv.php";
 
 	//search processing
 	//bikin array buat nampung tambahan string
@@ -24,7 +22,7 @@
 	$where = "";
 	$and = "";
 
-	if($_GET["keyword"] == "" && (isset($_GET["country"]) || isset($_GET["province"]))){
+	if(isset($_GET["keyword"]) && $_GET["keyword"] == "" && (isset($_GET["country"]) || isset($_GET["province"]))){
 		$where = " WHERE";
 	}
 	if(isset($_GET["keyword"]) && isset($_GET["country"]) || isset($_GET["province"])){
@@ -76,7 +74,7 @@
 	<body>
 		<?php
 			//bikin navbarnya
-			createNavbar(setActiveNav(NAVBAR, "companies.php"));
+			createNavbar(setActiveNav($NAVBAR, "companies.php"));
 		?>
 		<div class="container" style="margin-top: 80px">
 			<div class="well">
@@ -84,10 +82,10 @@
 				<form action="companies.php">
 					<?php
 						echo createInputFieldB("text", "Kata kunci:", "keyword", "keyword", "", "col-sm-12", false, "");
-						echo createSelectOptionById("Negara:", "country", "country", "---- Pilih Negara ----", $conn, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", false, "", "col-sm-6", false, "", "onchange = \"getProvince('country', 'province', '---- Pilih Provinsi ----', false, '', 'SELECT _province._id as _id, _province._nama as _name FROM _province, _country WHERE _country._id = _province._id_negara and _country._id = ', ' ORDER BY _province._order ASC', '../controller/combobox2.php')\"");
-						echo createSelectOptionById("Provinsi:", "province", "province", "---- Pilih Negara Terlebih Dahulu ----", $conn, "", false, "", "col-sm-6", false, "", "");
-						echo createSelectOptionByName("Klasifikasi:", "class", "class", "---Pilih Klasifikasi Perusahaan---", $conn, "SELECT _id, CONCAT(_kode, ' - ', _judul) as _name FROM _class_type WHERE LENGTH(_kode) > 3", false, "", "col-sm-6", false, "", "");
-						echo createSelectOptionByName("Kualifikasi:", "qual", "qual", "---Pilih Kualifikasi Perusahaan---", $conn, "SELECT _id, _judul as _name FROM _qual_type", false, "", "col-sm-6", false, "", "");
+						echo createSelectOptionById("Negara:", "country", "country", "---- Pilih Negara ----", $master, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", false, "", "col-sm-6", false, "", "onchange = \"getProvince('country', 'province', '---- Pilih Provinsi ----', false, '', 'SELECT _province._id as _id, _province._nama as _name FROM _province, _country WHERE _country._id = _province._id_negara and _country._id = ', ' ORDER BY _province._order ASC', '../controller/combobox2.php')\"");
+						echo createSelectOptionById("Provinsi:", "province", "province", "---- Pilih Negara Terlebih Dahulu ----", $master, "", false, "", "col-sm-6", false, "", "");
+						echo createSelectOptionByName("Klasifikasi:", "class", "class", "---Pilih Klasifikasi Perusahaan---", $master, "SELECT _id, CONCAT(_kode, ' - ', _judul) as _name FROM _class_type WHERE LENGTH(_kode) > 3", false, "", "col-sm-6", false, "", "");
+						echo createSelectOptionByName("Kualifikasi:", "qual", "qual", "---Pilih Kualifikasi Perusahaan---", $master, "SELECT _id, _judul as _name FROM _qual_type", false, "", "col-sm-6", false, "", "");
 					?>
 					<center><input type="submit" value="Search"></center>
 				</form>
@@ -97,7 +95,7 @@
 					$sql = "SELECT id, nama_perusahaan FROM tbl_user";
 					$sql .= $where . $addition1;
 					//echo $sql . "<br>";
-					$result1 = getResults($sql, $conn1);
+					$result1 = getResults($sql, $vendor);
 					$count = 0;
 					echo "
 						<table class='table table-bordered'>
@@ -114,7 +112,7 @@
 						$sql2 = "SELECT pengalaman_perusahaan.Sub_Classification, klasifikasi_perusahaan.Description, pengalaman_perusahaan.Value, nama_dan_tipe_perusahaan.Company_Qualification FROM pengalaman_perusahaan, data_pengalaman_perusahaan, klasifikasi_perusahaan, data_klasifikasi_perusahaan, tbl_user, nama_dan_tipe_perusahaan, data_nama_dan_tipe_perusahaan WHERE pengalaman_perusahaan.No = data_pengalaman_perusahaan.id_pengalaman_perusahaan and klasifikasi_perusahaan.No = data_klasifikasi_perusahaan.id_klasifikasi_perusahaan and nama_dan_tipe_perusahaan.No = data_nama_dan_tipe_perusahaan.id_nama_dan_tipe_perusahaan and data_pengalaman_perusahaan.id_user = tbl_user.id and data_klasifikasi_perusahaan.id_user = tbl_user.id and data_nama_dan_tipe_perusahaan.id_user = tbl_user.id and klasifikasi_perusahaan.Sub_Classification = pengalaman_perusahaan.Sub_Classification and tbl_user.id = '$data[id]'";
 						$sql2 .= $and . $addition2;
 						//echo $sql2;
-						$result2 = getResults($sql2, $conn1);
+						$result2 = getResults($sql2, $vendor);
 						$rowspan = $result2->num_rows;
 						while($data2 = $result2->fetch_assoc()){
 							if($count == 0){

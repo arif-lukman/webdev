@@ -5,15 +5,12 @@
 	//include session checker
 	include "../controller/check_session.php";
 
-	//set variabel nama db
-	$dbname = "_bpms_master";
-
-	//include file koneksi
-	include "../controller/koneksi.php";
-
 	//create connection
-	$conn1 = createConnection("localhost","root","","_bpms_vendor");
-	$conn2 = createConnection("localhost", "root", "", "_bpms_master");
+	$master = createConnection("localhost", "root", "", "_bpms_master");
+	$vendor = createConnection("localhost", "root", "", "_bpms_vendor");
+
+	//include privilege checker
+	include "../controller/check_priv.php";
 
 	//search processing
 	//bikin array buat nampung tambahan string
@@ -22,7 +19,8 @@
 	$addition = "";
 	$where = "";
 
-	if($_GET["keyword"] == "" && (isset($_GET["country"]) || isset($_GET["province"]))){
+	//cek parameter
+	if(isset($_GET["keyword"]) && $_GET["keyword"] == "" && (isset($_GET["country"]) || isset($_GET["province"]))){
 		$where = " WHERE";
 	}
 	if(isset($_GET["keyword"]) && isset($_GET["country"]) || isset($_GET["province"])){
@@ -32,7 +30,7 @@
 		$where = " WHERE";
 	}
 
-	//search processing
+	//keyword
 	if(isset($_GET["keyword"]) && $_GET["keyword"] != ""){
 		array_push($arrStrs, " nama_perusahaan LIKE '%" . $_GET["keyword"] . "%'");
 	}
@@ -62,7 +60,7 @@
 	<body>
 		<?php
 			//bikin navbarnya
-			createNavbar(setActiveNav(NAVBAR, "expiry.php"));
+			createNavbar(setActiveNav($NAVBAR, "expiry.php"));
 		?>
 		<div class="container" style="margin-top: 80px">
 			<div class="well">
@@ -70,8 +68,8 @@
 				<form action="expiry.php">
 					<?php
 						echo createInputFieldB("text", "Kata kunci(Nama Perusahaan):", "keyword", "keyword", "", "col-sm-12", false, "");
-						echo createSelectOptionById("Negara:", "country", "country", "---- Pilih Negara ----", $conn2, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", false, "", "col-sm-6", false, "", "onchange = \"getProvince('country', 'province', '---- Pilih Provinsi ----', false, '', 'SELECT _province._id as _id, _province._nama as _name FROM _province, _country WHERE _country._id = _province._id_negara and _country._id = ', ' ORDER BY _province._order ASC', '../controller/combobox2.php')\"");
-						echo createSelectOptionById("Provinsi:", "province", "province", "---- Pilih Negara Terlebih Dahulu ----", $conn2, "", false, "", "col-sm-6", false, "", "");
+						echo createSelectOptionById("Negara:", "country", "country", "---- Pilih Negara ----", $master, "SELECT _id, _nama as _name FROM _country ORDER BY _order ASC", false, "", "col-sm-6", false, "", "onchange = \"getProvince('country', 'province', '---- Pilih Provinsi ----', false, '', 'SELECT _province._id as _id, _province._nama as _name FROM _province, _country WHERE _country._id = _province._id_negara and _country._id = ', ' ORDER BY _province._order ASC', '../controller/combobox2.php')\"");
+						echo createSelectOptionById("Provinsi:", "province", "province", "---- Pilih Negara Terlebih Dahulu ----", $master, "", false, "", "col-sm-6", false, "", "");
 					?>
 					<center><input type="submit" value="Search"></center>
 					<br>
@@ -81,7 +79,7 @@
 					$sql = "SELECT id, nama_perusahaan FROM tbl_user";
 					$sql .= $where . $addition;
 					//echo $sql;
-					$result1 = getResults($sql, $conn1);
+					$result1 = getResults($sql, $vendor);
 					$count = 0;
 					echo "
 						<table class='table table-bordered'>
@@ -96,7 +94,7 @@
 					//echo $sql;
 					while($data = $result1->fetch_assoc()){
 						$sql2 = "SELECT dokumen_administrasi.Expired_Date, dokumen_administrasi.Document_Type FROM dokumen_administrasi, tbl_user, data_dokumen_administrasi WHERE tbl_user.id = data_dokumen_administrasi.id_user and dokumen_administrasi.No = data_dokumen_administrasi.id_dokumen_administrasi and tbl_user.id = '$data[id]'";
-						$result2 = getResults($sql2, $conn1);
+						$result2 = getResults($sql2, $vendor);
 						$rowspan = $result2->num_rows;
 						while($data2 = $result2->fetch_assoc()){
 							if($count == 0){

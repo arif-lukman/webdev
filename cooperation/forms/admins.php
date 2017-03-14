@@ -56,7 +56,7 @@
 						echo createInputField("text", "Nama Lengkap:", "fname", "fname", checkData($data,"_fullname"), "", false, "");
 						echo createInputField("text", "Email:", "email", "email", checkData($data,"_email"), "", false, "");
 						echo createInputField("text", "Password:", "pswrd", "pswrd", checkData($data,"_password"), "", false, "");
-						echo createSelectOptionByName("Group:", "grup", "grup", "---Pilih Hak Akses---", $conn, "SELECT * FROM _group_priv", $allowChecking, $param, "", "", false, "", "");
+						echo createSelectOptionById("Group:", "grup", "grup", "---Pilih Hak Akses---", $conn, "SELECT * FROM _group_priv", $allowChecking, $param, "", "", false, "", "");
 					?>
 					<div class="form-group">
 				  		<label for="stat">Status:</label>

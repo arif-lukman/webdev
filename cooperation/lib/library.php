@@ -1,6 +1,6 @@
 <?php
 	/*<============================================================Constants==================================================================>*/
-	//konstanta buat navbar
+	//konstanta buat navbar 1
 	define("NAVBAR", 
 		"
 		<nav class='navbar navbar-inverse navbar-fixed-top'>
@@ -11,6 +11,24 @@
 					<li><a href='../admin/proposals.php'>Status Pengajuan</a></li>
 					<li><a href='../admin/expiry.php'>Kadaluarsa</a></li>
 					<li><a href='../admin/cfg_gen.php'>Admin</a></li>
+					<li><a href='#''>Bantuan</a></li>
+				</ul>
+				<ul class='nav navbar-nav navbar-right'>
+					<li><a href='../controller/logout.php'>Logout</a></li>
+				</ul>
+			</div>
+		</nav>
+		");
+
+	//konstanta buat navbar 2
+	define("NAVBAR2", 
+		"
+		<nav class='navbar navbar-inverse navbar-fixed-top'>
+			<div class='container-fluid'>
+				<ul class='nav navbar-nav'>
+					<li><a href='../admin/companies.php'>Data Perusahaan</a></li>
+					<li><a href='../admin/proposals.php'>Status Pengajuan</a></li>
+					<li><a href='../admin/expiry.php'>Kadaluarsa</a></li>
 					<li><a href='#''>Bantuan</a></li>
 				</ul>
 				<ul class='nav navbar-nav navbar-right'>

@@ -18,7 +18,7 @@
 			$_SESSION['uid'] = $row['_id'];
 		}
 	    echo "<script> alert('Selamat datang~!');
-			location='../admin/main_menu.php';
+			location='../admin/companies.php';
 			</script>";
 	} else {
 	    echo "0 results";

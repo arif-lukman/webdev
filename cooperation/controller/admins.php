@@ -11,7 +11,7 @@
 	//ambil parameter
 	//parameter operasi: create/update/delete
 	$op = $_GET["op"];
-	echo $op;
+	//echo $op;
 	//parameter id
 	$id = getParamGet("id");
 
