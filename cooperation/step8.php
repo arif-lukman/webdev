@@ -77,7 +77,7 @@
 		<form class="col-sm-8" action="step8action.php" method="post">
 			<div class="col-sm-12 well well-lg">
 			<h2>Step 8</h2>
-			<h3>Partner K3S</h3>
+			<h3>Daftar Rekening Bank</h3>
 			<hr>
 				<?php
 					echo createSelectOptionByName("Nama Bank:", "Bank_Name", "Bank_Name", "---Pilih Bank---", $conn1, "SELECT _id, _nama as _name FROM _bank ORDER BY _order ASC", true, "", "col-xs-6", true, $warning, "");

@@ -13,7 +13,7 @@
 	$colExec = mysql_query($colQuery);
 
 	//query buat ngambil isi field
-	$conQuery = "SELECT data.No, data.Project_Name, data.Classification, data.User_Company, data.Contract_Date, data.Value, data.Attachment FROM tbl_user as user, pengalaman_perusahaan as data, data_pengalaman_perusahaan as conn WHERE user.id = conn.id_user and data.No = conn.id_pengalaman_perusahaan and user.id = '$id'";
+	$conQuery = "SELECT data.No, data.Project_Name, data.Classification, data.User_Company, data.Contact_Date, data.Value, data.Attachment FROM tbl_user as user, pengalaman_perusahaan as data, data_pengalaman_perusahaan as conn WHERE user.id = conn.id_user and data.No = conn.id_pengalaman_perusahaan and user.id = '$id'";
 
 	//eksekusi query conQuery
 	$conExec = mysql_query($conQuery);
