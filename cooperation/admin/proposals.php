@@ -92,6 +92,7 @@
 			initHead();
 		?>
 		<script src="../../assets/js/functions.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../assets/css/style2.css">
 	</head>
 
 	<body>

@@ -5,12 +5,12 @@
 	//include session checker
 	include "../controller/check_session.php";
 
-	//include privilege checker
-	include "../controller/check_priv.php";
-
 	//bikin koneksi ke db
 	$master = createConnection("localhost", "root", "", "_bpms_master");
 	$vendor = createConnection("localhost", "root", "", "_bpms_vendor");
+
+	//include privilege checker
+	include "../controller/check_priv.php";	
 
 	//data untuk select option negara
 	//ambil nama field
@@ -32,6 +32,7 @@
 			initHead();
 		?>
 		<script src="../../assets/js/functions.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../assets/css/style2.css">
 	</head>
 
 	<body>
